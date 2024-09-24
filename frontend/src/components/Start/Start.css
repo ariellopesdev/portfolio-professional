@@ -1,0 +1,26 @@
+#start {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #3b3b3b;
+    color: #eee;
+}
+
+#start h1 {
+    font-size: 4em;
+    font-weight: 600;
+}
+
+#start p {
+    font-size: .8em;
+    margin-top: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+#start #chevronDown {
+    margin-top: 50px;
+    font-size: 2em;
+}

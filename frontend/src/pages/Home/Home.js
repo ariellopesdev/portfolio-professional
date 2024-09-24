@@ -1,9 +1,13 @@
+//CSS
 import "./Home.css";
+
+//Components
+import Start from "../../components/Start/Start";
 
 const Home = () => {
   return (
     <div>
-      <h1>Home</h1>
+      <Start />
     </div>
   );
 };
