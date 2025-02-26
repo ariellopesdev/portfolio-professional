@@ -1,15 +1,23 @@
+//CSS
 import "./Navbar.css";
 
+//components
+import { NavLink, Link } from "react-router-dom";
+import { FaGithub, FaLinkedin, FaWhatsapp  } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
+
 const Navbar = () => {
-  return <div>
-    <ul id="navbar">
-        <li className="active">INÍCIO</li>
-        <li>SOBRE MIM</li>
-        <li>PORTFÓLIO</li>
-        <li>CURRÍCULO</li>
-        <li>CONTATO</li>
-    </ul>
-  </div>;
+  return (
+    <header>
+      <h1>Ariel Lopes</h1>
+      <ul>
+        <li><FaGithub /></li>
+        <li><FaLinkedin /></li>
+        <li><FaWhatsapp /></li>
+        <li><MdEmail /></li>
+      </ul>
+    </header>
+  );
 };
 
 export default Navbar;

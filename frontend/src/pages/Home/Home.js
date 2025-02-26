@@ -1,13 +1,14 @@
-//CSS
+//Css
 import "./Home.css";
 
-//Components
-import Start from "../../components/Start/Start";
+//components
+import Navbar from "../../components/Navbar/Navbar";
 
 const Home = () => {
   return (
     <div>
-      <Start />
+      <Navbar />
+      Home
     </div>
   );
 };
