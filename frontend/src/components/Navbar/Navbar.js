@@ -9,7 +9,6 @@ import { MdEmail } from "react-icons/md";
 const Navbar = () => {
   return (
     <header>
-      <h1>Ariel Lopes</h1>
       <ul>
         <li><FaGithub /></li>
         <li><FaLinkedin /></li>

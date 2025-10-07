@@ -3,14 +3,17 @@ import "./Home.css";
 
 //components
 import Navbar from "../../components/Navbar/Navbar";
+import Aside from "../../components/Aside/Aside";
 
 const Home = () => {
   return (
     <div>
       <Navbar />
+      <Aside />
       <section id="top">
         <h1>Ariel Lopes</h1>
-        <p>Desenvolvedor Full Stack</p>
+        <h2>Desenvolvedor Full Stack</h2>
+        <p>PORTFOLIO</p>
       </section>
       <section id="projects">
         <h1>Projetos</h1>
