@@ -1,17 +1,75 @@
+/* ================= Header ================= */
 header {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: calc(100% - 150px);
-    /* padding: 40px 40px 0; */
-    height: 60px;
-    color: #fff;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    z-index: 1001;
-    background-color: red;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: calc(100% - 150px);
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1em;
+  color: #fff; 
+  background-color: transparent;
+  z-index: 1000;
+}
+
+/* ================= Lista de ícones ================= */
+#ul-header {
+  list-style: none;
+  display: flex;
+  margin-left: auto;
+  gap: 1em;
+  align-items: center;
+  padding: 0;
+}
+
+#ul-header li {
+  font-size: 1.3em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+#ul-header li:hover {
+  color: #ff5f5f;
+}
+
+#ul-header li .nav-icon {
+  color: currentColor;
+  transition: color 0.2s ease;
+}
+
+/* ================= Botão de menu ================= */
+#menu-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0 1.5em 0 2.5em;
+}
+
+#menu-btn-toggle {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 1.6em;
+  color: #ff5f5f;
+  transition: color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#menu-btn-toggle:hover {
+  color: #ff7b7b;
+}
+
+#menu-btn-toggle .nav-icon {
+  color: currentColor;
+  transition: color 0.2s ease;
 }
