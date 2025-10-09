@@ -8,13 +8,22 @@ const Aside = () => {
   return (
     <aside>
       <h1>Ariel Lopes</h1>
-      <ul>
-        <li><FaMinus /></li>
-        <li><FaMinus /></li>
-        <li><FaMinus /></li>
-        <li><FaMinus /></li>
-      </ul>
-      <p>SCROLLDOWN <span>-</span></p>
+      <div id="aside-block">
+        <ul>
+          <li>
+            <FaMinus />
+          </li>
+          <li>
+            <FaMinus />
+          </li>
+          <li>
+            <FaMinus />
+          </li>
+          <li>
+            <FaMinus />
+          </li>
+        </ul>
+      </div>
     </aside>
   );
 };
