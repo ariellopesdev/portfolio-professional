@@ -8,7 +8,7 @@ import { HiChevronDoubleDown } from "react-icons/hi";
 const Aside = () => {
   return (
     <aside>
-      <h1>Ariel Lopes</h1>
+      <h1>Logo</h1>
       <div id="aside-block">
         <ul>
           <li>

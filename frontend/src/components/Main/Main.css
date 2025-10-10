@@ -1,0 +1,42 @@
+/* ================= Main ================= */
+
+#main #block-left {
+  width: 320px;
+}
+
+#main h1 {
+  font-size: 5.5em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+  margin-top: 40px;
+  font-weight: 500;
+}
+
+#block-after-main {
+  position: relative;
+  height: 20px; 
+  margin: 35px 0;
+}
+
+#block-after-main::before,
+#block-after-main::after {
+  content: "";
+  display: block;
+  height: 4px; 
+  background-color: #ff5f5f; 
+  width: 30%; 
+  margin: 15px 0;
+  border-radius: 4px;
+}
+
+#block-after-main::after{
+    margin-left: 50px;
+}
+
+#main h2 {
+  font-size: 1.5em;
+  letter-spacing: 0.2em;
+  color: #fff;
+  line-height: 1.7;
+}

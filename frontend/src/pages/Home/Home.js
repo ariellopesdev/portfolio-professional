@@ -4,17 +4,14 @@ import "./Home.css";
 //components
 import Navbar from "../../components/Navbar/Navbar";
 import Aside from "../../components/Aside/Aside";
+import Main from "../../components/Main/Main";
 
 const Home = () => {
   return (
     <div>
       <Navbar />
       <Aside />
-      <section id="top">
-        <h1>Ariel Lopes</h1>
-        <h2>Desenvolvedor Full Stack</h2>
-        <p>PORTFOLIO</p>
-      </section>
+      <Main />
       <section id="projects">
         <h1>Projetos</h1>
         <div className="projectcard">
