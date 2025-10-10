@@ -1,3 +1,5 @@
+/* ================= Aside ================= */
+
 aside {
   position: fixed;
   top: 0;
@@ -21,8 +23,10 @@ aside {
 aside h1 {
   font-size: 1.2em;
   font-weight: 600;
-  letter-spacing: .2em;
+  letter-spacing: 0.2em;
 }
+
+/* ================= Lista de ícones ================= */
 
 aside ul {
   list-style: none;
@@ -37,4 +41,26 @@ aside ul {
 aside li {
   margin-bottom: 0.6em;
   font-size: 1.5em;
+}
+
+#block-scroll {
+  position: absolute;
+  bottom: 20px;
+  width: 70px;
+  display: flex;
+  justify-content: center;
+}
+
+/* ================= Scroll Icon ================= */
+
+#scroll-icon {
+  font-size: 2em;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+#scroll-icon:hover {
+  transform: scale(1.1);
+  color: #ff5f5f;
 }

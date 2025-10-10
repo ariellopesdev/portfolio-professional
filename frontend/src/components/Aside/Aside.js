@@ -3,6 +3,7 @@ import "./Aside.css";
 
 //Icon
 import { FaMinus } from "react-icons/fa";
+import { HiChevronDoubleDown } from "react-icons/hi";
 
 const Aside = () => {
   return (
@@ -23,6 +24,9 @@ const Aside = () => {
             <FaMinus />
           </li>
         </ul>
+      </div>
+      <div id="block-scroll">
+        <HiChevronDoubleDown id="scroll-icon"/>
       </div>
     </aside>
   );
