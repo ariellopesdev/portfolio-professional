@@ -4,7 +4,7 @@ const Main = () => {
   return (
     <div>
       <section id="main">
-        <div id="block-left">
+        <div className="block-left">
           <h1>Ariel Lopes</h1>
           <div id="block-after-main"></div>
           <h2>

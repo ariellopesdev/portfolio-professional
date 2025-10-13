@@ -33,11 +33,13 @@ section, footer {
   width: calc(100% - 150px);
   padding-top: 60px;
   margin-left: 150px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   transition: all 0.8s ease;
   box-sizing: border-box;
   color: #fff;
   background-color: transparent;
+}
+
+/* Bloco que padroniza tamanho do conteúdo escrito em todas as seções*/
+.block-left {
+  width: 320px;
 }
