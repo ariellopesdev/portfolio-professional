@@ -1,32 +1,28 @@
 //CSS
 import "./Aside.css";
 
-//Icon
-import { FaMinus } from "react-icons/fa";
-import { HiChevronDoubleDown } from "react-icons/hi";
+const Aside = ({ currentSection }) => {
+  const numSections = 5; // quantidade de traços
+  const lines = Array.from({ length: numSections }, (_, i) => i);
 
-const Aside = () => {
   return (
     <aside>
       <h1>Logo</h1>
       <div id="aside-block">
         <ul>
-          <li>
-            <FaMinus />
-          </li>
-          <li>
-            <FaMinus />
-          </li>
-          <li>
-            <FaMinus />
-          </li>
-          <li>
-            <FaMinus />
-          </li>
+          {lines.map((line) => (
+            <li key={line} className={currentSection === line ? "active" : ""}>
+              <span className="line-bar"></span>
+            </li>
+          ))}
         </ul>
       </div>
-      <div id="block-scroll">
-        <HiChevronDoubleDown id="scroll-icon"/>
+      <div
+        id="scroll-text"
+        className={currentSection === 0 ? "visible" : "hidden"}
+      >
+        <span>SCROLLDOWN</span>
+        <span className="scroll-icon-minus"></span>
       </div>
     </aside>
   );

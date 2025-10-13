@@ -6,11 +6,64 @@ import Navbar from "../../components/Navbar/Navbar";
 import Aside from "../../components/Aside/Aside";
 import Main from "../../components/Main/Main";
 
+import { useEffect, useState } from "react";
+
 const Home = () => {
+  const sections = [
+    "main",
+    "projects",
+    "about",
+    "curriculum",
+    "contact",
+    "footer",
+  ];
+  const [currentSection, setCurrentSection] = useState(0);
+  const [isScrolling, setIsScrolling] = useState(false); // trava temporária
+  const [scrollTextVisible, setScrollTextVisible] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = (e) => {
+      e.preventDefault();
+
+      // Impede múltiplos disparos seguidos
+      if (isScrolling) return;
+      setIsScrolling(true);
+
+      let nextSection = currentSection;
+
+      if (e.deltaY > 0) {
+        //scroll para baixo
+        nextSection = Math.min(currentSection + 1, sections.length - 1);
+      }else{
+        //scroll para cima
+        nextSection = Math.max(currentSection - 1, 0);
+      }
+
+      setCurrentSection(nextSection);
+
+      //Controle do scroll text: visível apenas no main(índice 0)
+      if(nextSection === 0) setScrollTextVisible(true);
+      else setScrollTextVisible(false);
+
+      // Libera o scroll após 1 segundo
+      setTimeout(() => setIsScrolling(false), 500);
+    };
+
+    window.addEventListener("wheel", handleScroll, { passive: false });
+    return () => window.removeEventListener("wheel", handleScroll);
+  }, [isScrolling, currentSection, sections.length]);
+
+  // scroll para a seção atual
+  useEffect(() => {
+    const target = document.getElementById(sections[currentSection]);
+    if (target) target.scrollIntoView({ behavior: "smooth" });
+  }, [currentSection, sections]);
+
   return (
     <div>
       <Navbar />
-      <Aside />
+      {/*Para impedir com que o active suma abaixo do último section */}
+      <Aside currentSection={Math.min(currentSection, 4)} />
       <Main />
       <section id="projects">
         <h1>Projetos</h1>
@@ -58,7 +111,10 @@ const Home = () => {
         <div className="contactcard">
           <i></i>
           <h2>Redes Sociais</h2>
-          <i></i><i></i><i></i><i></i>
+          <i></i>
+          <i></i>
+          <i></i>
+          <i></i>
         </div>
         <div className="contactcard">
           <i></i>
@@ -67,18 +123,23 @@ const Home = () => {
         </div>
         <div className="contactcard">
           <input type="text" name="" id="" placeholder="Nome" />
-          <input type="email" name="" id="" placeholder="Email"/>
-          <input type="text" name="" id="" placeholder="Assunto"/>
-          <textarea name="" id="">Mensagem</textarea>
+          <input type="email" name="" id="" placeholder="Email" />
+          <input type="text" name="" id="" placeholder="Assunto" />
+          <textarea name="" id="">
+            Mensagem
+          </textarea>
           <button>Enviar</button>
         </div>
       </section>
-      <footer>
+      {/* <footer id="footer">
         <h1>Ariel Lopes</h1>
         <p>Frase Motivacional</p>
-        <i></i><i></i><i></i><i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
         <p>@copy; Copyright Ariel Lopes.</p>
-      </footer>
+      </footer> */}
     </div>
   );
 };

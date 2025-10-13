@@ -5,10 +5,18 @@
   font-family: "Raleway", sans-serif;
 }
 
+
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+  scroll-snap-type: none;
+}
+
 body {
   margin: 0; /* remove margens padrão */
   height: 100vh; /* altura da viewport */
   width: 100%;
+  overflow: hidden; /*impede scroll nativo*/
   background: linear-gradient(
     to bottom,
     #1a2c4e 0%,
@@ -17,13 +25,19 @@ body {
   );
   background-repeat: no-repeat; /* não repetir */
   background-size: cover; /* cobre a tela inteira */
-  background-attachment: scroll; /* se quiser que o fundo fique fixo ou se mova, pode alterar */
+  background-attachment: fixed; /* mantém o degradê estático */
 }
 
-section {
-  height: calc(100vh - 60px);
+section, footer {
+  height: 100vh;
   width: calc(100% - 150px);
-  float: right;
-  border-bottom: 1px solid red;
-  margin-top: 60px;
+  padding-top: 60px;
+  margin-left: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: all 0.8s ease;
+  box-sizing: border-box;
+  color: #fff;
+  background-color: transparent;
 }

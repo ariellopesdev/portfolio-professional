@@ -36,11 +36,31 @@ aside ul {
   transform: translateY(-50%);
   margin: 0;
   padding: 0;
+  width: 40px;
 }
 
-aside li {
-  margin-bottom: 0.6em;
-  font-size: 1.5em;
+aside ul li {
+  margin-bottom: 0.4em;
+  transform: scaleX(1);
+  transform-origin: left;
+  transition: all 0.5s ease;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  margin: 1.6em 0;
+}
+
+aside ul li .line-bar {
+  display: block;
+  width: 20px;
+  height: 3px;
+  background-color: #fff;
+  transition: all 0.5s ease;
+}
+
+aside ul li.active .line-bar {
+  width: 35px;
+  height: 4px;
 }
 
 #block-scroll {
@@ -53,14 +73,36 @@ aside li {
 
 /* ================= Scroll Icon ================= */
 
-#scroll-icon {
-  font-size: 2em;
-  color: #fff;
-  cursor: pointer;
-  transition: transform 0.3s ease, color 0.3s ease;
+#scroll-text {
+  position: absolute;
+  bottom: 110px;
+  left: -50px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.8em;
+  letter-spacing: 0.3em;
+  font-weight: 200;
+  color: #ffffff;
+  transform: rotate(90deg);
+  transition: bottom 0.5s ease, opacity 0.5s ease;
+  opacity: 1;
 }
 
-#scroll-icon:hover {
-  transform: scale(1.1);
-  color: #ff5f5f;
+#scroll-text.hidden {
+  opacity: 0;
+  bottom: -50px;
+}
+
+#scroll-text.visible {
+  opacity: 1;
+  bottom: 110px;
+}
+
+#scroll-text .scroll-icon-minus {
+  display: inline-block;
+  width: 60px;
+  height: 3px;
+  background-color: #fff;
+  transform-origin: left;
 }
