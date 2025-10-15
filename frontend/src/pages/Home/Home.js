@@ -5,6 +5,7 @@ import "./Home.css";
 import Navbar from "../../components/Navbar/Navbar";
 import Aside from "../../components/Aside/Aside";
 import Main from "../../components/Main/Main";
+import Projects from "../../components/Projects/Projects";
 
 import { useEffect, useState } from "react";
 
@@ -65,26 +66,7 @@ const Home = () => {
       {/*Para impedir com que o active suma abaixo do último section */}
       <Aside currentSection={Math.min(currentSection, 4)} />
       <Main />
-      <section id="projects">
-        <h1>Projetos</h1>
-        <div className="projectcard">
-          <h2>RandPlay</h2>
-          <img src="" alt="" />
-          <h3>Tecnologias: React.Js e Node.Js</h3>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam
-            culpa nesciunt amet tempore consectetur illum asperiores facere!
-            Atque facere enim ipsam, praesentium quisquam impedit neque nam
-            commodi cupiditate fugiat. Officia.
-          </p>
-        </div>
-        <div className="projectcard">
-          <p>Em breve</p>
-        </div>
-        <div className="projectcard">
-          <p>Em breve</p>
-        </div>
-      </section>
+      <Projects />
       <section id="about">
         <h1>Sobre mim</h1>
         <p>

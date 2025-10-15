@@ -6,7 +6,7 @@ const Main = () => {
       <section id="main">
         <div className="block-left">
           <h1>Ariel Lopes</h1>
-          <div id="block-after-main"></div>
+          <div className="two-lines"></div>
           <h2>
             desenvolvedor <br />
             full stack

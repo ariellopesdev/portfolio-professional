@@ -28,7 +28,7 @@ body {
   background-attachment: fixed; /* mantém o degradê estático */
 }
 
-section, footer {
+#main {
   height: 100vh;
   width: calc(100% - 150px);
   padding-top: 60px;
@@ -39,7 +39,38 @@ section, footer {
   background-color: transparent;
 }
 
+section{
+  height: 100vh;
+  width: calc(100% - 150px);
+  margin-left: 150px;
+  transition: all 0.8s ease;
+  box-sizing: border-box;
+  color: #fff;
+  background-color: transparent;
+}
+
 /* Bloco que padroniza tamanho do conteúdo escrito em todas as seções*/
 .block-left {
   width: 320px;
+}
+
+.two-lines {
+  position: relative;
+  height: 20px; 
+  margin: 35px 0;
+}
+
+.two-lines::before,
+.two-lines::after {
+  content: "";
+  display: block;
+  height: 4px; 
+  background-color: #ff5f5f; 
+  width: 30%; 
+  margin: 15px 0;
+  border-radius: 4px;
+}
+
+.two-lines::after{
+    margin-left: 50px;
 }

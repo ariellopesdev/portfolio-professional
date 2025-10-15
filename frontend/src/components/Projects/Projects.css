@@ -1,0 +1,91 @@
+#projects {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#projects .block-left {
+  height: 440px;
+}
+
+#projects .block-left h1 {
+  font-size: 5.5em;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+}
+
+#projects .block-left p {
+  text-align: left;
+  font-size: 0.9em;
+  letter-spacing: 0.1em;
+  margin-bottom: 35px;
+}
+
+#projects .block-left .btn-navigate {
+  background-color: #ff5f5f;
+  color: #fff;
+  border: none;
+  font-size: 0.9em;
+  padding: 1.3em;
+  font-weight: bold;
+  border-radius: 1.7em;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+#projects .block-left .btn-navigate:hover {
+  margin-top: -3px;
+  transition: 0.2s ease-in-out;
+}
+
+#projects .block-right {
+  width: 650px;
+  height: 300px;
+  margin-right: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.block-right .project-card {
+  width: 200px;
+  height: 300px;
+  overflow: hidden;
+  background-color: green;
+}
+
+.project-card img {
+  width: 200px;
+  height: 125px;
+}
+
+.project-card .project-card-main{
+width: 200px;
+height: 145px;
+display: flex;
+justify-content:space-around;
+flex-direction: column;
+align-items: center;
+}
+
+.project-card-main h2 {
+    font-size: .9em;
+}
+
+.project-card-main .technologys {
+    font-size: .7em;
+    padding: 0 .5em;
+}
+
+.project-card-main .description{
+    font-size: .6em;
+    padding: 0 .5em;
+    text-align: center;
+}
+
+.project-card .btn-link {
+    height: 30px;
+    background-color: yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
