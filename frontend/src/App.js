@@ -12,7 +12,7 @@ import Home from "./pages/Home/Home";
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+      <BrowserRouter basename="/portfolio-professional">
         <Navbar />
         <div className="container">
           <Routes>
