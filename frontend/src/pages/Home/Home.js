@@ -22,6 +22,7 @@ const Home = () => {
   const [isScrolling, setIsScrolling] = useState(false); // trava temporária
   const [scrollTextVisible, setScrollTextVisible] = useState(true);
 
+  // Controle de Scroll entre as Seções
   useEffect(() => {
     const handleScroll = (e) => {
       e.preventDefault();
@@ -35,7 +36,7 @@ const Home = () => {
       if (e.deltaY > 0) {
         //scroll para baixo
         nextSection = Math.min(currentSection + 1, sections.length - 1);
-      }else{
+      } else {
         //scroll para cima
         nextSection = Math.max(currentSection - 1, 0);
       }
@@ -43,7 +44,7 @@ const Home = () => {
       setCurrentSection(nextSection);
 
       //Controle do scroll text: visível apenas no main(índice 0)
-      if(nextSection === 0) setScrollTextVisible(true);
+      if (nextSection === 0) setScrollTextVisible(true);
       else setScrollTextVisible(false);
 
       // Libera o scroll após 1 segundo
