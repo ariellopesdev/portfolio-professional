@@ -23,9 +23,9 @@ body {
     rgb(6, 18, 32),
     rgb(2, 11, 22)
   );
-  background-repeat: no-repeat; /* não repetir */
-  background-size: cover; /* cobre a tela inteira */
-  background-attachment: fixed; /* mantém o degradê estático */
+  background-repeat: no-repeat; 
+  background-size: cover; 
+  background-attachment: fixed; 
 }
 
 #main {
