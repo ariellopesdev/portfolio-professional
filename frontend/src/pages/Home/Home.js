@@ -5,6 +5,7 @@ import "./Home.css";
 import Navbar from "../../components/Navbar/Navbar";
 import Aside from "../../components/Aside/Aside";
 import Main from "../../components/Main/Main";
+import Moon from "../../components/Moon/Moon";
 import Projects from "../../components/Projects/Projects";
 
 import { useEffect, useState } from "react";
@@ -62,11 +63,12 @@ const Home = () => {
   }, [currentSection, sections]);
 
   return (
-    <div>
+    <div id="home">
       <Navbar />
       {/*Para impedir com que o active suma abaixo do último section */}
       <Aside currentSection={Math.min(currentSection, 4)} />
       <Main />
+      <Moon />
       <Projects />
       <section id="about">
         <h1>Sobre mim</h1>
