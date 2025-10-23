@@ -2,7 +2,7 @@
 import "./Moon.css";
 
 //Hooks
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 //Images
 import photoPortfolio from "../../assets/images/portfolio-image2.png";
@@ -10,6 +10,7 @@ import photoPortfolio from "../../assets/images/portfolio-image2.png";
 const Moon = ({ isVisible }) => {
   const moonOrbitRef = useRef(null);
   const starsRef = useRef([]);
+  const [visibleState, setVisibleState] = useState(false);
 
   //Gera posições das estrelas apenas uma vez
   if (starsRef.current.length === 0) {
@@ -40,10 +41,32 @@ const Moon = ({ isVisible }) => {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
+  useEffect(()=>{
+    let t;
+    if(isVisible){
+      t = setTimeout(()=> setVisibleState(true), 100);
+    }else {
+      setVisibleState(false);
+    }
+
+    return ()=> clearTimeout(t);
+  },[]);
+
+  useEffect(()=>{
+    let t;
+    if(isVisible){
+      setVisibleState(false);
+      t = setTimeout(()=> setVisibleState(true), 40);
+    }else{
+      setVisibleState(false);
+    }
+    return ()=> clearTimeout(t);
+  },[isVisible]);
+
   return (
     <div className="moon-orbit" ref={moonOrbitRef}>
       {/* Lua */}
-      <div className={`moon ${!isVisible ? "moon-hidden" : ""}`}>
+      <div className={`moon ${visibleState ? "moon-visible" : "moon-hidden"}`}>
         <img
           src={photoPortfolio}
           alt="Photo to portfolio"
