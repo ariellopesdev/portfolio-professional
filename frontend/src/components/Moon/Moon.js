@@ -4,8 +4,23 @@ import "./Moon.css";
 //Hooks
 import { useEffect, useRef } from "react";
 
-const Moon = () => {
+//Images
+import photoPortfolio from "../../assets/images/portfolio-image2.png";
+
+const Moon = ({ isVisible }) => {
   const moonOrbitRef = useRef(null);
+  const starsRef = useRef([]);
+
+  //Gera posições das estrelas apenas uma vez
+  if (starsRef.current.length === 0) {
+    starsRef.current = Array.from({ length: 60 }).map(() => {
+      const size = Math.random() * 2 + 1; // 1 - 3px
+      const top = Math.random() * 100;
+      const left = Math.random() * 100;
+      const delay = Math.random() * 4;
+      return { size, top, left, delay };
+    });
+  }
 
   useEffect(() => {
     const moonOrbit = moonOrbitRef.current;
@@ -27,10 +42,36 @@ const Moon = () => {
 
   return (
     <div className="moon-orbit" ref={moonOrbitRef}>
-      <div className="moon"></div>
-      {[...Array(6)].map((_, i) => (
+      {/* Lua */}
+      <div className={`moon ${!isVisible ? "moon-hidden" : ""}`}>
+        <img
+          src={photoPortfolio}
+          alt="Photo to portfolio"
+          className="portfolio-image"
+        />
+      </div>
+
+      {/* Anéis */}
+      {[...Array(5)].map((_, i) => (
         <div key={i} className={`ring ring-${i + 1}`}></div>
       ))}
+
+      {/* Ring 6 com estrelas */}
+      <div className="ring ring-6">
+        {starsRef.current.map((star, i) => (
+          <div
+            key={i}
+            className="star"
+            style={{
+              width: `${star.size}px`,
+              height: `${star.size}px`,
+              top: `${star.top}%`,
+              left: `${star.left}%`,
+              animationDelay: `${star.delay}s`,
+            }}
+          ></div>
+        ))}
+      </div>
     </div>
   );
 };

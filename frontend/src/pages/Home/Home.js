@@ -68,7 +68,7 @@ const Home = () => {
       {/*Para impedir com que o active suma abaixo do último section */}
       <Aside currentSection={Math.min(currentSection, 4)} />
       <Main />
-      <Moon />
+      <Moon isVisible={currentSection === 0} />
       <Projects />
       <section id="about">
         <h1>Sobre mim</h1>
