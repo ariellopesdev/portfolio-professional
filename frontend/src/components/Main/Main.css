@@ -1,15 +1,89 @@
-/* ================= Main ================= */
-
 #main h1 {
-  font-size: 5.5em;
+  font-size: 5em;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  margin-top: 40px;
+  padding-top: 60px;
   font-weight: 600;
+  display: block;
+  word-wrap: break-word;
+  white-space: pre-line;
+  will-change: transform, opacity;
+  z-index: 10;
+  opacity: 0; /* invisível por padrão */
+  transform: translateX(-50px); /* começa à esquerda */
+  transition: transform 0.6s ease-out, opacity 0.6s ease-out;
 }
 
+/* ================= two-lines ================= */
+.two-lines {
+  position: relative;
+  height: 20px;
+  margin: 40px 0 40px 0;
+  opacity: 0; /* invisível por padrão */
+  transform: translateX(-50px);
+  transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+  will-change: transform, opacity;
+  z-index: 10;
+}
+
+.two-lines::before,
+.two-lines::after {
+  content: "";
+  display: block;
+  height: 4px;
+  background-color: #ff5f5f;
+  width: 90px;
+  margin: 15px 0;
+  border-radius: 4px;
+}
+
+.two-lines::after {
+  margin-left: 50px;
+}
+
+/* ================= h2 ================= */
 #main h2 {
   font-size: 1.5em;
   letter-spacing: 0.2em;
   line-height: 1.7;
+  display: block;
+  word-wrap: break-word;
+  white-space: pre-line;
+  will-change: transform, opacity;
+  z-index: 10;
+  opacity: 0; /* invisível por padrão */
+  transform: translateX(-50px);
+  transition: transform 0.6s ease-out, opacity 0.6s ease-out;
 }
+
+/* ================= Reset pré-animação ================= */
+#main h1.reset,
+#main h2.reset,
+#main .two-lines.reset {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: none; /* sem transição enquanto rola */
+}
+
+/* ================= Aparece da esquerda ================= */
+#main h1.visible,
+#main h2.visible,
+#main .two-lines.visible {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+  transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+}
+
+/* ================= Desaparece sem deslizar ================= */
+#main h1.hidden,
+#main h2.hidden,
+#main .two-lines.hidden {
+  opacity: 0 !important;
+  transform: translateX(0) !important; /* não desliza */
+  transition: opacity 0.3s ease-out;
+}
+
+/* ================= Staggered animation ================= */
+#main h1.visible { transition-delay: 0.1s; }
+#main .two-lines.visible { transition-delay: 0.3s; }
+#main h2.visible { transition-delay: 0.5s; }

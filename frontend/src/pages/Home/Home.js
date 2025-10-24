@@ -67,7 +67,7 @@ const Home = () => {
       <Navbar />
       {/*Para impedir com que o active suma abaixo do último section */}
       <Aside currentSection={Math.min(currentSection, 4)} />
-      <Main />
+      <Main isVisible={currentSection === 0} />
       <Moon isVisible={currentSection === 0} />
       <Projects />
       <section id="about">
