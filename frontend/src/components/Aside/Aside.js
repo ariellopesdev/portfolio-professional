@@ -16,14 +16,21 @@ const Aside = ({ currentSection }) => {
           ))}
         </ul>
       </div>
+      <div id="aside-block-mobile">
+        <ul>
+          {lines.map((line) => (
+            <li key={line} className={currentSection === line ? "active" : ""}>
+              <span className="line-bar-mobile"></span>
+            </li>
+          ))}
+        </ul>
+      </div>
       <div
-        id="block-scroll"
+        id="scroll-text"
         className={currentSection === 0 ? "visible" : "hidden"}
       >
-        <div id="scroll-text">
-          <span>SCROLLDOWN</span>
-          <span className="scroll-icon-minus"></span>
-        </div>
+        <span>SCROLLDOWN</span>
+        <p className="scroll-icon-minus"></p>
       </div>
     </aside>
   );
