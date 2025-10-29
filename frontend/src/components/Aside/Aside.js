@@ -7,7 +7,6 @@ const Aside = ({ currentSection }) => {
 
   return (
     <aside>
-      <h1>Logo</h1>
       <div id="aside-block">
         <ul>
           {lines.map((line) => (
@@ -18,11 +17,13 @@ const Aside = ({ currentSection }) => {
         </ul>
       </div>
       <div
-        id="scroll-text"
+        id="block-scroll"
         className={currentSection === 0 ? "visible" : "hidden"}
       >
-        <span>SCROLLDOWN</span>
-        <span className="scroll-icon-minus"></span>
+        <div id="scroll-text">
+          <span>SCROLLDOWN</span>
+          <span className="scroll-icon-minus"></span>
+        </div>
       </div>
     </aside>
   );

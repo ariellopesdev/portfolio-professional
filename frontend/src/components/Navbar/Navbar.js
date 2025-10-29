@@ -24,6 +24,7 @@ const Navbar = () => {
   const closeMenu = () => setMenuOpen(false);
   return (
     <header>
+      <h1>Logo</h1>
       <ul id="ul-header">
         <li>
           <a
