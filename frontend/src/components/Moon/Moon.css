@@ -16,17 +16,17 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 30em;
-  height: 30em;
+  width: clamp(10em, 30vw, 30em);
+  height: clamp(10em, 30vw, 30em);
   background: linear-gradient(90deg, #1f1f1f 0%, #332455 40%, #40255a 100%);
   border-radius: 50%;
   z-index: 7;
   box-shadow: 0 0 50px rgba(255, 255, 255, 0.15);
   overflow: hidden;
-  transform: translateX(140%) translateY(-50%);
+  transform: translateX(clamp(25vw, 40vw, 50vw)) translateY(-50%);
   opacity: 0;
-  transition: transform 1.3s cubic-bezier(0.22, 0.9, 0.28, 1),
-    opacity 1s ease-in-out;
+  transition: transform 1.8s cubic-bezier(0.22, 0.9, 0.28, 1),
+    opacity 1.2s ease-in-out;
   will-change: transform, opacity;
 }
 
@@ -36,9 +36,9 @@
 }
 
 .moon-hidden {
-  transform: translateX(160%) translateY(-50%);
+  transform: translateX(60vw) translateY(-50%);
   opacity: 0;
-  transition: transform 1s ease-in, opacity 1s ease-in;
+  transition: transform 1.8ss ease-in, opacity 1.2s ease-in;
 }
 
 .portfolio-image {
@@ -63,43 +63,43 @@
 
 /* ===== Cores e tamanhos progressivos ===== */
 .ring-1 {
-  width: 40em;
-  height: 40em;
+  width: clamp(15em, 40vw, 40em);
+  height: clamp(15em, 40vw, 40em);
   background-color: rgba(142, 150, 160, 0.1);
   z-index: 6;
 }
 
 .ring-2 {
-  width: 50em;
-  height: 50em;
+  width: clamp(20em, 50vw, 50em);
+  height: clamp(20em, 50vw, 50em);
   background-color: rgba(112, 120, 132, 0.13);
   z-index: 5;
 }
 
 .ring-3 {
-  width: 60em;
-  height: 60em;
+  width: clamp(25em, 60vw, 60em);
+  height: clamp(25em, 60vw, 60em);
   background-color: rgba(88, 100, 118, 0.16);
   z-index: 4;
 }
 
 .ring-4 {
-  width: 70em;
-  height: 70em;
+  width: clamp(30em, 70vw, 70em);
+  height: clamp(30em, 70vw, 70em);
   background-color: rgba(66, 83, 104, 0.19);
   z-index: 3;
 }
 
 .ring-5 {
-  width: 80em;
-  height: 80em;
+  width: clamp(35em, 80vw, 80em);
+  height: clamp(35em, 80vw, 80em);
   background-color: rgba(48, 67, 90, 0.22);
   z-index: 2;
 }
 
 .ring-6 {
-  width: 90em;
-  height: 90em;
+  width: clamp(40em, 90vw, 90em);
+  height: clamp(40em, 90vw, 90em);
   background-color: rgba(34, 54, 77, 0.25);
   border-radius: 50%;
   position: absolute;

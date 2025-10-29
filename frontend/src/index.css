@@ -14,7 +14,7 @@ html {
 body {
   position: relative;
   margin: 0;
-  height: 100vh;
+  height: 100%;
   width: 100%;
   overflow: hidden;
   background-image: linear-gradient(
@@ -27,19 +27,6 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-}
-
-#main {
-  position: relative;
-  height: 100vh;
-  width: calc(100% - 150px);
-  padding-top: 60px;
-  margin-left: 150px;
-  transition: all 0.8s ease;
-  box-sizing: border-box;
-  color: #fff;
-  background-color: transparent;
-  z-index: 10;
 }
 
 section {

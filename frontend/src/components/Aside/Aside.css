@@ -24,6 +24,7 @@ aside h1 {
   font-size: 1.2em;
   font-weight: 600;
   letter-spacing: 0.2em;
+  position: relative;
 }
 
 /* ================= Lista de ícones ================= */
@@ -108,3 +109,16 @@ aside ul li.active .line-bar {
 }
 
 /* ================= Media Queries ================= */
+
+@media (max-width: 767px) {
+  aside {
+    width: 75px;
+    padding: 20px 10px;
+  }
+  aside ul {
+    left: 18px;
+  }
+  #scroll-text {
+    left: -72px;
+  }
+}
