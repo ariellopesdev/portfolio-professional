@@ -24,6 +24,7 @@ header h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 10000;
 }
 
 /* ================= Lista de ícones ================= */
@@ -34,10 +35,11 @@ header h1 {
   gap: 1em;
   align-items: center;
   padding: 0;
+  z-index: 10000;
 }
 
 #ul-header li a {
-  font-size: 1.3em;
+  font-size: clamp(1.2rem, 2vw, 1.3em);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -124,20 +126,22 @@ header h1 {
 .fullscreen-menu ul li a {
   color: #f5f5f5;
   text-decoration: none;
-  font-size: 5em;
+  font-size: clamp(3rem, 6vw, 5em);
   font-weight: 600;
   transition: color 0.3s ease, transform 0.2s ease;
 }
 
 .fullscreen-menu ul li a:hover {
   color: #ff5f5f;
-  transform: scale(1.1);
+  transform: scale(1.2);
+  text-decoration: underline;
+
 }
 
 /* =================== Botão de fechar o menu =================== */
 .close-btn {
   position: absolute;
-  top: .5em;
+  top: .4em;
   right: 1.2em;
   background: transparent;
   border: none;

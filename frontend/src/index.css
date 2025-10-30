@@ -32,8 +32,8 @@ body {
 section {
   position: relative;
   height: 100vh;
-  width: calc(100% - 150px);
-  margin-left: 150px;
+  width: 100%;
+  padding-left: 150px;
   transition: all 0.8s ease;
   box-sizing: border-box;
   color: #fff;

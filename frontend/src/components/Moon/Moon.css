@@ -7,7 +7,7 @@
   width: 700px;
   height: 700px;
   transition: transform 1s ease-out;
-  will-change: transform; /* otimiza performance */
+  will-change: transform;
   pointer-events: none;
 }
 
@@ -16,14 +16,14 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  width: clamp(10em, 30vw, 30em);
-  height: clamp(10em, 30vw, 30em);
+  width: 30em;
+  height: 30em;
   background: linear-gradient(90deg, #1f1f1f 0%, #332455 40%, #40255a 100%);
   border-radius: 50%;
   z-index: 7;
   box-shadow: 0 0 50px rgba(255, 255, 255, 0.15);
   overflow: hidden;
-  transform: translateX(clamp(25vw, 40vw, 50vw)) translateY(-50%);
+  transform: translateX(40em) translateY(-50%);
   opacity: 0;
   transition: transform 1.8s cubic-bezier(0.22, 0.9, 0.28, 1),
     opacity 1.2s ease-in-out;
@@ -36,9 +36,9 @@
 }
 
 .moon-hidden {
-  transform: translateX(60vw) translateY(-50%);
+  transform: translateX(60em) translateY(-50%);
   opacity: 0;
-  transition: transform 1.8ss ease-in, opacity 1.2s ease-in;
+  transition: transform 1.8s ease-in, opacity 1.2s ease-in;
 }
 
 .portfolio-image {
@@ -63,43 +63,43 @@
 
 /* ===== Cores e tamanhos progressivos ===== */
 .ring-1 {
-  width: clamp(15em, 40vw, 40em);
-  height: clamp(15em, 40vw, 40em);
+  width: 40em;
+  height: 40em;
   background-color: rgba(142, 150, 160, 0.1);
   z-index: 6;
 }
 
 .ring-2 {
-  width: clamp(20em, 50vw, 50em);
-  height: clamp(20em, 50vw, 50em);
+  width: 50em;
+  height: 50em;
   background-color: rgba(112, 120, 132, 0.13);
   z-index: 5;
 }
 
 .ring-3 {
-  width: clamp(25em, 60vw, 60em);
-  height: clamp(25em, 60vw, 60em);
+  width: 60em;
+  height: 60em;
   background-color: rgba(88, 100, 118, 0.16);
   z-index: 4;
 }
 
 .ring-4 {
-  width: clamp(30em, 70vw, 70em);
-  height: clamp(30em, 70vw, 70em);
+  width: 70em;
+  height: 70em;
   background-color: rgba(66, 83, 104, 0.19);
   z-index: 3;
 }
 
 .ring-5 {
-  width: clamp(35em, 80vw, 80em);
-  height: clamp(35em, 80vw, 80em);
+  width: 80em;
+  height: 80em;
   background-color: rgba(48, 67, 90, 0.22);
   z-index: 2;
 }
 
 .ring-6 {
-  width: clamp(40em, 90vw, 90em);
-  height: clamp(40em, 90vw, 90em);
+  width: 90em;
+  height: 90em;
   background-color: rgba(34, 54, 77, 0.25);
   border-radius: 50%;
   position: absolute;
@@ -128,5 +128,40 @@
   50% {
     opacity: 1;
     transform: scale(1.4);
+  }
+}
+
+@media (max-width: 767px) {
+  .moon-orbit {
+    width: 300px;
+    height: 300px;
+  }
+  .moon {
+    width: 19em;
+    height: 19em;
+  }
+  .ring-1 {
+    width: 23em;
+    height: 23em;
+  }
+  .ring-2 {
+    width: 27em;
+    height: 27em;
+  }
+  .ring-3 {
+    width: 31em;
+    height: 31em;
+  }
+  .ring-4 {
+    width: 35em;
+    height: 35em;
+  }
+  .ring-5 {
+    width: 39em;
+    height: 39em;
+  }
+  .ring-6 {
+    width: 43em;
+    height: 43em;
   }
 }
