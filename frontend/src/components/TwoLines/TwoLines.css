@@ -1,0 +1,38 @@
+.two-lines {
+  position: relative;
+  height: 20px;
+  margin: 40px 0 40px 0;
+  opacity: 0; /* invisível por padrão */
+  transform: translateX(-50px);
+  transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+  will-change: transform, opacity;
+  z-index: 10;
+}
+
+.two-lines::before,
+.two-lines::after {
+  content: "";
+  display: block;
+  height: 4px;
+  background-color: var(--line-color, #ff5f5f);
+  width: 90px;
+  margin: 15px 0;
+  border-radius: 4px;
+}
+
+.two-lines::after {
+  margin-left: 50px;
+}
+
+.two-lines.reset {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: none;
+}
+
+.two-lines.visible {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+  transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+  transition-delay: 0.3s;
+}

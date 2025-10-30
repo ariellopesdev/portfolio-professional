@@ -49,7 +49,7 @@ const Home = () => {
       else setScrollTextVisible(false);
 
       // Libera o scroll após 1 segundo
-      setTimeout(() => setIsScrolling(false), 500);
+      setTimeout(() => setIsScrolling(false), 800);
     };
 
     window.addEventListener("wheel", handleScroll, { passive: false });

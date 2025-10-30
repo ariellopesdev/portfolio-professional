@@ -7,13 +7,20 @@ import testImage from "../../assets/images/image-test.jpg";
 //Icons
 import { FaGithub } from "react-icons/fa";
 
+//Components
+import TwoLines from "../TwoLines/TwoLines";
+
+//Hooks
+import { useVisibleState } from "../../hooks/useVisibleState";
+
 const Projects = () => {
+  const {ref, isVisible} = useVisibleState(0.3);
   return (
     <div>
-      <section id="projects">
+      <section id="projects" ref={ref}>
         <div className="block-left">
-          <h1>Projetos</h1>
-          <div className="two-lines"></div>
+          <h1 className={isVisible ? "visible" : "reset"}>Projetos</h1>
+          <TwoLines isVisible={isVisible} color="#ff5f5f" />
           <p>
             Aqui estão alguns dos projetos que desenvolvi ao longo da minha
             jornada como <strong>desenvolvedor fullstack</strong>. Cada um

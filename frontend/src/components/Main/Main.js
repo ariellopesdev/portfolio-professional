@@ -1,45 +1,23 @@
+//CSS
 import "./Main.css";
-import { useEffect, useState, useRef } from "react";
+
+//Hooks
+import {useVisibleState} from "../../hooks/useVisibleState";
+
+//Components
+import TwoLines from "../TwoLines/TwoLines";
 
 const Main = () => {
-  const [visibleState, setVisibleState] = useState(false);
-  const mainRef = useRef(null);
-
-  useEffect(() => {
-    const projectsSection = document.getElementById("projects");
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          // Projects ainda não ocupou 100% da tela: Main permanece visível
-          if (entry.intersectionRatio < 1) {
-            setVisibleState(true);
-          } else {
-            // Projects ocupa 100% da tela: Main desaparece
-            setVisibleState(false);
-          }
-        });
-      },
-      {
-        threshold: 1.0, // 100% visível
-      }
-    );
-
-    if (projectsSection) observer.observe(projectsSection);
-
-    return () => {
-      if (projectsSection) observer.unobserve(projectsSection);
-    };
-  }, []);
+  const {ref, isVisible} = useVisibleState(0.9);
 
   return (
-    <section id="main" ref={mainRef}>
+    <section id="main" ref={ref}>
       <div className="block-left">
-        <h1 className={visibleState ? "visible" : "reset"}>
+        <h1 className={isVisible ? "visible" : "reset"}>
           Ariel <br /> Lopes
         </h1>
-        <div className={`two-lines ${visibleState ? "visible" : "reset"}`}></div>
-        <h2 className={visibleState ? "visible" : "reset"}>
+        <TwoLines isVisible={isVisible} color="#ff5f5f" />
+        <h2 className={isVisible ? "visible" : "reset"}>
           desenvolvedor <br /> full stack
         </h2>
       </div>
