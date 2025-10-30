@@ -75,27 +75,27 @@ const Navbar = () => {
         <ul>
           <li>
             <NavLink to="/" onClick={closeMenu}>
-              Home
+              HOME
             </NavLink>
           </li>
           <li>
             <NavLink to="/projects" onClick={closeMenu}>
-              Projetos
+              PROJETOS
             </NavLink>
           </li>
           <li>
             <NavLink to="/about" onClick={closeMenu}>
-              Sobre mim
+              SOBRE MIM
             </NavLink>
           </li>
           <li>
             <NavLink to="/curriculum" onClick={closeMenu}>
-              Currículo
+              CURRÍCULO
             </NavLink>
           </li>
           <li>
             <NavLink to="/contact" onClick={closeMenu}>
-              Contato
+              CONTATO
             </NavLink>
           </li>
         </ul>
