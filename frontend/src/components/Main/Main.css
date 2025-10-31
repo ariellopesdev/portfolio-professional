@@ -1,14 +1,5 @@
-#main {
-  position: relative;
-  height: 100vh;
-  width: 100%;
-  padding-top: 60px;
-  padding-left: 150px;
-  transition: all 0.8s ease;
-  box-sizing: border-box;
-  color: #fff;
-  background-color: transparent;
-  z-index: 10;
+#block-left-main {
+  display: inline-block;
 }
 
 #main h1 {
@@ -17,7 +8,7 @@
   text-transform: uppercase;
   padding-top: 60px;
   font-weight: 600;
-  display: block;
+  margin: 0;
   word-wrap: break-word;
   white-space: pre-line;
   will-change: transform, opacity;
@@ -43,8 +34,7 @@
 
 /* ================= Reset pré-animação ================= */
 #main h1.reset,
-#main h2.reset,
-#main .two-lines.reset {
+#main h2.reset {
   opacity: 0;
   transform: translateX(-50px);
   transition: none; /* sem transição enquanto rola */
@@ -52,17 +42,16 @@
 
 /* ================= Aparece da esquerda ================= */
 #main h1.visible,
-#main h2.visible,
-#main .two-lines.visible {
+#main h2.visible {
   opacity: 1 !important;
   transform: translateX(0) !important;
   transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+  transition-delay: 0.3s;
 }
 
 /* ================= Desaparece sem deslizar ================= */
 #main h1.hidden,
-#main h2.hidden,
-#main .two-lines.hidden {
+#main h2.hidden {
   opacity: 0 !important;
   transform: translateX(0) !important; /* não desliza */
   transition: opacity 0.3s ease-out;
@@ -71,9 +60,6 @@
 /* ================= Staggered animation ================= */
 #main h1.visible {
   transition-delay: 0.1s;
-}
-#main .two-lines.visible {
-  transition-delay: 0.3s;
 }
 #main h2.visible {
   transition-delay: 0.5s;

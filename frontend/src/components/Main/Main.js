@@ -12,7 +12,7 @@ const Main = () => {
 
   return (
     <section id="main" ref={ref}>
-      <div className="block-left">
+      <div id="block-left-main">
         <h1 className={isVisible ? "visible" : "reset"}>
           Ariel <br /> Lopes
         </h1>

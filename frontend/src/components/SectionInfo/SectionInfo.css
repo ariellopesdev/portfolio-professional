@@ -1,0 +1,79 @@
+.section-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+/* ================= H1 ================= */
+.section-info h1 {
+  font-size: clamp(3rem, 5vw, 5.5em);
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  display: block;
+  word-wrap: break-word;
+  white-space: pre-line;
+  will-change: transform, opacity;
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+}
+
+/* ================= P ================= */
+.section-info p {
+  font-size: 1em;
+  letter-spacing: 0.2em;
+  width: 300px;
+  margin-top: 20px;
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+}
+
+/* ================= Button ================= */
+.section-info .btn-navigate {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+  background-color: #ff5f5f;
+  color: #fff;
+  border: none;
+  font-size: 0.9em;
+  padding: 1.3em 1.5em;
+  font-weight: bold;
+  border-radius: 1.7em;
+  cursor: pointer;
+  margin-top: 40px;
+}
+
+.section-info .btn-navigate:hover {
+  transform: translateY(-5px);
+  transition: all 0.2s ease-in-out;
+}
+
+/* ================= Visible / Reset ================= */
+.section-info h1.visible,
+.section-info p.visible,
+.section-info .btn-navigate.visible {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+/* Staggered animation usando transition-delay */
+.section-info h1.visible {
+  transition-delay: 0.1s;
+}
+.section-info p.visible {
+  transition-delay: 0.3s;
+}
+.section-info .btn-navigate.visible {
+  transition-delay: 3s;
+}
+
+.section-info h1.reset,
+.section-info p.reset,
+.section-info .btn-navigate.reset {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: none;
+}

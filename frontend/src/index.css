@@ -29,18 +29,55 @@ body {
   background-attachment: fixed;
 }
 
-section {
+#main {
   position: relative;
   height: 100vh;
   width: 100%;
+  padding-top: 60px;
   padding-left: 150px;
+  transition: all 0.8s ease;
+  box-sizing: border-box;
+  color: #fff;
+  background-color: transparent;
+  z-index: 10;
+}
+
+#projects,
+#about,
+#curriculum,
+#contact {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  padding: 80px 100px 60px 150px;
   transition: all 0.8s ease;
   box-sizing: border-box;
   color: #fff;
   background-color: transparent;
 }
 
-.block-left {
-  width: 320px;
+.sections-wrapper{
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: left;
   position: relative;
+}
+
+.section-info {
+  width: 35%;
+  height: 100%;
+  background-color: transparent;
+  z-index: 10;
+}
+
+.section-content {
+  width: 65%;
+  height: 100%;
+  background-color: yellow;
+  position: absolute;
+  right: 0;
+  z-index: 9;
 }
