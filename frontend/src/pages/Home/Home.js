@@ -24,7 +24,10 @@ const Home = () => {
     "footer",
   ];
 
-  const { currentSection, scrollTextVisible } = useScrollEffect(sections);
+  const { currentSection, isReady } =
+    useScrollEffect(sections);
+
+  if (!isReady) return null;
 
   return (
     <div id="home">
