@@ -26,7 +26,7 @@
   transform: translateX(40em) translateY(-50%);
   opacity: 0;
   transition: transform 1.8s cubic-bezier(0.22, 0.9, 0.28, 1),
-    opacity 1.2s ease-in-out;
+    opacity 1s ease-in-out;
   will-change: transform, opacity;
 }
 
@@ -38,7 +38,7 @@
 .moon-hidden {
   transform: translateX(60em) translateY(-50%);
   opacity: 0;
-  transition: transform 1.8s ease-in, opacity 1.2s ease-in;
+  transition: transform 1.2s ease-in, opacity 1.2s ease-in;
 }
 
 .portfolio-image {
