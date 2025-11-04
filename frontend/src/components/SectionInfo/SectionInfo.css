@@ -5,6 +5,18 @@
   align-items: flex-start;
 }
 
+/* ================= Keyframes ================= */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 /* ================= H1 ================= */
 .section-info h1 {
   font-size: clamp(3rem, 5vw, 5.5em);
@@ -15,8 +27,6 @@
   white-space: pre-line;
   will-change: transform, opacity;
   opacity: 0;
-  transform: translateX(-50px);
-  transition: transform 0.6s ease-out, opacity 0.6s ease-out;
 }
 
 /* ================= P ================= */
@@ -26,15 +36,10 @@
   width: 300px;
   margin-top: 20px;
   opacity: 0;
-  transform: translateX(-50px);
-  transition: transform 0.6s ease-out, opacity 0.6s ease-out;
 }
 
 /* ================= Button ================= */
 .section-info .btn-navigate {
-  opacity: 0;
-  transform: translateX(-50px);
-  transition: transform 0.6s ease-out, opacity 0.6s ease-out;
   background-color: #ff5f5f;
   color: #fff;
   border: none;
@@ -44,36 +49,33 @@
   border-radius: 1.7em;
   cursor: pointer;
   margin-top: 40px;
+  opacity: 0;
+  transform: translateX(-50px);
 }
 
 .section-info .btn-navigate:hover {
   transform: translateY(-5px);
-  transition: all 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
 }
 
-/* ================= Visible / Reset ================= */
-.section-info h1.visible,
-.section-info p.visible,
-.section-info .btn-navigate.visible {
-  opacity: 1 !important;
-  transform: translateX(0) !important;
-}
-
-/* Staggered animation usando transition-delay */
+/* ================= Visible ================= */
 .section-info h1.visible {
-  transition-delay: 0.1s;
-}
-.section-info p.visible {
-  transition-delay: 0.3s;
-}
-.section-info .btn-navigate.visible {
-  transition-delay: 3s;
+  animation: slideIn 0.8s ease-out 0.1s forwards;
 }
 
+.section-info p.visible {
+  animation: slideIn 0.8s ease-out 0.3s forwards;
+}
+
+.section-info .btn-navigate.visible {
+  animation: slideIn 0.8s ease-out 0.5s forwards;
+}
+
+/* ================= Reset ================= */
 .section-info h1.reset,
 .section-info p.reset,
 .section-info .btn-navigate.reset {
   opacity: 0;
   transform: translateX(-50px);
-  transition: none;
+  animation: none;
 }
