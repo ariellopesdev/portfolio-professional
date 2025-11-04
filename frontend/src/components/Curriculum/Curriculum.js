@@ -1,5 +1,5 @@
 //CSS
-import "./Projects.css";
+import "./Curriculum.css";
 
 //Components
 import SectionInfo from "../SectionInfo/SectionInfo";
@@ -8,17 +8,15 @@ import SectionContent from "../SectionContent/SectionContent";
 //Hooks
 import { useVisibleState } from "../../hooks/useVisibleState";
 
-const Projects = () => {
+const Curriculum = () => {
   const { ref, isVisible } = useVisibleState(0.3);
   return (
-    <section id="projects" ref={ref}>
+    <section id="curriculum" ref={ref}>
       <div className="sections-wrapper">
         <SectionInfo
-          title="Projetos"
-          text="Trabalhos que desenvolvi, unindo desempenho, usabilidade e boas práticas."
+          title="Currículo"
+          text="Em breve."
           isVisible={isVisible}
-          buttonText="Ver todos os projetos"
-          buttonLink="/all-projects"
         />
         <SectionContent />
       </div>
@@ -26,4 +24,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default Curriculum;

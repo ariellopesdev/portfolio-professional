@@ -7,7 +7,11 @@ import Aside from "../../components/Aside/Aside";
 import Main from "../../components/Main/Main";
 import Moon from "../../components/Moon/Moon";
 import Projects from "../../components/Projects/Projects";
+import About from "../../components/About/About";
+import Curriculum from "../../components/Curriculum/Curriculum";
+import Contact from "../../components/Contact/Contact";
 
+//Hooks
 import { useEffect, useState } from "react";
 
 const Home = () => {
@@ -69,53 +73,10 @@ const Home = () => {
       <Aside currentSection={Math.min(currentSection, 4)} />
       <Main isVisible={currentSection === 0} />
       <Moon isVisible={currentSection === 0} />
-      <Projects />
-      <section id="about">
-        <h1>Sobre mim</h1>
-        <p>
-          Há 2 anos desenvolvendo sites, sistemas e web apps em projetos
-          pessoais e acadêmicos, utilizando a linguagem Javascript e a
-          biblioteca React.Js, com ferramentas como: Redux/Redux Toolkit, React
-          Router, Fetch API e Styled Components e as boas práticas do
-          desenvolvimento frontend: Componentização, Gerenciamento de Estado,
-          Responsividade e Acessibilidade, SEO, Integrações a APIs. Para
-          Controle de Versionamento o GitHub, e gerenciamento e implementação de
-          projetos o Git.
-        </p>
-        <div id="aboutcard">
-          <p>Habilidades desenvolvidas</p>
-        </div>
-      </section>
-      <section id="curriculum">
-        <h1>Currículo</h1>
-        <p>Em breve</p>
-      </section>
-      <section id="contact">
-        <h1>Contato</h1>
-        <p>Me envie uma mensagem</p>
-        <div className="contactcard">
-          <i></i>
-          <h2>Redes Sociais</h2>
-          <i></i>
-          <i></i>
-          <i></i>
-          <i></i>
-        </div>
-        <div className="contactcard">
-          <i></i>
-          <h2>Email</h2>
-          <p>ariel_lopescwb2017@hotmail.com</p>
-        </div>
-        <div className="contactcard">
-          <input type="text" name="" id="" placeholder="Nome" />
-          <input type="email" name="" id="" placeholder="Email" />
-          <input type="text" name="" id="" placeholder="Assunto" />
-          <textarea name="" id="">
-            Mensagem
-          </textarea>
-          <button>Enviar</button>
-        </div>
-      </section>
+      <Projects isVisible={currentSection === 0} />
+      <About isVisible={currentSection === 0} />
+      <Curriculum isVisible={currentSection === 0} />
+      <Contact isVisible={currentSection === 0}/>
       {/* <footer id="footer">
         <h1>Ariel Lopes</h1>
         <p>Frase Motivacional</p>
