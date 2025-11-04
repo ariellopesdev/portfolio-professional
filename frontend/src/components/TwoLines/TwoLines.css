@@ -2,7 +2,7 @@
   position: relative;
   height: 20px;
   margin: 40px 0 40px 0;
-  opacity: 0; /* invisível por padrão */
+  opacity: 0;
   transform: translateX(-50px);
   transition: transform 0.6s ease-out, opacity 0.6s ease-out;
   will-change: transform, opacity;
@@ -24,6 +24,28 @@
   margin-left: 50px;
 }
 
+/* ================== ANIMAÇÃO ================ */
+
+@keyframes lineSlide {
+  from {
+    margin-left: 25px;
+  }
+  to {
+    margin-left: 50px;
+  }
+}
+
+@keyframes lineSlideTwo {
+  from{
+    margin-left: 25px;
+  }
+  to{
+    margin-left: 0px;
+  }
+}
+
+/* ================== ESTADOS ================= */
+
 .two-lines.reset {
   opacity: 0;
   transform: translateX(-50px);
@@ -31,14 +53,22 @@
 }
 
 .two-lines.visible {
-  opacity: 1 !important;
-  transform: translateX(0) !important;
+  opacity: 1;
+  transform: translateX(0);
   transition: transform 0.6s ease-out, opacity 0.6s ease-out;
   transition-delay: 0.3s;
 }
 
+.two-lines.visible::before{
+  animation: lineSlideTwo 0.6s ease-in-out 0.3s forwards;
+}
+
+.two-lines.visible::after {
+  animation: lineSlide 0.6s ease-out 0.3s forwards;
+}
+
 .two-lines.hidden {
-  opacity: 0 !important;
-  transform: translateX(0) !important; 
+  opacity: 0;
+  transform: translateX(0);
   transition: opacity 0.3s ease-out;
 }
