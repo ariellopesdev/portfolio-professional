@@ -18,16 +18,18 @@ const About = () => {
           text="Olá, sou o Ariel."
           isVisible={isVisible}
         />
-        <div className="section-content">
-          <p>Há 2 anos desenvolvendo sites, sistemas e web apps em projetos
-          pessoais e acadêmicos, utilizando a linguagem Javascript e a
-          biblioteca React.Js, com ferramentas como: Redux/Redux Toolkit, React
-          Router, Fetch API e Styled Components e as boas práticas do
-          desenvolvimento frontend: Componentização, Gerenciamento de Estado,
-          Responsividade e Acessibilidade, SEO, Integrações a APIs. Para
-          Controle de Versionamento o GitHub, e gerenciamento e implementação de
-          projetos o Git.</p>
-        </div>
+        <SectionContent>
+          <p>
+            Há 2 anos desenvolvendo sites, sistemas e web apps em projetos
+            pessoais e acadêmicos, utilizando a linguagem Javascript e a
+            biblioteca React.Js, com ferramentas como: Redux/Redux Toolkit,
+            React Router, Fetch API e Styled Components e as boas práticas do
+            desenvolvimento frontend: Componentização, Gerenciamento de Estado,
+            Responsividade e Acessibilidade, SEO, Integrações a APIs. Para
+            Controle de Versionamento o GitHub, e gerenciamento e implementação
+            de projetos o Git.
+          </p>
+        </SectionContent>
       </div>
     </section>
   );

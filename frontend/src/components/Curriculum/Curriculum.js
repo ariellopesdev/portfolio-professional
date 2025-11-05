@@ -13,12 +13,23 @@ const Curriculum = () => {
   return (
     <section id="curriculum" ref={ref}>
       <div className="sections-wrapper">
-        <SectionInfo
-          title="Currículo"
-          text="Em breve."
-          isVisible={isVisible}
-        />
-        <SectionContent />
+        <SectionInfo title="Currículo" text="Em breve." isVisible={isVisible} />
+        <SectionContent>
+          <div className="skills">
+            <div className="skill">
+              <span>Java</span>
+              <div className="progress-bar">
+                <div style={{ width: "90%" }}></div>
+              </div>
+            </div>
+            <div className="skill">
+              <span>React.js</span>
+              <div className="progress-bar">
+                <div style={{ width: "70%" }}></div>
+              </div>
+            </div>
+          </div>
+        </SectionContent>
       </div>
     </section>
   );

@@ -20,7 +20,13 @@ const Projects = () => {
           buttonText="Ver todos os projetos"
           buttonLink="/all-projects"
         />
-        <SectionContent />
+        <SectionContent>
+          <div className="projects-grid">
+            <div className="project-card">Projeto 1</div>
+            <div className="project-card">Projeto 2</div>
+            <div className="project-card">Projeto 3</div>
+          </div>
+        </SectionContent>
       </div>
     </section>
   );

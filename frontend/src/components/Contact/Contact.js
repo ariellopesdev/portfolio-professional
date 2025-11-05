@@ -17,30 +17,24 @@ const Contact = () => {
           text="Me envie uma mensagem"
           isVisible={isVisible}
         />
-        <div className="section-content">
-          <div className="contactcard">
-            <i></i>
-            <h2>Redes Sociais</h2>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-          </div>
-          <div className="contactcard">
-            <i></i>
-            <h2>Email</h2>
-            <p>ariel_lopescwb2017@hotmail.com</p>
-          </div>
-          <div className="contactcard">
-            <input type="text" name="" id="" placeholder="Nome" />
-            <input type="email" name="" id="" placeholder="Email" />
-            <input type="text" name="" id="" placeholder="Assunto" />
-            <textarea name="" id="">
-              Mensagem
-            </textarea>
-            <button>Enviar</button>
-          </div>
-        </div>
+        <SectionContent>
+          <form className="contact-form">
+            <input type="text" placeholder="Nome" required />
+            <input type="email" placeholder="Email" required />
+            <input type="text" placeholder="Assunto" />
+            <textarea placeholder="Mensagem" required></textarea>
+            <button type="submit">Enviar</button>
+
+            <div className="social-icons">
+              <a href="https://linkedin.com/in/seu-link" target="_blank">
+                LinkedIn
+              </a>
+              <a href="https://github.com/seu-usuario" target="_blank">
+                GitHub
+              </a>
+            </div>
+          </form>
+        </SectionContent>
       </div>
     </section>
   );
