@@ -5,4 +5,59 @@
   position: absolute;
   right: 0;
   z-index: 9;
+  overflow: hidden;
+}
+
+/* ================ Layers ================*/
+.layer {
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+}
+
+.layer-deep {
+  background-color: #072142;
+  transform: none;
+}
+
+.layer-mid {
+  background-color: #ff5f5f;
+  z-index: 2;
+}
+
+.layer-top {
+  background-color: #072142;
+  z-index: 3;
+}
+
+/* =============== Animações =============== */
+
+.section-content.visible .layer-mid {
+  animation: slideMid 0.8s ease-in-out forwards;
+}
+
+.section-content.visible .layer-top {
+  animation: slideTop 1.2s ease-in-out forwards;
+}
+
+@keyframes slideMid {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideTop {
+  0% {
+    transform: translateX(-100%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
