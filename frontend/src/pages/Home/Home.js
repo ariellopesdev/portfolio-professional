@@ -21,7 +21,6 @@ const Home = () => {
     "about",
     "curriculum",
     "contact",
-    "footer",
   ];
 
   const { currentSection, isReady } =
@@ -32,7 +31,6 @@ const Home = () => {
   return (
     <div id="home">
       <Navbar />
-      {/*Para impedir com que o active suma abaixo do último section */}
       <Aside currentSection={Math.min(currentSection, 4)} />
       <Main isVisible={currentSection === 0} />
       <Moon isVisible={currentSection === 0} />
@@ -40,15 +38,6 @@ const Home = () => {
       <About isVisible={currentSection === 2} />
       <Curriculum isVisible={currentSection === 3} />
       <Contact isVisible={currentSection === 4} />
-      {/* <footer id="footer">
-        <h1>Ariel Lopes</h1>
-        <p>Frase Motivacional</p>
-        <i></i>
-        <i></i>
-        <i></i>
-        <i></i>
-        <p>@copy; Copyright Ariel Lopes.</p>
-      </footer> */}
     </div>
   );
 };
