@@ -10,6 +10,8 @@
   transform-origin: bottom right;
   transform: scale(0.9);
   opacity: 1;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 /* ================ Layers ================*/
@@ -41,16 +43,15 @@
   z-index: 5;
   width: 100%;
   height: 100%;
-  padding: 3rem;
+  padding: 1rem;
   color: #fff;
   opacity: 0;
   transform: translateY(20px);
   transition: all 0.8s ease;
 }
 
-.section-inner.visible {
-  opacity: 1;
-  transform: translateY(0);
+.section-content.visible .section-inner {
+  animation: contentAppear 1.2s ease-in-out forwards;
 }
 
 /* =============== Animações =============== */
@@ -68,6 +69,17 @@
 }
 
 /* ============= Keyframes =============*/
+
+@keyframes contentAppear {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 @keyframes growContainer {
   0% {

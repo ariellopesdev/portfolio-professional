@@ -1,0 +1,87 @@
+.contact-form {
+  float: left;
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 80%;
+  padding: 10px;
+  border: none;
+  outline: none;
+  font-size: 0.9em;
+}
+
+.contact-form textarea {
+  resize: none;
+  height: 200px;
+}
+
+.contact-form .btn-form {
+  position: relative;
+  background-color: transparent;
+  overflow: hidden;
+  color: #fff;
+  border: none;
+  border-bottom: 2px solid #ff5f5f;
+  font-size: 1.1em;
+  padding: 0.5em 1em;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 40px;
+  transition: color 0.3s ease-in-out, border-bottom-color 0.3s ease-in-out;
+}
+
+.contact-form .btn-form::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background-color: #ff5f5f;
+  z-index: -1;
+  transition: height 0.3s ease-in-out;
+}
+
+.contact-form .btn-form:hover::before {
+  height: 100%;
+}
+
+.contact-form .btn-form:hover {
+  color: #fff;
+  border-bottom-color: transparent;
+}
+
+#ul-contact {
+  float: right;
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  list-style: none;
+  gap: 20px;
+}
+
+#ul-contact li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-size: 1em;
+}
+
+#ul-contact li a {
+  color: inherit;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
