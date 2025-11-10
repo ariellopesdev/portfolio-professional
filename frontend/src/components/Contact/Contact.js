@@ -24,61 +24,50 @@ const Contact = () => {
           title="Contato"
           text="Me envie uma mensagem"
           isVisible={isVisible}
+          externalLink
+          contacts={[
+            {
+              icon: FaGithub,
+              href: "https://github.com/ariellopesdev",
+              label: "github.com/ariellopesdev",
+            },
+            {
+              icon: FaLinkedin,
+              href: "https://www.linkedin.com/in/ariel-lopes-71000821b/",
+              label: "linkedin.com/in/ariel-lopes",
+            },
+            {
+              icon: FaWhatsapp,
+              href: "https://wa.me/5532998291774",
+              label: "+55 32 99829-1774",
+            },
+            {
+              icon: MdEmail,
+              href: "mailto:ariel_lopescwb2017@hotmail.com",
+              label: "ariel_lopescwb2017@hotmail.com",
+            },
+          ]}
         />
         <SectionContent>
-          <form className="contact-form">
-            <input type="text" placeholder="Nome" required />
-            <input type="email" placeholder="Email" required />
-            <textarea
-              placeholder="Mensagem"
-              required
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              maxLength={maxChars}
-            ></textarea>
-            <small>
-              {message.length}/{maxChars} caracteres
-            </small>
-            <button className="btn-form" type="submit">Enviar</button>
-          </form>
-          <ul id="ul-contact">
-            <li>
-              <a
-                href="https://github.com/ariellopesdev"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaGithub className="nav-icon" />
-              </a>
-              <p>github.com/ariellopesdev</p>
-            </li>
-            <li>
-              <a
-                href="https://www.linkedin.com/in/ariel-lopes-71000821b/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaLinkedin className="nav-icon" />
-              </a>
-              <p>ariel-lopes-71000821b/</p>
-            </li>
-            <li>
-              <a
-                href="https://wa.me/5532998291774"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaWhatsapp className="nav-icon" />
-                <p>+55 32 99829-1774</p>
-              </a>
-            </li>
-            <li>
-              <a href="mailto:ariel_lopescwb2017@hotmail.com">
-                <MdEmail className="nav-icon" />
-              </a>
-              <p>ariel_lopescwb2017@hotmail.com</p>
-            </li>
-          </ul>
+          <div id="contact-container">
+            <form className="contact-form">
+              <input type="text" placeholder="Nome" required />
+              <input type="email" placeholder="Email" required />
+              <textarea
+                placeholder="Mensagem"
+                required
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                maxLength={maxChars}
+              ></textarea>
+              <small>
+                {message.length}/{maxChars} caracteres
+              </small>
+              <button className="btn-form" type="submit">
+                Enviar
+              </button>
+            </form>
+          </div>
         </SectionContent>
       </div>
     </section>
