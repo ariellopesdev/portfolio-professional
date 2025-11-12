@@ -70,13 +70,7 @@
   gap: 12px;
   margin-top: 40px;
   opacity: 0;
-  transform: translateY(10px);
-  transition: all 0.6s ease;
-}
-
-.contacts-wrapper.visible {
-  opacity: 1;
-  transform: translateY(0);
+  transform: translateX(-50px);
 }
 
 .contact-item {
@@ -119,10 +113,15 @@
   animation: slideIn 0.8s ease-out 0.5s forwards;
 }
 
+.contacts-wrapper.visible{
+  animation: slideIn 0.8s ease-out 0.6s forwards;
+}
+
 /* ================= Reset ================= */
 .section-info h1.reset,
 .section-info p.reset,
-.section-info .btn-navigate.reset {
+.section-info .btn-navigate.reset,
+.section-info .contacts-wrapper.reset {
   opacity: 0;
   transform: translateX(-50px);
   animation: none;
