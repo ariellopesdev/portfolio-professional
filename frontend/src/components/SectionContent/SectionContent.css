@@ -47,11 +47,11 @@
   color: #fff;
   opacity: 0;
   transform: translateY(20px);
-  transition: all 0.8s ease;
+  transition: none;
 }
 
 .section-content.visible .section-inner {
-  animation: contentAppear 1.2s ease-in-out forwards;
+  animation: contentAppear 1s ease-in-out forwards;
 }
 
 /* =============== Animações =============== */
@@ -61,11 +61,11 @@
 }
 
 .section-content.visible .layer-mid {
-  animation: slideMid 0.8s ease-in-out forwards;
+  animation: slideMid 0.5s ease-in-out forwards;
 }
 
 .section-content.visible .layer-top {
-  animation: slideTop 1.2s ease-in-out forwards;
+  animation: slideTop 0.7s ease-in-out forwards;
 }
 
 /* ============= Keyframes =============*/
@@ -74,6 +74,10 @@
   0% {
     opacity: 0;
     transform: translateY(20px);
+  }
+  50%{
+    opacity: 0;
+    transform: translateY(10px);
   }
   100% {
     opacity: 1;
