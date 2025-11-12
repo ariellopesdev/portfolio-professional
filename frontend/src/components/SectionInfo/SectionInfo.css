@@ -7,16 +7,15 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  overflow: hidden;
 }
 
 /* ================= Keyframes ================= */
 @keyframes slideIn {
   from {
-    opacity: 0;
-    transform: translateX(-50px);
+    transform: translateX(-400px);
   }
   to {
-    opacity: 1;
     transform: translateX(0);
   }
 }
@@ -30,7 +29,7 @@
   word-wrap: break-word;
   white-space: pre-line;
   will-change: transform, opacity;
-  opacity: 0;
+  transform: translateX(-400px);
 }
 
 /* ================= P ================= */
@@ -39,7 +38,7 @@
   letter-spacing: 0.2em;
   width: 300px;
   margin-top: 20px;
-  opacity: 0;
+  transform: translateX(-400px);
 }
 
 /* ================= Button ================= */
@@ -53,13 +52,12 @@
   border-radius: 1.7em;
   cursor: pointer;
   margin-top: 40px;
-  opacity: 0;
-  transform: translateX(-50px);
+  transform: translateX(-400px);
+  transition: transform 0.3s ease-in-out;
 }
 
 .section-info .btn-navigate:hover {
   transform: translateY(-5px);
-  transition: transform 0.2s ease-in-out;
 }
 
 /* ================= Links ================= */
@@ -69,8 +67,7 @@
   align-items: flex-start;
   gap: 12px;
   margin-top: 40px;
-  opacity: 0;
-  transform: translateX(-50px);
+  transform: translateX(-400px);
 }
 
 .contact-item {
@@ -106,15 +103,15 @@
 }
 
 .section-info p.visible {
-  animation: slideIn 0.8s ease-out 0.3s forwards;
+  animation: slideIn 0.8s ease-out 0.2s forwards;
 }
 
 .section-info .btn-navigate.visible {
-  animation: slideIn 0.8s ease-out 0.5s forwards;
+  animation: slideIn 0.8s ease-out 0.3s forwards;
 }
 
-.contacts-wrapper.visible{
-  animation: slideIn 0.8s ease-out 0.6s forwards;
+.contacts-wrapper.visible {
+  animation: slideIn 0.8s ease-out 0.4s forwards;
 }
 
 /* ================= Reset ================= */
@@ -122,7 +119,6 @@
 .section-info p.reset,
 .section-info .btn-navigate.reset,
 .section-info .contacts-wrapper.reset {
-  opacity: 0;
-  transform: translateX(-50px);
+  transform: translateX(-400px);
   animation: none;
 }
