@@ -1,0 +1,52 @@
+#about-container {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
+  padding: 1.5em;
+  max-width: 900px;
+  margin: 0 auto; /* centraliza os blocos */
+  overflow: visible;
+}
+.about-block {
+  background-color: rgba(255, 255, 255, 0.02);
+  padding: 0.5em;
+  border-radius: 16px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.about-block:hover {
+  transform: translateY(-5px);
+}
+
+.about-block h1 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.1em;
+  color: #ff5f5f;
+  margin-bottom: 0.5em;
+}
+
+.about-block p {
+  font-size: 0.9em;
+  line-height: 1.6em;
+  color: #ddd;
+}
+
+.icon {
+  color: #ff5f5f;
+  width: 18px;
+  height: 18px;
+}
+
+.highlight {
+  color: #ff5f5f;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.highlight:hover {
+  color: #ffd8d8;
+  cursor: pointer;
+}
