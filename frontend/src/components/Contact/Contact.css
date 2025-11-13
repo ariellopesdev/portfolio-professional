@@ -31,7 +31,7 @@
   outline: none;
   border: none;
   font-size: 0.9em;
-  background-color: #f5f1e6; 
+  background-color: #f7f9fc;
   color: #222222; 
   transition: all 0.25s ease-in-out;
 }
@@ -44,7 +44,7 @@
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-  background-color: #fffaf3;
+  background-color: #f7f9fc;
   box-shadow: 0 0 5px #ff5f5f; 
   color: #111111;
   transition: box-shadow 0.25s ease-in-out, background-color 0.25s ease-in-out;

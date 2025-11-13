@@ -23,7 +23,7 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 const About = () => {
   const { ref, isVisible } = useVisibleState(0.3);
 
-  const scrollAmount = 350;
+  const scrollAmount = 265;
 
   const scrollLeft = () => {
     document.getElementById("about-container").scrollBy({
