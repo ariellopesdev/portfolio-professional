@@ -12,8 +12,8 @@
   scroll-behavior: smooth;
   gap: 15px;
   height: 100%;
-  padding: 1em 1em 3.5em 1em;
-  align-items: center; 
+  padding: 1em 1em 4em 1em;
+  align-items: center;
 }
 
 #about-container::-webkit-scrollbar {
@@ -23,15 +23,15 @@
 .about-block {
   width: 250px;
   min-width: 250px;
-  height: 90%;             
+  height: 100%;
   min-height: 250px;
   background-color: #f7f9fc;
-  padding: 0.8em;
+  padding: 1.2em 1em;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 6px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   transition: transform 0.3s ease;
 }
 
@@ -45,13 +45,17 @@
   gap: 10px;
   font-size: 1.2em;
   color: #222222;
-  margin-bottom: 0.5em;
+  margin: 0;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .about-block p {
-  font-size: .9em;
+  font-size: 0.9em;
   line-height: 1.6em;
   color: #222222;
+  margin-top: 0.3em;
+  text-align: justify;
 }
 
 .icon {
@@ -73,32 +77,32 @@
 
 .carousel-controls {
   position: absolute;
-  bottom: 20px;
+  bottom: 15px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 12px;
+  gap: 20px;
 }
 
 .carousel-btn {
-  width: 35px;
+  width: 50px;
   height: 35px;
-  background-color: #f5f1e6;
+  background-color: #f7f9fc;
   border: none;
-  border-radius: 50%;
-  box-shadow: 0 0 8px rgba(0,0,0,0.15);
+  border-radius: 15px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 0.9em;
+  font-size: 1.2em;
   transition: transform 0.3s ease;
 }
 
 .carousel-btn:hover {
   transform: scale(1.08);
   cursor: pointer;
-  background-color: #ff5f5f;;
+  background-color: #ff5f5f;
   color: #f5f1e6;
 }
 

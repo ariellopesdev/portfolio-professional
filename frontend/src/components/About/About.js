@@ -68,13 +68,14 @@ const About = () => {
                 </p>
               </div>
               <div className="about-block">
-                <h1>💡 Boas práticas</h1>
+                <h1>⚙️ Stack principal</h1>
                 <p>
-                  Crio aplicações completas, seguras e escaláveis, aplicando{" "}
-                  <span className="highlight">componentização</span>,{" "}
-                  <span className="highlight">gerenciamento de estado</span>,{" "}
-                  <span className="highlight">responsividade</span> e{" "}
-                  <span className="highlight">acessibilidade</span>.
+                  Ecossistema JavaScript com <SiNextdotjs className="icon" />{" "}
+                  <span className="highlight">Next.js</span>,{" "}
+                  <SiRedux className="icon" /> Redux Toolkit, React Router,
+                  Styled Components e Fetch API. Versionamento com{" "}
+                  <VscGithub className="icon" />{" "}
+                  <span className="highlight">Git e GitHub</span>.
                 </p>
               </div>
               <div className="about-block">
@@ -92,14 +93,13 @@ const About = () => {
                 </p>
               </div>
               <div className="about-block">
-                <h1>⚙️ Stack principal</h1>
+                <h1>💡 Boas práticas</h1>
                 <p>
-                  Ecossistema JavaScript com <SiNextdotjs className="icon" />{" "}
-                  <span className="highlight">Next.js</span>,{" "}
-                  <SiRedux className="icon" /> Redux Toolkit, React Router,
-                  Styled Components e Fetch API. Versionamento com{" "}
-                  <VscGithub className="icon" />{" "}
-                  <span className="highlight">Git e GitHub</span>.
+                  Crio aplicações completas, seguras e escaláveis, aplicando{" "}
+                  <span className="highlight">componentização</span>,{" "}
+                  <span className="highlight">gerenciamento de estado</span>,{" "}
+                  <span className="highlight">responsividade</span> e{" "}
+                  <span className="highlight">acessibilidade</span>.
                 </p>
               </div>
               <div className="about-block">
