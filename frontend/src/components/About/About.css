@@ -1,4 +1,6 @@
-/* ======= CAROUSEL STRUCTURE ======= */
+/* ============================================
+   CAROUSEL WRAPPER
+============================================ */
 #carousel-wrapper {
   width: 100%;
   height: 100%;
@@ -9,93 +11,113 @@
   align-items: center;
 }
 
-.carousel-center {
+/* ============================
+   ANIMAÇÃO DE ENTRADA DO SLIDE
+=============================== */
+@keyframes slideFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(25px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeSlideOut {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-25px);
+  }
+}
+
+/* ============================================
+   SLIDE FULL WIDTH
+============================================ */
+.carousel-slide {
   width: 100%;
-  max-width: 780px;
+  max-width: 850px;
   height: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 25px;
+  gap: 20px;
+  padding: 4em 4.5em;
+  background: transparent;
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-/* ======= CARDS WRAPPER ======= */
-.carousel-card {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: 0.35s ease;
+/* Estados animados */
+.carousel-slide.entering {
+  animation: slideFadeIn 0.6s ease forwards;
 }
 
-/* card ativo — apenas animação */
-.carousel-card.active {
-  transform: translateY(-5px) scale(1.05);
-  filter: none;
-  opacity: 1;
+.carousel-slide.exiting {
+  animation: fadeSlideOut 0.45s ease forwards;
 }
 
-/* cards laterais — ficam menores e desfocados */
-.carousel-card.blurred {
-  transform: scale(0.82);
-  opacity: 0.4;
-  filter: blur(1.5px) brightness(0.85);
-}
-
-/* ======= ABOUT BLOCK (CARD REAL) ======= */
-.about-block {
-  width: 300px;
-  height: 300px;
-  background-color: #f7f9fc;
-  padding: 1.2em 1em;
-  box-shadow: 0 18px 40px rgba(0,0,0,0.1);
-  border-radius: 18px;
+/* ============================================
+   LADO ESQUERDO – TÍTULO + TEXTO
+============================================ */
+.slide-left {
+  width: 60%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.about-block h1 {
+.slide-left h1 {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 1.2em;
-  color: #222;
-  margin: 0;
-  padding-bottom: 0.3em;
-  border-bottom: 1px solid rgba(0,0,0,0.1);
+  font-size: 1.8em;
+  color: #f7f9fc;
+  margin: 0 0 15px 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.about-block p {
-  font-size: 0.9em;
-  line-height: 1.55em;
-  color: #222;
-  margin-top: 0.3em;
+.slide-left p {
+  font-size: 1em;
+  line-height: 1.6em;
+  color: #f7f9fc;
   text-align: justify;
+  margin: 0;
 }
 
-.icon {
+/* ============================================
+   LADO DIREITO – ÍCONE/IMAGEM GRANDE
+============================================ */
+.slide-right {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.big-icon {
+  width: 140px;
+  height: 140px;
   color: #ff5f5f;
-  width: 17px;
-  height: 17px;
+  opacity: 0.9;
 }
 
-.highlight {
-  font-weight: 600;
-  color: #222;
-  transition: 0.3s;
-}
-
-.highlight:hover {
-  color: #ff5f5f;
-}
-
-/* ======= ARROWS ======= */
+/* ============================================
+   SETAS
+============================================ */
 .carousel-arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   font-size: 3em;
-  color: #ff5f5f;
+  color: #fff;
   border: none;
   background: none;
   cursor: pointer;
@@ -105,17 +127,28 @@
 
 .carousel-arrow:hover {
   transform: translateY(-50%) scale(1.25);
-  color: #ff8f8f;
+  color: #7b61ff;
 }
 
-.carousel-arrow.left { left: 20px; }
-.carousel-arrow.right { right: 20px; }
+.carousel-arrow.left {
+  left: -5px;
+}
 
-/* ======= DOTS ======= */
+.carousel-arrow.right {
+  right: -5px;
+}
+
+/* ============================================
+   DOTS
+============================================ */
 .carousel-dots {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   gap: 8px;
-  margin-bottom: 50px;
+  pointer-events: auto;
 }
 
 .carousel-dots .dot {
@@ -132,18 +165,70 @@
   transform: scale(1.3);
 }
 
-/* ======= RESPONSIVE ======= */
-@media (max-width: 600px) {
-  .about-block {
-    width: 220px;
-    height: 220px;
+/* ============================================
+   ICONS & HIGHLIGHT
+============================================ */
+.icon {
+  color: #ff5f5f;
+  width: 17px;
+  height: 17px;
+}
+
+.highlight {
+  font-weight: 600;
+  color: #7b61ff;
+  transition: 0.3s;
+}
+
+.highlight:hover {
+  color: #f7f9fc;
+}
+
+/* ============================================
+   RESPONSIVE
+============================================ */
+@media (max-width: 780px) {
+  .carousel-slide {
+    flex-direction: column;
+    height: auto;
+    padding: 2em;
+    text-align: center;
   }
 
-  .carousel-center {
-    gap: 15px;
+  .slide-left {
+    width: 100%;
   }
 
+  .slide-right {
+    width: 100%;
+    margin-top: 25px;
+  }
+
+  .big-icon {
+    width: 110px;
+    height: 110px;
+  }
+}
+
+@media (max-width: 480px) {
   .carousel-arrow {
-    font-size: 2em;
+    font-size: 2.2em;
+  }
+
+  .carousel-slide {
+    padding: 1.6em;
+  }
+
+  .slide-left h1 {
+    font-size: 1.4em;
+  }
+
+  .slide-left p {
+    font-size: 0.9em;
+  }
+
+  .big-icon {
+    width: 90px;
+    height: 90px;
   }
 }

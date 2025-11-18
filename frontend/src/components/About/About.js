@@ -1,4 +1,3 @@
-// About.jsx (FINAL — sem autoplay, sem hover pause)
 import "./About.css";
 
 // Components
@@ -30,7 +29,6 @@ import { VscGithub } from "react-icons/vsc";
 const About = () => {
   const { ref, isVisible } = useVisibleState(0.3);
 
-  // 🔥 TEXTOS COMPLETOS — EXATAMENTE COMO VOCÊ MANDOU
   const blocks = [
     {
       title: (
@@ -49,6 +47,7 @@ const About = () => {
           <span className="highlight">Node.js/Express</span> para APIs.
         </>
       ),
+      image: <FaReact className="big-icon" />,
     },
     {
       title: <>⚙️ Stack principal</>,
@@ -62,6 +61,7 @@ const About = () => {
           <span className="highlight">Git e GitHub</span>.
         </>
       ),
+      image: <SiNextdotjs className="big-icon" />,
     },
     {
       title: <>🧩 Backend e banco de dados</>,
@@ -77,6 +77,7 @@ const About = () => {
           notificações.
         </>
       ),
+      image: <FaNodeJs className="big-icon" />,
     },
     {
       title: <>💡 Boas práticas</>,
@@ -100,6 +101,7 @@ const About = () => {
           qualidade.
         </>
       ),
+      image: <FaNodeJs className="big-icon" />,
     },
     {
       title: <>📘 Outros conhecimentos</>,
@@ -111,6 +113,7 @@ const About = () => {
           <FaJava className="icon" /> <span className="highlight">Java</span>.
         </>
       ),
+      image: <FaNodeJs className="big-icon" />,
     },
     {
       title: <>🚀 Objetivo</>,
@@ -123,12 +126,27 @@ const About = () => {
           <span className="highlight">fullstack moderno</span>.
         </>
       ),
+      image: <FaNodeJs className="big-icon" />,
     },
   ];
 
+  // INDEX E ANIMAÇÃO
   const [index, setIndex] = useState(0);
-  const prev = () => setIndex((i) => (i === 0 ? blocks.length - 1 : i - 1));
-  const next = () => setIndex((i) => (i + 1) % blocks.length);
+  const [anim, setAnim] = useState("entering");
+
+  const goTo = (newIndex) => {
+    setAnim("exiting");
+
+    setTimeout(() => {
+      setIndex(newIndex);
+      setAnim("entering");
+
+      setTimeout(() => setAnim(""), 600);
+    }, 350);
+  };
+
+  const prev = () => goTo(index === 0 ? blocks.length - 1 : index - 1);
+  const next = () => goTo((index + 1) % blocks.length);
 
   const wrapperRef = useRef(null);
 
@@ -166,23 +184,14 @@ const About = () => {
               <FaChevronRight />
             </button>
 
-            {/* Cards */}
-            <div className="carousel-center">
-              {[index - 1, index, index + 1].map((pos, i) => {
-                const real = (pos + blocks.length) % blocks.length;
-                const active = i === 1;
-                return (
-                  <div
-                    className={`carousel-card ${active ? "active" : "blurred"}`}
-                    key={i}
-                  >
-                    <div className="about-block">
-                      <h1>{blocks[real].title}</h1>
-                      <p>{blocks[real].text}</p>
-                    </div>
-                  </div>
-                );
-              })}
+            {/* Slide */}
+            <div className={`carousel-slide ${anim}`}>
+              <div className="slide-left">
+                <h1>{blocks[index].title}</h1>
+                <p>{blocks[index].text}</p>
+              </div>
+
+              <div className="slide-right">{blocks[index].image}</div>
             </div>
 
             {/* Dots */}
@@ -191,7 +200,7 @@ const About = () => {
                 <span
                   key={i}
                   className={`dot ${i === index ? "active" : ""}`}
-                  onClick={() => setIndex(i)}
+                  onClick={() => goTo(i)}
                 />
               ))}
             </div>

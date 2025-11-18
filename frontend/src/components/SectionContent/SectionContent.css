@@ -11,7 +11,6 @@
   opacity: 1;
   display: flex;
   flex-wrap: wrap;
-  border-radius: 10px;
 }
 
 /* ================ Layers ================*/
@@ -24,19 +23,16 @@
 .layer-deep {
   background-color: #072142;
   transform: none;
-  border-radius: 10px;
 }
 
 .layer-mid {
   background-color: #ff5f5f;
   z-index: 2;
-  border-radius: 10px;
 }
 
 .layer-top {
   background-color: #072142;
   z-index: 3;
-  border-radius: 10px;
 }
 
 /* =============== Contéudo Interno ============= */
