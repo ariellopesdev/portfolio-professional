@@ -9,22 +9,17 @@ import { useVisibleState } from "../../hooks/useVisibleState";
 import { useState, useRef } from "react";
 
 // Icons
-import {
-  FaReact,
-  FaJava,
-  FaNodeJs,
-  FaDocker,
-  FaChevronLeft,
-  FaChevronRight,
-} from "react-icons/fa";
-import {
-  SiNextdotjs,
-  SiRedux,
-  SiFirebase,
-  SiMongodb,
-  SiMysql,
-} from "react-icons/si";
-import { VscGithub } from "react-icons/vsc";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+
+//Images
+import fullStackImg from "../../assets/images/full-stack-developer.png";
+import backend from "../../assets/images/backend.png";
+import goals from "../../assets/images/goals.png";
+import bestPractices from "../../assets/images/best-practices.png";
+import stackPrincipal from "../../assets/images/stack-principal.png";
+import tools from "../../assets/images/tools.png";
+import othersKnowledge from "../../assets/images/others-knowledge.png";
+import logo from "../../assets/images/logo.png";
 
 const About = () => {
   const { ref, isVisible } = useVisibleState(0.3);
@@ -33,100 +28,145 @@ const About = () => {
     {
       title: (
         <>
-          <FaReact className="icon" /> Sou{" "}
-          <span className="highlight">Dev Fullstack</span>
+          <img src={logo} className="icon" alt="Logo" />
+          Sou <span className="highlight">Dev Fullstack</span>
         </>
       ),
       text: (
         <>
-          Construo sites, sistemas e web apps com <FaReact className="icon" />{" "}
-          <span className="highlight">React.js</span> no frontend e{" "}
-          <FaJava className="icon" /> <span className="highlight">Java</span> no
-          backend como foco principal. Também trabalho com{" "}
-          <FaNodeJs className="icon" />{" "}
-          <span className="highlight">Node.js/Express</span> para APIs.
+          Construo sites, sistemas e web apps com
+          <span className="highlight"> React.js</span> no frontend e
+          <span className="highlight"> Java</span> e
+          <span className="highlight"> PHP</span> no backend. Também trabalho
+          com
+          <span className="highlight"> Node.js/Express</span> para APIs e MySQL,
+          MongoDB e Firebase para banco de dados.
         </>
       ),
-      image: <FaReact className="big-icon" />,
-    },
-    {
-      title: <>⚙️ Stack principal</>,
-      text: (
-        <>
-          Ecossistema JavaScript com <SiNextdotjs className="icon" />{" "}
-          <span className="highlight">Next.js</span>,{" "}
-          <SiRedux className="icon" /> Redux Toolkit, React Router, Styled
-          Components e Fetch API. Versionamento com{" "}
-          <VscGithub className="icon" />{" "}
-          <span className="highlight">Git e GitHub</span>.
-        </>
-      ),
-      image: <SiNextdotjs className="big-icon" />,
-    },
-    {
-      title: <>🧩 Backend e banco de dados</>,
-      text: (
-        <>
-          Desenvolvimento de <span className="highlight">APIs REST</span>,{" "}
-          <span className="highlight">autenticação JWT</span>,{" "}
-          <span className="highlight">upload de arquivos</span> e integração com
-          bancos (
-          <SiMysql className="icon" /> MySQL / <SiMongodb className="icon" />{" "}
-          MongoDB). Também uso <SiFirebase className="icon" />{" "}
-          <span className="highlight">Firebase</span> para autenticação e
-          notificações.
-        </>
-      ),
-      image: <FaNodeJs className="big-icon" />,
-    },
-    {
-      title: <>💡 Boas práticas</>,
-      text: (
-        <>
-          Crio aplicações completas, seguras e escaláveis, aplicando{" "}
-          <span className="highlight">componentização</span>,{" "}
-          <span className="highlight">gerenciamento de estado</span>,{" "}
-          <span className="highlight">responsividade</span> e{" "}
-          <span className="highlight">acessibilidade</span>.
-        </>
+      image: (
+        <img
+          src={fullStackImg}
+          className="big-icon"
+          alt="Fullstack Developer"
+        />
       ),
     },
     {
-      title: <>🧠 Ferramentas e qualidade</>,
+      title: <>Stack principal</>,
       text: (
         <>
-          Experiência com <FaDocker className="icon" />{" "}
-          <span className="highlight">Docker</span>, Postman, Sass e{" "}
-          <span className="highlight">testes automatizados</span> para garantir
-          qualidade.
+          Trabalho com o ecossistema JavaScript usando
+          <span className="highlight"> React.js</span> para criar interfaces
+          modernas. Utilizo Redux Toolkit para gerenciamento de estado e realizo
+          integrações com <span className="highlight"> APIs REST</span> que
+          desenvolvo em <span className="highlight"> Java</span> e
+          <span className="highlight"> PHP</span>. Versionamento com
+          <span className="highlight"> Git</span> e
+          <span className="highlight"> GitHub</span>.
         </>
       ),
-      image: <FaNodeJs className="big-icon" />,
+      image: (
+        <img src={stackPrincipal} className="big-icon" alt="Stack Principal" />
+      ),
     },
     {
-      title: <>📘 Outros conhecimentos</>,
-      text: (
+      title: (
         <>
-          Também possuo experiência com{" "}
-          <span className="highlight">Python</span> e{" "}
-          <span className="highlight">PHP</span>, mas meu foco no backend é{" "}
-          <FaJava className="icon" /> <span className="highlight">Java</span>.
+          Backend e
+          <br />
+          banco de dados
         </>
       ),
-      image: <FaNodeJs className="big-icon" />,
+      text: (
+        <>
+          Desenvolvo <span className="highlight">APIs REST</span> utilizando
+          <span className="highlight"> Java</span>,
+          <span className="highlight"> PHP</span> e
+          <span className="highlight"> Node.js</span>, aplicando boas práticas
+          de segurança, escalabilidade e documentação. Trabalho com bancos
+          relacionais e não relacionais, como
+          <span className="highlight"> MySQL</span>,
+          <span className="highlight"> MongoDB</span> e
+          <span className="highlight"> Firebase</span>, priorizando
+          consistência, desempenho e integração eficiente com o frontend.
+        </>
+      ),
+      image: (
+        <img src={backend} className="big-icon" alt="Backend and database" />
+      ),
     },
     {
-      title: <>🚀 Objetivo</>,
+      title: <>Boas práticas</>,
       text: (
         <>
-          Busco projetos que unam <span className="highlight">desempenho</span>,{" "}
-          <span className="highlight">usabilidade</span> e{" "}
-          <span className="highlight">escalabilidade</span>, aplicando práticas
-          sólidas de desenvolvimento{" "}
-          <span className="highlight">fullstack moderno</span>.
+          Estruturo aplicações seguindo padrões de
+          <span className="highlight"> arquitetura</span>,
+          <span className="highlight"> componentização</span> e
+          <span className="highlight"> organização de código</span>. Busco
+          entregar interfaces <span className="highlight">responsivas</span>,
+          <span className="highlight"> acessíveis</span> e com
+          <span className="highlight"> alta performance</span>, sempre
+          priorizando código limpo, claro e escalável.
         </>
       ),
-      image: <FaNodeJs className="big-icon" />,
+      image: (
+        <img src={bestPractices} className="big-icon" alt="Best Practices" />
+      ),
+    },
+    {
+      title: (
+        <>
+          Ferramentas
+          <br />e qualidade
+        </>
+      ),
+      text: (
+        <>
+          Utilizo ferramentas que fortalecem o fluxo de desenvolvimento, como
+          <span className="highlight"> Docker</span>,
+          <span className="highlight"> Postman</span> e metodologias de testes.
+          Trabalho com <span className="highlight">Git</span> para
+          versionamento, garantindo organização, rastreabilidade e
+          confiabilidade durante o desenvolvimento e entrega das aplicações.
+        </>
+      ),
+      image: <img src={tools} className="big-icon" alt="Tools and quality" />,
+    },
+    {
+      title: <>Outros conhecimentos</>,
+      text: (
+        <>
+          Tenho experiência com linguagens como
+          <span className="highlight"> Python</span>,
+          <span className="highlight"> C</span> e
+          <span className="highlight"> C#</span> para automações, scripts e
+          desenvolvimento backend. Possuo facilidade em aprender novas
+          tecnologias e me adaptar rapidamente a diferentes ambientes e
+          demandas.
+        </>
+      ),
+      image: (
+        <img
+          src={othersKnowledge}
+          className="big-icon"
+          alt="Others Knowledge"
+        />
+      ),
+    },
+    {
+      title: <>Objetivos</>,
+      text: (
+        <>
+          Meu foco é atuar em projetos que valorizem
+          <span className="highlight"> qualidade</span>,
+          <span className="highlight"> boas práticas</span> e
+          <span className="highlight"> evolução constante</span>. Busco
+          contribuir para equipes e produtos, criando soluções completas que
+          unam usabilidade, desempenho e escalabilidade, sempre com foco no
+          crescimento como desenvolvedor fullstack.
+        </>
+      ),
+      image: <img src={goals} className="big-icon" alt="Goals" />,
     },
   ];
 
