@@ -3,13 +3,11 @@ import "./About.css";
 // Components
 import SectionInfo from "../SectionInfo/SectionInfo";
 import SectionContent from "../SectionContent/SectionContent";
+import Carousel from "../Carousel/Carousel";
 
 // Hooks
 import { useVisibleState } from "../../hooks/useVisibleState";
-import { useState, useRef } from "react";
-
-// Icons
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { useCarousel } from "../../hooks/useCarousel";
 
 //Images
 import fullStackImg from "../../assets/images/full-stack-developer.png";
@@ -22,8 +20,6 @@ import othersKnowledge from "../../assets/images/others-knowledge.png";
 import logo from "../../assets/images/logo.png";
 
 const About = () => {
-  const { ref, isVisible } = useVisibleState(0.3);
-
   const blocks = [
     {
       title: (
@@ -169,35 +165,9 @@ const About = () => {
       image: <img src={goals} className="big-icon" alt="Goals" />,
     },
   ];
-
-  // INDEX E ANIMAÇÃO
-  const [index, setIndex] = useState(0);
-  const [anim, setAnim] = useState("entering");
-
-  const goTo = (newIndex) => {
-    setAnim("exiting");
-
-    setTimeout(() => {
-      setIndex(newIndex);
-      setAnim("entering");
-
-      setTimeout(() => setAnim(""), 600);
-    }, 350);
-  };
-
-  const prev = () => goTo(index === 0 ? blocks.length - 1 : index - 1);
-  const next = () => goTo((index + 1) % blocks.length);
-
-  const wrapperRef = useRef(null);
-
-  // Swipe mobile
-  const touchStartX = useRef(0);
-  const onTouchStart = (e) => (touchStartX.current = e.touches[0].clientX);
-  const onTouchEnd = (e) => {
-    const dist = e.changedTouches[0].clientX - touchStartX.current;
-    if (dist > 50) prev();
-    if (dist < -50) next();
-  };
+  const { index, anim, prev, next, goTo, onTouchStart, onTouchEnd } =
+    useCarousel(blocks.length);
+  const { ref, isVisible } = useVisibleState(0.3);
 
   return (
     <section id="about" ref={ref}>
@@ -207,44 +177,17 @@ const About = () => {
           text="Olá, sou o Ariel."
           isVisible={isVisible}
         />
-
         <SectionContent>
-          <div
-            id="carousel-wrapper"
-            ref={wrapperRef}
+          <Carousel
+            blocks={blocks}
+            index={index}
+            anim={anim}
+            prev={prev}
+            next={next}
+            goTo={goTo}
             onTouchStart={onTouchStart}
             onTouchEnd={onTouchEnd}
-          >
-            {/* Arrows */}
-            <button className="carousel-arrow left" onClick={prev}>
-              <FaChevronLeft />
-            </button>
-
-            <button className="carousel-arrow right" onClick={next}>
-              <FaChevronRight />
-            </button>
-
-            {/* Slide */}
-            <div className={`carousel-slide ${anim}`}>
-              <div className="slide-left">
-                <h1>{blocks[index].title}</h1>
-                <p>{blocks[index].text}</p>
-              </div>
-
-              <div className="slide-right">{blocks[index].image}</div>
-            </div>
-
-            {/* Dots */}
-            <div className="carousel-dots">
-              {blocks.map((_, i) => (
-                <span
-                  key={i}
-                  className={`dot ${i === index ? "active" : ""}`}
-                  onClick={() => goTo(i)}
-                />
-              ))}
-            </div>
-          </div>
+          />
         </SectionContent>
       </div>
     </section>
