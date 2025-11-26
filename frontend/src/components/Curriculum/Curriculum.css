@@ -1,15 +1,99 @@
-.curriculum-icon {
-  position: absolute;
-  width: 75px;
-  opacity: 0.12;
+/* ------------------------------
+   LISTA PRINCIPAL DO CURRÍCULO
+------------------------------ */
+
+.slide-layout-curriculum {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 100%;
+  padding: 0 4em;
 }
 
-.icon-1 {
-  top: 30px;
-  right: 60px;
+.slide-layout-courses {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  padding: 0 3em;
 }
 
-.icon-2 {
-  bottom: 40px;
-  left: 70px;
+.slc-block {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 3px solid #7b61ff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  transition: 0.3s ease;
+}
+
+.slc-block:hover {
+  border-left-color: #ff5f5f;
+  transform: translateX(5px);
+}
+
+/* ------------------------------
+   TEXTO / TIPOGRAFIA
+------------------------------ */
+
+.slc-block-year {
+  font-size: 0.9em;
+  font-weight: 600;
+  color: #7b61ff;
+  margin-bottom: 0.5em;
+}
+
+.slc-block-title {
+  font-size: 1.1em;
+  font-weight: 600;
+  margin-bottom: 0.5em;
+}
+
+.slc-block-desc {
+  font-size: 0.8em;
+  opacity: 0.8;
+  /* line-height: 1.5; */
+}
+
+.tech-bar-bottom {
+  /* margin-top: 40px; */
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  opacity: 0.5;
+  transition: 0.3s ease;
+}
+
+.tech-bar-bottom:hover {
+  opacity: 1;
+}
+
+.tech-icon {
+  font-size: 2.2em;
+  transition: 0.25s ease;
+}
+
+.tech-icon:hover {
+  transform: scale(1.2);
+  color: #7b61ff;
+}
+
+/* ------------------------------
+   RESPONSIVO
+------------------------------ */
+
+@media (max-width: 700px) {
+  .slide-layout-curriculum {
+    padding: 0.5em 0;
+  }
+
+  .sle-block {
+    padding-left: 10px;
+  }
+
+  .tech-icon {
+    font-size: 1.7em;
+  }
 }

@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 
-export const useCarousel = (length) => {
+export default function useCarousel(length) {
   const [index, setIndex] = useState(0);
   const [anim, setAnim] = useState("entering");
 
@@ -40,4 +40,4 @@ export const useCarousel = (length) => {
     onTouchStart,
     onTouchEnd,
   };
-};
+}

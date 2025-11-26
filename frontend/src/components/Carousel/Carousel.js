@@ -1,10 +1,19 @@
-//CSS
+// Carousel.css
 import "./Carousel.css";
 
-//Icons
+// Icons
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
-const Carousel = ({ blocks, index, anim, prev, next, goTo, onTouchStart, onTouchEnd }) => {
+const Carousel = ({
+  blocks,
+  index,
+  anim,
+  prev,
+  next,
+  goTo,
+  onTouchStart,
+  onTouchEnd,
+}) => {
   return (
     <div
       id="carousel-wrapper"
@@ -20,14 +29,9 @@ const Carousel = ({ blocks, index, anim, prev, next, goTo, onTouchStart, onTouch
         <FaChevronRight />
       </button>
 
-      {/* Slide */}
+      {/* Slide animation wrapper */}
       <div className={`carousel-slide ${anim}`}>
-        <div className="slide-left">
-          <h1>{blocks[index].title}</h1>
-          <p>{blocks[index].text}</p>
-        </div>
-
-        <div className="slide-right">{blocks[index].image}</div>
+        {blocks[index].content}
       </div>
 
       {/* Dots */}
