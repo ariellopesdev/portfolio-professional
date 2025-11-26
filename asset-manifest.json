@@ -1,17 +1,24 @@
 {
   "files": {
-    "main.css": "/portfolio-professional/static/css/main.016fdabb.css",
-    "main.js": "/portfolio-professional/static/js/main.2b6acd5d.js",
+    "main.css": "/portfolio-professional/static/css/main.e4f6a2cf.css",
+    "main.js": "/portfolio-professional/static/js/main.2ccc7331.js",
     "static/js/453.8ab44547.chunk.js": "/portfolio-professional/static/js/453.8ab44547.chunk.js",
     "static/media/image-test.jpg": "/portfolio-professional/static/media/image-test.c98984426d6787cbd4c8.jpg",
     "static/media/portfolio-image2.png": "/portfolio-professional/static/media/portfolio-image2.cd01f5e68aed0c24c648.png",
+    "static/media/best-practices.png": "/portfolio-professional/static/media/best-practices.dba1f85c7c146231d701.png",
+    "static/media/tools.png": "/portfolio-professional/static/media/tools.ad2d3d9432594dbf4b91.png",
+    "static/media/backend.png": "/portfolio-professional/static/media/backend.81dd42deefd50b84fdd2.png",
+    "static/media/goals.png": "/portfolio-professional/static/media/goals.8b315909a76172b28a7e.png",
+    "static/media/others-knowledge.png": "/portfolio-professional/static/media/others-knowledge.2614c5dab8c199f4a0ed.png",
+    "static/media/full-stack-developer.png": "/portfolio-professional/static/media/full-stack-developer.e6c11e753f4b14cd615d.png",
+    "static/media/stack-principal.png": "/portfolio-professional/static/media/stack-principal.569da3659c41a7c40aa0.png",
     "index.html": "/portfolio-professional/index.html",
-    "main.016fdabb.css.map": "/portfolio-professional/static/css/main.016fdabb.css.map",
-    "main.2b6acd5d.js.map": "/portfolio-professional/static/js/main.2b6acd5d.js.map",
+    "main.e4f6a2cf.css.map": "/portfolio-professional/static/css/main.e4f6a2cf.css.map",
+    "main.2ccc7331.js.map": "/portfolio-professional/static/js/main.2ccc7331.js.map",
     "453.8ab44547.chunk.js.map": "/portfolio-professional/static/js/453.8ab44547.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.016fdabb.css",
-    "static/js/main.2b6acd5d.js"
+    "static/css/main.e4f6a2cf.css",
+    "static/js/main.2ccc7331.js"
   ]
 }
