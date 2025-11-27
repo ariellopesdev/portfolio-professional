@@ -3,7 +3,6 @@
   width: 100%;
   height: 100%;
   padding: 4em 4.5em;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -59,6 +58,122 @@
 .highlight:hover {
   color: #f7f9fc;
 }
+
+/************** Card Hard Skills ************/
+
+.slide-layout-tech {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 4em;
+  gap: 20px;
+}
+
+.tech-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.tech-category {
+  color: #7b61ff;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  font-size: 0.9em;
+}
+
+.tech-card:hover .tech-category {
+  color: #ff5f5f; /* muda quando o card é hover */
+}
+
+.tech-card {
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.25);
+  padding: 10px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: space-between;
+  border-left: 2px solid #7b61ff;
+  transition: 0.3s ease;
+}
+
+.tech-card:hover {
+  border-left: 2px solid #ff5f5f;
+  transform: translateX(5px);
+}
+
+.container-tech {
+  display: flex;
+  gap: 12px;
+}
+
+.tech-icon {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.07);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+  transition: 0.3s ease;
+  border-radius: 6px;
+}
+
+.tech-icon:hover {
+  transform: translateY(-2px);
+}
+
+.tech-icon svg {
+  font-size: 1.25rem;
+  opacity: 1;
+}
+
+.tech-desc {
+  font-size: 0.75rem;
+  opacity: 0.85;
+}
+
+.tech-icon.java svg {
+  color: #f89820;
+}
+.tech-icon.php svg {
+  color: #4f5d95;
+}
+.tech-icon.python svg {
+  color: #3776ab;
+}
+.tech-icon.javascript svg {
+  color: #f7df1e;
+}
+.tech-icon.react svg {
+  color: #61dafb;
+}
+.tech-icon.node svg {
+  color: #83cd29;
+}
+.tech-icon.postman svg {
+  color: #ff6c37;
+}
+.tech-icon.mysql svg {
+  color: #00618a;
+}
+.tech-icon.mongodb svg {
+  color: #4db33d;
+}
+.tech-icon.firebase svg {
+  color: #ffca28;
+}
+.tech-icon.docker svg {
+  color: #2496ed;
+}
+.tech-icon.github svg {
+  color: #ffffff;
+}
+.tech-icon.git svg {
+  color: #f1502f;
+}
+
 
 /* Responsive */
 @media (max-width: 780px) {

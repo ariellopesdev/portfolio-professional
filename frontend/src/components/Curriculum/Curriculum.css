@@ -1,11 +1,13 @@
-/* ------------------------------
-   LISTA PRINCIPAL DO CURRÍCULO
------------------------------- */
+/************** H1 Padrozination on Curriculum ************/
+.slide-h1 {
+  font-weight: 700;
+}
 
+/************** Card Experiences ************/
 .slide-layout-experiences {
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 20px;
   width: 100%;
   padding: 0 4em;
 }
@@ -43,13 +45,15 @@
   opacity: 0.8;
 }
 
+/************** Card Courses ************/
+
 .slide-layout-courses {
   position: relative;
   display: flex;
   flex-direction: column;
   width: 100%;
   padding: 0 4em;
-  gap: 25px;
+  gap: 20px;
 }
 
 .courses-item {
@@ -79,6 +83,8 @@
   opacity: 0.8;
 }
 
+/************** Card Hard Skills ************/
+
 .slide-layout-tech {
   position: relative;
   display: flex;
@@ -89,30 +95,41 @@
 }
 
 .tech-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-  width: 100%;
-}
-
-.tech-category {
-  color: #7b61ff;       
-  font-weight: 600;
-  letter-spacing: 0.5px;
-}
-
-.tech-card {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 20px;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
+.tech-category {
+  color: #7b61ff;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  font-size: 0.9em;
+}
+
+.tech-card:hover .tech-category {
+  color: #ff5f5f; /* muda quando o card é hover */
+}
+
+.tech-card {
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.25);
+  padding: 10px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: space-between;
+  border-left: 2px solid #7b61ff;
+  transition: 0.3s ease;
+}
+
+.tech-card:hover {
+  border-left: 2px solid #ff5f5f;
+  transform: translateX(5px);
+}
+
 .container-tech {
   display: flex;
-  flex-wrap: wrap;
   gap: 12px;
 }
 
@@ -122,13 +139,13 @@
   gap: 8px;
   padding: 6px 12px;
   background: rgba(255, 255, 255, 0.07);
-  box-shadow: 0 0 8px rgba(0,0,0,0.25);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
   transition: 0.3s ease;
+  border-radius: 6px;
 }
 
 .tech-icon:hover {
   transform: translateY(-2px);
-  border-left: 1px solid #ff5f5f;
 }
 
 .tech-icon svg {
@@ -141,17 +158,71 @@
   opacity: 0.85;
 }
 
-.tech-icon.java svg { color: #f89820; }   
-.tech-icon.php svg { color: #4f5d95; }     
-.tech-icon.python svg { color: #3776ab; }   
-.tech-icon.c svg { color: #a8a9ad; }      
-.tech-icon.csharp svg { color: #68217a; }
-.tech-icon.react svg { color: #61dafb; }   
-.tech-icon.node svg { color: #83cd29; }    
-.tech-icon.postman svg { color: #ff6c37; } 
-.tech-icon.mysql svg { color: #00618a; }    
-.tech-icon.mongodb svg { color: #4db33d; }  
-.tech-icon.firebase svg { color: #ffca28; } 
-.tech-icon.docker svg { color: #2496ed; }   
-.tech-icon.github svg { color: #ffffff; }    
-.tech-icon.git svg { color: #f1502f; }     
+.tech-icon.java svg {
+  color: #f89820;
+}
+.tech-icon.php svg {
+  color: #4f5d95;
+}
+.tech-icon.python svg {
+  color: #3776ab;
+}
+.tech-icon.javascript svg {
+  color: #f7df1e;
+}
+.tech-icon.react svg {
+  color: #61dafb;
+}
+.tech-icon.node svg {
+  color: #83cd29;
+}
+.tech-icon.postman svg {
+  color: #ff6c37;
+}
+.tech-icon.mysql svg {
+  color: #00618a;
+}
+.tech-icon.mongodb svg {
+  color: #4db33d;
+}
+.tech-icon.firebase svg {
+  color: #ffca28;
+}
+.tech-icon.docker svg {
+  color: #2496ed;
+}
+.tech-icon.github svg {
+  color: #ffffff;
+}
+.tech-icon.git svg {
+  color: #f1502f;
+}
+
+/************** Card Hard Skills ************/
+.slide-layout-softskills{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 4em;
+  gap: 20px;
+}
+
+.softskills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.softskill-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.1rem;
+  color: #eaeaea;
+}
+
+.softskill-item svg {
+  font-size: 1.3rem;
+  color: #5fa8ff;
+}

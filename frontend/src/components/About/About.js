@@ -1,3 +1,4 @@
+// CSS
 import "./About.css";
 
 // Components
@@ -11,13 +12,32 @@ import useCarousel from "../../hooks/useCarousel";
 
 //Images
 import fullStackImg from "../../assets/images/full-stack-developer.png";
-import backend from "../../assets/images/backend.png";
-import goals from "../../assets/images/goals.png";
-import bestPractices from "../../assets/images/best-practices.png";
 import stackPrincipal from "../../assets/images/stack-principal.png";
-import tools from "../../assets/images/tools.png";
-import othersKnowledge from "../../assets/images/others-knowledge.png";
 import logo from "../../assets/images/logo.png";
+
+//Icons
+import {
+  FaReact,
+  FaJava,
+  FaNodeJs,
+  FaDocker,
+  FaCode,
+  FaUsers,
+  FaComments,
+  FaBrain,
+  FaHandsHelping,
+  FaLightbulb,
+} from "react-icons/fa";
+import {
+  SiMysql,
+  SiMongodb,
+  SiFirebase,
+  SiPhp,
+  SiPython,
+  SiGit,
+} from "react-icons/si";
+import { VscGithub } from "react-icons/vsc";
+import { IoLogoJavascript } from "react-icons/io5";
 
 const About = () => {
   const blocks = [
@@ -79,128 +99,150 @@ const About = () => {
     },
     {
       content: (
-        <div className="slide-layout-about">
-          <div className="info">
-            <h1>
-              Backend e
-              <br />
-              banco de dados
-            </h1>
-            <p>
-              Desenvolvo <span className="highlight">APIs REST</span> utilizando
-              <span className="highlight"> Java</span>,
-              <span className="highlight"> PHP</span> e
-              <span className="highlight"> Node.js</span>, aplicando boas
-              práticas de segurança, escalabilidade e documentação. Trabalho com
-              bancos relacionais e não relacionais, como
-              <span className="highlight"> MySQL</span>,
-              <span className="highlight"> MongoDB</span> e
-              <span className="highlight"> Firebase</span>, priorizando
-              consistência, desempenho e integração eficiente com o frontend.
-            </p>
-          </div>
-          <div className="image">
-            <img
-              src={backend}
-              className="big-icon"
-              alt="Backend and databases"
-            />
-          </div>
-        </div>
-      ),
-    },
-    {
-      content: (
-        <div className="slide-layout-about">
-          <div className="info">
-            <h1>Boas práticas</h1>
-            <p>
-              Estruturo aplicações seguindo padrões de
-              <span className="highlight"> arquitetura</span>,
-              <span className="highlight"> componentização</span> e
-              <span className="highlight"> organização de código</span>. Busco
-              entregar interfaces <span className="highlight">responsivas</span>
-              ,<span className="highlight"> acessíveis</span> e com
-              <span className="highlight"> alta performance</span>, sempre
-              priorizando código limpo, claro e escalável.
-            </p>
-          </div>
-          <div className="image">
-            <img
-              src={bestPractices}
-              className="big-icon"
-              alt="Best practices"
-            />
-          </div>
-        </div>
-      ),
-    },
-    {
-      content: (
-        <div className="slide-layout-about">
-          <div className="info">
-            <h1>
-              Ferramentas
-              <br />e qualidade
-            </h1>
-            <p>
-              Utilizo ferramentas que fortalecem o fluxo de desenvolvimento,
-              como
-              <span className="highlight"> Docker</span>,
-              <span className="highlight"> Postman</span> e metodologias de
-              testes. Trabalho com <span className="highlight">Git</span> para
-              versionamento, garantindo organização, rastreabilidade e
-              confiabilidade durante o desenvolvimento e entrega das aplicações.
-            </p>
-          </div>
-          <div className="image">
-            <img src={tools} className="big-icon" alt="Tools and quality" />
-          </div>
-        </div>
-      ),
-    },
-    {
-      content: (
-        <div className="slide-layout-about">
-          <div className="info">
-            <h1>Outros conhecimentos</h1>
-            <p>
-              Tenho experiência com linguagens como
-              <span className="highlight"> Python</span>,
-              <span className="highlight"> C</span> e
-              <span className="highlight"> C#</span> para automações, scripts e
-              desenvolvimento backend. Possuo facilidade em aprender novas
-              tecnologias e me adaptar rapidamente a diferentes ambientes e
-              demandas.
-            </p>
-          </div>
-          <div className="image">
-            <img
-              src={othersKnowledge}
-              className="big-icon"
-              alt="Others knowledge"
-            />
+        <div className="slide-layout-tech">
+          <h1 className="slide-h1">Hard Skills</h1>
+          <div className="tech-grid">
+            <div className="tech-card">
+              <h3 className="tech-category">Linguagens</h3>
+              <div className="container-tech">
+                <div className="tech-icon javascript">
+                  <IoLogoJavascript />
+                  <p className="tech-desc">Javascript</p>
+                </div>
+                <div className="tech-icon java">
+                  <FaJava />
+                  <p className="tech-desc">Java</p>
+                </div>
+                <div className="tech-icon php">
+                  <SiPhp />
+                  <p className="tech-desc">PHP</p>
+                </div>
+                <div className="tech-icon python">
+                  <SiPython />
+                  <p className="tech-desc">Python</p>
+                </div>
+              </div>
+            </div>
+            <div className="tech-card">
+              <h3 className="tech-category">Tecnologias Web</h3>
+              <div className="container-tech">
+                <div className="tech-icon react">
+                  {" "}
+                  <FaReact /> <p className="tech-desc">React.js</p>{" "}
+                </div>
+                <div className="tech-icon node">
+                  {" "}
+                  <FaNodeJs /> <p className="tech-desc">Node.js</p>{" "}
+                </div>
+                <div className="tech-icon postman">
+                  {" "}
+                  <FaCode /> <p className="tech-desc">Postman</p>{" "}
+                </div>
+              </div>
+            </div>
+            <div className="tech-card">
+              <h3 className="tech-category">Bancos de Dados</h3>
+              <div className="container-tech">
+                <div className="tech-icon mysql">
+                  {" "}
+                  <SiMysql /> <p className="tech-desc">MySQL</p>{" "}
+                </div>
+                <div className="tech-icon mongodb">
+                  {" "}
+                  <SiMongodb /> <p className="tech-desc">MongoDB</p>{" "}
+                </div>
+                <div className="tech-icon firebase">
+                  {" "}
+                  <SiFirebase /> <p className="tech-desc">Firebase</p>{" "}
+                </div>
+              </div>
+            </div>
+            <div className="tech-card">
+              <h3 className="tech-category">DevOps & Ferramentas</h3>
+              <div className="container-tech">
+                <div className="tech-icon docker">
+                  {" "}
+                  <FaDocker /> <p className="tech-desc">Docker</p>{" "}
+                </div>
+                <div className="tech-icon github">
+                  {" "}
+                  <VscGithub /> <p className="tech-desc">GitHub</p>{" "}
+                </div>
+                <div className="tech-icon git">
+                  {" "}
+                  <SiGit /> <p className="tech-desc">Git</p>{" "}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       ),
     },
     {
       content: (
-        <div className="slide-layout-about">
-          <div className="info">
-            <h1>Objetivos</h1>
-            <p>
-              Meu foco é atuar em projetos que valorizem
-              <span className="highlight"> qualidade</span>,
-              <span className="highlight"> boas práticas</span> e
-              <span className="highlight"> evolução constante</span>. Busco
-              contribuir para equipes e produtos, criando soluções completas que
-              unam usabilidade, desempenho e escalabilidade, sempre com foco no
-              crescimento como desenvolvedor fullstack.
-            </p>
-          </div>
-          <div className="image">
-            <img src={goals} className="big-icon" alt="Goals" />
+        <div className="slide-layout-softskills">
+          <h1 className="slide-h1">Soft Skills</h1>
+          <div className="softskills-grid">
+            <div className="slide-layout-softskills">
+              <div className="softskill-item">
+                <FaComments />
+                <p>
+                  Apresento soluções técnicas de forma clara e objetiva. No
+                  projeto Kara Arquitetura, mantive comunicação constante com o
+                  time para alinhar requisitos e entregar funcionalidades sem
+                  retrabalho.
+                </p>
+              </div>
+              <div className="softskill-item">
+                <FaUsers />
+                <p>
+                  Atuei de forma colaborativa em projetos acadêmicos e freelas,
+                  participando de pair programming, revisando PRs e apoiando
+                  colegas com dificuldades em lógica e estrutura de código.
+                </p>
+              </div>
+              <div className="softskill-item">
+                <FaBrain />
+                <p>
+                  No projeto Randplay, identifiquei gargalos no fluxo e
+                  implementei soluções que reduziram falhas e melhoraram o
+                  desempenho do backend.
+                </p>
+              </div>
+              <div className="softskill-item">
+                <FaLightbulb />
+                <p>
+                  Frequentemente proponho melhorias no código e na organização
+                  dos projetos. Em trabalhos da faculdade, assumi a liderança
+                  para estruturar tarefas e garantir que todos avançassem com
+                  clareza.
+                </p>
+              </div>
+              <div className="softskill-item">
+                <FaHandsHelping />
+                <p>
+                  Planejo e documento entregas usando boas práticas como
+                  versionamento organizado no Git, divisão modular de tarefas e
+                  padronização de commits.
+                </p>
+              </div>
+              <div className="softskill-item">
+                <FaHandsHelping />
+                <p>
+                  Adapto-me rapidamente a tecnologias e novas responsabilidades.
+                  Em projetos diferentes tive que alternar entre backend Java,
+                  frontend React, PHP e banco de dados conforme a necessidade.
+                </p>
+              </div>
+              <div className="softskill-item">
+                <FaHandsHelping />
+                <p>
+                  Mantive consistência nos estudos e entregas mesmo com alta
+                  carga de trabalho e transição de carreira, desenvolvendo
+                  capacidade de lidar com pressão e desafios técnicos.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       ),

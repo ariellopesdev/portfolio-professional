@@ -9,17 +9,6 @@ import Carousel from "../Carousel/Carousel";
 import { useVisibleState } from "../../hooks/useVisibleState";
 import useCarousel from "../../hooks/useCarousel";
 
-// Icons
-import { FaReact, FaJava, FaNodeJs, FaDocker, FaCode } from "react-icons/fa";
-import {
-  SiMysql,
-  SiMongodb,
-  SiFirebase,
-  SiPhp,
-  SiPython,
-} from "react-icons/si";
-import { VscGithub } from "react-icons/vsc";
-
 const blocks = [
   {
     content: (
@@ -89,91 +78,6 @@ const blocks = [
       </div>
     ),
   },
-  {
-    content: (
-      <div className="slide-layout-tech">
-        <h1 className="slide-h1">Hard Skills</h1>
-        <div className="tech-grid">
-          <div className="tech-card">
-            <h3 className="tech-category">Linguagens</h3>
-            <div className="container-tech">
-              <div className="tech-icon java">
-                <FaJava />
-                <p className="tech-desc">Java</p>
-              </div>
-              <div className="tech-icon php">
-                <SiPhp />
-                <p className="tech-desc">PHP</p>
-              </div>
-              <div className="tech-icon python">
-                <SiPython />
-                <p className="tech-desc">Python</p>
-              </div>
-              <div className="tech-icon c">
-                <VscGithub />
-                <p className="tech-desc">C</p>
-              </div>
-              <div className="tech-icon csharp">
-                <VscGithub />
-                <p className="tech-desc">C#</p>
-              </div>
-            </div>
-          </div>
-          <div className="tech-card">
-            <h3 className="tech-category">Frameworks & Bibliotecas</h3>
-            <div className="container-tech">
-              <div className="tech-icon react">
-                {" "}
-                <FaReact /> <p className="tech-desc">React.js</p>{" "}
-              </div>
-              <div className="tech-icon node">
-                {" "}
-                <FaNodeJs /> <p className="tech-desc">Node.js</p>{" "}
-              </div>
-              <div className="tech-icon postman">
-                {" "}
-                <FaCode /> <p className="tech-desc">Postman</p>{" "}
-              </div>
-            </div>
-          </div>
-          <div className="tech-card">
-            <h3 className="tech-category">Bancos de Dados</h3>
-            <div className="container-tech">
-              <div className="tech-icon mysql">
-                {" "}
-                <SiMysql /> <p className="tech-desc">MySQL</p>{" "}
-              </div>
-              <div className="tech-icon mongodb">
-                {" "}
-                <SiMongodb /> <p className="tech-desc">MongoDB</p>{" "}
-              </div>
-              <div className="tech-icon firebase">
-                {" "}
-                <SiFirebase /> <p className="tech-desc">Firebase</p>{" "}
-              </div>
-            </div>
-          </div>
-          <div className="tech-card">
-            <h3 className="tech-category">DevOps & Ferramentas</h3>
-            <div className="container-tech">
-              <div className="tech-icon docker">
-                {" "}
-                <FaDocker /> <p className="tech-desc">Docker</p>{" "}
-              </div>
-              <div className="tech-icon github">
-                {" "}
-                <VscGithub /> <p className="tech-desc">GitHub</p>{" "}
-              </div>
-              <div className="tech-icon git">
-                {" "}
-                <VscGithub /> <p className="tech-desc">Git</p>{" "}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    ),
-  },
 ];
 
 const Curriculum = () => {
@@ -187,10 +91,9 @@ const Curriculum = () => {
       <div className="sections-wrapper">
         <SectionInfo
           title="Currículo"
-          text="Minha Formação e Experiência"
+          text="Minha formação e experiência."
           isVisible={isVisible}
         />
-
         <SectionContent>
           <Carousel
             blocks={blocks}
