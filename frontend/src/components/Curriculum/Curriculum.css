@@ -2,7 +2,7 @@
    LISTA PRINCIPAL DO CURRÍCULO
 ------------------------------ */
 
-.slide-layout-curriculum {
+.slide-layout-experiences {
   display: flex;
   flex-direction: column;
   gap: 25px;
@@ -10,15 +10,7 @@
   padding: 0 4em;
 }
 
-.slide-layout-courses {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: 100%;
-  padding: 0 3em;
-}
-
-.slc-block {
+.experiences-item {
   display: flex;
   flex-direction: column;
   padding: 10px 15px;
@@ -28,72 +20,138 @@
   transition: 0.3s ease;
 }
 
-.slc-block:hover {
+.experiences-item:hover {
   border-left-color: #ff5f5f;
   transform: translateX(5px);
 }
 
-/* ------------------------------
-   TEXTO / TIPOGRAFIA
------------------------------- */
-
-.slc-block-year {
+.experiences-item-year {
   font-size: 0.9em;
   font-weight: 600;
   color: #7b61ff;
   margin-bottom: 0.5em;
 }
 
-.slc-block-title {
-  font-size: 1.1em;
+.experiences-item-title {
+  font-size: 1em;
   font-weight: 600;
   margin-bottom: 0.5em;
 }
 
-.slc-block-desc {
+.experiences-item-desc {
   font-size: 0.8em;
   opacity: 0.8;
-  /* line-height: 1.5; */
 }
 
-.tech-bar-bottom {
-  /* margin-top: 40px; */
+.slide-layout-courses {
+  position: relative;
   display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  justify-content: center;
-  opacity: 0.5;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 4em;
+  gap: 25px;
+}
+
+.courses-item {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 3px solid #7b61ff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
   transition: 0.3s ease;
 }
 
-.tech-bar-bottom:hover {
-  opacity: 1;
+.courses-item:hover {
+  border-left-color: #ff5f5f;
+  transform: translateX(5px);
+}
+
+.courses-year {
+  font-size: 0.9em;
+  font-weight: 600;
+  color: #7b61ff;
+  margin-bottom: 0.5em;
+}
+
+.courses-desc {
+  font-size: 0.9em;
+  opacity: 0.8;
+}
+
+.slide-layout-tech {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 4em;
+  gap: 20px;
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  width: 100%;
+}
+
+.tech-category {
+  color: #7b61ff;       
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.tech-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.container-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 .tech-icon {
-  font-size: 2.2em;
-  transition: 0.25s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.07);
+  box-shadow: 0 0 8px rgba(0,0,0,0.25);
+  transition: 0.3s ease;
 }
 
 .tech-icon:hover {
-  transform: scale(1.2);
-  color: #7b61ff;
+  transform: translateY(-2px);
+  border-left: 1px solid #ff5f5f;
 }
 
-/* ------------------------------
-   RESPONSIVO
------------------------------- */
-
-@media (max-width: 700px) {
-  .slide-layout-curriculum {
-    padding: 0.5em 0;
-  }
-
-  .sle-block {
-    padding-left: 10px;
-  }
-
-  .tech-icon {
-    font-size: 1.7em;
-  }
+.tech-icon svg {
+  font-size: 1.25rem;
+  opacity: 1;
 }
+
+.tech-desc {
+  font-size: 0.75rem;
+  opacity: 0.85;
+}
+
+.tech-icon.java svg { color: #f89820; }   
+.tech-icon.php svg { color: #4f5d95; }     
+.tech-icon.python svg { color: #3776ab; }   
+.tech-icon.c svg { color: #a8a9ad; }      
+.tech-icon.csharp svg { color: #68217a; }
+.tech-icon.react svg { color: #61dafb; }   
+.tech-icon.node svg { color: #83cd29; }    
+.tech-icon.postman svg { color: #ff6c37; } 
+.tech-icon.mysql svg { color: #00618a; }    
+.tech-icon.mongodb svg { color: #4db33d; }  
+.tech-icon.firebase svg { color: #ffca28; } 
+.tech-icon.docker svg { color: #2496ed; }   
+.tech-icon.github svg { color: #ffffff; }    
+.tech-icon.git svg { color: #f1502f; }     
