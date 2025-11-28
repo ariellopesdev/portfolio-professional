@@ -1,4 +1,4 @@
-/* ================= Aside ================= */
+/************** ASIDE **************/
 
 aside {
   position: fixed;
@@ -14,7 +14,7 @@ aside {
   z-index: 1000;
 }
 
-/* ================= Lista de ícones ================= */
+/************** ICON LIST **************/
 
 #aside-block {
   position: relative;
@@ -56,7 +56,7 @@ aside {
   width: 35px;
 }
 
-/* ================= Scroll Icon ================= */
+/************** ICON SCROLL **************/
 
 #scroll-text {
   position: absolute;
@@ -98,7 +98,7 @@ aside {
   background-color: #fff;
 }
 
-/* ================= Media Queries ================= */
+/************** RESPONSIVE **************/
 
 @media (max-width: 767px) {
   #aside-block {
