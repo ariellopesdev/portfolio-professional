@@ -12,10 +12,10 @@ const Moon = ({ isVisible }) => {
   const starsRef = useRef([]);
   const [visibleState, setVisibleState] = useState(false);
 
-  //Gera posições das estrelas apenas uma vez
+  //GENERATES STAR POSITIONS ONLY ONCE
   if (starsRef.current.length === 0) {
     starsRef.current = Array.from({ length: 60 }).map(() => {
-      const size = Math.random() * 2 + 1; // 1 - 3px
+      const size = Math.random() * 2 + 1;
       const top = Math.random() * 100;
       const left = Math.random() * 100;
       const delay = Math.random() * 4;
@@ -30,13 +30,12 @@ const Moon = ({ isVisible }) => {
       const x = (e.clientX - innerWidth / 2) / innerWidth;
       const y = (e.clientY - innerHeight / 2) / innerHeight;
 
-      //Movimento inverso (efeito parallax)
+      //REVERSE MOVEMENTE(PARALLAX EFFECT)
       const moveX = x * -40;
       const moveY = y * -40;
 
       moonOrbit.style.transform = `translate(${moveX}px, calc(-50% + ${moveY}px))`;
     };
-
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
@@ -48,7 +47,6 @@ const Moon = ({ isVisible }) => {
     }else {
       setVisibleState(false);
     }
-
     return ()=> clearTimeout(t);
   },[]);
 
@@ -65,7 +63,7 @@ const Moon = ({ isVisible }) => {
 
   return (
     <div className="moon-orbit" ref={moonOrbitRef}>
-      {/* Lua */}
+      {/* Moon */}
       <div className={`moon ${visibleState ? "moon-visible" : "moon-hidden"}`}>
         <img
           src={photoPortfolio}
@@ -73,13 +71,11 @@ const Moon = ({ isVisible }) => {
           className="portfolio-image"
         />
       </div>
-
-      {/* Anéis */}
+      {/* Rings */}
       {[...Array(5)].map((_, i) => (
         <div key={i} className={`ring ring-${i + 1}`}></div>
       ))}
-
-      {/* Ring 6 com estrelas */}
+      {/* Ring 6 with stars */}
       <div className="ring ring-6">
         {starsRef.current.map((star, i) => (
           <div

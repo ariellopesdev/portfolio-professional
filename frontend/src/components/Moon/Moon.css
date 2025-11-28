@@ -1,4 +1,4 @@
-/* Container dos anéis */
+/************** RING'S CONTAINER **************/
 .moon-orbit {
   position: fixed;
   top: 50%;
@@ -11,7 +11,7 @@
   pointer-events: none;
 }
 
-/* Lua central */
+/************** MOON IN THE MIDDLE **************/
 .moon {
   position: absolute;
   top: 50%;
@@ -49,7 +49,7 @@
   pointer-events: none;
 }
 
-/* Anéis */
+/************** RINGS **************/
 .ring {
   position: absolute;
   top: 50%;
@@ -61,7 +61,7 @@
   z-index: 1;
 }
 
-/* ===== Cores e tamanhos progressivos ===== */
+/************** COLORS AND PROGRESSIVE SIZES **************/
 .ring-1 {
   width: 40em;
   height: 40em;
@@ -119,6 +119,7 @@
   filter: drop-shadow(0 0 2px #fff);
 }
 
+/************** TWINKLING OF THE STARS **************/
 @keyframes twinkle {
   0%,
   100% {
@@ -131,6 +132,7 @@
   }
 }
 
+/************** RESPONSIVE **************/
 @media (max-width: 767px) {
   .moon-orbit {
     width: 300px;
