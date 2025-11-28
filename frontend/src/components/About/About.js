@@ -16,7 +16,7 @@ import fullStackImg from "../../assets/images/full-stack-developer.png";
 import stackPrincipal from "../../assets/images/stack-principal.png";
 import logo from "../../assets/images/logo.png";
 
-//Icons
+// Icons (Hard & Soft Skills)
 import {
   FaReact,
   FaJava,
@@ -41,16 +41,25 @@ import {
 import { VscGithub } from "react-icons/vsc";
 import { IoLogoJavascript } from "react-icons/io5";
 
+// ================================
+// MAIN COMPONENT — About Section
+// ================================
 const About = () => {
+  // Accordion state — ensures only one stays open
   const [openAcc, setOpenAcc] = useState(1);
 
+  // Accordion controller — prevents closing the currently open one
   const toggleAcc = (id) => {
     if (openAcc === id) return;
     setOpenAcc(id);
   };
 
+  // ================================
+  // CAROUSEL BLOCKS (Slides Content)
+  // ================================
   const blocks = [
     {
+      // Slide 1 — Introduction / Fullstack Overview
       content: (
         <div className="slide-layout-about">
           <div className="info">
@@ -81,6 +90,7 @@ const About = () => {
       ),
     },
     {
+      // Slide 2 — Main Stack
       content: (
         <div className="slide-layout-about">
           <div className="info">
@@ -113,6 +123,7 @@ const About = () => {
       ),
     },
     {
+      // Slide 3 — Hard Skills Grid
       content: (
         <div className="slide-layout-tech">
           <h1>Hard Skills</h1>
@@ -142,16 +153,13 @@ const About = () => {
               <h3 className="tech-category">Tecnologias Web</h3>
               <div className="container-tech">
                 <div className="tech-icon react">
-                  {" "}
-                  <FaReact /> <p className="tech-desc">React.js</p>{" "}
+                  <FaReact /> <p className="tech-desc">React.js</p>
                 </div>
                 <div className="tech-icon node">
-                  {" "}
-                  <FaNodeJs /> <p className="tech-desc">Node.js</p>{" "}
+                  <FaNodeJs /> <p className="tech-desc">Node.js</p>
                 </div>
                 <div className="tech-icon postman">
-                  {" "}
-                  <FaCode /> <p className="tech-desc">Postman</p>{" "}
+                  <FaCode /> <p className="tech-desc">Postman</p>
                 </div>
               </div>
             </div>
@@ -159,16 +167,13 @@ const About = () => {
               <h3 className="tech-category">Bancos de Dados</h3>
               <div className="container-tech">
                 <div className="tech-icon mysql">
-                  {" "}
-                  <SiMysql /> <p className="tech-desc">MySQL</p>{" "}
+                  <SiMysql /> <p className="tech-desc">MySQL</p>
                 </div>
                 <div className="tech-icon mongodb">
-                  {" "}
-                  <SiMongodb /> <p className="tech-desc">MongoDB</p>{" "}
+                  <SiMongodb /> <p className="tech-desc">MongoDB</p>
                 </div>
                 <div className="tech-icon firebase">
-                  {" "}
-                  <SiFirebase /> <p className="tech-desc">Firebase</p>{" "}
+                  <SiFirebase /> <p className="tech-desc">Firebase</p>
                 </div>
               </div>
             </div>
@@ -176,16 +181,13 @@ const About = () => {
               <h3 className="tech-category">DevOps & Ferramentas</h3>
               <div className="container-tech">
                 <div className="tech-icon docker">
-                  {" "}
-                  <FaDocker /> <p className="tech-desc">Docker</p>{" "}
+                  <FaDocker /> <p className="tech-desc">Docker</p>
                 </div>
                 <div className="tech-icon github">
-                  {" "}
-                  <VscGithub /> <p className="tech-desc">GitHub</p>{" "}
+                  <VscGithub /> <p className="tech-desc">GitHub</p>
                 </div>
                 <div className="tech-icon git">
-                  {" "}
-                  <SiGit /> <p className="tech-desc">Git</p>{" "}
+                  <SiGit /> <p className="tech-desc">Git</p>
                 </div>
               </div>
             </div>
@@ -194,6 +196,7 @@ const About = () => {
       ),
     },
     {
+      // Slide 4 — Soft Skills Accordion
       content: (
         <div id="slide-layout-softskills">
           <h1>Soft Skills</h1>
@@ -225,7 +228,7 @@ const About = () => {
                 <p>
                   Atuei de forma colaborativa em projetos acadêmicos e freelas,
                   participando de pair programming, revisando PRs e apoiando
-                  colegas com dificuldades em lógica e estrutura de código.{" "}
+                  colegas com dificuldades em lógica e estrutura de código.
                 </p>
               </div>
             </div>
@@ -295,10 +298,17 @@ const About = () => {
       ),
     },
   ];
+
+  // ================================
+  // CAROUSEL & VISIBILITY HOOKS
+  // ================================
   const { index, anim, prev, next, goTo, onTouchStart, onTouchEnd } =
     useCarousel(blocks.length);
   const { ref, isVisible } = useVisibleState(0.3);
 
+  // ================================
+  // MAIN RENDER
+  // ================================
   return (
     <section id="about" ref={ref}>
       <div className="sections-wrapper">
