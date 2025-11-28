@@ -13,6 +13,9 @@ import { useVisibleState } from "../../hooks/useVisibleState";
 import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 
+// ================================
+// MAIN COMPONENT — Contact Section
+// ================================
 const Contact = () => {
   const { ref, isVisible } = useVisibleState(0.3);
   const [message, setMessage] = useState("");
