@@ -1,3 +1,5 @@
+/************** MAIN **************/
+
 #block-left-main {
   display: inline-block;
 }
@@ -13,8 +15,8 @@
   white-space: pre-line;
   will-change: transform, opacity;
   z-index: 10;
-  opacity: 0; /* invisível por padrão */
-  transform: translateX(-50px); /* começa à esquerda */
+  opacity: 0; 
+  transform: translateX(-50px); 
   transition: transform 0.6s ease-out, opacity 0.6s ease-out;
 }
 
@@ -27,20 +29,20 @@
   white-space: pre-line;
   will-change: transform, opacity;
   z-index: 10;
-  opacity: 0; /* invisível por padrão */
+  opacity: 0; 
   transform: translateX(-50px);
   transition: transform 0.6s ease-out, opacity 0.6s ease-out;
 }
 
-/* ================= Reset pré-animação ================= */
+/************** RESET PRE-ANIMATION **************/
 #main h1.reset,
 #main h2.reset {
   opacity: 0;
   transform: translateX(-50px);
-  transition: none; /* sem transição enquanto rola */
+  transition: none; 
 }
 
-/* ================= Aparece da esquerda ================= */
+/************** ANIMATION COMES FROM LEFT **************/
 #main h1.visible,
 #main h2.visible {
   opacity: 1 !important;
@@ -49,15 +51,15 @@
   transition-delay: 0.3s;
 }
 
-/* ================= Desaparece sem deslizar ================= */
+/************** ANIMATION DISAPPEARS WITHOUT SLIDING **************/
 #main h1.hidden,
 #main h2.hidden {
   opacity: 0 !important;
-  transform: translateX(0) !important; /* não desliza */
+  transform: translateX(0) !important; 
   transition: opacity 0.3s ease-out;
 }
 
-/* ================= Staggered animation ================= */
+/************** STAGGERED ANIMATION **************/
 #main h1.visible {
   transition-delay: 0.1s;
 }
@@ -65,7 +67,7 @@
   transition-delay: 0.5s;
 }
 
-/* ================= Media Queries ================= */
+/************** RESPONSIVE **************/
 
 @media (max-width: 767px) {
   #main {
