@@ -77,14 +77,10 @@
 }
 
 .tech-category {
-  color: #7b61ff;
+  color: #fff;
   font-weight: 600;
   letter-spacing: 0.5px;
   font-size: 0.9em;
-}
-
-.tech-card:hover .tech-category {
-  color: #ff5f5f; /* muda quando o card é hover */
 }
 
 .tech-card {
@@ -102,6 +98,7 @@
 .tech-card:hover {
   border-left: 2px solid #ff5f5f;
   transform: translateX(5px);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .container-tech {
@@ -118,6 +115,7 @@
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
   transition: 0.3s ease;
   border-radius: 6px;
+  cursor: pointer;
 }
 
 .tech-icon:hover {
@@ -174,45 +172,69 @@
   color: #f1502f;
 }
 
-
-/* Responsive */
-@media (max-width: 780px) {
-  .slide-layout-about {
-    flex-direction: column;
-    padding: 2em;
-    text-align: center;
-  }
-
-  .slide-layout-about .info {
-    width: 100%;
-  }
-
-  .slide-layout-about .image {
-    width: 100%;
-    margin-top: 25px;
-  }
-
-  .big-icon {
-    width: 110px;
-    height: 110px;
-  }
+/************** SOFT SKILLS **************/
+#slide-layout-softskills {
+  width: 100%;
+  padding: 0 4em;
+  display: flex;
+  flex-direction: column;
 }
 
-@media (max-width: 480px) {
-  .slide-layout-about {
-    padding: 1.6em;
-  }
+.softskills-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  height: 300px;
+  margin-top: 20px;
+}
 
-  .slide-layout-about .info h1 {
-    font-size: 1.4em;
-  }
+.accordion-item {
+  width: 100%;
+}
 
-  .slide-layout-about .info p {
-    font-size: 0.9em;
-  }
+.accordion-item.open .accordion-header {
+  border-left: 2px solid #ff5f5f !important;
+}
 
-  .big-icon {
-    width: 90px;
-    height: 90px;
-  }
+/* HEADER */
+.accordion-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: .9rem;
+  font-weight: 600;
+  padding: 5px 10px;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.25);
+  border-left: 2px solid #7b61ff;
+  cursor: pointer;
+  transition: 0.3s ease;
+  color: #fff;
+}
+
+.accordion-header:hover{
+  border-left: 2px solid #ff5f5f;
+}
+
+.accordion-header svg {
+  color: #7b61ff;
+  font-size: 1.4rem;
+}
+
+/* CONTEÚDO FECHADO */
+.accordion-content {
+  line-height: 1.4;
+  font-size: 0.8rem;
+  max-height: 0;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0 18px;
+  border-left: 2px solid #5fa8ff20;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+/* CONTEÚDO ABERTO */
+.accordion-content.open {
+  padding: 10px;
+  max-height: 200px;
 }

@@ -39,7 +39,7 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 3em;
+  font-size: 2.5em;
   color: #fff;
   background: none;
   border: none;
@@ -64,7 +64,7 @@
 /* Dots */
 .carousel-dots {
   position: absolute;
-  bottom: 20px;
+  bottom: 15px;
   display: flex;
   gap: 8px;
 }

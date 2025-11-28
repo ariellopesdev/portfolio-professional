@@ -9,6 +9,7 @@ import Carousel from "../Carousel/Carousel";
 // Hooks
 import { useVisibleState } from "../../hooks/useVisibleState";
 import useCarousel from "../../hooks/useCarousel";
+import { useState } from "react";
 
 //Images
 import fullStackImg from "../../assets/images/full-stack-developer.png";
@@ -25,8 +26,9 @@ import {
   FaUsers,
   FaComments,
   FaBrain,
-  FaHandsHelping,
+  FaTasks,
   FaLightbulb,
+  FaShieldAlt,
 } from "react-icons/fa";
 import {
   SiMysql,
@@ -40,6 +42,13 @@ import { VscGithub } from "react-icons/vsc";
 import { IoLogoJavascript } from "react-icons/io5";
 
 const About = () => {
+  const [openAcc, setOpenAcc] = useState(1);
+
+  const toggleAcc = (id) => {
+    if (openAcc === id) return;
+    setOpenAcc(id);
+  };
+
   const blocks = [
     {
       content: (
@@ -50,16 +59,17 @@ const About = () => {
               Sou <span className="highlight">Dev Fullstack</span>
             </h1>
             <p>
-              Construo sites, sistemas e web apps com
-              <span className="highlight"> React.js</span> no frontend e
+              Desenvolvo sites, sistemas e aplicações web completas usando
+              <span className="highlight"> React.js</span> no frontend, e
               <span className="highlight"> Java</span> e
               <span className="highlight"> PHP</span> no backend. Também
-              trabalho com
-              <span className="highlight"> Node.js/Express</span> para APIs e
-              MySQL, MongoDB e Firebase para banco de dados.
+              construo e integro APIs com
+              <span className="highlight"> Node.js/Express</span>, além de
+              trabalhar com <span className="highlight">MySQL</span>,
+              <span className="highlight"> MongoDB</span> e
+              <span className="highlight"> Firebase</span> para bancos de dados.
             </p>
           </div>
-
           <div className="image">
             <img
               src={fullStackImg}
@@ -76,15 +86,20 @@ const About = () => {
           <div className="info">
             <h1>Stack principal</h1>
             <p>
-              Trabalho com o ecossistema JavaScript usando
+              Minha principal stack está focada no ecossistema JavaScript,
+              utilizando
               <span className="highlight"> React.js</span> para criar interfaces
-              modernas. Utilizo Redux Toolkit para gerenciamento de estado e
-              realizo integrações com{" "}
-              <span className="highlight"> APIs REST</span> que desenvolvo em{" "}
-              <span className="highlight"> Java</span> e
-              <span className="highlight"> PHP</span>. Versionamento com
+              modernas e responsivas. <br />
+              <br />
+              No backend, desenvolvo e consumo
+              <span className="highlight"> APIs</span> construídas em
+              <span className="highlight"> Java</span>,
+              <span className="highlight"> PHP</span> e
+              <span className="highlight"> Node.js</span>. Além disso, utilizo
+              práticas de versionamento com
               <span className="highlight"> Git</span> e
-              <span className="highlight"> GitHub</span>.
+              <span className="highlight"> GitHub</span> para garantir
+              organização e colaboração nos projetos.
             </p>
           </div>
           <div className="image">
@@ -100,7 +115,7 @@ const About = () => {
     {
       content: (
         <div className="slide-layout-tech">
-          <h1 className="slide-h1">Hard Skills</h1>
+          <h1>Hard Skills</h1>
           <div className="tech-grid">
             <div className="tech-card">
               <h3 className="tech-category">Linguagens</h3>
@@ -180,12 +195,17 @@ const About = () => {
     },
     {
       content: (
-        <div className="slide-layout-softskills">
-          <h1 className="slide-h1">Soft Skills</h1>
-          <div className="softskills-grid">
-            <div className="slide-layout-softskills">
-              <div className="softskill-item">
+        <div id="slide-layout-softskills">
+          <h1>Soft Skills</h1>
+          <div className="softskills-accordion">
+            <div className={`accordion-item ${openAcc === 1 ? "open" : ""}`}>
+              <div className="accordion-header" onClick={() => toggleAcc(1)}>
                 <FaComments />
+                Comunicação
+              </div>
+              <div
+                className={`accordion-content ${openAcc === 1 ? "open" : ""}`}
+              >
                 <p>
                   Apresento soluções técnicas de forma clara e objetiva. No
                   projeto Kara Arquitetura, mantive comunicação constante com o
@@ -193,24 +213,45 @@ const About = () => {
                   retrabalho.
                 </p>
               </div>
-              <div className="softskill-item">
+            </div>
+            <div className={`accordion-item ${openAcc === 2 ? "open" : ""}`}>
+              <div className="accordion-header" onClick={() => toggleAcc(2)}>
                 <FaUsers />
+                Trabalho em equipe
+              </div>
+              <div
+                className={`accordion-content ${openAcc === 2 ? "open" : ""}`}
+              >
                 <p>
                   Atuei de forma colaborativa em projetos acadêmicos e freelas,
                   participando de pair programming, revisando PRs e apoiando
-                  colegas com dificuldades em lógica e estrutura de código.
+                  colegas com dificuldades em lógica e estrutura de código.{" "}
                 </p>
               </div>
-              <div className="softskill-item">
+            </div>
+            <div className={`accordion-item ${openAcc === 3 ? "open" : ""}`}>
+              <div className="accordion-header" onClick={() => toggleAcc(3)}>
                 <FaBrain />
+                Resolução de problemas
+              </div>
+              <div
+                className={`accordion-content ${openAcc === 3 ? "open" : ""}`}
+              >
                 <p>
                   No projeto Randplay, identifiquei gargalos no fluxo e
                   implementei soluções que reduziram falhas e melhoraram o
                   desempenho do backend.
                 </p>
               </div>
-              <div className="softskill-item">
+            </div>
+            <div className={`accordion-item ${openAcc === 4 ? "open" : ""}`}>
+              <div className="accordion-header" onClick={() => toggleAcc(4)}>
                 <FaLightbulb />
+                Proatividade & Liderança
+              </div>
+              <div
+                className={`accordion-content ${openAcc === 4 ? "open" : ""}`}
+              >
                 <p>
                   Frequentemente proponho melhorias no código e na organização
                   dos projetos. Em trabalhos da faculdade, assumi a liderança
@@ -218,24 +259,30 @@ const About = () => {
                   clareza.
                 </p>
               </div>
-              <div className="softskill-item">
-                <FaHandsHelping />
+            </div>
+            <div className={`accordion-item ${openAcc === 5 ? "open" : ""}`}>
+              <div className="accordion-header" onClick={() => toggleAcc(5)}>
+                <FaTasks />
+                Organização
+              </div>
+              <div
+                className={`accordion-content ${openAcc === 5 ? "open" : ""}`}
+              >
                 <p>
                   Planejo e documento entregas usando boas práticas como
                   versionamento organizado no Git, divisão modular de tarefas e
                   padronização de commits.
                 </p>
               </div>
-              <div className="softskill-item">
-                <FaHandsHelping />
-                <p>
-                  Adapto-me rapidamente a tecnologias e novas responsabilidades.
-                  Em projetos diferentes tive que alternar entre backend Java,
-                  frontend React, PHP e banco de dados conforme a necessidade.
-                </p>
+            </div>
+            <div className={`accordion-item ${openAcc === 6 ? "open" : ""}`}>
+              <div className="accordion-header" onClick={() => toggleAcc(6)}>
+                <FaShieldAlt />
+                Resiliência
               </div>
-              <div className="softskill-item">
-                <FaHandsHelping />
+              <div
+                className={`accordion-content ${openAcc === 6 ? "open" : ""}`}
+              >
                 <p>
                   Mantive consistência nos estudos e entregas mesmo com alta
                   carga de trabalho e transição de carreira, desenvolvendo
