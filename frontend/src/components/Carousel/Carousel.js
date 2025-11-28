@@ -1,9 +1,10 @@
-// Carousel.css
+// CSS
 import "./Carousel.css";
 
-// Icons
+// Icons (Chevron)
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
+//Receives props to control navigation, animation, and touch interaction
 const Carousel = ({
   blocks,
   index,
@@ -20,11 +21,10 @@ const Carousel = ({
       onTouchStart={onTouchStart}
       onTouchEnd={onTouchEnd}
     >
-      {/* Arrows */}
+      {/* Chevron */}
       <button className="carousel-arrow left" onClick={prev}>
         <FaChevronLeft />
       </button>
-
       <button className="carousel-arrow right" onClick={next}>
         <FaChevronRight />
       </button>
