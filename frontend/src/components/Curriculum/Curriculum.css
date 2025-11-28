@@ -1,9 +1,9 @@
-/************** H1 Padrozination on Curriculum ************/
+/************** H1 STANTARDIZED **************/
 .slide-h1 {
   font-weight: 700;
 }
 
-/************** Card Experiences ************/
+/************** CARD EXPERIENCES **************/
 .slide-layout-experiences {
   display: flex;
   flex-direction: column;
@@ -45,8 +45,7 @@
   opacity: 0.8;
 }
 
-/************** Card Courses ************/
-
+/************** CARD COURSES **************/
 .slide-layout-courses {
   position: relative;
   display: flex;
@@ -76,6 +75,10 @@
   font-weight: 600;
   color: #7b61ff;
   margin-bottom: 0.5em;
+}
+
+.courses-year:not(:first-child) {
+  margin-top: 10px;
 }
 
 .courses-desc {

@@ -4,6 +4,9 @@ import "./SectionInfo.css";
 //Two Lines
 import TwoLines from "../TwoLines/TwoLines";
 
+//Currículo
+import curriculoPdf from "../../assets/curriculo_ariel_lopes.pdf";
+
 const SectionInfo = ({
   title,
   text,
@@ -12,10 +15,21 @@ const SectionInfo = ({
   buttonLink,
   color = "ff5f5f",
   externalLink,
-  contacts = [], 
+  contacts = [],
 }) => {
   const handleClick = () => {
-    if (buttonLink) {
+    if (!buttonLink) return;
+
+    // Se o botão é do currículo PDF
+    if (buttonLink === "pdf") {
+      window.open(curriculoPdf, "_blank", "noopener,noreferrer");
+      return;
+    }
+    // Se for link externo normal
+    if (externalLink) {
+      window.open(buttonLink, "_blank", "noopener,noreferrer");
+    } else {
+      // Navegação interna
       window.location.href = buttonLink;
     }
   };
@@ -45,7 +59,6 @@ const SectionInfo = ({
           ))}
         </div>
       )}
-
       {buttonText && buttonLink && (
         <button
           className={`btn-navigate ${isVisible ? "visible" : "reset"}`}

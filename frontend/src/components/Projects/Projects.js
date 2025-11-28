@@ -19,6 +19,7 @@ const Projects = () => {
           isVisible={isVisible}
           buttonText="Ver todos os projetos"
           buttonLink="/all-projects"
+          externalLink={false}
         />
         <SectionContent>
           <div className="projects-grid">
