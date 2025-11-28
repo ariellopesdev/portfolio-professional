@@ -1,4 +1,4 @@
-/* ================= Header ================= */
+/************** HEADER **************/
 header {
   position: fixed;
   top: 0;
@@ -27,7 +27,7 @@ header h1 {
   z-index: 10000;
 }
 
-/* ================= Lista de ícones ================= */
+/************** LIST OF ICONS **************/
 #ul-header {
   list-style: none;
   display: flex;
@@ -58,7 +58,7 @@ header h1 {
   transition: color 0.2s ease;
 }
 
-/* ================= Botão de menu ================= */
+/************** MENU BUTTON **************/
 #menu-btn {
   display: flex;
   align-items: center;
@@ -85,7 +85,7 @@ header h1 {
   transition: color 0.2s ease;
 }
 
-/* =================== MENU FULLSCREEN =================== */
+/************** MENU FULLSCREEN **************/
 .fullscreen-menu {
   position: fixed;
   top: 0;
@@ -134,7 +134,7 @@ header h1 {
 
 }
 
-/* =================== Botão de fechar o menu =================== */
+/************** CLOSE MENU BUTTON **************/
 .close-btn {
   position: absolute;
   top: .4em;

@@ -2,7 +2,7 @@
 import "./Navbar.css";
 
 //Router
-import { NavLink, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 //Hooks
 import { useState } from "react";
@@ -68,33 +68,83 @@ const Navbar = () => {
           )}
         </button>
       </div>
-      <nav className={`fullscreen-menu ${menuOpen ? "active" : ""}`}>
+      <nav className={`fullscreen-menu ${menuOpen ? "active" : "closing"}`}>
         <button className="close-btn" onClick={closeMenu}>
           <FaTimes />
         </button>
         <ul>
           <li>
-            <NavLink to="/" onClick={closeMenu}>
+            <NavLink
+              to="/"
+              onClick={() => {
+                closeMenu();
+                setTimeout(() => {
+                  document
+                    .getElementById("main")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                }, 50);
+              }}
+            >
               HOME
             </NavLink>
           </li>
           <li>
-            <NavLink to="/projects" onClick={closeMenu}>
+            <NavLink
+              to="/"
+              onClick={() => {
+                closeMenu();
+                setTimeout(() => {
+                  document
+                    .getElementById("projects")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                }, 50);
+              }}
+            >
               PROJETOS
             </NavLink>
           </li>
           <li>
-            <NavLink to="/about" onClick={closeMenu}>
+            <NavLink
+              to="/"
+              onClick={() => {
+                closeMenu();
+                setTimeout(() => {
+                  document
+                    .getElementById("about")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                }, 50);
+              }}
+            >
               SOBRE MIM
             </NavLink>
           </li>
           <li>
-            <NavLink to="/curriculum" onClick={closeMenu}>
+            <NavLink
+              to="/"
+              onClick={() => {
+                closeMenu();
+                setTimeout(() => {
+                  document
+                    .getElementById("curriculum")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                }, 50);
+              }}
+            >
               CURRÍCULO
             </NavLink>
           </li>
           <li>
-            <NavLink to="/contact" onClick={closeMenu}>
+            <NavLink
+              to="/"
+              onClick={() => {
+                closeMenu();
+                setTimeout(() => {
+                  document
+                    .getElementById("contact")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                }, 50);
+              }}
+            >
               CONTATO
             </NavLink>
           </li>
