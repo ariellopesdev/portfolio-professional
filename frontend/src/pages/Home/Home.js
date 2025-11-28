@@ -12,25 +12,19 @@ import Curriculum from "../../components/Curriculum/Curriculum";
 import Contact from "../../components/Contact/Contact";
 
 //Hooks
-import useScrollEffect from "../../hooks/useScrollEffect";
+import { useScrollEffect } from "../../hooks/useScrollEffect";
 
 const Home = () => {
-  const sections = [
-    "main",
-    "projects",
-    "about",
-    "curriculum",
-    "contact",
-  ];
+  const sections = ["main", "projects", "about", "curriculum", "contact"];
 
-  const { currentSection, isReady } =
+  const { currentSection, isReady, scrollToSection } =
     useScrollEffect(sections);
 
   if (!isReady) return null;
 
   return (
     <div id="home">
-      <Navbar />
+      <Navbar scrollToSection={scrollToSection} />
       <Aside currentSection={Math.min(currentSection, 4)} />
       <Main isVisible={currentSection === 0} />
       <Moon isVisible={currentSection === 0} />

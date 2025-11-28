@@ -2,7 +2,7 @@
 import "./Navbar.css";
 
 //Router
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 //Hooks
 import { useState } from "react";
@@ -17,7 +17,7 @@ import {
 } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 
-const Navbar = () => {
+const Navbar = ({ scrollToSection }) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
@@ -78,11 +78,7 @@ const Navbar = () => {
               to="/"
               onClick={() => {
                 closeMenu();
-                setTimeout(() => {
-                  document
-                    .getElementById("main")
-                    ?.scrollIntoView({ behavior: "smooth" });
-                }, 50);
+                scrollToSection(0);
               }}
             >
               HOME
@@ -93,11 +89,7 @@ const Navbar = () => {
               to="/"
               onClick={() => {
                 closeMenu();
-                setTimeout(() => {
-                  document
-                    .getElementById("projects")
-                    ?.scrollIntoView({ behavior: "smooth" });
-                }, 50);
+                scrollToSection(1);
               }}
             >
               PROJETOS
@@ -108,11 +100,7 @@ const Navbar = () => {
               to="/"
               onClick={() => {
                 closeMenu();
-                setTimeout(() => {
-                  document
-                    .getElementById("about")
-                    ?.scrollIntoView({ behavior: "smooth" });
-                }, 50);
+                scrollToSection(2);
               }}
             >
               SOBRE MIM
@@ -123,11 +111,7 @@ const Navbar = () => {
               to="/"
               onClick={() => {
                 closeMenu();
-                setTimeout(() => {
-                  document
-                    .getElementById("curriculum")
-                    ?.scrollIntoView({ behavior: "smooth" });
-                }, 50);
+                scrollToSection(3);
               }}
             >
               CURRÍCULO
@@ -138,11 +122,7 @@ const Navbar = () => {
               to="/"
               onClick={() => {
                 closeMenu();
-                setTimeout(() => {
-                  document
-                    .getElementById("contact")
-                    ?.scrollIntoView({ behavior: "smooth" });
-                }, 50);
+                scrollToSection(4);
               }}
             >
               CONTATO
