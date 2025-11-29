@@ -20,16 +20,14 @@ const SectionInfo = ({
   const handleClick = () => {
     if (!buttonLink) return;
 
-    // Se o botão é do currículo PDF
+    // Link conditions
     if (buttonLink === "pdf") {
       window.open(curriculoPdf, "_blank", "noopener,noreferrer");
       return;
     }
-    // Se for link externo normal
     if (externalLink) {
       window.open(buttonLink, "_blank", "noopener,noreferrer");
     } else {
-      // Navegação interna
       window.location.href = buttonLink;
     }
   };
@@ -37,11 +35,8 @@ const SectionInfo = ({
   return (
     <div className="section-info">
       <h1 className={isVisible ? "visible" : "reset"}>{title}</h1>
-
       <TwoLines isVisible={isVisible} color={color} />
-
       <p className={isVisible ? "visible" : "reset"}>{text}</p>
-
       {contacts.length > 0 && (
         <div className={`contacts-wrapper ${isVisible ? "visible" : "reset"}`}>
           {contacts.map(({ icon: Icon, href, label }, index) => (
