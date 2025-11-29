@@ -18,7 +18,7 @@ const Projects = () => {
           text="Trabalhos que desenvolvi, unindo desempenho, usabilidade e boas práticas."
           isVisible={isVisible}
           buttonText="Ver todos os projetos"
-          buttonLink="/all-projects"
+          buttonLink="projects"
           externalLink={false}
         />
         <SectionContent>

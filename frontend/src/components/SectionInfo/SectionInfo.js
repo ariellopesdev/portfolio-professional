@@ -7,6 +7,9 @@ import TwoLines from "../TwoLines/TwoLines";
 //Currículo
 import curriculoPdf from "../../assets/curriculo_ariel_lopes.pdf";
 
+//Router
+import { useNavigate } from "react-router-dom";
+
 const SectionInfo = ({
   title,
   text,
@@ -17,10 +20,11 @@ const SectionInfo = ({
   externalLink,
   contacts = [],
 }) => {
+  const navigate = useNavigate();
   const handleClick = () => {
     if (!buttonLink) return;
 
-    // Link conditions
+    // PDF
     if (buttonLink === "pdf") {
       window.open(curriculoPdf, "_blank", "noopener,noreferrer");
       return;
@@ -28,7 +32,7 @@ const SectionInfo = ({
     if (externalLink) {
       window.open(buttonLink, "_blank", "noopener,noreferrer");
     } else {
-      window.location.href = buttonLink;
+      navigate(buttonLink);
     }
   };
 
