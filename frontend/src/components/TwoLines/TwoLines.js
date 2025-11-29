@@ -1,3 +1,4 @@
+//CSS
 import "./TwoLines.css";
 
 const TwoLines = ({ isVisible = false, color = "ff5f5f" }) => {
