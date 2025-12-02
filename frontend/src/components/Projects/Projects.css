@@ -1,182 +1,82 @@
-/************************************
-             MAIN BLOCK
-************************************/
-
-#projects-container{
-    width: 100%;
-    height: 100%;
+/************** CARD PROJECTS **************/
+.slide-layout-projects {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 0em 4em;
+  gap: 20px;
 }
 
-#projects-main{
-    height: 100%;
-}
-
-.projects-main-block {
-    width: 60%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    gap: 12px;
-    padding: 20px;
-    animation: fadeBlock .4s ease;
-}
-
-@keyframes fadeBlock {
-    from {
-        opacity: 0;
-        transform: translateX(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-.projects-main-block h1 {
-    font-size: 2rem;
-    color: white;
-}
-
-.projects-main-block h2 {
-    font-size: 1.2rem;
-    opacity: 0.8;
-    color: #ccc;
-}
-
-.projects-main-block p {
-    color: #e4e4e4;
-    line-height: 1.4;
-    max-width: 90%;
-}
-
-.projects-main-block img {
-    width: 150px;
-    max-height: 200px;
-    border-radius: 12px;
-    object-fit: cover;
-}
-
-.projects-main-block .projects-btn {
-    display: flex;
-    gap: 14px;
-    margin-top: 12px;
-}
-
-.projects-main-block a {
-    position: relative;
-    padding: 10px 24px;
-    border-radius: 8px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    color: #e8f0ff;
-    background: rgba(255, 255, 255, 0.06); /* fundo sutil translúcido */
-    border: 1px solid rgba(75, 223, 255, 0.35); /* ciano suave */
-    backdrop-filter: blur(4px);
-    cursor: pointer;
-    transition: 0.25s ease;
-    overflow: hidden;
-}
-
-/* Gradiente neon passando por trás */
-.projects-main-block a::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    padding: 2px;
-    background: linear-gradient(135deg, #4bdfff, #ff356e);
-    mask: 
-      linear-gradient(#fff 0 0) content-box, 
-      linear-gradient(#fff 0 0);
-    mask-composite: exclude;
-    transition: 0.4s ease;
-    opacity: 0.35;
-}
-
-.projects-main-block a:hover::before {
-    opacity: 1;
-}
-
-/* Hover aumenta brilho + fundo */
-.projects-main-block a:hover {
-    background: rgba(255, 255, 255, 0.12);
-    transform: translateY(-2px);
-}
-
-/* Clique */
-.projects-main-block a:active {
-    transform: scale(0.97);
-}
-
-
-/************************************
-             CARROSSEL DIREITO
-************************************/
-
-#projects-grid {
+.projects-header{
     display: flex;
     align-items: center;
-    width: 40%;
-    height: 100%;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    overflow: hidden;
-    white-space: nowrap;
+    justify-content: space-between;
 }
 
-.projects-carousel {
-    display: flex;
-    gap: 10px;
-    transition: transform 0.3s ease;
-    height: 50%;
+/* Título e tecnologia */
+.projects-title {
+  font-size: 2.1em;
+  font-weight: 700;
+  letter-spacing: 0.1em;
 }
 
-.project-card {
-    position: relative;
-    width: 160px;
-    height: 50%;
-    flex-shrink: 0;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.projects-tech {
+  width: fit-content;
+  font-size: .9em;
+  font-weight: 600;
+  opacity: 1;
+  color: #7b61ff;
 }
 
-.project-card h1 {
-    color: #fff;
-    font-size: 1.2em;
-    text-align: center;
-    text-shadow: 0px 2px 8px rgba(0,0,0,0.5);
+/* Descrição */
+.projects-desc {
+  font-size: 0.8em;
+  line-height: 1.5em;
+  opacity: 0.8;
+  width: 90%;
 }
 
-/************************************
-             ARROWS
-************************************/
-#projects-arrow {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 30px;
+/* Galeria de imagens */
+.projects-image {
+  height: 150px;
+  display: flex;
+  justify-content: space-between;
 }
 
-#projects-arrow button {
-    background: none;
-    border: none;
-    cursor: pointer;
+.projects-image img {
+  width: 31%;
+  height: 100%;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  transition: transform 0.25s ease;
 }
 
-#projects-arrow button svg {
-    font-size: 30px;
-    color: white;
-    transition: 0.2s;
+.projects-image img:hover {
+  transform: scale(1.04);
 }
 
-#projects-arrow button:hover svg {
-    transform: scale(1.2);
+/* Links: Site | Repo */
+.projects-links {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+}
+
+.projects-links .btn-projects {
+  grid-area: button;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  font-size: 0.9em;
+  padding: 0.2em 1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out, border-bottom-color 0.3s ease-in-out;
+  justify-self: center;
+}
+
+.projects-links .btn-projects:hover {
+  border-left-color: #ff5f5f;
+  transform: translateX(5px);
 }

@@ -4,18 +4,113 @@ import "./Projects.css";
 //Components
 import SectionInfo from "../SectionInfo/SectionInfo";
 import SectionContent from "../SectionContent/SectionContent";
+import Carousel from "../Carousel/Carousel";
 
 //Hooks
 import { useVisibleState } from "../../hooks/useVisibleState";
-
-// Icons
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import useCarousel from "../../hooks/useCarousel";
 
 //Images
 import ImgTest from "../../assets/images/image-test.jpg";
 
+const blocks = [
+  {
+    content: (
+      <div className="slide-layout-projects">
+        <div className="projects-header">
+          <h1 className="projects-title">RandPlay</h1>
+          <h2 className="projects-tech">React.js · Java · MongoDB · APIs</h2>
+        </div>
+
+        <p className="projects-desc">
+          RandPlay é uma plataforma completa para criação e gerenciamento de
+          campeonatos de futebol. Com ela, qualquer pessoa pode montar torneios
+          personalizados, editar regras, registrar resultados, controlar
+          placares e organizar times ou seleções com total liberdade. O usuário
+          ainda pode definir formatos de competição, personalizar escudos e
+          ajustar configurações específicas de cada campeonato.
+        </p>
+
+        <div className="projects-image">
+          <img src={ImgTest} alt="Project image" />
+          <img src={ImgTest} alt="Project image" />
+          <img src={ImgTest} alt="Project image" />
+        </div>
+
+        <div className="projects-links">
+          <a className="btn-projects">Site</a>
+          <a className="btn-projects">Repositório</a>
+        </div>
+      </div>
+    ),
+  },
+  {
+    content: (
+      <div className="slide-layout-projects">
+        <div>
+          <h1 className="projects-title">RE Arquitetura</h1>
+          <h2 className="projects-tech">React.js · PHP · Firebase · APIs</h2>
+        </div>
+
+        <p className="projects-desc">
+          Ramon Efísio Arquitetura é um estúdio especializado em projetos
+          arquitetônicos contemporâneos, oferecendo soluções que unem estética,
+          funcionalidade e eficiência espacial. A empresa desenvolve projetos
+          residenciais, comerciais e reformas, sempre priorizando a identidade
+          do cliente e o uso inteligente dos ambientes. Cada trabalho recebe
+          atenção individual, garantindo qualidade técnica, detalhamento preciso
+          e uma experiência arquitetônica personalizada.
+        </p>
+
+        <div className="projects-image">
+          <img src={ImgTest} alt="Project image" />
+          <img src={ImgTest} alt="Project image" />
+          <img src={ImgTest} alt="Project image" />
+        </div>
+
+        <div className="projects-links">
+          <a className="btn-projects">Site</a>
+          <a className="btn-projects">Repositório</a>
+        </div>
+      </div>
+    ),
+  },
+  {
+    content: (
+      <div className="slide-layout-projects">
+        <div>
+          <h1 className="projects-title">TecTravel</h1>
+          <h2 className="projects-tech">React.js · Java · MySql · APIs</h2>
+        </div>
+
+        <p className="projects-desc">
+          TechTravel é uma plataforma moderna de viagens que permite planejar e
+          gerenciar roteiros de forma prática e inteligente. Com ela, o usuário
+          pode explorar destinos, montar itinerários personalizados, acompanhar
+          despesas e receber sugestões automatizadas com base em preferências e
+          dados atualizados. Tudo isso em uma experiência visual e tecnológica
+          que torna cada viagem mais simples e personalizada.
+        </p>
+
+        <div className="projects-image">
+          <img src={ImgTest} alt="Project image" />
+          <img src={ImgTest} alt="Project image" />
+          <img src={ImgTest} alt="Project image" />
+        </div>
+
+        <div className="projects-links">
+          <a className="btn-projects">Site</a>
+          <a className="btn-projects">Repositório</a>
+        </div>
+      </div>
+    ),
+  },
+];
+
 const Projects = () => {
   const { ref, isVisible } = useVisibleState(0.3);
+  const { index, anim, prev, next, goTo, onTouchStart, onTouchEnd } =
+    useCarousel(blocks.length);
 
   return (
     <section id="projects" ref={ref}>
@@ -29,64 +124,16 @@ const Projects = () => {
           externalLink={false}
         />
         <SectionContent>
-          <div id="projects-container">
-            <div id="projects-main">
-              <div className="projects-main-block">
-                <h1>Randplay</h1>
-                <h2>React.js - PHP</h2>
-                <p>Player musical com playlists dinâmicas, integração com API e suporte offline.</p>
-                <img src={ImgTest} alt="Project image" />
-                <a id="site">Site</a>
-                <a id="repo"><i></i>Repositório</a>
-              </div>
-              <div className="projects-main-block">
-                <h1>Kara Arquitetura</h1>
-                <h2>React.js - PHP</h2>
-                <p>Player musical com playlists dinâmicas, integração com API e suporte offline.</p>
-                <img src={ImgTest} alt="Project image" />
-                <a id="site">Site</a>
-                <a id="repo"><i></i>Repositório</a>
-              </div>
-              <div className="projects-main-block">
-                <h1>Projeto 3</h1>
-                <h2>React.js - PHP</h2>
-                <p>Player musical com playlists dinâmicas, integração com API e suporte offline.</p>
-                <img src={ImgTest} alt="Project image" />
-                <a id="site">Site</a>
-                <a id="repo"><i></i>Repositório</a>
-              </div>
-              <div id="projects-arrow">
-                <button id="projects-arrow-left">
-                  <FaChevronLeft />
-                </button>
-                <button id="projects-arrow-right">
-                  <FaChevronRight />
-                </button>
-              </div>
-            </div>
-            <div id="projects-grid">
-              <div
-                className="project-card"
-                style={{ backgroundImage: `url(${ImgTest})` }}
-              >
-                <h1>RandPlay</h1>
-              </div>
-              <div
-                className="project-card"
-                style={{ backgroundImage: `url(${ImgTest})` }}
-              >
-                <h1>
-                  Kara <br /> Arquitetura
-                </h1>
-              </div>
-              <div
-                className="project-card"
-                style={{ backgroundImage: `url(${ImgTest})` }}
-              >
-                <h1>Projeto 3</h1>
-              </div>
-            </div>
-          </div>
+          <Carousel
+            blocks={blocks}
+            index={index}
+            anim={anim}
+            prev={prev}
+            next={next}
+            goTo={goTo}
+            onTouchStart={onTouchStart}
+            onTouchEnd={onTouchEnd}
+          />
         </SectionContent>
       </div>
     </section>
