@@ -4,6 +4,7 @@ import "./About.css";
 // Components
 import SectionInfo from "../SectionInfo/SectionInfo";
 import SectionContent from "../SectionContent/SectionContent";
+import TabsNavigation from "../TabsNavigation/TabsNavigation";
 
 // Hooks
 import { useVisibleState } from "../../hooks/useVisibleState";
@@ -40,9 +41,6 @@ import {
 import { VscGithub } from "react-icons/vsc";
 import { IoLogoJavascript } from "react-icons/io5";
 
-// ================================
-// MAIN COMPONENT — About Section
-// ================================
 const About = () => {
   // Accordion state — ensures only one stays open
   const [openAcc, setOpenAcc] = useState(1);
@@ -53,9 +51,6 @@ const About = () => {
     setOpenAcc(id);
   };
 
-  // ================================
-  // CAROUSEL BLOCKS (Slides Content)
-  // ================================
   const blocks = [
     {
       // Slide 1 — Introduction / Fullstack Overview
@@ -298,16 +293,15 @@ const About = () => {
     },
   ];
 
-  // ================================
-  // CAROUSEL & VISIBILITY HOOKS
-  // ================================
-  // const { index, anim, prev, next, goTo, onTouchStart, onTouchEnd } =
-  //   useTabsNavigation(blocks.length);
   const { ref, isVisible } = useVisibleState(0.3);
+  const { index, anim, goTo } = useTabsNavigation(blocks.length);
+  const tabs = [
+    "Apresentação",
+    "Stack Principal",
+    "Hard Skills",
+    "Soft Skills",
+  ];
 
-  // ================================
-  // MAIN RENDER
-  // ================================
   return (
     <section id="about" ref={ref}>
       <div className="sections-wrapper">
@@ -317,14 +311,10 @@ const About = () => {
           isVisible={isVisible}
         />
         <SectionContent>
-          {/* blocks={blocks}
-          index={index}
-          anim={anim}
-          prev={prev}
-          next={next}
-          goTo={goTo}
-          onTouchStart={onTouchStart}
-          onTouchEnd={onTouchEnd} */}
+          <TabsNavigation tabs={tabs} current={index} goTo={goTo} />
+          <div className={`tabs-content-wrapper ${anim}`}>
+            {blocks[index].content}
+          </div>
         </SectionContent>
       </div>
     </section>

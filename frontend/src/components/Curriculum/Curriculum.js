@@ -4,6 +4,7 @@ import "./Curriculum.css";
 // Components
 import SectionInfo from "../SectionInfo/SectionInfo";
 import SectionContent from "../SectionContent/SectionContent";
+import TabsNavigation from "../TabsNavigation/TabsNavigation";
 
 // Hooks
 import { useVisibleState } from "../../hooks/useVisibleState";
@@ -74,8 +75,8 @@ const blocks = [
 
 const Curriculum = () => {
   const { ref, isVisible } = useVisibleState(0.3);
-  // const { index, anim, prev, next, goTo, onTouchStart, onTouchEnd } =
-  //   useTabsNavigation(blocks.length);
+  const { index, anim, goTo} = useTabsNavigation(blocks.length);
+  const tabs = ["Formação e Cursos", "Experiências"];
 
   return (
     <section id="curriculum" ref={ref}>
@@ -89,16 +90,10 @@ const Curriculum = () => {
           externalLink={true}
         />
         <SectionContent>
-          {/* <Carousel
-            blocks={blocks}
-            index={index}
-            anim={anim}
-            prev={prev}
-            next={next}
-            goTo={goTo}
-            onTouchStart={onTouchStart}
-            onTouchEnd={onTouchEnd}
-          /> */}
+          <TabsNavigation tabs={tabs} current={index} goTo={goTo} />
+          <div className={`tabs-content-wrapper ${anim}`}>
+            {blocks[index].content}
+          </div>
         </SectionContent>
       </div>
     </section>

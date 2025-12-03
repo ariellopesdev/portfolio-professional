@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState} from "react";
 
 export default function useTabsNavigation(length) {
   // Current active tab index
@@ -24,30 +24,9 @@ export default function useTabsNavigation(length) {
     }, 350);
   };
 
-  // Reference to store the starting X position for touch events (mobile swipe)
-  const touchStartX = useRef(0);
-
-  // Capture initial touch position
-  const onTouchStart = (e) => {
-    touchStartX.current = e.touches[0].clientX;
-  };
-
-  // Detect swipe direction when touch ends
-  const onTouchEnd = (e) => {
-    const dist = e.changedTouches[0].clientX - touchStartX.current;
-
-    // Swipe right → go to previous tab (if it exists)
-    if (dist > 50 && index > 0) goTo(index - 1);
-
-    // Swipe left → go to next tab (if it exists)
-    if (dist < -50 && index < length - 1) goTo(index + 1);
-  };
-
   return {
     index,
     anim,
     goTo,
-    onTouchStart,
-    onTouchEnd,
   };
 }
