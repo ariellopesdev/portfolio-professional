@@ -1,0 +1,91 @@
+.layout-single{
+    width: 100%;
+    height: 100%;
+    padding: 4% 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+.card-left{
+    
+}
+.card-right{
+
+}
+h2{
+
+}
+h3{
+
+}
+.layout-h4{
+    font-size: 1.1em;
+    margin: 5px 0 15px 0;
+}
+.layout-desc{
+    font-size: 0.85em;
+    opacity: 0.8;
+}
+.layout-strong {
+    font-size: 1em;
+    font-weight: bolder;
+    color: #8e23d1; 
+    margin-bottom: 5px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.15); 
+}
+
+.layout-block {
+    background-color: rgba(60, 90, 150, 0.25);
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+
+
+.icon-block{
+
+}
+.icon-block i{
+
+}
+.icon-block p{
+
+}
+.img-block{
+
+}
+.img-block img{
+
+}
+.img-single{
+
+}
+.tech-block{
+
+}
+.tech-block i{
+
+}
+.tech-block p{
+
+}
+.btn-block{
+
+}
+.btn-block button{
+
+}
+.btn-single{
+
+}
+ul{
+
+}
+ul li{
+
+}
+small{
+
+}

@@ -1,5 +1,6 @@
 // CSS
-import "./About.css";
+import "../PagesGroup/PagesGroup.css";
+import "../TabsNavigation/TabsNavigation.css";
 
 // Components
 import SectionInfo from "../SectionInfo/SectionInfo";
@@ -57,8 +58,7 @@ const About = () => {
       content: (
         <div className="slide-layout-about">
           <div className="info">
-            <h1>
-              <img src={logo} className="icon" alt="" />
+            <h1 className="tab-title">
               Sou <span className="highlight">Dev Fullstack</span>
             </h1>
             <p>

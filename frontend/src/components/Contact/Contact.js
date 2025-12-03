@@ -1,5 +1,6 @@
-//CSS
-import "./Contact.css";
+// CSS
+import "../PagesGroup/PagesGroup.css";
+import "../TabsNavigation/TabsNavigation.css";
 
 //Components
 import SectionInfo from "../SectionInfo/SectionInfo";

@@ -1,0 +1,49 @@
+/* Container das tabs */
+.tabs-nav {
+  display: flex;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 2px solid #1b1f26;
+}
+
+/* Botões */
+.tab-button {
+  padding: 8px 18px;
+  background: transparent;
+  border: none;
+  color: #bfc6d1;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.25s ease;
+}
+
+/* Linha de destaque */
+.tab-button::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 3px;
+  background: #6ea8ff;
+  border-radius: 4px;
+  transition: width 0.25s ease;
+}
+
+/* Hover */
+.tab-button:hover {
+  color: #ffffff;
+}
+.tab-button:hover::after {
+  width: 100%;
+}
+
+/* Tab ativa */
+.tab-button.active {
+  color: #ffffff;
+}
+.tab-button.active::after {
+  width: 100%;
+}
