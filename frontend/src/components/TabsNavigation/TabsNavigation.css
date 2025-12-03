@@ -47,3 +47,9 @@
 .tab-button.active::after {
   width: 100%;
 }
+
+.tabs-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 88%;
+} 

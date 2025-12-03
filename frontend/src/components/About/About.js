@@ -54,10 +54,9 @@ const About = () => {
 
   const blocks = [
     {
-      // Slide 1 — Introduction / Fullstack Overview
       content: (
-        <div className="slide-layout-about">
-          <div className="info">
+        <div className="layout-double">
+          <div className="layout-left">
             <h1 className="tab-title">
               Sou <span className="highlight">Dev Fullstack</span>
             </h1>
@@ -73,10 +72,10 @@ const About = () => {
               <span className="highlight"> Firebase</span> para bancos de dados.
             </p>
           </div>
-          <div className="image">
+          <div className="layout-right">
             <img
               src={fullStackImg}
-              className="big-icon"
+              className="layout-img-single"
               alt="Fullstack developer"
             />
           </div>
