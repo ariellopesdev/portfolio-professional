@@ -57,11 +57,9 @@ const About = () => {
       content: (
         <div className="layout-double">
           <div className="layout-left">
-            <h1 className="tab-title">
-              Sou <span className="highlight">Dev Fullstack</span>
-            </h1>
-            <p>
-              Desenvolvo sites, sistemas e aplicações web completas usando
+            <p className="layout-desc-main">
+              Sou <span className="highlight">Dev Fullstack</span> e desenvolvo
+              sites, sistemas e aplicações web completas usando
               <span className="highlight"> React.js</span> no frontend, e
               <span className="highlight"> Java</span> e
               <span className="highlight"> PHP</span> no backend. Também
@@ -83,12 +81,10 @@ const About = () => {
       ),
     },
     {
-      // Slide 2 — Main Stack
       content: (
-        <div className="slide-layout-about">
-          <div className="info">
-            <h1>Stack principal</h1>
-            <p>
+        <div className="layout-double">
+          <div className="layout-left">
+            <p className="layout-desc-main">
               Minha principal stack está focada no ecossistema JavaScript,
               utilizando
               <span className="highlight"> React.js</span> para criar interfaces
@@ -105,10 +101,10 @@ const About = () => {
               organização e colaboração nos projetos.
             </p>
           </div>
-          <div className="image">
+          <div className="layout-right">
             <img
               src={stackPrincipal}
-              className="big-icon"
+              className="layout-img-single"
               alt="Stack principal"
             />
           </div>
@@ -116,12 +112,9 @@ const About = () => {
       ),
     },
     {
-      // Slide 3 — Hard Skills Grid
       content: (
-        <div className="slide-layout-tech">
-          <h1>Hard Skills</h1>
-          <div className="tech-grid">
-            <div className="tech-card">
+        <div className="layout-single">
+            <div className="layout-block-horizontal">
               <h3 className="tech-category">Linguagens</h3>
               <div className="container-tech">
                 <div className="tech-icon javascript">
@@ -142,7 +135,7 @@ const About = () => {
                 </div>
               </div>
             </div>
-            <div className="tech-card">
+            <div className="layout-block-horizontal">
               <h3 className="tech-category">Tecnologias Web</h3>
               <div className="container-tech">
                 <div className="tech-icon react">
@@ -156,7 +149,7 @@ const About = () => {
                 </div>
               </div>
             </div>
-            <div className="tech-card">
+            <div className="layout-block-horizontal">
               <h3 className="tech-category">Bancos de Dados</h3>
               <div className="container-tech">
                 <div className="tech-icon mysql">
@@ -170,7 +163,7 @@ const About = () => {
                 </div>
               </div>
             </div>
-            <div className="tech-card">
+            <div className="layout-block-horizontal">
               <h3 className="tech-category">DevOps & Ferramentas</h3>
               <div className="container-tech">
                 <div className="tech-icon docker">
@@ -184,15 +177,13 @@ const About = () => {
                 </div>
               </div>
             </div>
-          </div>
         </div>
       ),
     },
     {
       // Slide 4 — Soft Skills Accordion
       content: (
-        <div id="slide-layout-softskills">
-          <h1>Soft Skills</h1>
+        <div className="layout-single">
           <div className="softskills-accordion">
             <div className={`accordion-item ${openAcc === 1 ? "open" : ""}`}>
               <div className="accordion-header" onClick={() => toggleAcc(1)}>
