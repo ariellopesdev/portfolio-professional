@@ -4,12 +4,11 @@ import "./About.css";
 // Components
 import SectionInfo from "../SectionInfo/SectionInfo";
 import SectionContent from "../SectionContent/SectionContent";
-import Carousel from "../Carousel/Carousel";
 
 // Hooks
 import { useVisibleState } from "../../hooks/useVisibleState";
-import useCarousel from "../../hooks/useCarousel";
 import { useState } from "react";
+import useTabsNavigation from "../../hooks/useTabsNavigation";
 
 //Images
 import fullStackImg from "../../assets/images/full-stack-developer.png";
@@ -302,8 +301,8 @@ const About = () => {
   // ================================
   // CAROUSEL & VISIBILITY HOOKS
   // ================================
-  const { index, anim, prev, next, goTo, onTouchStart, onTouchEnd } =
-    useCarousel(blocks.length);
+  // const { index, anim, prev, next, goTo, onTouchStart, onTouchEnd } =
+  //   useTabsNavigation(blocks.length);
   const { ref, isVisible } = useVisibleState(0.3);
 
   // ================================
@@ -318,16 +317,14 @@ const About = () => {
           isVisible={isVisible}
         />
         <SectionContent>
-          <Carousel
-            blocks={blocks}
-            index={index}
-            anim={anim}
-            prev={prev}
-            next={next}
-            goTo={goTo}
-            onTouchStart={onTouchStart}
-            onTouchEnd={onTouchEnd}
-          />
+          {/* blocks={blocks}
+          index={index}
+          anim={anim}
+          prev={prev}
+          next={next}
+          goTo={goTo}
+          onTouchStart={onTouchStart}
+          onTouchEnd={onTouchEnd} */}
         </SectionContent>
       </div>
     </section>

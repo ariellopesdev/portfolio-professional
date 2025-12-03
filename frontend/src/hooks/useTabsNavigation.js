@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 
-export default function useCarousel(length) {
+export default function useTabsNavigation(length) {
   //// State that keeps track of which carousel item is visible
   const [index, setIndex] = useState(0);
   // State responsible for controlling the animation classes (entering/exiting)

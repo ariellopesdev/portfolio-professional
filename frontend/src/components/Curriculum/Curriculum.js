@@ -4,11 +4,10 @@ import "./Curriculum.css";
 // Components
 import SectionInfo from "../SectionInfo/SectionInfo";
 import SectionContent from "../SectionContent/SectionContent";
-import Carousel from "../Carousel/Carousel";
 
 // Hooks
 import { useVisibleState } from "../../hooks/useVisibleState";
-import useCarousel from "../../hooks/useCarousel";
+import useTabsNavigation from "../../hooks/useTabsNavigation";
 
 const blocks = [
   {
@@ -75,8 +74,8 @@ const blocks = [
 
 const Curriculum = () => {
   const { ref, isVisible } = useVisibleState(0.3);
-  const { index, anim, prev, next, goTo, onTouchStart, onTouchEnd } =
-    useCarousel(blocks.length);
+  // const { index, anim, prev, next, goTo, onTouchStart, onTouchEnd } =
+  //   useTabsNavigation(blocks.length);
 
   return (
     <section id="curriculum" ref={ref}>
@@ -90,7 +89,7 @@ const Curriculum = () => {
           externalLink={true}
         />
         <SectionContent>
-          <Carousel
+          {/* <Carousel
             blocks={blocks}
             index={index}
             anim={anim}
@@ -99,7 +98,7 @@ const Curriculum = () => {
             goTo={goTo}
             onTouchStart={onTouchStart}
             onTouchEnd={onTouchEnd}
-          />
+          /> */}
         </SectionContent>
       </div>
     </section>
