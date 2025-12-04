@@ -1,19 +1,20 @@
 {
   "files": {
-    "main.css": "/portfolio-professional/static/css/main.dc7b4be9.css",
-    "main.js": "/portfolio-professional/static/js/main.d5acc5f7.js",
+    "main.css": "/portfolio-professional/static/css/main.10d9a90e.css",
+    "main.js": "/portfolio-professional/static/js/main.84853f95.js",
     "static/js/453.8ab44547.chunk.js": "/portfolio-professional/static/js/453.8ab44547.chunk.js",
+    "static/media/curriculo_ariel_lopes.pdf": "/portfolio-professional/static/media/curriculo_ariel_lopes.7cd64a682732fa7fc81e.pdf",
     "static/media/image-test.jpg": "/portfolio-professional/static/media/image-test.c98984426d6787cbd4c8.jpg",
     "static/media/portfolio-image2.png": "/portfolio-professional/static/media/portfolio-image2.cd01f5e68aed0c24c648.png",
     "static/media/full-stack-developer.png": "/portfolio-professional/static/media/full-stack-developer.e6c11e753f4b14cd615d.png",
     "static/media/stack-principal.png": "/portfolio-professional/static/media/stack-principal.569da3659c41a7c40aa0.png",
     "index.html": "/portfolio-professional/index.html",
-    "main.dc7b4be9.css.map": "/portfolio-professional/static/css/main.dc7b4be9.css.map",
-    "main.d5acc5f7.js.map": "/portfolio-professional/static/js/main.d5acc5f7.js.map",
+    "main.10d9a90e.css.map": "/portfolio-professional/static/css/main.10d9a90e.css.map",
+    "main.84853f95.js.map": "/portfolio-professional/static/js/main.84853f95.js.map",
     "453.8ab44547.chunk.js.map": "/portfolio-professional/static/js/453.8ab44547.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.dc7b4be9.css",
-    "static/js/main.d5acc5f7.js"
+    "static/css/main.10d9a90e.css",
+    "static/js/main.84853f95.js"
   ]
 }
