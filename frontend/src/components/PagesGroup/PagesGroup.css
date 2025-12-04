@@ -24,36 +24,42 @@
   justify-content: center;
   align-items: center;
 }
-h2 {
+.layout-h2 {
+  font-weight: 600;
+  font-size: 1.1em;
 }
 h3 {
+  font-weight: 700;
 }
 .layout-h4 {
+  font-weight: 700;
   font-size: 1.1em;
-  margin: 5px 0 15px 0;
+  margin-bottom: 10px;
 }
 .highlight {
   color: #ab27fd;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
 }
 .layout-desc {
+  font-weight: 400;
   font-size: 0.85em;
   opacity: 0.8;
 }
-.layout-desc-main{
-   font-size: 1.2em;
+.layout-desc-main {
+  font-weight: 400;
+  font-size: 1.25em;
 }
 .layout-strong {
   font-size: 1em;
   font-weight: bolder;
   color: #ab27fd;
-  margin-bottom: 5px;
+  margin-bottom: 3px;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
 }
 
 .layout-block {
   background-color: rgba(60, 90, 150, 0.25);
-  padding: 1em;
+  padding: 0.8em 1em;
   display: flex;
   flex-direction: column;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
@@ -63,14 +69,17 @@ h3 {
   background-color: rgba(60, 90, 150, 0.25);
   padding: 1em;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
-.icon-block {
+.layout-icon-block {
 }
 .icon-block i {
 }
 .icon-block p {
+  font-weight: 400;
 }
 .img-block {
 }
@@ -79,11 +88,64 @@ h3 {
 .layout-img-single {
   width: 250px;
 }
-.tech-block {
+.layout-tech-block {
+  display: flex;
+  gap: 15px;
 }
-.tech-block i {
+
+.layout-tech-block-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0.4em 0.5em;
+  border-radius: 0.3em;
+  background-color: rgba(60, 90, 150, 0.4);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
-.tech-block p {
+.layout-tech-block-item.javascript {
+  color: #f7df1e;
+}
+.layout-tech-block-item.java {
+  color: #007396;
+}
+.layout-tech-block-item.php {
+  color: #777bb4;
+}
+.layout-tech-block-item.python {
+  color: #3776ab;
+}
+.layout-tech-block-item.react {
+  color: #61dafb;
+}
+.layout-tech-block-item.node {
+  color: #339933;
+}
+.layout-tech-block-item.postman {
+  color: #ff6c37;
+}
+.layout-tech-block-item.mysql {
+  color: #4479a1;
+}
+.layout-tech-block-item.mongodb {
+  color: #47a248;
+}
+.layout-tech-block-item.firebase {
+  color: #ffca28;
+}
+.layout-tech-block-item.docker {
+  color: #2496ed;
+}
+.layout-tech-block-item.github {
+  color: #181717;
+}
+.layout-tech-block-item.git {
+  color: #f05032;
+}
+.layout-tech-block p {
+  font-weight: 400;
+  font-size: 0.85em;
+  opacity: 0.9;
+  color: #fff !important;
 }
 .btn-block {
 }
@@ -96,4 +158,68 @@ ul {
 ul li {
 }
 small {
+}
+
+/* ====== ACCORDION ====== */
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+/* Container do item */
+.accordion-item {
+  background: rgba(60, 90, 150, 0.25);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Cabeçalho */
+.accordion-header {
+  width: 100%;
+  padding: 0.6em;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1em;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.25s ease;
+}
+
+.accordion-header:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Corpo */
+.accordion-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.35s ease;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.accordion-body p {
+  padding: 0.6em;
+  opacity: 0.85;
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+/* Quando aberto */
+.accordion-item.open .accordion-body {
+  max-height: 250px; /* expande */
+}
+
+/* Ícones coloridos para harmonizar */
+.accordion-header svg {
+  font-size: 1.2rem;
+  opacity: 0.85;
 }

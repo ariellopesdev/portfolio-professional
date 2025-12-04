@@ -114,85 +114,84 @@ const About = () => {
     {
       content: (
         <div className="layout-single">
-            <div className="layout-block-horizontal">
-              <h3 className="tech-category">Linguagens</h3>
-              <div className="container-tech">
-                <div className="tech-icon javascript">
-                  <IoLogoJavascript />
-                  <p className="tech-desc">Javascript</p>
-                </div>
-                <div className="tech-icon java">
-                  <FaJava />
-                  <p className="tech-desc">Java</p>
-                </div>
-                <div className="tech-icon php">
-                  <SiPhp />
-                  <p className="tech-desc">PHP</p>
-                </div>
-                <div className="tech-icon python">
-                  <SiPython />
-                  <p className="tech-desc">Python</p>
-                </div>
+          <div className="layout-block-horizontal">
+            <h3 className="layout-h2">Linguagens</h3>
+            <div className="layout-tech-block">
+              <div className="layout-tech-block-item javascript">
+                <IoLogoJavascript />
+                <p className="layout-tech-block">Javascript</p>
+              </div>
+              <div className="layout-tech-block-item java">
+                <FaJava />
+                <p className="layout-tech-block">Java</p>
+              </div>
+              <div className="layout-tech-block-item php">
+                <SiPhp />
+                <p className="layout-tech-block">PHP</p>
+              </div>
+              <div className="layout-tech-block-item python">
+                <SiPython />
+                <p className="layout-tech-block">Python</p>
               </div>
             </div>
-            <div className="layout-block-horizontal">
-              <h3 className="tech-category">Tecnologias Web</h3>
-              <div className="container-tech">
-                <div className="tech-icon react">
-                  <FaReact /> <p className="tech-desc">React.js</p>
-                </div>
-                <div className="tech-icon node">
-                  <FaNodeJs /> <p className="tech-desc">Node.js</p>
-                </div>
-                <div className="tech-icon postman">
-                  <FaCode /> <p className="tech-desc">Postman</p>
-                </div>
+          </div>
+          <div className="layout-block-horizontal">
+            <h3 className="layout-h2">Tecnologias Web</h3>
+            <div className="layout-tech-block">
+              <div className="layout-tech-block-item react">
+                <FaReact /> <p className="layout-tech-block">React.js</p>
+              </div>
+              <div className="layout-tech-block-item node">
+                <FaNodeJs /> <p className="layout-tech-block">Node.js</p>
+              </div>
+              <div className="layout-tech-block-item postman">
+                <FaCode /> <p className="layout-tech-block">Postman</p>
               </div>
             </div>
-            <div className="layout-block-horizontal">
-              <h3 className="tech-category">Bancos de Dados</h3>
-              <div className="container-tech">
-                <div className="tech-icon mysql">
-                  <SiMysql /> <p className="tech-desc">MySQL</p>
-                </div>
-                <div className="tech-icon mongodb">
-                  <SiMongodb /> <p className="tech-desc">MongoDB</p>
-                </div>
-                <div className="tech-icon firebase">
-                  <SiFirebase /> <p className="tech-desc">Firebase</p>
-                </div>
+          </div>
+          <div className="layout-block-horizontal">
+            <h3 className="layout-h2">Bancos de Dados</h3>
+            <div className="layout-tech-block">
+              <div className="layout-tech-block-item mysql">
+                <SiMysql /> <p className="layout-tech-block">MySQL</p>
+              </div>
+              <div className="layout-tech-block-item mongodb">
+                <SiMongodb /> <p className="layout-tech-block">MongoDB</p>
+              </div>
+              <div className="layout-tech-block-item firebase">
+                <SiFirebase /> <p className="layout-tech-block">Firebase</p>
               </div>
             </div>
-            <div className="layout-block-horizontal">
-              <h3 className="tech-category">DevOps & Ferramentas</h3>
-              <div className="container-tech">
-                <div className="tech-icon docker">
-                  <FaDocker /> <p className="tech-desc">Docker</p>
-                </div>
-                <div className="tech-icon github">
-                  <VscGithub /> <p className="tech-desc">GitHub</p>
-                </div>
-                <div className="tech-icon git">
-                  <SiGit /> <p className="tech-desc">Git</p>
-                </div>
+          </div>
+          <div className="layout-block-horizontal">
+            <h3 className="layout-h2">DevOps & Ferramentas</h3>
+            <div className="layout-tech-block">
+              <div className="layout-tech-block-item docker">
+                <FaDocker /> <p className="layout-tech-block">Docker</p>
+              </div>
+              <div className="layout-tech-block-item github">
+                <VscGithub /> <p className="layout-tech-block">GitHub</p>
+              </div>
+              <div className="layout-tech-block-item git">
+                <SiGit /> <p className="layout-tech-block">Git</p>
               </div>
             </div>
+          </div>
         </div>
       ),
     },
     {
-      // Slide 4 — Soft Skills Accordion
       content: (
         <div className="layout-single">
-          <div className="softskills-accordion">
+          <div className="accordion">
+            {/* ITEM 1 */}
             <div className={`accordion-item ${openAcc === 1 ? "open" : ""}`}>
-              <div className="accordion-header" onClick={() => toggleAcc(1)}>
+              <button className="accordion-header" onClick={() => toggleAcc(1)}>
                 <FaComments />
                 Comunicação
-              </div>
-              <div
-                className={`accordion-content ${openAcc === 1 ? "open" : ""}`}
-              >
+              </button>
+
+              <div className="accordion-body">
                 <p>
                   Apresento soluções técnicas de forma clara e objetiva. No
                   projeto Kara Arquitetura, mantive comunicação constante com o
@@ -201,79 +200,80 @@ const About = () => {
                 </p>
               </div>
             </div>
+
+            {/* ITEM 2 */}
             <div className={`accordion-item ${openAcc === 2 ? "open" : ""}`}>
-              <div className="accordion-header" onClick={() => toggleAcc(2)}>
+              <button className="accordion-header" onClick={() => toggleAcc(2)}>
                 <FaUsers />
                 Trabalho em equipe
-              </div>
-              <div
-                className={`accordion-content ${openAcc === 2 ? "open" : ""}`}
-              >
+              </button>
+
+              <div className="accordion-body">
                 <p>
                   Atuei de forma colaborativa em projetos acadêmicos e freelas,
                   participando de pair programming, revisando PRs e apoiando
-                  colegas com dificuldades em lógica e estrutura de código.
+                  colegas com dificuldades.
                 </p>
               </div>
             </div>
+
+            {/* ITEM 3 */}
             <div className={`accordion-item ${openAcc === 3 ? "open" : ""}`}>
-              <div className="accordion-header" onClick={() => toggleAcc(3)}>
+              <button className="accordion-header" onClick={() => toggleAcc(3)}>
                 <FaBrain />
                 Resolução de problemas
-              </div>
-              <div
-                className={`accordion-content ${openAcc === 3 ? "open" : ""}`}
-              >
+              </button>
+
+              <div className="accordion-body">
                 <p>
-                  No projeto Randplay, identifiquei gargalos no fluxo e
-                  implementei soluções que reduziram falhas e melhoraram o
-                  desempenho do backend.
+                  No Randplay, identifiquei gargalos e implementei soluções que
+                  reduziram falhas e melhoraram o desempenho.
                 </p>
               </div>
             </div>
+
+            {/* ITEM 4 */}
             <div className={`accordion-item ${openAcc === 4 ? "open" : ""}`}>
-              <div className="accordion-header" onClick={() => toggleAcc(4)}>
+              <button className="accordion-header" onClick={() => toggleAcc(4)}>
                 <FaLightbulb />
                 Proatividade & Liderança
-              </div>
-              <div
-                className={`accordion-content ${openAcc === 4 ? "open" : ""}`}
-              >
+              </button>
+
+              <div className="accordion-body">
                 <p>
-                  Frequentemente proponho melhorias no código e na organização
-                  dos projetos. Em trabalhos da faculdade, assumi a liderança
-                  para estruturar tarefas e garantir que todos avançassem com
-                  clareza.
+                  Proponho melhorias no código e na organização. Em trabalhos
+                  acadêmicos, assumi liderança organizando tarefas e garantindo
+                  clareza ao time.
                 </p>
               </div>
             </div>
+
+            {/* ITEM 5 */}
             <div className={`accordion-item ${openAcc === 5 ? "open" : ""}`}>
-              <div className="accordion-header" onClick={() => toggleAcc(5)}>
+              <button className="accordion-header" onClick={() => toggleAcc(5)}>
                 <FaTasks />
                 Organização
-              </div>
-              <div
-                className={`accordion-content ${openAcc === 5 ? "open" : ""}`}
-              >
+              </button>
+
+              <div className="accordion-body">
                 <p>
-                  Planejo e documento entregas usando boas práticas como
-                  versionamento organizado no Git, divisão modular de tarefas e
-                  padronização de commits.
+                  Planejo entregas com versionamento organizado no Git, divisão
+                  modular e padronização de commits.
                 </p>
               </div>
             </div>
+
+            {/* ITEM 6 */}
             <div className={`accordion-item ${openAcc === 6 ? "open" : ""}`}>
-              <div className="accordion-header" onClick={() => toggleAcc(6)}>
+              <button className="accordion-header" onClick={() => toggleAcc(6)}>
                 <FaShieldAlt />
                 Resiliência
-              </div>
-              <div
-                className={`accordion-content ${openAcc === 6 ? "open" : ""}`}
-              >
+              </button>
+
+              <div className="accordion-body">
                 <p>
                   Mantive consistência nos estudos e entregas mesmo com alta
-                  carga de trabalho e transição de carreira, desenvolvendo
-                  capacidade de lidar com pressão e desafios técnicos.
+                  carga de trabalho e transição de carreira.
                 </p>
               </div>
             </div>

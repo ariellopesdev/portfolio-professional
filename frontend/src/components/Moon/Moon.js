@@ -31,8 +31,8 @@ const Moon = ({ isVisible }) => {
       const y = (e.clientY - innerHeight / 2) / innerHeight;
 
       //REVERSE MOVEMENTE(PARALLAX EFFECT)
-      const moveX = x * -40;
-      const moveY = y * -40;
+      const moveX = x * -60;
+      const moveY = y * -60;
 
       moonOrbit.style.transform = `translate(${moveX}px, calc(-50% + ${moveY}px))`;
     };
