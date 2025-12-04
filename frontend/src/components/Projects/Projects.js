@@ -17,7 +17,7 @@ import ImgTest from "../../assets/images/image-test.jpg";
 const blocks = [
   {
     content: (
-      <div className="slide-layout-projects">
+      <div className="layout-double">
         <div className="projects-header">
           <h1 className="projects-title">RandPlay</h1>
           <h2 className="projects-tech">React.js · Java · MongoDB · APIs</h2>
@@ -47,7 +47,7 @@ const blocks = [
   },
   {
     content: (
-      <div className="slide-layout-projects">
+      <div className="layout-double">
         <div>
           <h1 className="projects-title">RE Arquitetura</h1>
           <h2 className="projects-tech">React.js · PHP · Firebase · APIs</h2>
@@ -78,7 +78,7 @@ const blocks = [
   },
   {
     content: (
-      <div className="slide-layout-projects">
+      <div className="layout-double">
         <div>
           <h1 className="projects-title">TecTravel</h1>
           <h2 className="projects-tech">React.js · Java · MySql · APIs</h2>
