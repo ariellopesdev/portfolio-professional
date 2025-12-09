@@ -34,21 +34,22 @@
 }
 
 .section-info p {
-  font-size: 1em;
+  font-size: 1rem;
   letter-spacing: 0.2em;
   width: 300px;
-  margin-top: 20px;
+  margin-top: 1.25rem;
   transform: translateX(-400px);
+  line-height: 1.6;
 }
 
 .section-info .btn-navigate {
   background-color: #ff5f5f;
   color: #fff;
   border: none;
-  font-size: 0.9em;
-  padding: 1.3em 1.5em;
+  font-size: 0.9rem;
+  padding: 1.2rem 1.4rem;
   font-weight: bold;
-  border-radius: 1.7em;
+  border-radius: 1.7rem;
   cursor: pointer;
   margin-top: 40px;
   transform: translateX(-400px);
@@ -57,44 +58,6 @@
 
 .section-info .btn-navigate:hover {
   background: #e64c4c;
-}
-
-
-/************** LINKS **************/
-.contacts-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 12px;
-  margin-top: 40px;
-  transform: translateX(-400px);
-}
-
-.contact-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: #fff;
-  font-size: 1em;
-}
-
-.contact-icon-link {
-  color: #ff5f5f;
-  text-decoration: none;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.contact-icon-link:hover {
-  color: #ffffff;
-  transform: translateY(-2px);
-}
-
-.contact-icon {
-  font-size: 1.4em;
-}
-
-.contact-item span {
-  font-size: 0.95em;
 }
 
 /************** ANIMATION SLIDE IN **************/
@@ -110,15 +73,10 @@
   animation: slideIn 0.8s ease-out 0.3s forwards;
 }
 
-.contacts-wrapper.visible {
-  animation: slideIn 0.8s ease-out 0.4s forwards;
-}
-
 /************** ANIMATION RESET **************/
 .section-info h1.reset,
 .section-info p.reset,
-.section-info .btn-navigate.reset,
-.section-info .contacts-wrapper.reset {
+.section-info .btn-navigate.reset {
   transform: translateX(-400px);
   animation: none;
 }
