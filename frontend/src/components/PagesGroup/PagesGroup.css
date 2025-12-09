@@ -29,7 +29,7 @@
 }
 .layout-left {
   flex-direction: column;
-  gap: 20px;
+  gap: 1.25em;
 }
 .layout-right {
   align-items: center;
@@ -38,24 +38,24 @@
 /************** TYPOGRAPHY **************/
 .layout-h2 {
   font-weight: 600;
-  font-size: 1em;
+  font-size: 1rem;
 }
 .layout-h3 {
   font-weight: 700;
-  font-size: 0.85em;
+  font-size: 0.85rem;
   opacity: 0.6;
   color: #ab27fd;
 }
 .layout-h4 {
   font-weight: 700;
-  font-size: 1.1em;
-  margin-bottom: 10px;
+  font-size: 1.1rem;
+  margin-bottom: 0.625em;
 }
 .layout-h5 {
   font-weight: 700;
-  font-size: 1.6em;
+  font-size: 1.6rem;
   letter-spacing: 0.1em;
-  margin-bottom: 20px;
+  margin-bottom: 1.25em;
 }
 .highlight {
   color: #ab27fd;
@@ -63,23 +63,23 @@
 }
 .layout-desc {
   font-weight: 400;
-  font-size: 0.85em;
+  font-size: 0.85rem;
   opacity: 0.8;
 }
 .layout-desc-main {
   font-weight: 400;
-  font-size: 1.2em;
+  font-size: 1.2rem;
 }
 
 .layout-desc-projects {
   font-weight: 400;
-  font-size: 0.9;
+  font-size: 0.9rem;
 }
 .layout-strong {
-  font-size: 1em;
+  font-size: 1rem;
   font-weight: bolder;
   color: #ab27fd;
-  margin-bottom: 3px;
+  margin-bottom: 0.188em;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
 }
 
@@ -106,7 +106,7 @@
   width: 90%;
   aspect-ratio: 1 / 1;
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: 0.5rem;
 }
 .layout-img-block img {
   width: 100%;
@@ -172,7 +172,7 @@
 }
 .layout-tech-block p {
   font-weight: 400;
-  font-size: 0.85em;
+  font-size: 0.85rem;
   opacity: 0.9;
   color: #fff !important;
 }
@@ -191,7 +191,7 @@
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(8px);
   color: #dce0e8;
-  font-size: 0.95em;
+  font-size: 0.95rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.25s ease;
@@ -221,7 +221,7 @@
 }
 .layout-ul li {
   font-weight: 400;
-  font-size: 0.95em;
+  font-size: 0.95rem;
   display: flex;
   align-items: center;
 }
@@ -349,7 +349,7 @@
 .accordion-body p {
   padding: 0.6em;
   opacity: 0.85;
-  font-size: 0.9em;
+  font-size: 0.9rem;
   font-weight: 500;
 }
 .accordion-item.open .accordion-body {
