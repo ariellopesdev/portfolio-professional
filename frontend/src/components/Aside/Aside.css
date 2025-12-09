@@ -66,8 +66,8 @@ aside {
   padding-left: 44%;
   height: 200px;
   width: 100%;
-  font-size: 0.8em;
-  letter-spacing: 0.3em;
+  font-size: 0.8rem;
+  letter-spacing: 0.25rem;
   font-weight: 200;
   color: #ffffff;
   transition: bottom 0.5s ease, opacity 0.5s ease;
