@@ -31,7 +31,7 @@ const Contact = () => {
         />
         <SectionContent>
           <div className="layout-double">
-            <div className="layout-single-contact">
+            <div className="layout-double-contact">
               <div className="layout-left">
                 <ul className="layout-ul">
                   <h5 className="layout-h5">Entre em contato comigo</h5>
@@ -78,7 +78,7 @@ const Contact = () => {
                 </ul>
               </div>
               <div className="layout-right">
-                <form className="contact-form">
+                <form className="layout-contact-form">
                   <label htmlFor="name">Nome</label>
                   <input
                     id="name"

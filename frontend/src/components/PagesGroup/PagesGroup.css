@@ -1,3 +1,4 @@
+/************** LAYOUT STRUCTURES **************/
 .layout-single {
   width: 100%;
   height: 100%;
@@ -6,36 +7,38 @@
   flex-direction: column;
   gap: 1em;
 }
-.layout-single-contact{
+.layout-double,
+.layout-double-contact {
   width: 100%;
   height: 100%;
   display: flex;
+}
+.layout-double {
+  padding: 1.5em 2em;
+}
+.layout-double-contact {
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
-.layout-double {
-  width: 100%;
-  height: 100%;
-  padding: 1.5em 2em;
-  display: flex;
-}
-.layout-left {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 20px;
-}
+.layout-left,
 .layout-right {
   width: 50%;
   display: flex;
   justify-content: center;
+}
+.layout-left {
+  flex-direction: column;
+  gap: 20px;
+}
+.layout-right {
   align-items: center;
 }
+
+/************** TYPOGRAPHY **************/
 .layout-h2 {
   font-weight: 600;
-  font-size: 1.1em;
+  font-size: 1em;
 }
 .layout-h3 {
   font-weight: 700;
@@ -48,7 +51,7 @@
   font-size: 1.1em;
   margin-bottom: 10px;
 }
-.layout-h5{
+.layout-h5 {
   font-weight: 700;
   font-size: 1.6em;
   letter-spacing: 0.1em;
@@ -65,7 +68,7 @@
 }
 .layout-desc-main {
   font-weight: 400;
-  font-size: 1.25em;
+  font-size: 1.2em;
 }
 
 .layout-desc-projects {
@@ -80,30 +83,25 @@
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
 }
 
-.layout-block {
+/************** BLOCKS **************/
+.layout-block,
+.layout-block-horizontal {
   background-color: rgba(60, 90, 150, 0.25);
-  padding: 0.8em 1em;
-  display: flex;
-  flex-direction: column;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  display: flex;
+}
+.layout-block {
+  padding: 0.8em 1em;
+  flex-direction: column;
 }
 
 .layout-block-horizontal {
-  background-color: rgba(60, 90, 150, 0.25);
   padding: 1em;
-  display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
-.layout-icon-block {
-}
-.icon-block i {
-}
-.icon-block p {
-  font-weight: 400;
-}
+/************** IMAGES **************/
 .layout-img-block {
   width: 90%;
   aspect-ratio: 1 / 1;
@@ -118,11 +116,12 @@
 .layout-img-single {
   width: 250px;
 }
+
+/************** TECHNOLOGIES **************/
 .layout-tech-block {
   display: flex;
   gap: 15px;
 }
-
 .layout-tech-block-item {
   display: flex;
   align-items: center;
@@ -178,6 +177,7 @@
   color: #fff !important;
 }
 
+/************** BUTTONS **************/
 .layout-btn-block {
   display: flex;
   align-items: center;
@@ -185,33 +185,32 @@
   margin-top: 10px;
 }
 .layout-btn-block a {
-  padding: 0.4em 0.5em;
+  padding: 0.6em 0.7em;
   border-radius: 0.3em;
   background-color: rgba(60, 90, 150, 0.4);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(8px);
   color: #dce0e8;
-  font-size: 0.95rem;
-  font-weight: 500;
+  font-size: 0.95em;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.25s ease;
   display: flex;
   align-items: center;
   gap: 6px;
 }
-
 .layout-btn-block .btn-projects:hover {
   transform: translateY(-2px);
   background-color: #ff5f5f;
 }
-
 .layout-btn-block .repo-btn {
-  padding: 0.4em 0.5em;
+  padding: 0.6em 0.7em;
 }
-
 .layout-btn-block .repo-btn svg {
   font-size: 1.2rem;
 }
+
+/************** CONTACT LIST **************/
 .layout-ul {
   list-style: none;
   height: 333px;
@@ -226,7 +225,7 @@
   display: flex;
   align-items: center;
 }
-.layout-ul li a{
+.layout-ul li a {
   font-size: clamp(1.2rem, 2vw, 1.3em);
   cursor: pointer;
   color: #fff;
@@ -238,31 +237,29 @@
   align-items: center;
   line-height: 1;
 }
-.layout-ul li a:hover{
+.layout-ul li a:hover {
   color: #ff5f5f;
 }
-.layout-ul li label{
+.layout-ul li label {
   opacity: 0.8;
 }
-.contact-form {
+
+/************** CONTACT FORM **************/
+.layout-contact-form {
   width: 100%;
   height: fit-content;
   display: flex;
   flex-direction: column;
   gap: 0.8em;
 }
-
-/* LABELS */
-.contact-form label {
+.layout-contact-form label {
   font-size: 0.75rem;
   color: #fff;
   margin-bottom: -0.35rem;
   font-weight: 400;
 }
-
-/* INPUTS E TEXTAREA */
-.contact-form input,
-.contact-form textarea {
+.layout-contact-form input,
+.layout-contact-form textarea {
   width: 100%;
   padding: 0.7em 0.8em;
   background-color: #eeeeee;
@@ -272,25 +269,19 @@
   outline: none;
   transition: 0.2s ease;
 }
-
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
+.layout-contact-form input::placeholder,
+.layout-contact-form textarea::placeholder {
   color: #ccc;
 }
-
-.contact-form input:focus,
-.contact-form textarea:focus {
+.layout-contact-form input:focus,
+.layout-contact-form textarea:focus {
   border-color: #ff5f5f !important;
 }
-
-/* TEXTAREA ALTURA */
-.contact-form textarea {
+.layout-contact-form textarea {
   min-height: 90px;
-  resize:none;
+  resize: none;
 }
-
-/* CONTADOR */
-.contact-form small {
+.layout-contact-form small {
   font-size: 0.7rem;
   color: #aaa;
   margin-top: -0.3rem;
@@ -298,7 +289,7 @@
   align-self: flex-end;
 }
 
-/* BOTÃO — ESQUERDA e COR #ff5f5f */
+/************** SUBMIT BUTTON **************/
 .btn-form {
   width: fit-content;
   padding: 0.75rem 1.4rem;
@@ -311,34 +302,26 @@
   cursor: pointer;
   transition: 0.2s ease;
 }
-
 .btn-form:hover {
   transform: translateY(-3px);
 }
-
 .btn-form:active {
   transform: scale(0.97);
 }
 
-
-/* ====== ACCORDION ====== */
-
+/************** ACCORDION **************/
 .accordion {
   display: flex;
   flex-direction: column;
   gap: 10px;
   width: 100%;
 }
-
-/* Container do item */
 .accordion-item {
   background: rgba(60, 90, 150, 0.25);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
   overflow: hidden;
   transition: all 0.3s ease;
 }
-
-/* Cabeçalho */
 .accordion-header {
   width: 100%;
   padding: 0.6em;
@@ -354,32 +337,24 @@
   text-align: left;
   transition: background 0.25s ease;
 }
-
 .accordion-header:hover {
   background: rgba(255, 255, 255, 0.05);
 }
-
-/* Corpo */
 .accordion-body {
   max-height: 0;
   overflow: hidden;
   transition: all 0.35s ease;
   background: rgba(255, 255, 255, 0.05);
 }
-
 .accordion-body p {
   padding: 0.6em;
   opacity: 0.85;
   font-size: 0.9em;
   font-weight: 500;
 }
-
-/* Quando aberto */
 .accordion-item.open .accordion-body {
-  max-height: 250px; /* expande */
+  max-height: 250px; 
 }
-
-/* Ícones coloridos para harmonizar */
 .accordion-header svg {
   font-size: 1.2rem;
   opacity: 0.85;
