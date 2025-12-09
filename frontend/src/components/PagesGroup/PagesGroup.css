@@ -17,6 +17,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 20px;
 }
 .layout-right {
   width: 50%;
@@ -28,8 +29,11 @@
   font-weight: 600;
   font-size: 1.1em;
 }
-h3 {
+.layout-h3 {
   font-weight: 700;
+  font-size: 0.85em;
+  opacity: 0.6;
+  color:#ab27fd;
 }
 .layout-h4 {
   font-weight: 700;
@@ -48,6 +52,11 @@ h3 {
 .layout-desc-main {
   font-weight: 400;
   font-size: 1.25em;
+}
+
+.layout-desc-projects {
+  font-weight: 400;
+  font-size: 0.9;
 }
 .layout-strong {
   font-size: 1em;
@@ -81,9 +90,16 @@ h3 {
 .icon-block p {
   font-weight: 400;
 }
-.img-block {
+.layout-img-block {
+  width: 90%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 8px;
 }
-.img-block img {
+.layout-img-block img {
+ width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .layout-img-single {
   width: 250px;
@@ -147,9 +163,38 @@ h3 {
   opacity: 0.9;
   color: #fff !important;
 }
-.btn-block {
+
+.layout-btn-block {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
 }
-.btn-block button {
+.layout-btn-block a {
+  padding: 10px 15px;
+  border-radius: 1em;
+  background: #ff5f5f;
+  backdrop-filter: blur(8px);
+  color: #dce0e8;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.layout-btn-block .btn-projects:hover {
+  transform: translateY(-2px);
+}
+
+.layout-btn-block .repo-btn {
+  padding: 10px 12px;
+}
+
+.layout-btn-block .repo-btn svg {
+  font-size: 1.2rem;
 }
 .btn-single {
 }

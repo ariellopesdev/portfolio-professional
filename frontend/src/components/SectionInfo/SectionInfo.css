@@ -56,8 +56,9 @@
 }
 
 .section-info .btn-navigate:hover {
-  transform: translateY(-5px);
+  background: #e64c4c;
 }
+
 
 /************** LINKS **************/
 .contacts-wrapper {
