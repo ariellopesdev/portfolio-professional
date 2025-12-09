@@ -6,6 +6,14 @@
   flex-direction: column;
   gap: 1em;
 }
+.layout-single-contact{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
 .layout-double {
   width: 100%;
   height: 100%;
@@ -39,6 +47,12 @@
   font-weight: 700;
   font-size: 1.1em;
   margin-bottom: 10px;
+}
+.layout-h5{
+  font-weight: 700;
+  font-size: 1.6em;
+  letter-spacing: 0.1em;
+  margin-bottom: 20px;
 }
 .highlight {
   color: #ab27fd;
@@ -188,6 +202,7 @@
 
 .layout-btn-block .btn-projects:hover {
   transform: translateY(-2px);
+  background-color: #ff5f5f;
 }
 
 .layout-btn-block .repo-btn {
@@ -197,14 +212,114 @@
 .layout-btn-block .repo-btn svg {
   font-size: 1.2rem;
 }
-.btn-single {
+.layout-ul {
+  list-style: none;
+  height: 333px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
-ul {
+.layout-ul li {
+  font-weight: 400;
+  font-size: 0.95em;
+  display: flex;
+  align-items: center;
 }
-ul li {
+.layout-ul li a{
+  font-size: clamp(1.2rem, 2vw, 1.3em);
+  cursor: pointer;
+  color: #fff;
+  transition: color 0.2s ease, transform 0.2s ease;
+  text-decoration: none;
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
 }
-small {
+.layout-ul li a:hover{
+  color: #ff5f5f;
 }
+.layout-ul li label{
+  opacity: 0.8;
+}
+.contact-form {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8em;
+}
+
+/* LABELS */
+.contact-form label {
+  font-size: 0.75rem;
+  color: #fff;
+  margin-bottom: -0.35rem;
+  font-weight: 400;
+}
+
+/* INPUTS E TEXTAREA */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.7em 0.8em;
+  background-color: #eeeeee;
+  border: none;
+  color: #424242;
+  font-size: 0.8rem;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #ccc;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #ff5f5f !important;
+}
+
+/* TEXTAREA ALTURA */
+.contact-form textarea {
+  min-height: 90px;
+  resize:none;
+}
+
+/* CONTADOR */
+.contact-form small {
+  font-size: 0.7rem;
+  color: #aaa;
+  margin-top: -0.3rem;
+  margin-bottom: 0.3rem;
+  align-self: flex-end;
+}
+
+/* BOTÃO — ESQUERDA e COR #ff5f5f */
+.btn-form {
+  width: fit-content;
+  padding: 0.75rem 1.4rem;
+  background: #ff5f5f;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.btn-form:hover {
+  transform: translateY(-3px);
+}
+
+.btn-form:active {
+  transform: scale(0.97);
+}
+
 
 /* ====== ACCORDION ====== */
 
