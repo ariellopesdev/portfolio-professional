@@ -4,11 +4,11 @@ header {
   top: 0;
   right: 0;
   width: 100%;
-  height: 60px;
+  height: 3.75rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-right: 1em;
+  padding-right: 1rem;
   color: #fff;
   background-color: transparent;
   z-index: 1000;
@@ -16,7 +16,7 @@ header {
 
 header h1 {
   position: relative;
-  font-size: 1.2em;
+  font-size: 1.2rem;
   font-weight: 600;
   letter-spacing: 0.2em;
   height: 100%;
@@ -32,7 +32,7 @@ header h1 {
   list-style: none;
   display: flex;
   margin-left: auto;
-  gap: 1em;
+  gap: 1rem;
   align-items: center;
   padding: 0;
   z-index: 10000;
@@ -64,7 +64,7 @@ header h1 {
   align-items: center;
   justify-content: center;
   height: 100%;
-  padding: 0 1.5em 0 2.5em;
+  padding: 0 1.5rem 0 2.5rem;
 }
 
 #menu-btn-toggle {
@@ -72,7 +72,7 @@ header h1 {
   border: none;
   outline: none;
   cursor: pointer;
-  font-size: 1.6em;
+  font-size: 1.6rem;
   color: #ff5f5f;
   transition: color 0.2s ease;
   display: flex;
@@ -137,11 +137,11 @@ header h1 {
 /************** CLOSE MENU BUTTON **************/
 .close-btn {
   position: absolute;
-  top: .4em;
-  right: 1.2em;
+  top: .9rem;
+  right: 2.2rem;
   background: transparent;
   border: none;
-  font-size: 2em;
+  font-size: 2rem;
   color: #ff5f5f;
   cursor: pointer;
   transition: transform 0.2s ease, color 0.2s ease;
