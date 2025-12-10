@@ -76,7 +76,7 @@
     opacity: 0;
     transform: translateY(20px);
   }
-  50%{
+  50% {
     opacity: 0;
     transform: translateY(10px);
   }
@@ -114,5 +114,13 @@
   100% {
     transform: translateX(0);
     opacity: 1;
+  }
+}
+
+/************** RESPONSIVE **************/
+@media (max-width: 768px) {
+  .section-content {
+    width: 100%;
+    height: 60%;
   }
 }

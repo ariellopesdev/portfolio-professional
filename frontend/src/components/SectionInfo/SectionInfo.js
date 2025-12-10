@@ -41,23 +41,6 @@ const SectionInfo = ({
       <h1 className={isVisible ? "visible" : "reset"}>{title}</h1>
       <TwoLines isVisible={isVisible} color={color} />
       <p className={isVisible ? "visible" : "reset"}>{text}</p>
-      {contacts.length > 0 && (
-        <div className={`contacts-wrapper ${isVisible ? "visible" : "reset"}`}>
-          {contacts.map(({ icon: Icon, href, label }, index) => (
-            <div key={index} className="contact-item">
-              <a
-                href={href}
-                target={externalLink ? "_blank" : "_self"}
-                rel={externalLink ? "noopener noreferrer" : undefined}
-                className="contact-icon-link"
-              >
-                <Icon className="contact-icon" />
-              </a>
-              <span>{label}</span>
-            </div>
-          ))}
-        </div>
-      )}
       {buttonText && buttonLink && (
         <button
           className={`btn-navigate ${isVisible ? "visible" : "reset"}`}
