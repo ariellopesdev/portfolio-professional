@@ -140,7 +140,7 @@ const Projects = () => {
       <div className="sections-wrapper">
         <SectionInfo
           title="Projetos"
-          text="Trabalhos que desenvolvi, unindo desempenho, usabilidade e boas práticas."
+          text="Um pouco de tudo que desenvolvi. Dá uma olhadinha!"
           isVisible={isVisible}
           buttonText="Ver todos os projetos"
           buttonLink="projects"

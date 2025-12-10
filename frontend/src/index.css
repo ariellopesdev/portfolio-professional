@@ -78,7 +78,8 @@ body {
     padding: 4em 1em 3.5em 1em;
   }
   .sections-wrapper {
-    display: flex;
     flex-direction: column;
+    height: 85vh;
+    /* background-color: green; */
   }
 }

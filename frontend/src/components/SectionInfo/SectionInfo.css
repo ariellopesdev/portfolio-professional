@@ -85,7 +85,8 @@
 @media (max-width: 768px) {
   .section-info {
     width: 100%;
-    height: 40%;
+    height: fit-content;
+    margin-bottom: 2em;
   }
   .section-info .btn-navigate {
     padding: 0.9em 1em;
