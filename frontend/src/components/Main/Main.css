@@ -5,7 +5,7 @@
 }
 
 #main h1 {
-  font-size: clamp(4.5rem, 6vw, 5em);
+  font-size: clamp(3.5rem, 6vw, 5em);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   padding-top: 60px;
@@ -65,12 +65,4 @@
 }
 #main h2.visible {
   transition-delay: 0.5s;
-}
-
-/************** RESPONSIVE **************/
-
-@media (max-width: 767px) {
-  #main {
-    padding-left: 75px !important;
-  }
 }
