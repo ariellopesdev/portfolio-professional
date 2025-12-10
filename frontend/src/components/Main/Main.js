@@ -16,7 +16,7 @@ const Main = () => {
         <h1 className={isVisible ? "visible" : "reset"}>
           Ariel <br /> Lopes
         </h1>
-        <TwoLines isVisible={isVisible} color="#ff5f5f" />
+        <TwoLines isVisible={isVisible} color="#ff5f5f" compact={false} />
         <h2 className={isVisible ? "visible" : "reset"}>
           desenvolvedor <br /> full stack
         </h2>

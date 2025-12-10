@@ -77,11 +77,12 @@
 
 /************** RESPONSIVE **************/
 @media (max-width: 768px) {
-  .two-lines {
-    margin: .8rem 0;
+  .two-lines.compact {
+    margin: 0.8rem 0;
   }
-  .two-lines::before,
-  .two-lines::after {
+
+  .two-lines.compact::before,
+  .two-lines.compact::after {
     margin: 0.6rem 0;
   }
 }
