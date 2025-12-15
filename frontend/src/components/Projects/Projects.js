@@ -3,7 +3,8 @@ import "../PagesGroup/PagesGroup.css";
 import "../TabsNavigation/TabsNavigation.css";
 
 //Components
-import SectionBlock from "../SectionBlock/SectionBlock";
+import SectionInfo from "../SectionInfo/SectionInfo";
+import SectionContent from "../SectionContent/SectionContent";
 import TabsNavigation from "../TabsNavigation/TabsNavigation";
 
 //Hooks
@@ -137,19 +138,19 @@ const Projects = () => {
   return (
     <section id="projects" ref={ref}>
       <div className="sections-wrapper">
-        <SectionBlock
+        <SectionInfo
           title="Projetos"
-          text="Um pouco de tudo que desenvolvi. Dá uma olhadinha!"
           isVisible={isVisible}
           buttonText="Ver todos os projetos"
           buttonLink="projects"
           externalLink={false}
-        >
+        />
+        <SectionContent>
           <TabsNavigation tabs={tabs} current={index} goTo={goTo} />
           <div className={`tabs-content-wrapper ${anim}`}>
             {blocks[index].content}
           </div>
-        </SectionBlock>
+        </SectionContent>
       </div>
     </section>
   );
