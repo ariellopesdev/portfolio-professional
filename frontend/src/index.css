@@ -16,7 +16,8 @@ body {
   margin: 0;
   height: 100%;
   width: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   background-image: linear-gradient(
     rgb(7, 33, 66),
     rgb(6, 28, 55),
@@ -47,13 +48,14 @@ body {
 #curriculum,
 #contact {
   position: relative;
-  height: 100vh;
+  min-height: auto;
   width: 100%;
   padding: 80px 100px 60px 150px;
   transition: all 0.8s ease;
   box-sizing: border-box;
   color: #fff;
   background-color: transparent;
+  overflow-y: auto;
 }
 
 .sections-wrapper {
@@ -68,18 +70,5 @@ body {
 
 /************** RESPONSIVE **************/
 @media (max-width: 768px) {
-  #main {
-    padding: 1.5em 0 0 1.5em;
-  }
-  #projects,
-  #about,
-  #curriculum,
-  #contact {
-    padding: 4em 1em 3.5em 1em;
-  }
-  .sections-wrapper {
-    flex-direction: column;
-    height: 85vh;
-    /* background-color: green; */
-  }
+  
 }

@@ -1,4 +1,3 @@
-//CSS
 import { useEffect, useState, useRef } from "react";
 
 export function useScrollEffect(sections) {
@@ -40,22 +39,32 @@ export function useScrollEffect(sections) {
   // NATURAL SCROLL CONTROL (mouse wheel / touch swipe)
   // -------------------------------------------
   const handleScroll = (direction) => {
-    // Prevents scroll when:
-    // - the hook is already processing a scroll
-    // - a menu scroll is in progress
     if (isScrolling.current || isManualScroll.current) return;
 
+    const sectionId = sections[currentSection];
+    const sectionEl = document.getElementById(sectionId);
+
+    if (!sectionEl) return;
+
+    const scrollTop = sectionEl.scrollTop;
+    const clientHeight = sectionEl.clientHeight;
+    const scrollHeight = sectionEl.scrollHeight;
+
+    const isAtTop = scrollTop === 0;
+    const isAtBottom = scrollTop + clientHeight >= scrollHeight - 2;
+
+    // 👉 SE AINDA DÁ PRA ROLAR DENTRO DA SEÇÃO, NÃO TROCA
+    if (direction === "down" && !isAtBottom) return;
+    if (direction === "up" && !isAtTop) return;
+
+    // 👉 SÓ AQUI troca de seção
     isScrolling.current = true;
 
-    // Move to next or previous section depending on scroll direction
     setCurrentSection((prev) => {
       const nextIndex = direction === "down" ? prev + 1 : prev - 1;
-
-      // Keep the index within the allowed range
       return Math.max(0, Math.min(nextIndex, sections.length - 1));
     });
 
-    // Re-enable scrolling after a delay (matches smooth scroll duration)
     setTimeout(() => {
       isScrolling.current = false;
     }, 800);
