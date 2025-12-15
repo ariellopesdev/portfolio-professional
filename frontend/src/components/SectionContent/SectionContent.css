@@ -1,11 +1,9 @@
 /************** SECTION-CONTENT **************/
 
 .section-content {
-  width: 65%;
+  width: 100%;
   height: 100%;
-  position: absolute;
-  right: 0;
-  bottom: 0;
+  position: relative;
   z-index: 9;
   overflow: hidden;
   transform-origin: bottom right;

@@ -13,6 +13,25 @@ export function useScrollEffect(sections) {
   // Tracks whether the scroll originated from clicking the menu (not from mouse/touch)
   const isManualScroll = useRef(false);
 
+  const canChangeSection = (direction) => {
+    const currentId = sections[currentSection];
+    const el = document.getElementById(currentId);
+
+    if (!el) return true;
+
+    const { scrollTop, scrollHeight, clientHeight } = el;
+
+    if (direction === "down") {
+      return scrollTop + clientHeight >= scrollHeight - 2;
+    }
+
+    if (direction === "up") {
+      return scrollTop <= 2;
+    }
+
+    return true;
+  };
+
   // -------------------------------------------
   // SCROLL TRIGGERED BY MENU CLICK (manual scroll)
   // -------------------------------------------
@@ -41,23 +60,6 @@ export function useScrollEffect(sections) {
   const handleScroll = (direction) => {
     if (isScrolling.current || isManualScroll.current) return;
 
-    const sectionId = sections[currentSection];
-    const sectionEl = document.getElementById(sectionId);
-
-    if (!sectionEl) return;
-
-    const scrollTop = sectionEl.scrollTop;
-    const clientHeight = sectionEl.clientHeight;
-    const scrollHeight = sectionEl.scrollHeight;
-
-    const isAtTop = scrollTop === 0;
-    const isAtBottom = scrollTop + clientHeight >= scrollHeight - 2;
-
-    // 👉 SE AINDA DÁ PRA ROLAR DENTRO DA SEÇÃO, NÃO TROCA
-    if (direction === "down" && !isAtBottom) return;
-    if (direction === "up" && !isAtTop) return;
-
-    // 👉 SÓ AQUI troca de seção
     isScrolling.current = true;
 
     setCurrentSection((prev) => {

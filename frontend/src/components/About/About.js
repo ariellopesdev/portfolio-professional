@@ -3,8 +3,7 @@ import "../PagesGroup/PagesGroup.css";
 import "../TabsNavigation/TabsNavigation.css";
 
 // Components
-import SectionInfo from "../SectionInfo/SectionInfo";
-import SectionContent from "../SectionContent/SectionContent";
+import SectionBlock from "../SectionBlock/SectionBlock";
 import TabsNavigation from "../TabsNavigation/TabsNavigation";
 
 // Hooks
@@ -294,19 +293,13 @@ const About = () => {
 
   return (
     <section id="about" ref={ref}>
-      <div className="sections-wrapper">
-        <SectionInfo
-          title="Sobre Mim"
-          text="Olá, sou o Ariel."
-          isVisible={isVisible}
-        />
-        <SectionContent>
-          <TabsNavigation tabs={tabs} current={index} goTo={goTo} />
-          <div className={`tabs-content-wrapper ${anim}`}>
-            {blocks[index].content}
-          </div>
-        </SectionContent>
-      </div>
+      <SectionBlock title="Sobre Mim" text="Olá, sou o Ariel." isVisible={isVisible}>
+        <TabsNavigation tabs={tabs} current={index} goTo={goTo} />
+
+        <div className={`tabs-content-wrapper ${anim}`}>
+          {blocks[index].content}
+        </div>
+      </SectionBlock>
     </section>
   );
 };

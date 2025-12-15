@@ -1,0 +1,226 @@
+/************************************
+ * SECTION-CONTENT
+ ************************************/
+
+.section-content {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 9;
+  overflow: hidden;
+  transform-origin: bottom right;
+  transform: scale(0.9);
+  opacity: 1;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/************************************
+ * LAYERS
+ ************************************/
+
+.layer {
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+}
+
+.layer-deep {
+  background-color: #072142;
+  transform: none;
+}
+
+.layer-mid {
+  background-color: #ff5f5f;
+  z-index: 2;
+}
+
+.layer-top {
+  background-color: #072142;
+  z-index: 3;
+}
+
+/************************************
+ * INTERNAL CONTENT
+ ************************************/
+
+.section-inner {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  color: #fff;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: none;
+}
+
+.section-content.visible .section-inner {
+  animation: contentAppear 1s ease-in-out forwards;
+}
+
+/************************************
+ * GROW CONTAINER ANIMATION
+ ************************************/
+
+.section-content.visible {
+  animation: growContainer 1s ease-in-out forwards;
+}
+
+.section-content.visible .layer-mid {
+  animation: slideMid 0.5s ease-in-out forwards;
+}
+
+.section-content.visible .layer-top {
+  animation: slideTop 0.7s ease-in-out forwards;
+}
+
+/************************************
+ * SECTION-INFO
+ ************************************/
+
+.section-info {
+  width: 100%;
+  height: fit-content;
+  background-color: transparent;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  overflow: hidden;
+}
+
+/************************************
+ * KEYFRAMES – SLIDE IN (INFO)
+ ************************************/
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-400px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.section-info h1 {
+  font-size: clamp(2.2rem, 5vw, 5.5rem);
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  display: block;
+  word-wrap: break-word;
+  white-space: pre-line;
+  will-change: transform, opacity;
+  transform: translateX(-400px);
+}
+
+.section-info p {
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  letter-spacing: 0.2em;
+  width: 300px;
+  margin-top: 1.25rem;
+  transform: translateX(-400px);
+  line-height: 1.6;
+}
+
+.section-info .btn-navigate {
+  background-color: #ff5f5f;
+  color: #fff;
+  border: none;
+  font-size: clamp(0.85rem, 1.2vw, 0.9rem);
+  padding: 1.2rem 1.4rem;
+  font-weight: bold;
+  border-radius: 1.7rem;
+  cursor: pointer;
+  margin-top: 40px;
+  transform: translateX(-400px);
+  transition: transform 0.3s ease-in-out;
+}
+
+.section-info .btn-navigate:hover {
+  background: #e64c4c;
+}
+
+/************************************
+ * ANIMATION – SLIDE IN (INFO)
+ ************************************/
+
+.section-info h1.visible {
+  animation: slideIn 0.8s ease-out 0.1s forwards;
+}
+
+.section-info p.visible {
+  animation: slideIn 0.8s ease-out 0.2s forwards;
+}
+
+.section-info .btn-navigate.visible {
+  animation: slideIn 0.8s ease-out 0.3s forwards;
+}
+
+/************************************
+ * ANIMATION RESET (INFO)
+ ************************************/
+
+.section-info h1.reset,
+.section-info p.reset,
+.section-info .btn-navigate.reset {
+  transform: translateX(-400px);
+  animation: none;
+}
+
+/************************************
+ * KEYFRAMES – CONTENT / CONTAINER
+ ************************************/
+
+@keyframes contentAppear {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  50% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes growContainer {
+  0% {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slideMid {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideTop {
+  0% {
+    transform: translateX(-100%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/************************************
+ * RESPONSIVE
+ ************************************/
+

@@ -3,8 +3,7 @@ import "../PagesGroup/PagesGroup.css";
 import "../TabsNavigation/TabsNavigation.css";
 
 // Components
-import SectionInfo from "../SectionInfo/SectionInfo";
-import SectionContent from "../SectionContent/SectionContent";
+import SectionBlock from "../SectionBlock/SectionBlock";
 import TabsNavigation from "../TabsNavigation/TabsNavigation";
 
 // Hooks
@@ -79,22 +78,19 @@ const Curriculum = () => {
 
   return (
     <section id="curriculum" ref={ref}>
-      <div className="sections-wrapper">
-        <SectionInfo
-          title="Currículo"
-          text="Minha formação, cursos e experiência como dev."
-          isVisible={isVisible}
-          buttonText="Abrir Currículo (PDF)"
-          buttonLink="pdf"
-          externalLink={true}
-        />
-        <SectionContent>
-          <TabsNavigation tabs={tabs} current={index} goTo={goTo} />
-          <div className={`tabs-content-wrapper ${anim}`}>
-            {blocks[index].content}
-          </div>
-        </SectionContent>
-      </div>
+      <SectionBlock
+        title="Currículo"
+        text="Minha formação, cursos e experiência como dev."
+        isVisible={isVisible}
+        buttonText="Abrir Currículo (PDF)"
+        buttonLink="pdf"
+        externalLink={true}
+      >
+        <TabsNavigation tabs={tabs} current={index} goTo={goTo} />
+        <div className={`tabs-content-wrapper ${anim}`}>
+          {blocks[index].content}
+        </div>
+      </SectionBlock>
     </section>
   );
 };
