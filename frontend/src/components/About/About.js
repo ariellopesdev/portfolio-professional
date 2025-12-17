@@ -8,16 +8,14 @@ import SectionContent from "../SectionContent/SectionContent";
 import TabsNavigation from "../TabsNavigation/TabsNavigation";
 
 // Hooks
-import { useVisibleState } from "../../hooks/useVisibleState";
 import { useState } from "react";
 import useTabsNavigation from "../../hooks/useTabsNavigation";
 
-//Images
+// Images
 import fullStackImg from "../../assets/images/full-stack-developer.png";
 import stackPrincipal from "../../assets/images/stack-principal.png";
-import logo from "../../assets/images/logo.png";
 
-// Icons (Hard & Soft Skills)
+// Icons
 import {
   FaReact,
   FaJava,
@@ -283,22 +281,14 @@ const About = () => {
     },
   ];
 
-  const { ref, isVisible } = useVisibleState(0.3);
   const { index, anim, goTo } = useTabsNavigation(blocks.length);
-  const tabs = [
-    "Apresentação",
-    "Stack Principal",
-    "Hard Skills",
-    "Soft Skills",
-  ];
+  const tabs = ["Apresentação", "Stack Principal", "Hard Skills", "Soft Skills"];
 
   return (
-    <section id="about" ref={ref}>
+    <section id="about">
       <div className="sections-wrapper">
-        <SectionInfo
-          title="Sobre Mim"
-          isVisible={isVisible}
-        />
+        <SectionInfo title="Sobre Mim" />
+
         <SectionContent>
           <TabsNavigation tabs={tabs} current={index} goTo={goTo} />
           <div className={`tabs-content-wrapper ${anim}`}>

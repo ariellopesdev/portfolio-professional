@@ -4,6 +4,30 @@
   display: inline-block;
 }
 
+/************** BASE STATE **************/
+
+#main h1,
+#main h2 {
+  opacity: 0;
+  transform: translateX(-50px);
+  will-change: transform, opacity;
+}
+
+/************** KEYFRAMES **************/
+
+@keyframes fadeSlideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/************** TITLE **************/
+
 #main h1 {
   font-size: clamp(3.5rem, 6vw, 5em);
   letter-spacing: 0.1em;
@@ -11,58 +35,26 @@
   padding-top: 60px;
   font-weight: 600;
   margin: 0;
-  word-wrap: break-word;
   white-space: pre-line;
-  will-change: transform, opacity;
   z-index: 10;
-  opacity: 0; 
-  transform: translateX(-50px); 
-  transition: transform 0.6s ease-out, opacity 0.6s ease-out;
 }
+
+.animate-title {
+  animation: fadeSlideLeft 0.6s ease-out forwards;
+  animation-delay: 0.1s;
+}
+
+/************** SUBTITLE **************/
 
 #main h2 {
   font-size: clamp(1.2rem, 3vw, 1.5em);
   letter-spacing: 0.2em;
   line-height: 1.7;
-  display: block;
-  word-wrap: break-word;
   white-space: pre-line;
-  will-change: transform, opacity;
   z-index: 10;
-  opacity: 0; 
-  transform: translateX(-50px);
-  transition: transform 0.6s ease-out, opacity 0.6s ease-out;
 }
 
-/************** RESET PRE-ANIMATION **************/
-#main h1.reset,
-#main h2.reset {
-  opacity: 0;
-  transform: translateX(-50px);
-  transition: none; 
-}
-
-/************** ANIMATION COMES FROM LEFT **************/
-#main h1.visible,
-#main h2.visible {
-  opacity: 1 !important;
-  transform: translateX(0) !important;
-  transition: transform 0.6s ease-out, opacity 0.6s ease-out;
-  transition-delay: 0.3s;
-}
-
-/************** ANIMATION DISAPPEARS WITHOUT SLIDING **************/
-#main h1.hidden,
-#main h2.hidden {
-  opacity: 0 !important;
-  transform: translateX(0) !important; 
-  transition: opacity 0.3s ease-out;
-}
-
-/************** STAGGERED ANIMATION **************/
-#main h1.visible {
-  transition-delay: 0.1s;
-}
-#main h2.visible {
-  transition-delay: 0.5s;
+.animate-subtitle {
+  animation: fadeSlideLeft 0.6s ease-out forwards;
+  animation-delay: 0.5s;
 }

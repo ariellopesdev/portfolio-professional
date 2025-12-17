@@ -1,34 +1,33 @@
-//CSS
 import "./SectionInfo.css";
 
-//Two Lines
+// Two Lines
 import TwoLines from "../TwoLines/TwoLines";
 
-//Currículo
+// Currículo
 import curriculoPdf from "../../assets/curriculo_ariel_lopes.pdf";
 
-//Router
+// Router
 import { useNavigate } from "react-router-dom";
 
 const SectionInfo = ({
   title,
   text,
-  isVisible,
   buttonText,
   buttonLink,
-  color = "ff5f5f",
+  color = "#ff5f5f",
   externalLink,
   contacts = [],
 }) => {
   const navigate = useNavigate();
+
   const handleClick = () => {
     if (!buttonLink) return;
 
-    // PDF
     if (buttonLink === "pdf") {
       window.open(curriculoPdf, "_blank", "noopener,noreferrer");
       return;
     }
+
     if (externalLink) {
       window.open(buttonLink, "_blank", "noopener,noreferrer");
     } else {
@@ -38,14 +37,14 @@ const SectionInfo = ({
 
   return (
     <div className="section-info">
-      <h1 className={isVisible ? "visible" : "reset"}>{title}</h1>
-      <TwoLines isVisible={isVisible} color={color} />
-      <p className={isVisible ? "visible" : "reset"}>{text}</p>
+      <h1 className="animate-title">{title}</h1>
+
+      <TwoLines color={color} />
+
+      <p className="animate-text">{text}</p>
+
       {buttonText && buttonLink && (
-        <button
-          className={`btn-navigate ${isVisible ? "visible" : "reset"}`}
-          onClick={handleClick}
-        >
+        <button className="btn-navigate animate-button" onClick={handleClick}>
           {buttonText}
         </button>
       )}

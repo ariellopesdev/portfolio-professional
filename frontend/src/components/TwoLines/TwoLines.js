@@ -1,13 +1,11 @@
-//CSS
 import "./TwoLines.css";
 
-const TwoLines = ({ isVisible = false, color = "ff5f5f", compact = true }) => {
+const TwoLines = ({ color = "#ff5f5f", compact = true }) => {
   return (
     <div
-      className={`two-lines ${compact ? "compact" : ""} ${
-        isVisible ? "visible" : "reset"
-      }`}
-    ></div>
+      className={`two-lines ${compact ? "compact" : ""}`}
+      style={{ "--line-color": color }}
+    />
   );
 };
 

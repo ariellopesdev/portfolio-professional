@@ -48,7 +48,7 @@ body {
 #curriculum,
 #contact {
   position: relative;
-  height: fit-content;
+  height: auto;
   width: 100%;
   padding: 80px 100px 0 150px;
   transition: all 0.8s ease;

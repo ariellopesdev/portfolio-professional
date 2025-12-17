@@ -1,7 +1,7 @@
-//Css
+// CSS
 import "./Home.css";
 
-//components
+// Components
 import Navbar from "../../components/Navbar/Navbar";
 import Aside from "../../components/Aside/Aside";
 import Main from "../../components/Main/Main";
@@ -11,27 +11,32 @@ import About from "../../components/About/About";
 import Curriculum from "../../components/Curriculum/Curriculum";
 import Contact from "../../components/Contact/Contact";
 
-//Hooks
-import { useScrollEffect } from "../../hooks/useScrollEffect";
-
 const Home = () => {
-  const sections = ["main", "projects", "about", "curriculum", "contact"];
-
-  const { currentSection, isReady, scrollToSection } =
-    useScrollEffect(sections);
-
-  if (!isReady) return null;
-
   return (
     <div id="home">
-      <Navbar scrollToSection={scrollToSection} />
-      <Aside currentSection={Math.min(currentSection, 4)} />
-      <Main isVisible={currentSection === 0} />
-      <Moon isVisible={currentSection === 0} />
-      <Projects isVisible={currentSection === 1} />
-      <About isVisible={currentSection === 2} />
-      <Curriculum isVisible={currentSection === 3} />
-      <Contact isVisible={currentSection === 4} />
+      <Navbar />
+      <Aside />
+
+      <section id="main">
+        <Main />
+        <Moon />
+      </section>
+
+      <section id="projects">
+        <Projects />
+      </section>
+
+      <section id="about">
+        <About />
+      </section>
+
+      <section id="curriculum">
+        <Curriculum />
+      </section>
+
+      <section id="contact">
+        <Contact />
+      </section>
     </div>
   );
 };

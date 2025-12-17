@@ -1,81 +1,67 @@
-//CSS
+// CSS
 import "./Moon.css";
 
-//Hooks
+// Hooks
 import { useEffect, useRef, useState } from "react";
 
-//Images
+// Images
 import photoPortfolio from "../../assets/images/portfolio-image2.png";
 
-const Moon = ({ isVisible }) => {
+const Moon = () => {
   const moonOrbitRef = useRef(null);
   const starsRef = useRef([]);
-  const [visibleState, setVisibleState] = useState(false);
+  const [visible, setVisible] = useState(false);
 
-  //GENERATES STAR POSITIONS ONLY ONCE
+  // Generate stars once
   if (starsRef.current.length === 0) {
-    starsRef.current = Array.from({ length: 60 }).map(() => {
-      const size = Math.random() * 2 + 1;
-      const top = Math.random() * 100;
-      const left = Math.random() * 100;
-      const delay = Math.random() * 4;
-      return { size, top, left, delay };
-    });
+    starsRef.current = Array.from({ length: 60 }).map(() => ({
+      size: Math.random() * 2 + 1,
+      top: Math.random() * 100,
+      left: Math.random() * 100,
+      delay: Math.random() * 4,
+    }));
   }
 
+  // Parallax
   useEffect(() => {
     const moonOrbit = moonOrbitRef.current;
+
     const handleMouseMove = (e) => {
-      const { innerWidth, innerHeight } = window;
-      const x = (e.clientX - innerWidth / 2) / innerWidth;
-      const y = (e.clientY - innerHeight / 2) / innerHeight;
+      const x = (e.clientX - window.innerWidth / 2) / window.innerWidth;
+      const y = (e.clientY - window.innerHeight / 2) / window.innerHeight;
 
-      //REVERSE MOVEMENTE(PARALLAX EFFECT)
-      const moveX = x * -60;
-      const moveY = y * -60;
-
-      moonOrbit.style.transform = `translate(${moveX}px, calc(-50% + ${moveY}px))`;
+      moonOrbit.style.transform = `translate(${x * -60}px, calc(-50% + ${
+        y * -60
+      }px))`;
     };
+
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
-  useEffect(()=>{
-    let t;
-    if(isVisible){
-      t = setTimeout(()=> setVisibleState(true), 100);
-    }else {
-      setVisibleState(false);
-    }
-    return ()=> clearTimeout(t);
-  },[]);
-
-  useEffect(()=>{
-    let t;
-    if(isVisible){
-      setVisibleState(false);
-      t = setTimeout(()=> setVisibleState(true), 40);
-    }else{
-      setVisibleState(false);
-    }
-    return ()=> clearTimeout(t);
-  },[isVisible]);
+  // Trigger animation on mount
+  useEffect(() => {
+    const t = setTimeout(() => setVisible(true), 100);
+    return () => clearTimeout(t);
+  }, []);
 
   return (
     <div className="moon-orbit" ref={moonOrbitRef}>
       {/* Moon */}
-      <div className={`moon ${visibleState ? "moon-visible" : "moon-hidden"}`}>
+      <div className={`moon ${visible ? "moon-visible" : "moon-hidden"}`}>
         <img
           src={photoPortfolio}
           alt="Photo to portfolio"
           className="portfolio-image"
         />
       </div>
+
       {/* Rings */}
       {[...Array(5)].map((_, i) => (
-        <div key={i} className={`ring ring-${i + 1}`}></div>
+        <div key={i} className={`ring ring-${i + 1}`} />
       ))}
-      {/* Ring 6 with stars */}
+
+      {/* Ring with stars */}
       <div className="ring ring-6">
         {starsRef.current.map((star, i) => (
           <div
@@ -88,7 +74,7 @@ const Moon = ({ isVisible }) => {
               left: `${star.left}%`,
               animationDelay: `${star.delay}s`,
             }}
-          ></div>
+          />
         ))}
       </div>
     </div>

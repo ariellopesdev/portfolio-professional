@@ -1,23 +1,19 @@
-//CSS
 import "./Main.css";
 
-//Hooks
-import {useVisibleState} from "../../hooks/useVisibleState";
-
-//Components
+// Components
 import TwoLines from "../TwoLines/TwoLines";
 
 const Main = () => {
-  const {ref, isVisible} = useVisibleState(0.9);
-
   return (
-    <section id="main" ref={ref}>
+    <section id="main">
       <div id="block-left-main">
-        <h1 className={isVisible ? "visible" : "reset"}>
+        <h1 className="animate-title">
           Ariel <br /> Lopes
         </h1>
-        <TwoLines isVisible={isVisible} color="#ff5f5f" compact={false} />
-        <h2 className={isVisible ? "visible" : "reset"}>
+
+        <TwoLines color="#ff5f5f" compact={false} />
+
+        <h2 className="animate-subtitle">
           desenvolvedor <br /> full stack
         </h2>
       </div>

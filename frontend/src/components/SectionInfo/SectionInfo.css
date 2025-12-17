@@ -12,35 +12,59 @@
   overflow: hidden;
 }
 
-/************** KEYFRAMES SLIDE IN **************/
-@keyframes slideIn {
+/************** BASE STATE **************/
+
+.section-info h1,
+.section-info p,
+.section-info .btn-navigate {
+  transform: translateX(-400px);
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+/************** KEYFRAMES **************/
+
+@keyframes slideFadeIn {
   from {
     transform: translateX(-400px);
+    opacity: 0;
   }
   to {
     transform: translateX(0);
+    opacity: 1;
   }
 }
+
+/************** TITLE **************/
 
 .section-info h1 {
   font-size: clamp(2.2rem, 5vw, 5.5rem);
   letter-spacing: 0.1em;
   font-weight: 600;
-  display: block;
-  word-wrap: break-word;
   white-space: pre-line;
-  will-change: transform, opacity;
-  transform: translateX(-400px);
 }
+
+.animate-title {
+  animation: slideFadeIn 0.8s ease-out forwards;
+  animation-delay: 0.1s;
+}
+
+/************** TEXT **************/
 
 .section-info p {
   font-size: clamp(0.9rem, 1.5vw, 1rem);
   letter-spacing: 0.2em;
   width: 300px;
   margin-top: 1.25rem;
-  transform: translateX(-400px);
   line-height: 1.6;
 }
+
+.animate-text {
+  animation: slideFadeIn 0.8s ease-out forwards;
+  animation-delay: 0.25s;
+}
+
+/************** BUTTON **************/
 
 .section-info .btn-navigate {
   background-color: #ff5f5f;
@@ -52,42 +76,29 @@
   border-radius: 1.7rem;
   cursor: pointer;
   margin-top: 40px;
-  transform: translateX(-400px);
-  transition: transform 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out;
 }
 
 .section-info .btn-navigate:hover {
   background: #e64c4c;
 }
 
-/************** ANIMATION SLIDE IN **************/
-.section-info h1.visible {
-  animation: slideIn 0.8s ease-out 0.1s forwards;
-}
-
-.section-info p.visible {
-  animation: slideIn 0.8s ease-out 0.2s forwards;
-}
-
-.section-info .btn-navigate.visible {
-  animation: slideIn 0.8s ease-out 0.3s forwards;
-}
-
-/************** ANIMATION RESET **************/
-.section-info h1.reset,
-.section-info p.reset,
-.section-info .btn-navigate.reset {
-  transform: translateX(-400px);
-  animation: none;
+.animate-button {
+  animation: slideFadeIn 0.8s ease-out forwards;
+  animation-delay: 0.4s;
 }
 
 /************** RESPONSIVE **************/
+
 @media (max-width: 768px) {
   .section-info {
-    width: 100%;
-    height: fit-content;
     margin-bottom: 2em;
   }
+
+  .section-info p {
+    width: 100%;
+  }
+
   .section-info .btn-navigate {
     padding: 0.9em 1em;
     margin-top: 15px;
