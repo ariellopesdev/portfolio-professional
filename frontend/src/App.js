@@ -5,7 +5,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // Components
 import Navbar from "./components/Navbar/Navbar";
-import StarsBackground from "./components/StarsBackground/StarsBackground";
 import SolarSystemBackground from "./components/SolarSystemBackground/SolarSystemBackground";
 
 // Pages
@@ -16,7 +15,6 @@ function App() {
   return (
     <div className="App">
       {/* Background 3D global */}
-      <StarsBackground />
       <SolarSystemBackground />
 
       <BrowserRouter basename="/portfolio-professional">
