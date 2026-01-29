@@ -64,30 +64,6 @@
   animation-delay: 0.25s;
 }
 
-/************** BUTTON **************/
-
-.section-info .btn-navigate {
-  background-color: #ff5f5f;
-  color: #fff;
-  border: none;
-  font-size: clamp(0.85rem, 1.2vw, 0.9rem);
-  padding: 1.2rem 1.4rem;
-  font-weight: bold;
-  border-radius: 1.7rem;
-  cursor: pointer;
-  margin-top: 40px;
-  transition: background 0.3s ease-in-out;
-}
-
-.section-info .btn-navigate:hover {
-  background: #e64c4c;
-}
-
-.animate-button {
-  animation: slideFadeIn 0.8s ease-out forwards;
-  animation-delay: 0.4s;
-}
-
 /************** RESPONSIVE **************/
 
 @media (max-width: 768px) {

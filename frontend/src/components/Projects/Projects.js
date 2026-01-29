@@ -36,10 +36,7 @@ const Projects = () => {
             <h3 className="layout-h3">React.js · Java · MongoDB · APIs</h3>
 
             <div className="layout-btn-block">
-              <a
-                className="btn-projects"
-                onClick={() => navigate("/projects")}
-              >
+              <a className="btn-projects" onClick={() => navigate("/projects")}>
                 Ver mais
               </a>
 
@@ -75,10 +72,7 @@ const Projects = () => {
             <h3 className="layout-h3">React.js · PHP · Firebase · APIs</h3>
 
             <div className="layout-btn-block">
-              <a
-                className="btn-projects"
-                onClick={() => navigate("/projects")}
-              >
+              <a className="btn-projects" onClick={() => navigate("/projects")}>
                 Ver mais
               </a>
 
@@ -115,10 +109,7 @@ const Projects = () => {
             <h3 className="layout-h3">React.js · Java · MySQL · APIs</h3>
 
             <div className="layout-btn-block">
-              <a
-                className="btn-projects"
-                onClick={() => navigate("/projects")}
-              >
+              <a className="btn-projects" onClick={() => navigate("/projects")}>
                 Ver mais
               </a>
 
@@ -149,16 +140,16 @@ const Projects = () => {
   return (
     <section id="projects">
       <div className="sections-wrapper">
-        <SectionInfo
-          title="Projetos"
-          buttonText="Ver todos os projetos"
-          buttonLink="projects"
-          externalLink={false}
-        />
+        <SectionInfo title="Projetos" />
 
-        <SectionContent>
+        <SectionContent
+          action={{
+            text: "Ver todos os projetos",
+            link: "/projects",
+            external: false,
+          }}
+        >
           <TabsNavigation tabs={tabs} current={index} goTo={goTo} />
-
           <div className={`tabs-content-wrapper ${anim}`}>
             {blocks[index].content}
           </div>

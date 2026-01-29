@@ -1,6 +1,10 @@
+//CSS
 import "./SectionContent.css";
 
-const SectionContent = ({ children }) => {
+//Component
+import SectionActionButton from "../SectionActionButton/SectionActionButton";
+
+const SectionContent = ({ children, action }) => {
   return (
     <div className="section-content animate">
       <div className="layer layer-deep"></div>
@@ -9,6 +13,14 @@ const SectionContent = ({ children }) => {
 
       <div className="section-inner">
         {children}
+
+        {action && (
+          <SectionActionButton
+            text={action.text}
+            link={action.link}
+            external={action.external}
+          />
+        )}
       </div>
     </div>
   );

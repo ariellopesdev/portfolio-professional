@@ -57,7 +57,8 @@ const blocks = [
           <strong className="layout-strong">Out 2025</strong>
           <h4 className="layout-h4">RandPlay — Projeto (Acadêmico)</h4>
           <p className="layout-desc">
-            React.js, Java, MongoDB, APIs, hooks, middlewares e alta performance.
+            React.js, Java, MongoDB, APIs, hooks, middlewares e alta
+            performance.
           </p>
         </div>
 
@@ -67,8 +68,8 @@ const blocks = [
             Kara Arquitetura — Projeto (Acadêmico/Cliente)
           </h4>
           <p className="layout-desc">
-            Site completo com React.js, PHP e Firebase. SEO, responsividade e boas
-            práticas.
+            Site completo com React.js, PHP e Firebase. SEO, responsividade e
+            boas práticas.
           </p>
         </div>
       </div>
@@ -83,16 +84,16 @@ const Curriculum = () => {
   return (
     <section id="curriculum">
       <div className="sections-wrapper">
-        <SectionInfo
-          title="Currículo"
-          buttonText="Abrir Currículo (PDF)"
-          buttonLink="pdf"
-          externalLink
-        />
+        <SectionInfo title="Currículo" />
 
-        <SectionContent>
+        <SectionContent
+          action={{
+            text: "Abrir Currículo (PDF)",
+            link: "pdf",
+            external: true,
+          }}
+        >
           <TabsNavigation tabs={tabs} current={index} goTo={goTo} />
-
           <div className={`tabs-content-wrapper ${anim}`}>
             {blocks[index].content}
           </div>
