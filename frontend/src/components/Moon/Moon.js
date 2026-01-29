@@ -1,11 +1,11 @@
 // CSS
-import "./Moon.css";
+// import "./Moon.css";
 
 // Hooks
 import { useEffect, useRef, useState } from "react";
 
 // Images
-import photoPortfolio from "../../assets/images/portfolio-image2.png";
+// import photoPortfolio from "../../assets/images/portfolio-image2.png";
 
 const Moon = () => {
   const moonOrbitRef = useRef(null);
@@ -50,7 +50,7 @@ const Moon = () => {
       {/* Moon */}
       <div className={`moon ${visible ? "moon-visible" : "moon-hidden"}`}>
         <img
-          src={photoPortfolio}
+          // src={photoPortfolio}
           alt="Photo to portfolio"
           className="portfolio-image"
         />

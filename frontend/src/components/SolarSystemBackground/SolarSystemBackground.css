@@ -1,0 +1,12 @@
+.solar-system-background {
+  position: fixed;
+  inset: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  z-index: -5; /* fica acima das estrelas, abaixo do conteúdo */
+  pointer-events: none;
+
+  overflow: hidden;
+}

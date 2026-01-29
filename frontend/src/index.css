@@ -11,31 +11,26 @@ html {
   scroll-snap-type: none;
 }
 
+#stars-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  pointer-events: none;
+}
+
 body {
-  position: relative;
   margin: 0;
-  height: 100%;
-  width: 100%;
+  min-height: 100vh;
   overflow-x: hidden;
-  overflow-y: auto;
-  background-image: linear-gradient(
-    rgb(7, 33, 66),
-    rgb(6, 28, 55),
-    rgb(7, 24, 43),
-    rgb(6, 18, 32),
-    rgb(2, 11, 22)
-  );
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
+  background: #000;
 }
 
 #main {
   position: relative;
   height: 100vh;
   width: 100%;
-  padding-top: 60px;
-  padding-left: 150px;
+  padding-top: 10px;
+  padding-left: 100px;
   transition: all 0.8s ease;
   box-sizing: border-box;
   color: #fff;
@@ -50,7 +45,7 @@ body {
   position: relative;
   height: auto;
   width: 100%;
-  padding: 80px 100px 0 150px;
+  padding: 10px 100px 0 100px;
   transition: all 0.8s ease;
   box-sizing: border-box;
   color: #fff;
