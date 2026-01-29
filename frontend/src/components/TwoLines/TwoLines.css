@@ -3,13 +3,23 @@
 .two-lines {
   position: relative;
   height: 1.25rem;
-  margin: 2.5rem 0;
+  margin: 1rem 0;
   opacity: 0;
   transform: translateX(-50px);
   animation: fadeSlideIn 0.6s ease-out forwards;
   animation-delay: 0.3s;
   will-change: transform, opacity;
   z-index: 10;
+}
+
+/************** VARIANT TWO LINES **************/
+.two-lines.main {
+  margin: 2.5rem 0 2rem 0;
+}
+
+.two-lines.main::before,
+.two-lines.main::after {
+  margin: 2.5rem 0;
 }
 
 .two-lines::before,
