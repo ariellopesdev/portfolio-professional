@@ -2,6 +2,7 @@
 
 #block-left-main {
   display: inline-block;
+  margin-top: 5rem;
 }
 
 /************** BASE STATE **************/
@@ -32,7 +33,6 @@
   font-size: clamp(3.5rem, 6vw, 5em);
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  padding-top: 60px;
   font-weight: 600;
   margin: 0;
   white-space: pre-line;
@@ -57,4 +57,11 @@
 .animate-subtitle {
   animation: fadeSlideLeft 0.6s ease-out forwards;
   animation-delay: 0.5s;
+}
+
+/************** RESPONSIVE **************/
+@media (max-width: 768px) {
+  #main {
+    padding-left: 20px;
+  }
 }
