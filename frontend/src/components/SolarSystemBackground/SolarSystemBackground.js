@@ -228,9 +228,15 @@ export default function SolarSystemBackground() {
     });
 
     const placeSolarSystemOnScreen = () => {
+      const w = window.innerWidth;
+      const h = window.innerHeight;
+
+      const horizontalOffset = w * 0.25;
+      const verticalOffset = h * 0.45;
+
       solarSystem.position.set(
-        window.innerWidth / 2 - 450,
-        window.innerHeight / 2 - 300,
+        w / 2 - horizontalOffset,
+        h / 2 - verticalOffset,
         0,
       );
     };
