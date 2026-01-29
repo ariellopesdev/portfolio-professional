@@ -22,17 +22,21 @@ body {
   position: relative;
   height: 100vh;
   width: 100%;
-  padding-left: 100px;
+  padding: 75px 150px;
   transition: all 0.8s ease;
   box-sizing: border-box;
   color: #fff;
   background-color: transparent;
   z-index: 10;
+  display: flex;
+  align-items: center;
 }
 
-#projects,
+#projects {
+  background: linear-gradient(180deg, #07182f 0%, #061326 50%, #040a16 100%);
+}
 #curriculum {
-  background-color: #072142;
+  background: linear-gradient(180deg, #050b14 0%, #030812 60%, #02050c 100%);
 }
 
 #about,
@@ -47,7 +51,7 @@ body {
   position: relative;
   height: auto;
   width: 100%;
-  padding: 10px 100px 0 100px;
+  padding: 75px 150px;
   transition: all 0.8s ease;
   box-sizing: border-box;
   color: #fff;
@@ -65,4 +69,10 @@ body {
 
 /************** RESPONSIVE **************/
 @media (max-width: 768px) {
+  #projects,
+  #about,
+  #curriculum,
+  #contact {
+    padding: 75px 20px 50px 20px;
+  }
 }

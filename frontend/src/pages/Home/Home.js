@@ -16,27 +16,12 @@ const Home = () => {
     <div id="home">
       <Navbar />
       <Aside />
-
-      <section id="main">
-        <Main />
-        <Moon />
-      </section>
-
-      <section id="projects">
-        <Projects />
-      </section>
-
-      <section id="about">
-        <About />
-      </section>
-
-      <section id="curriculum">
-        <Curriculum />
-      </section>
-
-      <section id="contact">
-        <Contact />
-      </section>
+      <Main />
+      <Moon />
+      <Projects />
+      <About />
+      <Curriculum />
+      <Contact />
     </div>
   );
 };
