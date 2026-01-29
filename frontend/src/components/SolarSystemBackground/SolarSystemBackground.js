@@ -15,9 +15,13 @@ import starsTex from "../../assets/textures/planets/stars.jpg";
 
 export default function SolarSystemBackground() {
   const mountRef = useRef(null);
+  const rendererRef = useRef(null); // guardamos o renderer aqui
 
   useEffect(() => {
     const mount = mountRef.current;
+    if (!mount) return;
+
+    /* ================= SCENE ================= */
     const scene = new THREE.Scene();
 
     /* ================= CAMERA ================= */
@@ -29,13 +33,18 @@ export default function SolarSystemBackground() {
     camera.position.z = 1100;
 
     /* ================= RENDERER ================= */
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    renderer.outputColorSpace = THREE.SRGBColorSpace;
-    renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    renderer.toneMappingExposure = 1.2; 
-    mount.appendChild(renderer.domElement);
+    // Verifica se já existe um renderer (evita duplicar)
+    let renderer = rendererRef.current;
+    if (!renderer) {
+      renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      renderer.outputColorSpace = THREE.SRGBColorSpace;
+      renderer.toneMapping = THREE.ACESFilmicToneMapping;
+      renderer.toneMappingExposure = 1.2; 
+      mount.appendChild(renderer.domElement);
+      rendererRef.current = renderer;
+    }
 
     /* ================= LIGHT ================= */
     scene.add(new THREE.AmbientLight(0xffffff, 0.05));
@@ -51,13 +60,9 @@ export default function SolarSystemBackground() {
     };
 
     /* ================= BACKGROUND ================= */
-    // Fundo preto com a textura stars.jpg
     const backgroundPlane = new THREE.Mesh(
       new THREE.PlaneGeometry(window.innerWidth * 2, window.innerHeight * 2),
-      new THREE.MeshBasicMaterial({
-        map: loadTexture(starsTex),
-        side: THREE.DoubleSide,
-      })
+      new THREE.MeshBasicMaterial({ map: loadTexture(starsTex), side: THREE.DoubleSide })
     );
     backgroundPlane.position.z = -2000;
     scene.add(backgroundPlane);
@@ -141,6 +146,7 @@ export default function SolarSystemBackground() {
     };
     animate();
 
+    /* ================= RESIZE ================= */
     const onResize = () => {
       camera.left = window.innerWidth / -2; camera.right = window.innerWidth / 2;
       camera.top = window.innerHeight / 2; camera.bottom = window.innerHeight / -2;
@@ -150,10 +156,18 @@ export default function SolarSystemBackground() {
     };
 
     window.addEventListener("resize", onResize);
+
     return () => {
       window.removeEventListener("resize", onResize);
-      mount.removeChild(renderer.domElement);
-      renderer.dispose();
+
+      // cleanup renderer
+      if (rendererRef.current) {
+        rendererRef.current.dispose();
+        if (rendererRef.current.domElement) {
+          rendererRef.current.domElement.remove();
+        }
+        rendererRef.current = null;
+      }
     };
   }, []);
 
