@@ -1,20 +1,30 @@
 {
   "files": {
-    "main.css": "/portfolio-professional/static/css/main.a2d4fcf3.css",
-    "main.js": "/portfolio-professional/static/js/main.f9c9f4df.js",
+    "main.css": "/portfolio-professional/static/css/main.cd153130.css",
+    "main.js": "/portfolio-professional/static/js/main.744f0401.js",
     "static/js/453.8ab44547.chunk.js": "/portfolio-professional/static/js/453.8ab44547.chunk.js",
+    "static/media/mercury.jpg": "/portfolio-professional/static/media/mercury.b3bc4c353800a4a2a211.jpg",
+    "static/media/mars.jpg": "/portfolio-professional/static/media/mars.a48029948504cbb4d125.jpg",
+    "static/media/earth.jpg": "/portfolio-professional/static/media/earth.54672c1f3ba121d80470.jpg",
     "static/media/curriculo_ariel_lopes.pdf": "/portfolio-professional/static/media/curriculo_ariel_lopes.7cd64a682732fa7fc81e.pdf",
+    "static/media/sun.jpg": "/portfolio-professional/static/media/sun.b34e6ead10e18ad3ad77.jpg",
+    "static/media/jupiter.jpg": "/portfolio-professional/static/media/jupiter.b3729a97be4e03928871.jpg",
+    "static/media/stars.jpg": "/portfolio-professional/static/media/stars.922b4b906f9689bef027.jpg",
+    "static/media/venus.jpg": "/portfolio-professional/static/media/venus.9415315ac12bfa77093f.jpg",
     "static/media/image-test.jpg": "/portfolio-professional/static/media/image-test.c98984426d6787cbd4c8.jpg",
-    "static/media/portfolio-image2.png": "/portfolio-professional/static/media/portfolio-image2.cd01f5e68aed0c24c648.png",
+    "static/media/portfolio-image.png": "/portfolio-professional/static/media/portfolio-image.4292967540401d3e17e2.png",
+    "static/media/saturn.jpg": "/portfolio-professional/static/media/saturn.afe61e83ea388f0d901a.jpg",
+    "static/media/neptune.jpg": "/portfolio-professional/static/media/neptune.6dd112666aad0cd68958.jpg",
+    "static/media/uranus.jpg": "/portfolio-professional/static/media/uranus.428ad3f979bd783a27d1.jpg",
     "static/media/full-stack-developer.png": "/portfolio-professional/static/media/full-stack-developer.e6c11e753f4b14cd615d.png",
     "static/media/stack-principal.png": "/portfolio-professional/static/media/stack-principal.569da3659c41a7c40aa0.png",
     "index.html": "/portfolio-professional/index.html",
-    "main.a2d4fcf3.css.map": "/portfolio-professional/static/css/main.a2d4fcf3.css.map",
-    "main.f9c9f4df.js.map": "/portfolio-professional/static/js/main.f9c9f4df.js.map",
+    "main.cd153130.css.map": "/portfolio-professional/static/css/main.cd153130.css.map",
+    "main.744f0401.js.map": "/portfolio-professional/static/js/main.744f0401.js.map",
     "453.8ab44547.chunk.js.map": "/portfolio-professional/static/js/453.8ab44547.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a2d4fcf3.css",
-    "static/js/main.f9c9f4df.js"
+    "static/css/main.cd153130.css",
+    "static/js/main.744f0401.js"
   ]
 }
