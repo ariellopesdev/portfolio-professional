@@ -116,10 +116,12 @@ const About = () => {
             <h3 className="about__skills--title">Tecnologias Web</h3>
             <ul className="about__skills--list">
               <div className="about__skills--item skills__item--react">
-                <FaReact /> <span className="about__skills--name">React.js</span>
+                <FaReact />{" "}
+                <span className="about__skills--name">React.js</span>
               </div>
               <div className="about__skills--item skills__item--node">
-                <FaNodeJs /> <span className="about__skills--name">Node.js</span>
+                <FaNodeJs />{" "}
+                <span className="about__skills--name">Node.js</span>
               </div>
               <div className="about__skills--item skills__item--postman">
                 <FaCode /> <span className="about__skills--name">Postman</span>
@@ -133,10 +135,12 @@ const About = () => {
                 <SiMysql /> <span className="about__skills--name">MySQL</span>
               </div>
               <div className="about__skills--item skills__item--mongodb">
-                <SiMongodb /> <span className="about__skills--name">MongoDB</span>
+                <SiMongodb />{" "}
+                <span className="about__skills--name">MongoDB</span>
               </div>
               <div className="about__skills--item skills__item--firebase">
-                <SiFirebase /> <span className="about__skills--name">Firebase</span>
+                <SiFirebase />{" "}
+                <span className="about__skills--name">Firebase</span>
               </div>
             </ul>
           </div>
@@ -147,7 +151,8 @@ const About = () => {
                 <FaDocker /> <span className="about__skills--name">Docker</span>
               </div>
               <div className="about__skills--item skills__item--github">
-                <VscGithub /> <span className="about__skills--name">GitHub</span>
+                <VscGithub />{" "}
+                <span className="about__skills--name">GitHub</span>
               </div>
               <div className="about__skills--item skills__item--git">
                 <SiGit /> <span className="about__skills--name">Git</span>
@@ -165,16 +170,21 @@ const About = () => {
             enfrento desafios. Acredito que bons resultados vêm da combinação
             entre técnica e comportamento profissional.
           </p>
-          <div className="accordion">
+          <div className="about__accordion">
             {/* ITEM 1 */}
-            <div className={`accordion-item ${openAcc === 1 ? "open" : ""}`}>
-              <button className="accordion-header" onClick={() => toggleAcc(1)}>
+            <div
+              className={`about__accordion--item ${openAcc === 1 ? "accordion__item--open" : ""}`}
+            >
+              <button
+                className="about__accordion--header"
+                onClick={() => toggleAcc(1)}
+              >
                 <FaComments />
                 Comunicação
               </button>
 
-              <div className="accordion-body">
-                <p>
+              <div className="about__accordion--content">
+                <p className="about__accordion--paragraph">
                   Comunico soluções técnicas de forma clara e objetiva,
                   facilitando o alinhamento entre requisitos e entregas. No
                   projeto Kara Arquitetura, isso reduziu retrabalho e melhorou o
@@ -184,14 +194,19 @@ const About = () => {
             </div>
 
             {/* ITEM 2 */}
-            <div className={`accordion-item ${openAcc === 2 ? "open" : ""}`}>
-              <button className="accordion-header" onClick={() => toggleAcc(2)}>
+            <div
+              className={`about__accordion--item ${openAcc === 2 ? "accordion__item--open" : ""}`}
+            >
+              <button
+                className="about__accordion--header"
+                onClick={() => toggleAcc(2)}
+              >
                 <FaUsers />
                 Trabalho em equipe
               </button>
 
-              <div className="accordion-body">
-                <p>
+              <div className="about__accordion--content">
+                <p className="about__accordion--paragraph">
                   Atuo de forma colaborativa em projetos acadêmicos e freelas,
                   participando de pair programming, revisões de código e
                   apoiando colegas para manter a qualidade e o ritmo do time.
@@ -200,14 +215,19 @@ const About = () => {
             </div>
 
             {/* ITEM 3 */}
-            <div className={`accordion-item ${openAcc === 3 ? "open" : ""}`}>
-              <button className="accordion-header" onClick={() => toggleAcc(3)}>
+            <div
+              className={`about__accordion--item ${openAcc === 3 ? "accordion__item--open" : ""}`}
+            >
+              <button
+                className="about__accordion--header"
+                onClick={() => toggleAcc(3)}
+              >
                 <FaBrain />
                 Resolução de problemas
               </button>
 
-              <div className="accordion-body">
-                <p>
+              <div className="about__accordion--content">
+                <p className="about__accordion--paragraph">
                   Identifico gargalos e proponho soluções práticas. No projeto
                   Randplay, implementei melhorias que reduziram falhas e
                   aumentaram o desempenho da aplicação.
@@ -216,14 +236,19 @@ const About = () => {
             </div>
 
             {/* ITEM 4 */}
-            <div className={`accordion-item ${openAcc === 4 ? "open" : ""}`}>
-              <button className="accordion-header" onClick={() => toggleAcc(4)}>
+            <div
+              className={`about__accordion--item ${openAcc === 4 ? "accordion__item--open" : ""}`}
+            >
+              <button
+                className="about__accordion--header"
+                onClick={() => toggleAcc(4)}
+              >
                 <FaLightbulb />
                 Proatividade & Liderança
               </button>
 
-              <div className="accordion-body">
-                <p>
+              <div className="about__accordion--content">
+                <p className="about__accordion--paragraph">
                   Tenho postura proativa na melhoria de código e processos. Em
                   trabalhos acadêmicos, atuei organizando tarefas, distribuindo
                   responsabilidades e garantindo clareza para o time.
@@ -232,14 +257,19 @@ const About = () => {
             </div>
 
             {/* ITEM 5 */}
-            <div className={`accordion-item ${openAcc === 5 ? "open" : ""}`}>
-              <button className="accordion-header" onClick={() => toggleAcc(5)}>
+            <div
+              className={`about__accordion--item ${openAcc === 5 ? "accordion__item--open" : ""}`}
+            >
+              <button
+                className="about__accordion--header"
+                onClick={() => toggleAcc(5)}
+              >
                 <FaTasks />
                 Organização
               </button>
 
-              <div className="accordion-body">
-                <p>
+              <div className="about__accordion--content">
+                <p className="about__accordion--paragraph">
                   Planejo entregas com foco em organização, utilizando
                   versionamento no Git, estrutura modular e padronização de
                   commits para facilitar manutenção e evolução do projeto.
@@ -248,14 +278,19 @@ const About = () => {
             </div>
 
             {/* ITEM 6 */}
-            <div className={`accordion-item ${openAcc === 6 ? "open" : ""}`}>
-              <button className="accordion-header" onClick={() => toggleAcc(6)}>
+            <div
+              className={`about__accordion--item ${openAcc === 6 ? "accordion__item--open" : ""}`}
+            >
+              <button
+                className="about__accordion--header"
+                onClick={() => toggleAcc(6)}
+              >
                 <FaShieldAlt />
                 Resiliência
               </button>
 
-              <div className="accordion-body">
-                <p>
+              <div className="about__accordion--content">
+                <p className="about__accordion--paragraph">
                   Demonstro resiliência ao manter consistência nos estudos e
                   entregas mesmo em períodos de alta demanda e durante a
                   transição de carreira.
