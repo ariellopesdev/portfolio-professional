@@ -1,0 +1,132 @@
+/************** LAYOUT STRUCTURES **************/
+.about__block--centered {
+  width: 100%;
+  height: 100%;
+  padding: 1.5em 2em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.about__block--split {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  padding: 1.5em 2em;
+}
+
+.about__content--text,
+.about__content--media {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+.about__content--text {
+  flex-direction: column;
+  gap: 1.25em;
+}
+.about__content--media {
+  align-items: center;
+}
+
+/************** TYPOGRAPHY **************/
+.about__skills--title {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.about__skills--intro,
+.about__accordion--intro{
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.about__paragraph {
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+
+.about__paragraph--quote {
+  margin-top: 1rem;
+  padding-left: 1rem;
+  border-left: 2px solid var(--accent-color);
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+.about__skills--name {
+  font-weight: 400;
+  font-size: 0.85rem;
+  opacity: 0.9;
+  color: #fff !important;
+}
+
+/************** BLOCKS **************/
+.about__skills {
+  background-color: rgba(60, 90, 150, 0.25);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  display: flex;
+  padding: 1em;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.about__skills--list {
+  display: flex;
+  gap: 15px;
+}
+
+.about__skills--item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0.4em 0.5em;
+  border-radius: 0.3em;
+  background-color: rgba(60, 90, 150, 0.4);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/************** IMAGES **************/
+.about__image--profile {
+  width: 250px;
+}
+
+.skills__item--javascript {
+  color: #f7df1e;
+}
+.skills__item--java {
+  color: #007396;
+}
+.skills__item--php {
+  color: #777bb4;
+}
+.skills__item--python {
+  color: #3776ab;
+}
+.skills__item--react {
+  color: #61dafb;
+}
+.skills__item--node {
+  color: #339933;
+}
+.skills__item--postman {
+  color: #ff6c37;
+}
+.skills__item--mysql {
+  color: #4479a1;
+}
+.skills__item--mongodb {
+  color: #47a248;
+}
+.skills__item--firebase {
+  color: #ffca28;
+}
+.skills__item--docker {
+  color: #2496ed;
+}
+.skills__item--github {
+  color: #181717;
+}
+.skills__item--git {
+  color: #f05032;
+}

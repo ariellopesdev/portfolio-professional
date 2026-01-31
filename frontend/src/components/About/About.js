@@ -1,19 +1,17 @@
 // CSS
-import "../PagesGroup/PagesGroup.css";
-import "../TabsNavigation/TabsNavigation.css";
+import "./About.css";
 
 // Components
 import SectionInfo from "../SectionInfo/SectionInfo";
 import SectionContent from "../SectionContent/SectionContent";
-import TabsNavigation from "../TabsNavigation/TabsNavigation";
 
 // Hooks
 import { useState } from "react";
-import useTabsNavigation from "../../hooks/useTabsNavigation";
 
 // Images
 import fullStackImg from "../../assets/images/full-stack-developer.png";
 import stackPrincipal from "../../assets/images/stack-principal.png";
+import portfolioImg from "../../assets/images/portfolio-image.png";
 
 // Icons
 import {
@@ -53,26 +51,33 @@ const About = () => {
   const blocks = [
     {
       content: (
-        <div className="layout-double">
-          <div className="layout-left">
-            <p className="layout-desc-main">
-              Sou <span className="highlight">Dev Fullstack</span> e desenvolvo
-              sites, sistemas e aplicações web completas usando
-              <span className="highlight"> React.js</span> no frontend, e
-              <span className="highlight"> Java</span> e
-              <span className="highlight"> PHP</span> no backend. Também
-              construo e integro APIs com
-              <span className="highlight"> Node.js/Express</span>, além de
-              trabalhar com <span className="highlight">MySQL</span>,
-              <span className="highlight"> MongoDB</span> e
-              <span className="highlight"> Firebase</span> para bancos de dados.
+        <div className="about__block--split">
+          <div className="about__content--text">
+            <p className="about__paragraph">
+              Sou <span className="highlight">Desenvolvedor Fullstack</span>,
+              focado em criar aplicações web que unem clareza, performance e
+              boas experiências para quem usa.
+            </p>
+            <p className="about__paragraph">
+              Acredito que desenvolvimento vai além de escrever código. Envolve
+              entender problemas, pensar soluções e construir sistemas
+              organizados, fáceis de evoluir e manter.
+            </p>
+            <p className="about__paragraph--quote">
+              “Código bem feito resolve problemas hoje e continua fazendo
+              sentido amanhã.”
+            </p>
+            <p className="about__paragraph">
+              Tenho curiosidade constante por novas ideias, gosto de pesquisar,
+              testar abordagens diferentes e transformar conceitos em soluções
+              práticas e bem estruturadas.
             </p>
           </div>
-          <div className="layout-right">
+          <div className="about__content--media">
             <img
-              src={fullStackImg}
-              className="layout-img-single"
-              alt="Fullstack developer"
+              src={portfolioImg}
+              className="about__image--profile"
+              alt="My photo for portfolio"
             />
           </div>
         </div>
@@ -80,107 +85,86 @@ const About = () => {
     },
     {
       content: (
-        <div className="layout-double">
-          <div className="layout-left">
-            <p className="layout-desc-main">
-              Minha principal stack está focada no ecossistema JavaScript,
-              utilizando
-              <span className="highlight"> React.js</span> para criar interfaces
-              modernas e responsivas. <br />
-              <br />
-              No backend, desenvolvo e consumo
-              <span className="highlight"> APIs</span> construídas em
-              <span className="highlight"> Java</span>,
-              <span className="highlight"> PHP</span> e
-              <span className="highlight"> Node.js</span>. Além disso, utilizo
-              práticas de versionamento com
-              <span className="highlight"> Git</span> e
-              <span className="highlight"> GitHub</span> para garantir
-              organização e colaboração nos projetos.
-            </p>
-          </div>
-          <div className="layout-right">
-            <img
-              src={stackPrincipal}
-              className="layout-img-single"
-              alt="Stack principal"
-            />
-          </div>
-        </div>
-      ),
-    },
-    {
-      content: (
-        <div className="layout-single">
-          <div className="layout-block-horizontal">
-            <h3 className="layout-h2">Linguagens</h3>
-            <div className="layout-tech-block">
-              <div className="layout-tech-block-item javascript">
+        <div className="about__block--centered">
+          <h2 className="about__skills--intro">
+            Ao longo da minha formação e experiências práticas, desenvolvi
+            habilidades técnicas em diferentes linguagens, tecnologias web e
+            ferramentas de apoio ao desenvolvimento.
+          </h2>
+          <div className="about__skills">
+            <h3 className="about__skills--title">Linguagens</h3>
+            <ul className="about__skills--list">
+              <div className="about__skills--item skills__item--javascript">
                 <IoLogoJavascript />
-                <p className="layout-tech-block">Javascript</p>
+                <span className="about__skills--name">Javascript</span>
               </div>
-              <div className="layout-tech-block-item java">
+              <div className="about__skills--item skills__item--java">
                 <FaJava />
-                <p className="layout-tech-block">Java</p>
+                <span className="about__skills--name">Java</span>
               </div>
-              <div className="layout-tech-block-item php">
+              <div className="about__skills--item skills__item--php">
                 <SiPhp />
-                <p className="layout-tech-block">PHP</p>
+                <span className="about__skills--name">PHP</span>
               </div>
-              <div className="layout-tech-block-item python">
+              <div className="about__skills--item skills__item--python">
                 <SiPython />
-                <p className="layout-tech-block">Python</p>
+                <span className="about__skills--name">Python</span>
               </div>
-            </div>
+            </ul>
           </div>
-          <div className="layout-block-horizontal">
-            <h3 className="layout-h2">Tecnologias Web</h3>
-            <div className="layout-tech-block">
-              <div className="layout-tech-block-item react">
-                <FaReact /> <p className="layout-tech-block">React.js</p>
+          <div className="about__skills">
+            <h3 className="about__skills--title">Tecnologias Web</h3>
+            <ul className="about__skills--list">
+              <div className="about__skills--item skills__item--react">
+                <FaReact /> <span className="about__skills--name">React.js</span>
               </div>
-              <div className="layout-tech-block-item node">
-                <FaNodeJs /> <p className="layout-tech-block">Node.js</p>
+              <div className="about__skills--item skills__item--node">
+                <FaNodeJs /> <span className="about__skills--name">Node.js</span>
               </div>
-              <div className="layout-tech-block-item postman">
-                <FaCode /> <p className="layout-tech-block">Postman</p>
+              <div className="about__skills--item skills__item--postman">
+                <FaCode /> <span className="about__skills--name">Postman</span>
               </div>
-            </div>
+            </ul>
           </div>
-          <div className="layout-block-horizontal">
-            <h3 className="layout-h2">Bancos de Dados</h3>
-            <div className="layout-tech-block">
-              <div className="layout-tech-block-item mysql">
-                <SiMysql /> <p className="layout-tech-block">MySQL</p>
+          <div className="about__skills">
+            <h3 className="about__skills--title">Bancos de Dados</h3>
+            <ul className="about__skills--list">
+              <div className="about__skills--item skills__item--mysql">
+                <SiMysql /> <span className="about__skills--name">MySQL</span>
               </div>
-              <div className="layout-tech-block-item mongodb">
-                <SiMongodb /> <p className="layout-tech-block">MongoDB</p>
+              <div className="about__skills--item skills__item--mongodb">
+                <SiMongodb /> <span className="about__skills--name">MongoDB</span>
               </div>
-              <div className="layout-tech-block-item firebase">
-                <SiFirebase /> <p className="layout-tech-block">Firebase</p>
+              <div className="about__skills--item skills__item--firebase">
+                <SiFirebase /> <span className="about__skills--name">Firebase</span>
               </div>
-            </div>
+            </ul>
           </div>
-          <div className="layout-block-horizontal">
-            <h3 className="layout-h2">DevOps & Ferramentas</h3>
-            <div className="layout-tech-block">
-              <div className="layout-tech-block-item docker">
-                <FaDocker /> <p className="layout-tech-block">Docker</p>
+          <div className="about__skills">
+            <h3 className="about__skills--title">DevOps & Ferramentas</h3>
+            <ul className="about__skills--list">
+              <div className="about__skills--item skills__item--docker">
+                <FaDocker /> <span className="about__skills--name">Docker</span>
               </div>
-              <div className="layout-tech-block-item github">
-                <VscGithub /> <p className="layout-tech-block">GitHub</p>
+              <div className="about__skills--item skills__item--github">
+                <VscGithub /> <span className="about__skills--name">GitHub</span>
               </div>
-              <div className="layout-tech-block-item git">
-                <SiGit /> <p className="layout-tech-block">Git</p>
+              <div className="about__skills--item skills__item--git">
+                <SiGit /> <span className="about__skills--name">Git</span>
               </div>
-            </div>
+            </ul>
           </div>
         </div>
       ),
     },
     {
       content: (
-        <div className="layout-single">
+        <div className="about__block--centered">
+          <p className="about__accordion--intro">
+            Além da parte técnica, valorizo a forma como me comunico, colaboro e
+            enfrento desafios. Acredito que bons resultados vêm da combinação
+            entre técnica e comportamento profissional.
+          </p>
           <div className="accordion">
             {/* ITEM 1 */}
             <div className={`accordion-item ${openAcc === 1 ? "open" : ""}`}>
@@ -191,10 +175,10 @@ const About = () => {
 
               <div className="accordion-body">
                 <p>
-                  Apresento soluções técnicas de forma clara e objetiva. No
-                  projeto Kara Arquitetura, mantive comunicação constante com o
-                  time para alinhar requisitos e entregar funcionalidades sem
-                  retrabalho.
+                  Comunico soluções técnicas de forma clara e objetiva,
+                  facilitando o alinhamento entre requisitos e entregas. No
+                  projeto Kara Arquitetura, isso reduziu retrabalho e melhorou o
+                  fluxo do desenvolvimento.
                 </p>
               </div>
             </div>
@@ -208,9 +192,9 @@ const About = () => {
 
               <div className="accordion-body">
                 <p>
-                  Atuei de forma colaborativa em projetos acadêmicos e freelas,
-                  participando de pair programming, revisando PRs e apoiando
-                  colegas com dificuldades.
+                  Atuo de forma colaborativa em projetos acadêmicos e freelas,
+                  participando de pair programming, revisões de código e
+                  apoiando colegas para manter a qualidade e o ritmo do time.
                 </p>
               </div>
             </div>
@@ -224,8 +208,9 @@ const About = () => {
 
               <div className="accordion-body">
                 <p>
-                  No Randplay, identifiquei gargalos e implementei soluções que
-                  reduziram falhas e melhoraram o desempenho.
+                  Identifico gargalos e proponho soluções práticas. No projeto
+                  Randplay, implementei melhorias que reduziram falhas e
+                  aumentaram o desempenho da aplicação.
                 </p>
               </div>
             </div>
@@ -239,9 +224,9 @@ const About = () => {
 
               <div className="accordion-body">
                 <p>
-                  Proponho melhorias no código e na organização. Em trabalhos
-                  acadêmicos, assumi liderança organizando tarefas e garantindo
-                  clareza ao time.
+                  Tenho postura proativa na melhoria de código e processos. Em
+                  trabalhos acadêmicos, atuei organizando tarefas, distribuindo
+                  responsabilidades e garantindo clareza para o time.
                 </p>
               </div>
             </div>
@@ -255,8 +240,9 @@ const About = () => {
 
               <div className="accordion-body">
                 <p>
-                  Planejo entregas com versionamento organizado no Git, divisão
-                  modular e padronização de commits.
+                  Planejo entregas com foco em organização, utilizando
+                  versionamento no Git, estrutura modular e padronização de
+                  commits para facilitar manutenção e evolução do projeto.
                 </p>
               </div>
             </div>
@@ -270,8 +256,9 @@ const About = () => {
 
               <div className="accordion-body">
                 <p>
-                  Mantive consistência nos estudos e entregas mesmo com alta
-                  carga de trabalho e transição de carreira.
+                  Demonstro resiliência ao manter consistência nos estudos e
+                  entregas mesmo em períodos de alta demanda e durante a
+                  transição de carreira.
                 </p>
               </div>
             </div>
@@ -281,20 +268,11 @@ const About = () => {
     },
   ];
 
-  const { index, anim, goTo } = useTabsNavigation(blocks.length);
-  const tabs = ["Apresentação", "Stack Principal", "Hard Skills", "Soft Skills"];
-
   return (
     <section id="about">
       <div className="sections-wrapper">
         <SectionInfo title="Sobre Mim" />
-
-        <SectionContent>
-          <TabsNavigation tabs={tabs} current={index} goTo={goTo} />
-          <div className={`tabs-content-wrapper ${anim}`}>
-            {blocks[index].content}
-          </div>
-        </SectionContent>
+        <SectionContent>{blocks.map((block) => block.content)}</SectionContent>
       </div>
     </section>
   );
