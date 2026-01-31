@@ -5,7 +5,7 @@
   padding: 1.5em 2em;
   display: flex;
   flex-direction: column;
-  gap: 1em;
+  gap: 1.8em;
 }
 
 .about__block--split {
@@ -13,6 +13,12 @@
   height: 100%;
   display: flex;
   padding: 1.5em 2em;
+}
+
+.about__block--centered,
+.about__block--split {
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .about__content--text,
@@ -33,25 +39,33 @@
 .about__skills--title {
   font-weight: 600;
   font-size: 1rem;
+  margin-bottom: .6em;
 }
 
 .about__skills--intro,
 .about__accordion--intro {
-  font-size: 1.3rem;
+  font-size: 1.15rem;
+  line-height: 1.6;
   font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 760px;
 }
 
 .about__paragraph {
-  font-weight: 400;
-  font-size: 1.2rem;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.88);
+  max-width: 560px;
 }
 
 .about__paragraph--quote {
-  margin-top: 1rem;
-  padding-left: 1rem;
-  border-left: 2px solid var(--accent-color);
+  margin: 1.6rem 0;
+  padding-left: 1.2rem;
+  border-left: 3px solid #ff5f5f;
   font-size: 0.95rem;
-  opacity: 0.85;
+  font-style: italic;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.65);
 }
 
 .about__skills--name {
@@ -63,12 +77,10 @@
 
 /************** BLOCKS **************/
 .about__skills {
-  background-color: rgba(60, 90, 150, 0.25);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-  display: flex;
-  padding: 1em;
-  justify-content: space-between;
-  align-items: center;
+  background-color: rgba(60, 90, 150, 0.22);
+  border-radius: 12px;
+  padding: 1.1em 1.2em;
+  gap: 1em;
 }
 
 .about__skills--list {
@@ -77,18 +89,24 @@
 }
 
 .about__skills--item {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  padding: 0.4em 0.5em;
-  border-radius: 0.3em;
-  background-color: rgba(60, 90, 150, 0.4);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  background-color: rgba(60, 90, 150, 0.35);
+  border-radius: 8px;
+  padding: 0.45em 0.6em;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.about__skills--item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 
 /************** IMAGES **************/
 .about__image--profile {
-  width: 250px;
+  width: 260px;
+  border-radius: 14px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
 }
 
 .skills__item--javascript {
@@ -150,7 +168,7 @@
   background: transparent;
   border: none;
   color: #fff;
-  font-size: 1em;
+  font-size: 1rem;
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -158,9 +176,17 @@
   cursor: pointer;
   text-align: left;
   transition: background 0.25s ease;
+  letter-spacing: 0.3px;
 }
 .about__accordion--header:hover {
   background: rgba(255, 255, 255, 0.05);
+}
+.accordion__item--open .about__accordion--header {
+  color: #ff5f5f;
+}
+
+.accordion__item--open .about__accordion--header svg {
+  opacity: 1;
 }
 .about__accordion--content {
   max-height: 0;
@@ -169,15 +195,15 @@
   background: rgba(255, 255, 255, 0.05);
 }
 .about__accordion--paragraph {
-  padding: 0.6em;
-  opacity: 0.85;
-  font-size: 0.9rem;
-  font-weight: 500;
+  padding: 0.8em 0.9em;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
 }
 .accordion__item--open .about__accordion--content {
   max-height: 250px;
 }
 .about__accordion--header svg {
-  font-size: 1.2rem;
-  opacity: 0.85;
+  font-size: 1.15rem;
+  opacity: 0.75;
 }

@@ -17,7 +17,7 @@ const Home = () => {
       <Navbar />
       <Aside />
       <Main />
-      <Moon />
+      {/* <Moon /> */}
       <Projects />
       <About />
       <Curriculum />
