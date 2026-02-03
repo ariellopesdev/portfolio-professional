@@ -54,23 +54,25 @@ const About = () => {
         <div className="about__block--split">
           <div className="about__content--text">
             <p className="about__paragraph">
-              Sou <span className="highlight">Desenvolvedor Fullstack</span>,
-              focado em criar aplicações web que unem clareza, performance e
-              boas experiências para quem usa.
+              Sou <span className="highlight">Desenvolvedor Fullstack</span> e
+              estou no último período de Análise e Desenvolvimento de Sistemas
+              na <strong>PUCPR</strong> (conclusão em Jun/2026). Meu foco é
+              criar aplicações web que unem clareza, performance e experiências
+              centradas no usuário.
             </p>
             <p className="about__paragraph">
-              Acredito que desenvolvimento vai além de escrever código. Envolve
-              entender problemas, pensar soluções e construir sistemas
-              organizados, fáceis de evoluir e manter.
+              Acredito que desenvolvimento vai além de escrever código; trata-se
+              de arquitetar soluções escaláveis e sistemas organizados, fáceis
+              de manter e evoluir.
             </p>
             <p className="about__paragraph--quote">
-              “Código bem feito resolve problemas hoje e continua fazendo
-              sentido amanhã.”
+              “Código bem escrito resolve problemas hoje e mantém sua relevância
+              amanhã.”
             </p>
             <p className="about__paragraph">
-              Tenho curiosidade constante por novas ideias, gosto de pesquisar,
-              testar abordagens diferentes e transformar conceitos em soluções
-              práticas e bem estruturadas.
+              Mantenho uma curiosidade constante por novas tecnologias, sempre
+              testando abordagens que transformam conceitos complexos em
+              soluções práticas e bem estruturadas.
             </p>
           </div>
           <div className="about__content--media">
