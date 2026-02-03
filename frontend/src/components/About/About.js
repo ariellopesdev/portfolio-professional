@@ -11,7 +11,7 @@ import { useState } from "react";
 // Images
 import fullStackImg from "../../assets/images/full-stack-developer.png";
 import stackPrincipal from "../../assets/images/stack-principal.png";
-import portfolioImg from "../../assets/images/portfolio-image.png";
+import portfolioImg from "../../assets/images/portfolio-image2.png";
 
 // Icons
 import {
