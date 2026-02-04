@@ -10,9 +10,7 @@ const Main = () => {
         <h1 className="animate-title">
           Ariel <br /> Lopes
         </h1>
-
         <TwoLines color="#ff5f5f" compact={false} variant="main"/>
-
         <h2 className="animate-subtitle">
           desenvolvedor <br /> full stack
         </h2>

@@ -4,13 +4,12 @@ import "./About.css";
 // Components
 import SectionInfo from "../SectionInfo/SectionInfo";
 import SectionContent from "../SectionContent/SectionContent";
+import SubtitleH2 from "../SubtitleH2/SubtitleH2";
 
 // Hooks
 import { useState } from "react";
 
 // Images
-import fullStackImg from "../../assets/images/full-stack-developer.png";
-import stackPrincipal from "../../assets/images/stack-principal.png";
 import portfolioImg from "../../assets/images/portfolio-image2.png";
 
 // Icons
@@ -26,6 +25,9 @@ import {
   FaTasks,
   FaLightbulb,
   FaShieldAlt,
+  FaHtml5,
+  FaCss3Alt,
+  FaServer,
 } from "react-icons/fa";
 import {
   SiMysql,
@@ -34,6 +36,10 @@ import {
   SiPhp,
   SiPython,
   SiGit,
+  SiExpress,
+  SiKubernetes, 
+  SiGithubactions,
+  SiPostman,
 } from "react-icons/si";
 import { VscGithub } from "react-icons/vsc";
 import { IoLogoJavascript } from "react-icons/io5";
@@ -85,93 +91,100 @@ const About = () => {
         </div>
       ),
     },
+    { content: <SubtitleH2>Hard Skills</SubtitleH2> },
     {
       content: (
         <div className="about__block--centered">
-          <h2 className="about__skills--intro">
-            Ao longo da minha formação e experiências práticas, desenvolvi
-            habilidades técnicas em diferentes linguagens, tecnologias web e
-            ferramentas de apoio ao desenvolvimento.
-          </h2>
-          <div className="about__skills">
-            <h3 className="about__skills--title">Linguagens</h3>
-            <ul className="about__skills--list">
-              <div className="about__skills--item skills__item--javascript">
-                <IoLogoJavascript />
-                <span className="about__skills--name">Javascript</span>
+          <p className="about__skills--intro">Habilidades Técnicas</p>
+          <div className="about__skills--container">
+            <div className="about__skills">
+              <div className="skills__card--icons">
+                <IoLogoJavascript className="skills__item--general skills__item--javascript" />
+                {/* <FaJava className="skills__item--general skills__item--java" />
+                <SiPhp className="skills__item--general skills__item--php" />
+                <SiPython className="skills__item--general skills__item--python" /> */}
               </div>
-              <div className="about__skills--item skills__item--java">
-                <FaJava />
-                <span className="about__skills--name">Java</span>
+              <div className="skills__card--content">
+                <h3 className="skillscard__content--title">Linguagens</h3>
+                <div className="skillscard__content--name">
+                  Javascript, Java, PHP, Python
+                </div>
               </div>
-              <div className="about__skills--item skills__item--php">
-                <SiPhp />
-                <span className="about__skills--name">PHP</span>
+            </div>
+            <div className="about__skills">
+              <div className="skills__card--icons">
+                <FaHtml5 className="skills__item--general skills__item--html" />
+                {/* <FaCss3Alt className="skills__item--general skills__item--css" />
+                <FaReact className="skills__item--general skills__item--react" /> */}
               </div>
-              <div className="about__skills--item skills__item--python">
-                <SiPython />
-                <span className="about__skills--name">Python</span>
+              <div className="skills__card--content">
+                <h3 className="skillscard__content--title">Front-End</h3>
+                <div className="skillscard__content--name">
+                  HTML5, CSS3, SASS, React JS
+                </div>
               </div>
-            </ul>
-          </div>
-          <div className="about__skills">
-            <h3 className="about__skills--title">Tecnologias Web</h3>
-            <ul className="about__skills--list">
-              <div className="about__skills--item skills__item--react">
-                <FaReact />{" "}
-                <span className="about__skills--name">React.js</span>
+            </div>
+            <div className="about__skills">
+              <div className="skills__card--icons">
+                <FaNodeJs className="skills__item--general skills__item--node" />
+                {/* <SiExpress className="skills__item--general skills__item--express" />
+                <FaServer className="skills__item--general skills__item--rest" /> */}
               </div>
-              <div className="about__skills--item skills__item--node">
-                <FaNodeJs />{" "}
-                <span className="about__skills--name">Node.js</span>
+              <div className="skills__card--content">
+                <h3 className="skillscard__content--title">Back-End</h3>
+                <div className="skillscard__content--name">
+                  Node JS, Express JS, RESTful APIs
+                </div>
               </div>
-              <div className="about__skills--item skills__item--postman">
-                <FaCode /> <span className="about__skills--name">Postman</span>
+            </div>
+            <div className="about__skills">
+              <div className="skills__card--icons">
+                <SiMysql className="skills__item--general skills__item--mysql"/>
+                {/* <SiMongodb className="skills__item--general skills__item--mongodb"/>
+                <SiFirebase className="skills__item--general skills__item--firebase"/> */}
               </div>
-            </ul>
-          </div>
-          <div className="about__skills">
-            <h3 className="about__skills--title">Bancos de Dados</h3>
-            <ul className="about__skills--list">
-              <div className="about__skills--item skills__item--mysql">
-                <SiMysql /> <span className="about__skills--name">MySQL</span>
+              <div className="skills__card--content">
+                <h3 className="skillscard__content--title">Banco de Dados</h3>
+                <div className="skillscard__content--name">
+                  MySQL, MongoDB, Firebase
+                </div>
               </div>
-              <div className="about__skills--item skills__item--mongodb">
-                <SiMongodb />{" "}
-                <span className="about__skills--name">MongoDB</span>
+            </div>
+            <div className="about__skills">
+              <div className="skills__card--icons">
+                <FaDocker className="skills__item--general skills__item--docker"/>
+                {/* <SiKubernetes className="skills__item--general skills__item--kubernetes" />
+                <SiGithubactions className="skills__item--general skills__item--cicd" /> */}
               </div>
-              <div className="about__skills--item skills__item--firebase">
-                <SiFirebase />{" "}
-                <span className="about__skills--name">Firebase</span>
+              <div className="skills__card--content">
+                <h3 className="skillscard__content--title">Cloud & DevOps</h3>
+                <div className="skillscard__content--name">
+                  Docker, Kubernetes, CI/CD
+                </div>
               </div>
-            </ul>
-          </div>
-          <div className="about__skills">
-            <h3 className="about__skills--title">DevOps & Ferramentas</h3>
-            <ul className="about__skills--list">
-              <div className="about__skills--item skills__item--docker">
-                <FaDocker /> <span className="about__skills--name">Docker</span>
+            </div>
+            <div className="about__skills">
+              <div className="skills__card--icons">
+                <SiGit className="skills__item--general skills__item--git"/>
+                {/* <VscGithub className="skills__item--general skills__item--github"/>
+                <SiPostman className="skills__item--general skills__item--postman" /> */}
               </div>
-              <div className="about__skills--item skills__item--github">
-                <VscGithub />{" "}
-                <span className="about__skills--name">GitHub</span>
+              <div className="skills__card--content">
+                <h3 className="skillscard__content--title">Ferramentas</h3>
+                <div className="skillscard__content--name">
+                  Git, GitHub, Postman
+                </div>
               </div>
-              <div className="about__skills--item skills__item--git">
-                <SiGit /> <span className="about__skills--name">Git</span>
-              </div>
-            </ul>
+            </div>
           </div>
         </div>
       ),
     },
+    { content: <SubtitleH2>Soft Skills</SubtitleH2> },
     {
       content: (
         <div className="about__block--centered">
-          <p className="about__accordion--intro">
-            Além da parte técnica, valorizo a forma como me comunico, colaboro e
-            enfrento desafios. Acredito que bons resultados vêm da combinação
-            entre técnica e comportamento profissional.
-          </p>
+          <p className="about__accordion--intro">Habilidades Sociais</p>
           <div className="about__accordion">
             {/* ITEM 1 */}
             <div

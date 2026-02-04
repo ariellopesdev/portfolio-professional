@@ -12,7 +12,7 @@
   width: 100%;
   height: 100%;
   display: flex;
-  padding: 1.5em 2em;
+  padding: 4rem 3rem;
 }
 
 .about__block--centered,
@@ -36,23 +36,24 @@
 }
 
 /************** TYPOGRAPHY **************/
-.about__skills--title {
+.skillscard__content--title {
   font-weight: 600;
-  font-size: 1rem;
-  margin-bottom: .6em;
+  font-size: 1.3rem;
+  margin-bottom: .7em;
+  transition: color 0.3s ease;
 }
 
 .about__skills--intro,
 .about__accordion--intro {
-  font-size: 1.15rem;
+  font-size: 2rem;
   line-height: 1.6;
   font-weight: 500;
   color: rgba(255, 255, 255, 0.85);
-  max-width: 760px;
+  text-align: center;
 }
 
 .about__paragraph {
-  font-size: 1.05rem;
+  font-size: 1.2rem;
   line-height: 1.8;
   color: rgba(255, 255, 255, 0.88);
   max-width: 560px;
@@ -68,45 +69,67 @@
   color: rgba(255, 255, 255, 0.65);
 }
 
-.about__skills--name {
-  font-weight: 400;
-  font-size: 0.85rem;
+.skillscard__content--name {
+  font-weight: 300;
+  font-size: 0.9rem;
   opacity: 0.9;
   color: #fff !important;
+  transition: color 0.3s ease;
 }
 
 /************** BLOCKS **************/
+.about__skills--container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
 .about__skills {
-  background-color: rgba(60, 90, 150, 0.22);
-  border-radius: 12px;
-  padding: 1.1em 1.2em;
-  gap: 1em;
-}
-
-.about__skills--list {
+  width: 100%;
+  height: 150px;
   display: flex;
-  gap: 15px;
 }
 
-.about__skills--item {
-  background-color: rgba(60, 90, 150, 0.35);
-  border-radius: 8px;
-  padding: 0.45em 0.6em;
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+.about__skills:hover .skills__item--general {
+  transform: scale(1.2);
 }
 
-.about__skills--item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+.about__skills:hover .skills__card--content {
+  background-color: #ff5f5f;
+}
+
+.about__skills:hover .skillscard__content--title,
+.about__skills:hover .skillscard__content--name {
+  color: #fff;
+}
+
+.skills__card--icons{
+  height: 150px;
+  width: 200px;
+  border: 1px solid #ff5f5f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.skills__card--content{
+  height: 150px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.5em;
+  transition: background-color 0.3s ease;
 }
 
 /************** IMAGES **************/
 .about__image--profile {
   width: 350px;
-  /* border-radius: 14px;
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45); */
+}
+
+.skills__item--general{
+  height: 75px;
+  width: 75px;
+  transition: transform 0.3s ease;
 }
 
 .skills__item--javascript {
@@ -121,11 +144,23 @@
 .skills__item--python {
   color: #3776ab;
 }
+.skills__item--html {
+  color: #e34f26;
+}
+.skills__item--css {
+  color: #1572b6;
+}
 .skills__item--react {
   color: #61dafb;
 }
 .skills__item--node {
   color: #339933;
+}
+.skills__item--express {
+  color: #ffffff;
+}
+.skills__item--rest {
+  color: #ff5f5f;
 }
 .skills__item--postman {
   color: #ff6c37;
@@ -141,6 +176,13 @@
 }
 .skills__item--docker {
   color: #2496ed;
+}
+.skills__item--kubernetes {
+  color: #326ce5;
+}
+.skills__item--cicd svg,
+.skills__item--cicd {
+  color: #2088ff;
 }
 .skills__item--github {
   color: #181717;
