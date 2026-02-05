@@ -18,7 +18,6 @@ import {
   FaJava,
   FaNodeJs,
   FaDocker,
-  FaCode,
   FaUsers,
   FaComments,
   FaBrain,

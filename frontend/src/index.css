@@ -5,6 +5,40 @@
   font-family: "Public Sans", sans-serif;
 }
 
+:root {
+  /* Base */
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  /* Whites with opacity */
+  --white-85: #ffffffd9;
+  --white-88: #ffffffe0;
+  --white-65: #ffffffa6;
+
+  /* Primary */
+  --color-primary: #ff5f5f;
+
+  /* Tech colors */
+  --color-js: #f7df1e;
+  --color-java: #007396;
+  --color-php: #777bb4;
+  --color-python: #3776ab;
+  --color-html: #e34f26;
+  --color-css: #1572b6;
+  --color-react: #61dafb;
+  --color-node: #339933;
+  --color-postman: #ff6c37;
+  --color-mysql: #4479a1;
+  --color-mongodb: #47a248;
+  --color-firebase: #ffca28;
+  --color-docker: #2496ed;
+  --color-kubernetes: #326ce5;
+  --color-cicd: #2088ff;
+  --color-github: #181717;
+  --color-git: #f05032;
+}
+
+
 html {
   height: 100%;
   scroll-behavior: smooth;
@@ -67,6 +101,10 @@ body {
 
 /************** RESPONSIVE **************/
 @media (max-width: 768px) {
+  #main{
+    align-items: flex-start;
+  }
+
   #projects,
   #about,
   #curriculum,

@@ -1,13 +1,14 @@
 /************** MAIN **************/
 
-#block-left-main {
+#main__container {
   display: inline-block;
 }
 
 /************** BASE STATE **************/
 
-#main h1,
-#main h2 {
+.main__text--title,
+.main__text--subtitle,
+.main__actions {
   opacity: 0;
   transform: translateX(-50px);
   will-change: transform, opacity;
@@ -28,7 +29,7 @@
 
 /************** TITLE **************/
 
-#main h1 {
+.main__text--title {
   font-size: clamp(3.5rem, 6vw, 5em);
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -36,26 +37,59 @@
   margin: 0;
   white-space: pre-line;
   z-index: 10;
-}
-
-.animate-title {
+  color: var(--color-white);
   animation: fadeSlideLeft 0.6s ease-out forwards;
   animation-delay: 0.1s;
 }
 
 /************** SUBTITLE **************/
 
-#main h2 {
+.main__text--subtitle {
   font-size: clamp(1.2rem, 3vw, 1.5em);
-  letter-spacing: 0.2em;
+  letter-spacing: 0.1em;
   line-height: 1.7;
   white-space: pre-line;
   z-index: 10;
-}
-
-.animate-subtitle {
+  font-weight: 300;
+  color: var(--color-white);
   animation: fadeSlideLeft 0.6s ease-out forwards;
   animation-delay: 0.5s;
+}
+
+/************** BLOCK **************/
+#main__actions {
+  display: flex;
+  gap: .9rem;
+  margin-top: 2.5rem;
+  animation: fadeSlideLeft 0.6s ease-out forwards;
+  animation-delay: 0.9s;
+}
+.main__actions--link {
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  font-weight: 500;
+  transition: all 0.3s ease;
+  font-size: clamp(0.8rem, 2vw, 0.95rem);
+}
+
+.main__actions--link,
+.main__actions--link:visited,
+.main__actions--link:hover,
+.main__actions--link:active,
+.main__actions--link:focus {
+  color: var(--color-white);
+}
+
+.main__actions--link:hover {
+  background: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+.main__actions--link:active {
+  transform: translateY(0);
 }
 
 /************** RESPONSIVE **************/
