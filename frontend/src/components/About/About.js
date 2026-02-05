@@ -7,7 +7,7 @@ import SectionContent from "../SectionContent/SectionContent";
 import SubtitleH2 from "../SubtitleH2/SubtitleH2";
 
 // Hooks
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 // Images
 import portfolioImg from "../../assets/images/portfolio-image2.png";
@@ -28,6 +28,8 @@ import {
   FaHtml5,
   FaCss3Alt,
   FaServer,
+  FaUserTie,
+  FaProjectDiagram,
 } from "react-icons/fa";
 import {
   SiMysql,
@@ -37,7 +39,7 @@ import {
   SiPython,
   SiGit,
   SiExpress,
-  SiKubernetes, 
+  SiKubernetes,
   SiGithubactions,
   SiPostman,
 } from "react-icons/si";
@@ -45,13 +47,18 @@ import { VscGithub } from "react-icons/vsc";
 import { IoLogoJavascript } from "react-icons/io5";
 
 const About = () => {
-  // Accordion state — ensures only one stays open
-  const [openAcc, setOpenAcc] = useState(1);
+  const IconCarousel = ({ icons, interval = 2000 }) => {
+    const [index, setIndex] = useState(0);
 
-  // Accordion controller — prevents closing the currently open one
-  const toggleAcc = (id) => {
-    if (openAcc === id) return;
-    setOpenAcc(id);
+    useEffect(() => {
+      const timer = setInterval(() => {
+        setIndex((prev) => (prev + 1) % icons.length);
+      }, interval);
+
+      return () => clearInterval(timer);
+    }, [icons.length, interval]);
+
+    return <>{icons[index]}</>;
   };
 
   const blocks = [
@@ -63,7 +70,7 @@ const About = () => {
               Sou <span className="highlight">Desenvolvedor Fullstack</span> e
               estou no último período de Análise e Desenvolvimento de Sistemas
               na <strong>PUCPR</strong> (conclusão em Jun/2026). Meu foco é
-              criar aplicações web que unem clareza, performance e experiências
+              criar aplicações que unem clareza, performance e experiências
               centradas no usuário.
             </p>
             <p className="about__paragraph">
@@ -99,49 +106,51 @@ const About = () => {
           <div className="about__skills--container">
             <div className="about__skills">
               <div className="skills__card--icons">
-                <IoLogoJavascript className="skills__item--general skills__item--javascript" />
-                {/* <FaJava className="skills__item--general skills__item--java" />
-                <SiPhp className="skills__item--general skills__item--php" />
-                <SiPython className="skills__item--general skills__item--python" /> */}
-              </div>
-              <div className="skills__card--content">
-                <h3 className="skillscard__content--title">Linguagens</h3>
-                <div className="skillscard__content--name">
-                  Javascript, Java, PHP, Python
-                </div>
-              </div>
-            </div>
-            <div className="about__skills">
-              <div className="skills__card--icons">
-                <FaHtml5 className="skills__item--general skills__item--html" />
-                {/* <FaCss3Alt className="skills__item--general skills__item--css" />
-                <FaReact className="skills__item--general skills__item--react" /> */}
+                <IconCarousel
+                  icons={[
+                    <IoLogoJavascript className="skills__item--general skills__item--javascript" />,
+                    <FaHtml5 className="skills__item--general skills__item--html" />,
+                    <FaCss3Alt className="skills__item--general skills__item--css" />,
+                    <FaReact className="skills__item--general skills__item--react" />,
+                  ]}
+                />
               </div>
               <div className="skills__card--content">
                 <h3 className="skillscard__content--title">Front-End</h3>
                 <div className="skillscard__content--name">
-                  HTML5, CSS3, SASS, React JS
+                  Javascript, HTML5, CSS3, SASS, React JS
                 </div>
               </div>
             </div>
             <div className="about__skills">
               <div className="skills__card--icons">
-                <FaNodeJs className="skills__item--general skills__item--node" />
-                {/* <SiExpress className="skills__item--general skills__item--express" />
-                <FaServer className="skills__item--general skills__item--rest" /> */}
+                <IconCarousel
+                  icons={[
+                    <FaJava className="skills__item--general skills__item--java" />,
+                    <SiPhp className="skills__item--general skills__item--php" />,
+                    <SiPython className="skills__item--general skills__item--python" />,
+                    <FaNodeJs className="skills__item--general skills__item--node" />,
+                    <SiExpress className="skills__item--general skills__item--express" />,
+                    <FaServer className="skills__item--general skills__item--rest" />,
+                  ]}
+                />
               </div>
               <div className="skills__card--content">
                 <h3 className="skillscard__content--title">Back-End</h3>
                 <div className="skillscard__content--name">
-                  Node JS, Express JS, RESTful APIs
+                  Java, PHP, Python, Node JS, Express JS, RESTful APIs
                 </div>
               </div>
             </div>
             <div className="about__skills">
               <div className="skills__card--icons">
-                <SiMysql className="skills__item--general skills__item--mysql"/>
-                {/* <SiMongodb className="skills__item--general skills__item--mongodb"/>
-                <SiFirebase className="skills__item--general skills__item--firebase"/> */}
+                <IconCarousel
+                  icons={[
+                    <SiMysql className="skills__item--general skills__item--mysql" />,
+                    <SiMongodb className="skills__item--general skills__item--mongodb" />,
+                    <SiFirebase className="skills__item--general skills__item--firebase" />,
+                  ]}
+                />
               </div>
               <div className="skills__card--content">
                 <h3 className="skillscard__content--title">Banco de Dados</h3>
@@ -152,27 +161,23 @@ const About = () => {
             </div>
             <div className="about__skills">
               <div className="skills__card--icons">
-                <FaDocker className="skills__item--general skills__item--docker"/>
-                {/* <SiKubernetes className="skills__item--general skills__item--kubernetes" />
-                <SiGithubactions className="skills__item--general skills__item--cicd" /> */}
+                <IconCarousel
+                  icons={[
+                    <FaDocker className="skills__item--general skills__item--docker" />,
+                    <SiKubernetes className="skills__item--general skills__item--kubernetes" />,
+                    <SiGithubactions className="skills__item--general skills__item--cicd" />,
+                    <SiGit className="skills__item--general skills__item--git" />,
+                    <VscGithub className="skills__item--general skills__item--github" />,
+                    <SiPostman className="skills__item--general skills__item--postman" />,
+                  ]}
+                />
               </div>
               <div className="skills__card--content">
-                <h3 className="skillscard__content--title">Cloud & DevOps</h3>
+                <h3 className="skillscard__content--title">
+                  DevOps & Ferramentas
+                </h3>
                 <div className="skillscard__content--name">
-                  Docker, Kubernetes, CI/CD
-                </div>
-              </div>
-            </div>
-            <div className="about__skills">
-              <div className="skills__card--icons">
-                <SiGit className="skills__item--general skills__item--git"/>
-                {/* <VscGithub className="skills__item--general skills__item--github"/>
-                <SiPostman className="skills__item--general skills__item--postman" /> */}
-              </div>
-              <div className="skills__card--content">
-                <h3 className="skillscard__content--title">Ferramentas</h3>
-                <div className="skillscard__content--name">
-                  Git, GitHub, Postman
+                  Docker, Kubernetes, CI/CD, Git, GitHub, Postman
                 </div>
               </div>
             </div>
@@ -185,130 +190,110 @@ const About = () => {
       content: (
         <div className="about__block--centered">
           <p className="about__accordion--intro">Habilidades Sociais</p>
-          <div className="about__accordion">
-            {/* ITEM 1 */}
-            <div
-              className={`about__accordion--item ${openAcc === 1 ? "accordion__item--open" : ""}`}
-            >
-              <button
-                className="about__accordion--header"
-                onClick={() => toggleAcc(1)}
-              >
-                <FaComments />
-                Comunicação
-              </button>
-
-              <div className="about__accordion--content">
-                <p className="about__accordion--paragraph">
-                  Comunico soluções técnicas de forma clara e objetiva,
-                  facilitando o alinhamento entre requisitos e entregas. No
-                  projeto Kara Arquitetura, isso reduziu retrabalho e melhorou o
-                  fluxo do desenvolvimento.
+          <div className="about__skills--container">
+            <div className="about__skills">
+              <div className="skills__card--icons">
+                <FaComments className="skills__item--general skills_item--simpleicons" />
+              </div>
+              <div className="skills__card--content">
+                <h3 className="skillscard__content--title">Comunicação</h3>
+                <p className="skillscard__content--text">
+                  Comunico sempre de forma fluída, clara e objetiva. Reuniões,
+                  feedbacks e report de atividades.
                 </p>
               </div>
             </div>
-
-            {/* ITEM 2 */}
-            <div
-              className={`about__accordion--item ${openAcc === 2 ? "accordion__item--open" : ""}`}
-            >
-              <button
-                className="about__accordion--header"
-                onClick={() => toggleAcc(2)}
-              >
-                <FaUsers />
-                Trabalho em equipe
-              </button>
-
-              <div className="about__accordion--content">
-                <p className="about__accordion--paragraph">
-                  Atuo de forma colaborativa em projetos acadêmicos e freelas,
-                  participando de pair programming, revisões de código e
-                  apoiando colegas para manter a qualidade e o ritmo do time.
+            <div className="about__skills">
+              <div className="skills__card--icons">
+                <FaUsers className="skills__item--general skills_item--simpleicons" />
+              </div>
+              <div className="skills__card--content">
+                <h3 className="skillscard__content--title">
+                  Trabalho em Equipe
+                </h3>
+                <p className="skillscard__content--text">
+                  Atuo colaborativamente em projetos acadêmicos e freelas, com
+                  pair programming, revisõe de código.
                 </p>
               </div>
             </div>
-
-            {/* ITEM 3 */}
-            <div
-              className={`about__accordion--item ${openAcc === 3 ? "accordion__item--open" : ""}`}
-            >
-              <button
-                className="about__accordion--header"
-                onClick={() => toggleAcc(3)}
-              >
-                <FaBrain />
-                Resolução de problemas
-              </button>
-
-              <div className="about__accordion--content">
-                <p className="about__accordion--paragraph">
-                  Identifico gargalos e proponho soluções práticas. No projeto
-                  Randplay, implementei melhorias que reduziram falhas e
-                  aumentaram o desempenho da aplicação.
+            <div className="about__skills">
+              <div className="skills__card--icons">
+                <FaBrain className="skills__item--general skills_item--simpleicons" />
+              </div>
+              <div className="skills__card--content">
+                <h3 className="skillscard__content--title">
+                  Resolução de Problemas
+                </h3>
+                <p className="skillscard__content--text">
+                  Entender os processos, e a qualidade necessária para
+                  realização, auxiliam bastante a identificação de problemas, e
+                  ação para resolvê-los.
                 </p>
               </div>
             </div>
-
-            {/* ITEM 4 */}
-            <div
-              className={`about__accordion--item ${openAcc === 4 ? "accordion__item--open" : ""}`}
-            >
-              <button
-                className="about__accordion--header"
-                onClick={() => toggleAcc(4)}
-              >
-                <FaLightbulb />
-                Proatividade & Liderança
-              </button>
-
-              <div className="about__accordion--content">
-                <p className="about__accordion--paragraph">
-                  Tenho postura proativa na melhoria de código e processos. Em
-                  trabalhos acadêmicos, atuei organizando tarefas, distribuindo
-                  responsabilidades e garantindo clareza para o time.
+            <div className="about__skills">
+              <div className="skills__card--icons">
+                <FaLightbulb className="skills__item--general skills_item--simpleicons" />
+              </div>
+              <div className="skills__card--content">
+                <h3 className="skillscard__content--title">Proatividade</h3>
+                <p className="skillscard__content--text">
+                  Sei identificar pontos de melhoria, procuro assumir novas
+                  responsabilidades, criar atividades que sejam benéficas aos
+                  processos.
                 </p>
               </div>
             </div>
-
-            {/* ITEM 5 */}
-            <div
-              className={`about__accordion--item ${openAcc === 5 ? "accordion__item--open" : ""}`}
-            >
-              <button
-                className="about__accordion--header"
-                onClick={() => toggleAcc(5)}
-              >
-                <FaTasks />
-                Organização
-              </button>
-
-              <div className="about__accordion--content">
-                <p className="about__accordion--paragraph">
-                  Planejo entregas com foco em organização, utilizando
-                  versionamento no Git, estrutura modular e padronização de
-                  commits para facilitar manutenção e evolução do projeto.
+            <div className="about__skills">
+              <div className="skills__card--icons">
+                <FaUserTie className="skills__item--general skills_item--simpleicons" />
+              </div>
+              <div className="skills__card--content">
+                <h3 className="skillscard__content--title">Liderança</h3>
+                <p className="skillscard__content--text">
+                  Tenho facilidade em organizar tarefas, distribuir
+                  responsabilidades e garantir clareza e boa comunicação para o
+                  time.
                 </p>
               </div>
             </div>
-
-            {/* ITEM 6 */}
-            <div
-              className={`about__accordion--item ${openAcc === 6 ? "accordion__item--open" : ""}`}
-            >
-              <button
-                className="about__accordion--header"
-                onClick={() => toggleAcc(6)}
-              >
-                <FaShieldAlt />
-                Resiliência
-              </button>
-
-              <div className="about__accordion--content">
-                <p className="about__accordion--paragraph">
+            <div className="about__skills">
+              <div className="skills__card--icons">
+                <FaTasks className="skills__item--general skills_item--simpleicons" />
+              </div>
+              <div className="skills__card--content">
+                <h3 className="skillscard__content--title">Organização</h3>
+                <p className="skillscard__content--text">
+                  Utilizo versionamento no Git, estrutura modular e padronização
+                  de commits para facilitar manutenção e evolução do projeto.
+                </p>
+              </div>
+            </div>
+            <div className="about__skills">
+              <div className="skills__card--icons">
+                <FaShieldAlt className="skills__item--general skills_item--simpleicons" />
+              </div>
+              <div className="skills__card--content">
+                <h3 className="skillscard__content--title">Resiliência</h3>
+                <p className="skillscard__content--text">
                   Demonstro resiliência ao manter consistência nos estudos e
                   entregas mesmo em períodos de alta demanda e durante a
                   transição de carreira.
+                </p>
+              </div>
+            </div>
+            <div className="about__skills">
+              <div className="skills__card--icons">
+                <FaProjectDiagram className="skills__item--general skills_item--simpleicons" />
+              </div>
+              <div className="skills__card--content">
+                <h3 className="skillscard__content--title">
+                  Pensamento crítico/lógico
+                </h3>
+                <p className="skillscard__content--text">
+                  Sou capaz de raciocinar de forma crítica e encontrar soluções
+                  para problemas reais.
                 </p>
               </div>
             </div>

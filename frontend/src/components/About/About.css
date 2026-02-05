@@ -1,8 +1,41 @@
+:root {
+  /* Base */
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  /* Whites with opacity */
+  --white-85: #ffffffd9;
+  --white-88: #ffffffe0;
+  --white-65: #ffffffa6;
+
+  /* Primary */
+  --color-primary: #ff5f5f;
+
+  /* Tech colors */
+  --color-js: #f7df1e;
+  --color-java: #007396;
+  --color-php: #777bb4;
+  --color-python: #3776ab;
+  --color-html: #e34f26;
+  --color-css: #1572b6;
+  --color-react: #61dafb;
+  --color-node: #339933;
+  --color-postman: #ff6c37;
+  --color-mysql: #4479a1;
+  --color-mongodb: #47a248;
+  --color-firebase: #ffca28;
+  --color-docker: #2496ed;
+  --color-kubernetes: #326ce5;
+  --color-cicd: #2088ff;
+  --color-github: #181717;
+  --color-git: #f05032;
+}
+
 /************** LAYOUT STRUCTURES **************/
 .about__block--centered {
   width: 100%;
   height: 100%;
-  padding: 1.5em 2em;
+  padding: 0 60px 60px 60px;
   display: flex;
   flex-direction: column;
   gap: 1.8em;
@@ -12,7 +45,7 @@
   width: 100%;
   height: 100%;
   display: flex;
-  padding: 4rem 3rem;
+  padding: 60px;
 }
 
 .about__block--centered,
@@ -38,80 +71,91 @@
 /************** TYPOGRAPHY **************/
 .skillscard__content--title {
   font-weight: 600;
-  font-size: 1.3rem;
-  margin-bottom: .7em;
+  font-size: clamp(1.05rem, 1.6vw, 1.3rem);
+  margin-bottom: 0.7em;
   transition: color 0.3s ease;
 }
 
 .about__skills--intro,
 .about__accordion--intro {
-  font-size: 2rem;
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
   line-height: 1.6;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--white-85);
   text-align: center;
 }
 
 .about__paragraph {
   font-size: 1.2rem;
   line-height: 1.8;
-  color: rgba(255, 255, 255, 0.88);
+  color: var(--white-88);
   max-width: 560px;
 }
 
 .about__paragraph--quote {
   margin: 1.6rem 0;
   padding-left: 1.2rem;
-  border-left: 3px solid #ff5f5f;
-  font-size: 0.95rem;
+  border-left: 3px solid var(--color-primary);
+  font-size: clamp(0.85rem, 1.4vw, 0.95rem);
   font-style: italic;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.65);
+  color: var(--white-65);
 }
 
-.skillscard__content--name {
+.skillscard__content--name,
+.skillscard__content--text {
   font-weight: 300;
-  font-size: 0.9rem;
+  font-size: clamp(0.8rem, 1.4vw, 0.9rem);
   opacity: 0.9;
-  color: #fff !important;
+  color: var(--color-white) !important;
   transition: color 0.3s ease;
 }
 
 /************** BLOCKS **************/
 .about__skills--container {
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
 }
 .about__skills {
+  min-width: 0;
   width: 100%;
   height: 150px;
   display: flex;
 }
 
-.about__skills:hover .skills__item--general {
-  transform: scale(1.2);
-}
-
 .about__skills:hover .skills__card--content {
-  background-color: #ff5f5f;
+  background-color: var(--color-primary);
 }
 
 .about__skills:hover .skillscard__content--title,
 .about__skills:hover .skillscard__content--name {
-  color: #fff;
+  color: var(--color-white);
 }
 
-.skills__card--icons{
+/************** ICON CARD **************/
+.skills__card--icons {
   height: 150px;
-  width: 200px;
-  border: 1px solid #ff5f5f;
+  flex: 0 0 clamp(100px, 30vw, 150px);
+  border: 1px solid var(--color-primary);
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
-.skills__card--content{
+.skills__item--general {
+  width: 75px;
+  height: 75px;
+  transition: transform 0.3s ease;
+}
+
+.about__skills:hover .skills__item--general {
+  transform: scale(1.15);
+}
+
+/************** CONTENT CARD **************/
+.skills__card--content {
   height: 150px;
   width: 100%;
   display: flex;
@@ -126,126 +170,115 @@
   width: 350px;
 }
 
-.skills__item--general{
-  height: 75px;
-  width: 75px;
-  transition: transform 0.3s ease;
+/************** ICON COLORS **************/
+.skills_item--simpleicons {
+  color: var(--color-primary);
 }
 
 .skills__item--javascript {
-  color: #f7df1e;
+  color: var(--color-js);
 }
 .skills__item--java {
-  color: #007396;
+  color: var(--color-java);
 }
 .skills__item--php {
-  color: #777bb4;
+  color: var(--color-php);
 }
 .skills__item--python {
-  color: #3776ab;
+  color: var(--color-python);
 }
 .skills__item--html {
-  color: #e34f26;
+  color: var(--color-html);
 }
 .skills__item--css {
-  color: #1572b6;
+  color: var(--color-css);
 }
 .skills__item--react {
-  color: #61dafb;
+  color: var(--color-react);
 }
 .skills__item--node {
-  color: #339933;
+  color: var(--color-node);
 }
 .skills__item--express {
-  color: #ffffff;
+  color: var(--color-white);
 }
 .skills__item--rest {
-  color: #ff5f5f;
+  color: var(--color-primary);
 }
 .skills__item--postman {
-  color: #ff6c37;
+  color: var(--color-postman);
 }
 .skills__item--mysql {
-  color: #4479a1;
+  color: var(--color-mysql);
 }
 .skills__item--mongodb {
-  color: #47a248;
+  color: var(--color-mongodb);
 }
 .skills__item--firebase {
-  color: #ffca28;
+  color: var(--color-firebase);
 }
 .skills__item--docker {
-  color: #2496ed;
+  color: var(--color-docker);
 }
 .skills__item--kubernetes {
-  color: #326ce5;
+  color: var(--color-kubernetes);
 }
-.skills__item--cicd svg,
-.skills__item--cicd {
-  color: #2088ff;
+
+.skills__item--cicd,
+.skills__item--cicd svg {
+  color: var(--color-cicd);
 }
+
 .skills__item--github {
-  color: #181717;
+  color: var(--color-github);
 }
 .skills__item--git {
-  color: #f05032;
+  color: var(--color-git);
 }
 
-/************** ACCORDION **************/
-.about__accordion {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: 100%;
-}
-.about__accordion--item {
-  background: rgba(60, 90, 150, 0.25);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-  overflow: hidden;
-  transition: all 0.3s ease;
-}
-.about__accordion--header {
-  width: 100%;
-  padding: 0.6em;
-  background: transparent;
-  border: none;
-  color: #fff;
-  font-size: 1rem;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  cursor: pointer;
-  text-align: left;
-  transition: background 0.25s ease;
-  letter-spacing: 0.3px;
-}
-.about__accordion--header:hover {
-  background: rgba(255, 255, 255, 0.05);
-}
-.accordion__item--open .about__accordion--header {
-  color: #ff5f5f;
-}
+/************** RESPONSIVE **************/
+@media (max-width: 767px) {
+  .about__block--centered {
+    padding: 0 0 60px 0;
+  }
 
-.accordion__item--open .about__accordion--header svg {
-  opacity: 1;
-}
-.about__accordion--content {
-  max-height: 0;
-  overflow: hidden;
-  transition: all 0.35s ease;
-  background: rgba(255, 255, 255, 0.05);
-}
-.about__accordion--paragraph {
-  padding: 0.8em 0.9em;
-  font-size: 0.92rem;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.8);
-}
-.accordion__item--open .about__accordion--content {
-  max-height: 250px;
-}
-.about__accordion--header svg {
-  font-size: 1.15rem;
-  opacity: 0.75;
+  .about__block--split {
+    padding: 40px 10px;
+  }
+  .skills__card--content {
+    padding: 0.5em;
+  }
+  .about__content--text,
+  .about__content--media {
+    width: 100%;
+  }
+  .about__image--profile {
+    width: 290px;
+  }
+  .about__skills--container {
+    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .about__skills {
+    height: 120px;
+    width: 95%;
+  }
+  .skills__card--icons {
+    height: 120px;
+    width: 180px;
+  }
+  .skills__card--content {
+    height: 120px;
+  }
+  .about__block--split {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .about__content--text,
+  .about__content--media {
+    width: 100%;
+  }
 }

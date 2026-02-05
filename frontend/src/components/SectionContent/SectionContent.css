@@ -119,9 +119,9 @@
 /************** RESPONSIVE **************/
 
 @media (max-width: 768px) {
-  .section-content {
+  /* .section-content {
     width: 100%;
     height: 60%;
     position: relative;
-  }
+  } */
 }
