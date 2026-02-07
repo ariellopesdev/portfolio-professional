@@ -10,6 +10,7 @@ import Projects from "../../components/Projects/Projects";
 import About from "../../components/About/About";
 import Curriculum from "../../components/Curriculum/Curriculum";
 import Contact from "../../components/Contact/Contact";
+import Footer from "../../components/Footer/Footer";
 
 const Home = () => {
   return (
@@ -22,6 +23,7 @@ const Home = () => {
       <About />
       <Curriculum />
       <Contact />
+      <Footer />
     </div>
   );
 };
