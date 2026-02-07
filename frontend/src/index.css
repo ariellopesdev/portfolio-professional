@@ -56,7 +56,7 @@ body {
   position: relative;
   height: 100vh;
   width: 100%;
-  padding: 75px 150px;
+  padding: 75px 100px;
   transition: all 0.8s ease;
   box-sizing: border-box;
   color: #fff;
@@ -83,7 +83,7 @@ body {
   position: relative;
   min-height: 100vh;
   width: 100%;
-  padding: 75px 150px;
+  padding: 75px 100px;
   transition: all 0.8s ease;
   box-sizing: border-box;
   color: #fff;

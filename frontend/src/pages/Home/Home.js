@@ -15,7 +15,7 @@ const Home = () => {
   return (
     <div id="home">
       <Navbar />
-      <Aside />
+      {/* <Aside /> */}
       <Main />
       {/* <Moon /> */}
       <Projects />
