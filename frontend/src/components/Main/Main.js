@@ -7,8 +7,11 @@ const Main = () => {
   return (
     <section id="main">
       <div id="main__container">
+        <p className="main__text--intro">
+          Oi, eu sou
+        </p>
         <h1 className="main__text--title">
-          Ariel <br /> Lopes
+          Ariel Lopes
         </h1>
         <TwoLines color="#ff5f5f" compact={false} variant="main" />
         <h2 className="main__text--subtitle">Full Stack Developer</h2>
