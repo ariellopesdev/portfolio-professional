@@ -34,7 +34,7 @@ const Footer = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <FaGithub className="nav-icon" />
+                    <FaGithub className="footer__icon" />
                   </a>
                 </li>
                 <li>
@@ -43,7 +43,7 @@ const Footer = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <FaLinkedin className="nav-icon" />
+                    <FaLinkedin className="footer__icon" />
                   </a>
                 </li>
                 <li>
@@ -52,12 +52,12 @@ const Footer = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <FaWhatsapp className="nav-icon" />
+                    <FaWhatsapp className="footer__icon" />
                   </a>
                 </li>
                 <li>
                   <a href="mailto:ariel_lopescwb2017@hotmail.com">
-                    <MdEmail className="nav-icon" />
+                    <MdEmail className="footer__icon" />
                   </a>
                 </li>
               </ul>

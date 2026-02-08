@@ -36,6 +36,9 @@
   --color-cicd: #2088ff;
   --color-github: #181717;
   --color-git: #f05032;
+
+  /* Footer */
+  --footer-bg: #0f0f0f;
 }
 
 
