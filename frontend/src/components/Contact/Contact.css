@@ -1,0 +1,109 @@
+/************** CONTACT **************/
+
+.contact__block--centered {
+  width: 100%;
+  height: 100%;
+  padding: 3.75em;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5em;
+  margin: 0 auto;
+}
+
+/************** TEXT **************/
+
+.contact__calltoaction {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.contact__calltoaction span {
+  color: var(--color-primary);
+}
+
+.contact__text {
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  line-height: 1.6;
+}
+
+/************** BUTTON **************/
+
+.contact__calltoaction--btn {
+  font-size: clamp(0.85rem, 1.4vw, 0.9rem);
+  padding: 1.25em 1.8em;
+  width: fit-content;
+  text-decoration: none;
+  letter-spacing: 0.0625rem;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.contact__calltoaction--btn:hover {
+  background-color: var(--color-primary);
+  cursor: pointer;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+  color: var(--color-white);
+}
+
+/************** ACTIONS **************/
+#contact__actions {
+  position: relative; 
+  display: flex;
+  gap: 0.9rem;
+  padding: 2.5rem 0 0 0;
+}
+#contact__actions:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 3.75em;             
+  right: 3.75em;
+  height: 0.0625rem;
+  background: var(--color-primary);
+}
+.contact__actions--link {
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  font-weight: 500;
+  transition: all 0.3s ease;
+  font-size: clamp(0.8rem, 2vw, 0.95rem);
+}
+
+.contact__actions--link,
+.contact__calltoaction--btn,
+.contact__actions--link:visited,
+.contact__calltoaction--btn:visited,
+.contact__actions--link:hover,
+.contact__calltoaction--btn:hover,
+.contact__actions--link:active,
+.contact__calltoaction--btn:active,
+.contact__calltoaction--btn:focus
+.contact__actions--link:focus {
+  color: var(--color-white);
+}
+
+.contact__actions--link:hover {
+  background: var(--color-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+}
+
+.contact__actions--link:active {
+  transform: translateY(0);
+}
+
+/************** RESPONSIVE **************/
+@media (max-width: 768px) {
+  .contact__block--centered {
+  padding: 1.5em;
+  gap: 2em;
+
+}
+}

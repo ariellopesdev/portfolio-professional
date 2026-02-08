@@ -93,6 +93,12 @@ body {
   overflow-y: auto;
 }
 
+#contact{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .sections-wrapper {
   position: relative;
   background-color: transparent;
