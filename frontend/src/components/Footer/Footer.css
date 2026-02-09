@@ -68,7 +68,7 @@
 }
 
 .footer__icon {
-  font-size: clamp(1.1rem, 1.8vw, 1.3rem);
+  font-size: clamp(1.2rem, 1.8vw, 1.3rem);
 }
 
 .footer__icon:hover {
@@ -108,4 +108,17 @@
   font-weight: 600;
   text-decoration: none;
   color: var(--color-white);
+}
+
+/************** RESPONSIVE **************/
+@media (max-width: 500px) {
+  .footer__info--contact {
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+.info__contact--tel {
+  border-right: none
+}
+
 }
