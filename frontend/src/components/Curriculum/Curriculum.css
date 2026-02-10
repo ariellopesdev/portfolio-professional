@@ -1,0 +1,187 @@
+/************************************************************
+  CURRICULUM – TIMELINE (CORRIGIDO 1:1 COM A REFERÊNCIA)
+************************************************************/
+
+/************** FILTERS **************/
+.curriculum__filters {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  margin-bottom: 4rem;
+}
+
+.curriculum__filter {
+  background: none;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--color-white);
+  position: relative;
+}
+
+.curriculum__filter.active::after {
+  content: "✔";
+  margin-left: 0.4rem;
+  color: #ff5f5f;
+}
+
+/************** EMPTY **************/
+.curriculum__empty {
+  text-align: center;
+  color: var(--white-65);
+  margin-top: 3rem;
+}
+
+/************** TIMELINE **************/
+.timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  padding: 2rem 0;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  background: #ff5f5f;
+
+  /* 🔥 CONTROLE REAL DA ALTURA */
+  top: 35px;       
+  bottom: 35px; 
+}
+
+/************** ITEM **************/
+.timeline__item {
+  position: relative;
+  display: flex;
+  width: 100%;
+  min-height: 180px;
+}
+
+/* CORREÇÃO PRINCIPAL */
+.timeline__item.left {
+  justify-content: flex-start;
+}
+
+.timeline__item.right {
+  justify-content: flex-end;
+}
+
+/************** MARKER **************/
+.timeline__marker {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  z-index: 5;
+}
+
+.timeline__circle {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #ff5f5f;
+  background: transparent;
+  border-radius: 50%;
+}
+
+/************** DATE **************/
+.timeline__date {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #ff5f5f;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.timeline__item.left .timeline__date {
+  margin-left: 0.6rem;
+}
+
+.timeline__item.right .timeline__date {
+  margin-right: 0.6rem;
+  text-align: right;
+}
+
+/************** CARDS **************/
+.timeline__cards {
+  position: relative;
+  width: 420px;
+  height: 150px;
+}
+
+.timeline__card {
+  position: absolute;
+  inset: 0;
+}
+
+.timeline__card--back {
+  background: #dcdcdc;
+  z-index: 1;
+}
+
+.timeline__card--front {
+  background: #ff5f5f;
+  color: #ffffff;
+  padding: 1.6em;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/************** OFFSET + ARROW **************/
+.timeline__item.left .timeline__cards {
+  margin-left: 3.5rem;
+}
+
+.timeline__item.left .timeline__card--back {
+  transform: translateX(5px);
+}
+
+.timeline__item.left .timeline__card--back::after {
+  content: "";
+  position: absolute;
+  top: 30%; /* sobe a seta para alinhar com o círculo */
+  right: -10px;
+  transform: translateY(-50%);
+  border-width: 8px 0 8px 10px;
+  border-style: solid;
+  border-color: transparent transparent transparent #dcdcdc;
+}
+
+.timeline__item.right .timeline__cards {
+  margin-right: 3.5rem;
+}
+
+.timeline__item.right .timeline__card--back {
+  transform: translateX(-5px);
+}
+
+.timeline__item.right .timeline__card--back::after {
+  content: "";
+  position: absolute;
+  top: 30%; /* mesmo alinhamento */
+  left: -10px;
+  transform: translateY(-50%);
+  border-width: 8px 10px 8px 0;
+  border-style: solid;
+  border-color: transparent #dcdcdc transparent transparent;
+}
+
+/************** TEXT **************/
+.timeline__card--front h4 {
+  font-size: 1rem;
+  margin-bottom: 0.4em;
+}
+
+.timeline__card--front p {
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
