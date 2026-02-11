@@ -57,7 +57,13 @@ const Curriculum = () => {
   const items = [
     ...(filters.academic ? academicExperiences : []),
     ...(filters.professional ? professionalExperiences : []),
-  ];
+  ].sort((a, b) => {
+    const getYear = (value) => {
+      const match = value.match(/\d{4}/);
+      return match ? parseInt(match[0]) : 0;
+    };
+    return getYear(b.year) - getYear(a.year);
+  });
 
   return (
     <section id="curriculum">
@@ -65,32 +71,37 @@ const Curriculum = () => {
         <SectionInfo title="Currículo" />
 
         <SectionContent>
-          {/* FILTERS */}
-          <div className="curriculum__filters">
-            <button
-              className={`curriculum__filter ${
-                filters.professional ? "active" : ""
-              }`}
-              onClick={() => toggleFilter("professional")}
-            >
-              Profissional
-            </button>
+          {/* TEXTO SEM SELEÇÃO — SEMPRE NO TOPO */}
 
-            <button
-              className={`curriculum__filter ${
-                filters.academic ? "active" : ""
-              }`}
-              onClick={() => toggleFilter("academic")}
-            >
-              Acadêmica
-            </button>
+          <div className="curriculum__empty">
+            <p>
+              Selecione uma ou mais categorias para visualizar minha trajetória
+              acadêmica e profissional organizada cronologicamente. As
+              experiências são exibidas de acordo com o ano de realização,
+              independentemente do tipo.
+            </p>
           </div>
 
-          {!filters.academic && !filters.professional && (
-            <p className="curriculum__empty">
-              Selecione pelo menos um tipo de experiência para conhecer minha trajetória.
-            </p>
-          )}
+          {/* FILTROS SOBRE AS COLUNAS */}
+          <div className="curriculum__filters">
+            <label className="filter-box left">
+              <input
+                type="checkbox"
+                checked={filters.academic}
+                onChange={() => toggleFilter("academic")}
+              />
+              Acadêmica
+            </label>
+
+            <label className="filter-box right">
+              <input
+                type="checkbox"
+                checked={filters.professional}
+                onChange={() => toggleFilter("professional")}
+              />
+              Profissional
+            </label>
+          </div>
 
           {(filters.academic || filters.professional) && (
             <div className="timeline">
@@ -99,13 +110,11 @@ const Curriculum = () => {
 
                 return (
                   <div key={index} className={`timeline__item ${side}`}>
-                    {/* LINE MARKER */}
                     <div className="timeline__marker">
                       <span className="timeline__circle"></span>
                       <span className="timeline__date">{item.year}</span>
                     </div>
 
-                    {/* CONTENT */}
                     <div className="timeline__cards">
                       <div className="timeline__card timeline__card--back"></div>
                       <div className="timeline__card timeline__card--front">
