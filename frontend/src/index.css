@@ -92,6 +92,10 @@ body {
   overflow-y: auto;
 }
 
+#curriculum{
+  min-height: unset !important;
+}
+
 #contact {
   display: flex;
   justify-content: center;
