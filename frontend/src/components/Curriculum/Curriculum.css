@@ -199,6 +199,14 @@
   margin-bottom: 0.4em;
 }
 
+.timeline__subtitle {
+  font-size: clamp(0.8rem, 1.5vw, 0.95rem);
+  font-weight: 500;
+  color: var(--white-85);
+  margin-bottom: 0.4rem;
+  opacity: 0.9;
+}
+
 .timeline__card--front p {
   font-size: clamp(0.8rem, 1.5vw, 1rem);
   line-height: 1.5;

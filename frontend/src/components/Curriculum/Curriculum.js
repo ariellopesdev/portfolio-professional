@@ -11,35 +11,59 @@ import { useState } from "react";
 const academicExperiences = [
   {
     year: "Jun 2026",
-    title: "Análise e Desenvolvimento de Sistemas (PUCPR)",
-    desc: "",
+    title: "Tecnólogo em Análise e Desenvolvimento de Sistemas",
+    subtitle: "Pontifícia Universidade Católica do Paraná",
+    desc: "Desenvolvimento de software, bancos de dados, APIs, arquitetura e metodologias ágeis.",
   },
   {
-    year: "2025",
-    title: "Banco de Dados e Linguagem SQL — IA Expert Academy",
-    desc: "Curso de SEO 2025 — Rodrigo Bueno | SASS e SCSS do básico ao avançado — Hora de Codar",
+    year: "Jan 2025",
+    title: "Banco de Dados e Linguagem SQL",
+    subtitle: "IA Expert Academy | Udemy",
+    desc: "Modelagem relacional, normalização e consultas SQL avançadas com foco em performance.",
   },
   {
-    year: "2024",
-    title: "HTML5 e CSS3 Avançado — Hora de Codar",
-    desc: "PHP do Zero à Maestria — Hora de Codar",
+    year: "Mai 2025",
+    title: "Curso de SEO 2025",
+    subtitle: "Rodrigo Bueno | Udemy",
+    desc: "SEO técnico, performance web e estruturação semântica para melhor ranqueamento.",
   },
   {
-    year: "2023",
-    title: "React do zero à maestria — Hora de Codar",
-    desc: "React JS do zero ao avançado — Matheus Fraga",
+    year: "Mar 2025",
+    title: "SASS e SCSS do básico ao avançado",
+    subtitle: "Hora de Codar | Udemy",
+    desc: "Pré-processamento de CSS com foco em modularização, reutilização e escalabilidade.",
+  },
+  {
+    year: "Fev 2023",
+    title: "HTML5 e CSS3 Avançado",
+    subtitle: "Hora de Codar | Udemy",
+    desc: "HTML semântico, CSS avançado, responsividade e boas práticas de estrutura e manutenção.",
+  },
+  {
+    year: "Dez 2024",
+    title: "PHP do Zero à Maestria",
+    subtitle: "Hora de Codar | Udemy",
+    desc: "Backend com PHP, integração com banco de dados e construção de aplicações web dinâmicas.",
+  },
+  {
+    year: "Jun 2024",
+    title: "React do zero à maestria",
+    subtitle: "Hora de Codar | Udemy",
+    desc: "React, hooks, componentização e integração com APIs.",
   },
 ];
 
 const professionalExperiences = [
   {
     year: "Out 2025",
-    title: "RandPlay — Projeto (Acadêmico)",
+    title: "RandPlay",
+    subtitle: "Projeto (Acadêmico)",
     desc: "React.js, Java, MongoDB, APIs, hooks, middlewares e alta performance.",
   },
   {
     year: "Jun 2025",
-    title: "Kara Arquitetura — Projeto (Acadêmico/Cliente)",
+    title: "Kara Arquitetura",
+    subtitle: "Projeto (Acadêmico/Cliente)",
     desc: "Site completo com React.js, PHP e Firebase. SEO, responsividade e boas práticas.",
   },
 ];
@@ -61,11 +85,34 @@ const Curriculum = () => {
     ...(filters.academic ? academicExperiences : []),
     ...(filters.professional ? professionalExperiences : []),
   ].sort((a, b) => {
-    const getYear = (value) => {
-      const match = value.match(/\d{4}/);
-      return match ? parseInt(match[0]) : 0;
+    const parseDate = (value) => {
+      const months = {
+        Jan: 0,
+        Fev: 1,
+        Mar: 2,
+        Abr: 3,
+        Mai: 4,
+        Jun: 5,
+        Jul: 6,
+        Ago: 7,
+        Set: 8,
+        Out: 9,
+        Nov: 10,
+        Dez: 11,
+      };
+
+      const parts = value.split(" ");
+
+      if (parts.length === 2) {
+        const [month, year] = parts;
+        return new Date(parseInt(year), months[month] ?? 0);
+      }
+
+      // Caso venha só o ano
+      return new Date(parseInt(value), 0);
     };
-    return getYear(b.year) - getYear(a.year);
+
+    return parseDate(b.year) - parseDate(a.year);
   });
 
   return (
@@ -141,6 +188,11 @@ const Curriculum = () => {
                         </span>
 
                         <h4>{item.title}</h4>
+                        {item.subtitle && (
+                          <span className="timeline__subtitle">
+                            {item.subtitle}
+                          </span>
+                        )}
                         {item.desc && <p>{item.desc}</p>}
                       </div>
                     </div>
