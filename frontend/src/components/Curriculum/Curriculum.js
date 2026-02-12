@@ -109,15 +109,34 @@ const Curriculum = () => {
                 const side = index % 2 === 0 ? "left" : "right";
 
                 return (
-                  <div key={index} className={`timeline__item ${side}`}>
+                  <div
+                    key={`${item.year}-${item.title}`}
+                    className={`timeline__item ${side}`}
+                  >
+                    {/* DATA FORA DO BLOCO (DESKTOP) */}
+                    {side === "left" && (
+                      <span className="timeline__date">{item.year}</span>
+                    )}
+
+                    {/* MARKER */}
                     <div className="timeline__marker">
                       <span className="timeline__circle"></span>
-                      <span className="timeline__date">{item.year}</span>
                     </div>
 
+                    {side === "right" && (
+                      <span className="timeline__date">{item.year}</span>
+                    )}
+
+                    {/* CARDS */}
                     <div className="timeline__cards">
                       <div className="timeline__card timeline__card--back"></div>
+
                       <div className="timeline__card timeline__card--front">
+                        {/* DATA DENTRO DO BLOCO (MOBILE) */}
+                        <span className="timeline__date--inside">
+                          {item.year}
+                        </span>
+
                         <h4>{item.title}</h4>
                         {item.desc && <p>{item.desc}</p>}
                       </div>

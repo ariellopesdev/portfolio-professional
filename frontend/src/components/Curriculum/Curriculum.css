@@ -112,15 +112,23 @@
   color: #5fa8ff;
   text-transform: uppercase;
   white-space: nowrap;
+  display: block;
+  z-index: 10;
+}
+
+.timeline__date--inside {
+  display: none;
 }
 
 .timeline__item.left .timeline__date {
-  left: 30px;
+  left: calc(50% + 30px);
+  padding-bottom: 60px;
 }
 
 .timeline__item.right .timeline__date {
-  right: 30px;
+  right: calc(50% + 30px);
   text-align: right;
+  padding-bottom: 60px;
 }
 
 /************** CARDS **************/
@@ -199,3 +207,57 @@
   font-size: 0.85rem;
   line-height: 1.5;
 }
+
+/************** RESPONSIVE **************/
+
+@media (max-width: 768px) {
+  /************** LINHA VAI PARA ESQUERDA **************/
+  .timeline::before {
+    left: 30px;
+    transform: none;
+  }
+
+  /************** MARKER ACOMPANHA A LINHA **************/
+  .timeline__marker {
+    left: -38px;
+    transform: translateY(-50%);
+  }
+
+  /************** TODOS OS ITENS FUNCIONAM COMO RIGHT **************/
+  .timeline__item {
+    justify-content: flex-end !important;
+  }
+
+  /************** REMOVE COMPORTAMENTO LEFT **************/
+  .timeline__item.left .timeline__cards {
+    padding-right: 0 !important;
+  }
+
+  .timeline__item.left .timeline__card--back {
+    transform: translateX(-5px) !important;
+  }
+
+  .timeline__item.left .timeline__card--back::after {
+    left: -10px !important;
+    right: auto !important;
+    border-width: 8px 10px 8px 0 !important;
+    border-color: transparent #e3a4a4 transparent transparent !important;
+  }
+
+  /************** DATA SAI DO LADO **************/
+  .timeline__date {
+    display: none !important;
+  }
+
+  /************** DATA VAI PARA DENTRO DO BLOCO **************/
+  .timeline__date--inside {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #5fa8ff;
+    margin-bottom: 0.6rem;
+    text-transform: uppercase;
+  }
+
+}
+
