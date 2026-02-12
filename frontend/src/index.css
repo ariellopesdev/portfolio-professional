@@ -17,8 +17,27 @@
 
   /* Primary */
   --color-primary: #ff5f5f;
+  --color-primary-soft: #e3a4a4;
 
-  /* Tech colors */
+  /* Backgrounds */
+  --color-bg-dark: #000000;
+  --color-bg-deep-1: #01050d;
+  --color-bg-deep-2: #010a17;
+  --color-bg-circle: #072142;
+
+  /* Accent */
+  --color-accent-blue: #5fa8ff;
+
+  /* Timeline */
+  --timeline-line: var(--color-primary);
+  --timeline-card-bg: var(--color-primary);
+  --timeline-card-back: var(--color-primary-soft);
+  --timeline-circle-border: var(--color-primary);
+
+  /* Footer */
+  --footer-bg: #0f0f0f;
+
+  /* Tech colors (mantidos como estão) */
   --color-js: #f7df1e;
   --color-java: #007396;
   --color-php: #777bb4;
@@ -36,9 +55,6 @@
   --color-cicd: #2088ff;
   --color-github: #181717;
   --color-git: #f05032;
-
-  /* Footer */
-  --footer-bg: #0f0f0f;
 }
 
 html {
@@ -70,7 +86,11 @@ body {
 
 #projects,
 #curriculum {
-  background: linear-gradient(180deg, #01050d 0%, #010a17 100%);
+  background: linear-gradient(
+    180deg,
+    var(--color-bg-deep-1) 0%,
+    var(--color-bg-deep-2) 100%
+  );
 }
 
 #about,

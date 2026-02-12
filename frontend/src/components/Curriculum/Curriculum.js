@@ -1,8 +1,11 @@
-import "../PagesGroup/PagesGroup.css";
+//CSS
 import "./Curriculum.css";
 
+//Components
 import SectionInfo from "../SectionInfo/SectionInfo";
 import SectionContent from "../SectionContent/SectionContent";
+
+//Hooks
 import { useState } from "react";
 
 const academicExperiences = [
