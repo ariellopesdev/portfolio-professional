@@ -168,8 +168,10 @@
   position: absolute;
   top: 30%;
   right: -10px;
+  
   transform: translateY(-50%);
   border-width: 8px 0 8px 10px;
+
   border-style: solid;
   border-color: transparent transparent transparent var(--timeline-card-back);
 }
