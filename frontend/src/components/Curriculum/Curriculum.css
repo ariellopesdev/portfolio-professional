@@ -68,7 +68,6 @@
   position: relative;
   display: flex;
   width: 100%;
-  min-height: 150px;
 }
 
 /* CORREÇÃO PRINCIPAL */
@@ -101,14 +100,15 @@
 /************** DATE **************/
 .timeline__date {
   position: absolute;
-  top: 50%;
+  top: 30%;
   transform: translateY(-50%);
   font-size: clamp(0.85rem, 2vw, 1rem);
   font-weight: 600;
   color: var(--color-accent-blue);
   text-transform: uppercase;
   white-space: nowrap;
-  display: block;
+  display: flex;
+  align-items: center;
   z-index: 10;
 }
 
@@ -118,47 +118,47 @@
 
 .timeline__item.left .timeline__date {
   left: calc(50% + 30px);
-  padding-bottom: 60px;
 }
 
 .timeline__item.right .timeline__date {
   right: calc(50% + 30px);
   text-align: right;
-  padding-bottom: 60px;
 }
 
 /************** CARDS **************/
 .timeline__cards {
   position: relative;
   width: calc(50% - 40px);
-  height: 150px;
 }
 
 .timeline__card {
-  position: absolute;
-  inset: 0;
+  position: relative;
+  width: 100%;
 }
 
 .timeline__card--back {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   background: var(--timeline-card-back);
-  z-index: 1;
+  z-index: 0;
 }
 
 .timeline__card--front {
+  position: relative;
   background: var(--timeline-card-bg);
   color: var(--color-white);
   padding: 1.6em;
-  z-index: 2;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  z-index: 1;
+  width: 100%;
 }
 
 /************** OFFSET + ARROW **************/
-.timeline__item.left .timeline__cards {
-  padding-right: 1rem;
-}
-
 .timeline__item.left .timeline__card--back {
   transform: translateX(5px);
 }
@@ -168,16 +168,10 @@
   position: absolute;
   top: 30%;
   right: -10px;
-  
   transform: translateY(-50%);
   border-width: 8px 0 8px 10px;
-
   border-style: solid;
   border-color: transparent transparent transparent var(--timeline-card-back);
-}
-
-.timeline__item.right .timeline__cards {
-  padding-left: 1rem;
 }
 
 .timeline__item.right .timeline__card--back {
@@ -187,7 +181,7 @@
 .timeline__item.right .timeline__card--back::after {
   content: "";
   position: absolute;
-  top: 30%; 
+  top: 30%;
   left: -10px;
   transform: translateY(-50%);
   border-width: 8px 10px 8px 0;
@@ -217,6 +211,9 @@
 /************** RESPONSIVE **************/
 
 @media (max-width: 768px) {
+  .curriculum__empty {
+    padding: 40px 10px;
+  }
   .timeline {
     padding: 0 15px 0 10px;
   }
@@ -237,7 +234,13 @@
   .timeline__item.left .timeline__cards {
     padding-right: 0 !important;
   }
+  .timeline__item.right .timeline__cards {
+    padding-left: 0 !important;
+  }
   .timeline__item.left .timeline__card--back {
+    transform: translateX(-5px) !important;
+  }
+  .timeline__item.right .timeline__card--back {
     transform: translateX(-5px) !important;
   }
   .timeline__item.left .timeline__card--back::after {

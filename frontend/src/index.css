@@ -112,7 +112,7 @@ body {
   overflow-y: auto;
 }
 
-#curriculum{
+#curriculum {
   min-height: unset !important;
 }
 
@@ -139,9 +139,11 @@ body {
     padding: 0 0 20px 20px;
   }
   #projects,
-  #about,
-  #curriculum {
+  #about {
     padding: 75px 20px 50px 20px;
+  }
+  #curriculum {
+    padding: 60px 20px 20px 20px;
   }
   #contact {
     padding: 20px;
