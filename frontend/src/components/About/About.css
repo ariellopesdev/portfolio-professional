@@ -38,7 +38,7 @@
 /************** TYPOGRAPHY **************/
 .skillscard__content--title {
   font-weight: 600;
-  font-size: clamp(1.05rem, 1.6vw, 1.3rem);
+  font-size: clamp(1.1rem, 1.6vw, 1.3rem);
   margin-bottom: 0.7em;
   transition: color 0.3s ease;
 }
@@ -72,7 +72,7 @@
 .skillscard__content--name,
 .skillscard__content--text {
   font-weight: 300;
-  font-size: clamp(0.75rem, 1.4vw, 0.9rem);
+  font-size: clamp(0.8rem, 1.4vw, 0.9rem);
   opacity: 0.9;
   color: var(--color-white) !important;
   transition: color 0.3s ease;
