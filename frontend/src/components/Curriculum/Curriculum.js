@@ -134,7 +134,7 @@ const Curriculum = () => {
 
           {/* FILTROS SOBRE AS COLUNAS */}
           <div className="curriculum__filters">
-            <label className="filter-box left">
+            <label className="filter__box left">
               <input
                 type="checkbox"
                 checked={filters.academic}
@@ -143,7 +143,7 @@ const Curriculum = () => {
               Acadêmica
             </label>
 
-            <label className="filter-box right">
+            <label className="filter__box right">
               <input
                 type="checkbox"
                 checked={filters.professional}
@@ -154,7 +154,7 @@ const Curriculum = () => {
           </div>
 
           {(filters.academic || filters.professional) && (
-            <div className="timeline">
+            <div className="curriculum__timeline">
               {items.map((item, index) => {
                 const side = index % 2 === 0 ? "left" : "right";
 

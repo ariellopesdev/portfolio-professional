@@ -14,7 +14,7 @@
   padding: 10px 60px;
 }
 
-.filter-box {
+.filter__box {
   display: flex;
   align-items: center;
   gap: 0.6rem;
@@ -23,7 +23,7 @@
   cursor: pointer;
 }
 
-.filter-box input {
+.filter__box input {
   appearance: none;
   width: 18px;
   height: 18px;
@@ -32,18 +32,18 @@
   cursor: pointer;
 }
 
-.filter-box input:checked {
+.filter__box input:checked {
   background: var(--color-primary);
 }
 
-.filter-box input:checked::after {
+.filter__box input:checked::after {
   content: "";
   position: absolute;
   background: var(--color-primary);
 }
 
 /************** TIMELINE **************/
-.timeline {
+.curriculum__timeline {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -52,7 +52,7 @@
   margin: 60px 0;
 }
 
-.timeline::before {
+.curriculum__timeline::before {
   content: "";
   position: absolute;
   left: 50%;
