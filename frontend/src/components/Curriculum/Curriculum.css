@@ -231,6 +231,9 @@
   .timeline__cards {
     width: calc(100% - 60px) !important;
   }
+  .timeline__card--front {
+    padding: 1em;
+  }
   .timeline__item.left .timeline__cards {
     padding-right: 0 !important;
   }
