@@ -37,6 +37,11 @@
   /* Footer */
   --footer-bg: #0f0f0f;
 
+  /* Modal */
+  --modal-title: #343a40;
+  --modal-text: #6c757d;
+  --modal-bg: #f8f9fa;
+
   /* Tech colors (mantidos como estão) */
   --color-js: #f7df1e;
   --color-java: #007396;
@@ -112,7 +117,8 @@ body {
   overflow-y: auto;
 }
 
-#curriculum {
+#curriculum,
+#projects {
   min-height: unset !important;
 }
 
@@ -129,6 +135,10 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
+}
+
+.highlight{
+  color: var(--color-kubernetes);
 }
 
 /************** RESPONSIVE **************/
