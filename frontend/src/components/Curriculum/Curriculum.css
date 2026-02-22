@@ -214,10 +214,10 @@
   .curriculum__empty {
     padding: 40px 10px;
   }
-  .timeline {
+  .curriculum__timeline {
     padding: 0 15px 0 10px;
   }
-  .timeline::before {
+  .curriculum__timeline::before {
     left: 30px;
     transform: none;
   }
