@@ -117,8 +117,7 @@ body {
   overflow-y: auto;
 }
 
-#curriculum,
-#projects {
+#curriculum {
   min-height: unset !important;
 }
 
