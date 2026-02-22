@@ -104,6 +104,7 @@ const Projects = () => {
                       onClick={() => setSelectedProject(null)}
                     />
                   </div>
+                  <span className="modal__tech">{selectedProject.tech}</span>
                   <div className="modal__image">
                     <img
                       src={selectedProject.image}

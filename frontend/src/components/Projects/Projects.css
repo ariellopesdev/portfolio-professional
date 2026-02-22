@@ -93,7 +93,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: 1rem 1rem 0 1rem;
 }
 
 .modal__header h3 {
@@ -108,7 +108,14 @@
   color: var(--modal-text);
 }
 
+.modal__tech{
+  font-size: clamp(0.8rem, 1.2vw, 0.9rem);
+  color: var(--modal-text);
+  padding: 0 1.05rem;
+}
+
 .modal__image {
+  padding-top: .5rem;
   padding-bottom: 1rem;
 }
 
