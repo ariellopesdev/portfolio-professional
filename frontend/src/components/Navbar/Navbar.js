@@ -2,10 +2,10 @@
 import "./Navbar.css";
 
 //Router
-import { NavLink} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 //Hooks
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 //Icons
 import {
@@ -19,45 +19,28 @@ import { MdEmail } from "react-icons/md";
 
 const Navbar = ({ scrollToSection }) => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
   const closeMenu = () => setMenuOpen(false);
   return (
-    <header>
+    <header className={scrolled ? "header scrolled" : "header"}>
       <h1>Logo</h1>
       <ul id="ul-header">
-        <li>
-          <a
-            href="https://github.com/ariellopesdev"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaGithub className="nav-icon" />
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://www.linkedin.com/in/ariel-lopes-71000821b/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaLinkedin className="nav-icon" />
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://wa.me/5532998291774"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaWhatsapp className="nav-icon" />
-          </a>
-        </li>
-        <li>
-          <a href="mailto:ariel_lopescwb2017@hotmail.com">
-            <MdEmail className="nav-icon" />
-          </a>
-        </li>
+        <li onClick={() => scrollToSection(0)}>Home</li>
+        <li onClick={() => scrollToSection(1)}>Projetos</li>
+        <li onClick={() => scrollToSection(2)}>Sobre</li>
+        <li onClick={() => scrollToSection(3)}>Currículo</li>
+        <li onClick={() => scrollToSection(4)}>Contato</li>
       </ul>
       <div id="menu-btn">
         <button id="menu-btn-toggle" onClick={toggleMenu}>
@@ -75,6 +58,7 @@ const Navbar = ({ scrollToSection }) => {
         <ul>
           <li>
             <NavLink
+              className={({ isActive }) => (isActive ? "active-header" : "")}
               to="/"
               onClick={() => {
                 closeMenu();

@@ -4,14 +4,21 @@ header {
   top: 0;
   right: 0;
   width: 100%;
-  height: 3.75rem;
+  height: 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-right: 1rem;
+  padding-right: 2rem;
   color: #fff;
   background-color: transparent;
+  transition: all 0.3s ease;
   z-index: 1000;
+}
+
+header.scrolled {
+  height: 60px;
+  background-color: #000;
+  backdrop-filter: blur(8px);
 }
 
 header h1 {
@@ -32,30 +39,24 @@ header h1 {
   list-style: none;
   display: flex;
   margin-left: auto;
-  gap: 1rem;
+  gap: 1.8rem;
   align-items: center;
   padding: 0;
-  z-index: 10000;
 }
 
-#ul-header li a {
-  font-size: clamp(1.2rem, 2vw, 1.3em);
+#ul-header li {
+  font-size: clamp(0.9rem, 1.2vw, 1rem);
+  font-weight: 500;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  transition: color 0.2s ease, transform 0.2s ease;
-  text-decoration: none;
-}
-
-#ul-header li a:hover {
-  color: #ff5f5f;
-}
-
-#ul-header li .nav-icon {
-  color: currentColor;
   transition: color 0.2s ease;
+}
+
+.active-header{
+  color: var(--color-primary);
+}
+
+#ul-header li:hover {
+  color: var(--color-primary);
 }
 
 /************** MENU BUTTON **************/
@@ -88,22 +89,25 @@ header h1 {
 /************** MENU FULLSCREEN **************/
 .fullscreen-menu {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background: linear-gradient(90deg, #1f1f1f 0%, #332455 40%, #40255a 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  transform: translateY(-100%);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition: opacity 0.4s ease, visibility 0.4s ease;
   z-index: 2000;
-  transition: transform 0.5s ease;
 }
 
 .fullscreen-menu.active {
-  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
 }
 
 .fullscreen-menu ul {
@@ -146,6 +150,9 @@ header h1 {
 /************** RESPONSIVE **************/
 
 @media (max-width: 768px) {
+  #ul-header{
+    display: none;
+  }
   header {
     padding-right: 0;
   }
