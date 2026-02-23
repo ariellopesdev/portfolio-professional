@@ -8,7 +8,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-right: 2rem;
+  padding: 0 75px;
   color: #fff;
   background-color: transparent;
   transition: all 0.3s ease;
@@ -21,17 +21,15 @@ header.scrolled {
   backdrop-filter: blur(8px);
 }
 
-header h1 {
+header .logo__image {
   position: relative;
-  font-size: 1.2rem;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  height: 100%;
-  width: 150px;
+  height: 55%;
+  width: auto;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 10000;
+  cursor: pointer;
 }
 
 /************** LIST OF ICONS **************/
@@ -45,27 +43,21 @@ header h1 {
 }
 
 #ul-header li {
-  font-size: clamp(0.9rem, 1.2vw, 1rem);
-  font-weight: 500;
+  position: relative;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  font-weight: 300;
   cursor: pointer;
+  color: var(--white-65);
   transition: color 0.2s ease;
 }
 
-.active-header{
-  color: var(--color-primary);
-}
-
-#ul-header li:hover {
+.active-header {
   color: var(--color-primary);
 }
 
 /************** MENU BUTTON **************/
 #menu-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  padding: 0 1.5rem 0 2.5rem;
+  display: none;
 }
 
 #menu-btn-toggle {
@@ -73,7 +65,7 @@ header h1 {
   border: none;
   outline: none;
   cursor: pointer;
-  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-size: clamp(1.8rem, 2.5vw, 2rem);
   color: #ff5f5f;
   transition: color 0.2s ease;
   display: flex;
@@ -90,80 +82,132 @@ header h1 {
 .fullscreen-menu {
   position: fixed;
   inset: 0;
-  background: linear-gradient(90deg, #1f1f1f 0%, #332455 40%, #40255a 100%);
+  background: #000;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
   flex-direction: column;
-
+  padding-top: 60px;
+  transform: translateY(-100%);
   opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
 
-  transition: opacity 0.4s ease, visibility 0.4s ease;
+  transition:
+    transform 0.5s cubic-bezier(0.77, 0, 0.18, 1),
+    opacity 0.4s ease;
+
   z-index: 2000;
 }
 
 .fullscreen-menu.active {
+  transform: translateY(0);
   opacity: 1;
-  visibility: visible;
-  pointer-events: all;
+  height: fit-content;
 }
 
 .fullscreen-menu ul {
   list-style: none;
-  padding: 0;
-  text-align: center;
-}
-
-.fullscreen-menu ul li {
-  margin: 1em 0;
+  padding: 25px 20px;
 }
 
 .fullscreen-menu ul li a {
-  color: #f5f5f5;
+  position: relative;
+  display: inline-block;
+  padding: 8px 0;
+  color: var(--white-65);
   text-decoration: none;
-  font-size: clamp(3rem, 6vw, 4.5rem);
+  font-size: clamp(1rem, 2vw, 2rem);
   font-weight: 600;
-  transition: color 0.3s ease, transform 0.2s ease;
+  transition:
+    color 0.3s ease,
+    transform 0.2s ease,
+    background 0.3s ease;
+}
+
+.fullscreen-menu ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background: var(--color-primary);
+  transition: width 0.3s ease;
 }
 
 .fullscreen-menu ul li a:hover {
-  color: #ff5f5f;
-  transform: scale(1.2);
-  text-decoration: underline;
+  color: var(--color-primary);
+  border-bottom: 1px solid var(--color-primary);
+}
+
+.fullscreen-menu ul li a:hover::after {
+  width: 100%;
 }
 
 /************** CLOSE MENU BUTTON **************/
 .close-btn {
   position: absolute;
-  top: 0.6rem;
-  right: 2.2rem;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: transparent;
   border: none;
-  font-size: clamp(1.8rem, 3vw, 2.6rem);
-  color: #ff5f5f;
+  font-size: clamp(1.8rem, 2.5vw, 2rem);
+  color: var(--color-primary);
   cursor: pointer;
-  transition: transform 0.2s ease, color 0.2s ease;
 }
 
 /************** RESPONSIVE **************/
 
 @media (max-width: 768px) {
-  #ul-header{
+  #ul-header {
     display: none;
   }
-  header {
-    padding-right: 0;
-  }
-  header h1 {
-    width: 100px;
-  }
   #menu-btn {
-    padding: 0 1.5rem 0 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
-  .close-btn {
-    top: 0.9rem;
-    right: 1.3rem;
+  header {
+    height: 60px;
+    background-color: #000;
+    transition: none;
+    padding: 0 20px;
+  }
+}
+
+@media (min-width: 769px) {
+  header.scrolled {
+    height: 60px;
+    background-color: #000;
+    backdrop-filter: blur(8px);
+  }
+  #ul-header li::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background: var(--color-primary);
+    transition: width 0.3s ease;
+  }
+
+  #ul-header li:hover {
+    color: var(--color-primary);
+  }
+
+  #ul-header li:hover::after {
+    width: 100%;
+  }
+  .active-header::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 2px;
+    background: var(--color-primary);
   }
 }

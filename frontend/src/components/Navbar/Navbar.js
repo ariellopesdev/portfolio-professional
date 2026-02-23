@@ -17,9 +17,26 @@ import {
 } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 
+//Images
+import logoImage from "../../assets/images/logo-2.png";
+
 const Navbar = ({ scrollToSection }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(min-width: 769px)");
+
+    const handleMediaChange = (e) => {
+      if (e.matches) {
+        setMenuOpen(false);
+      }
+    };
+
+    mediaQuery.addEventListener("change", handleMediaChange);
+
+    return () => mediaQuery.removeEventListener("change", handleMediaChange);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,7 +51,7 @@ const Navbar = ({ scrollToSection }) => {
   const closeMenu = () => setMenuOpen(false);
   return (
     <header className={scrolled ? "header scrolled" : "header"}>
-      <h1>Logo</h1>
+      <img src={logoImage} alt="Logo image" className="logo__image" />
       <ul id="ul-header">
         <li onClick={() => scrollToSection(0)}>Home</li>
         <li onClick={() => scrollToSection(1)}>Projetos</li>
@@ -65,7 +82,7 @@ const Navbar = ({ scrollToSection }) => {
                 scrollToSection(0);
               }}
             >
-              HOME
+              Home
             </NavLink>
           </li>
           <li>
@@ -76,7 +93,7 @@ const Navbar = ({ scrollToSection }) => {
                 scrollToSection(1);
               }}
             >
-              PROJETOS
+              Projetos
             </NavLink>
           </li>
           <li>
@@ -87,7 +104,7 @@ const Navbar = ({ scrollToSection }) => {
                 scrollToSection(2);
               }}
             >
-              SOBRE MIM
+              Sobre Mim
             </NavLink>
           </li>
           <li>
@@ -98,7 +115,7 @@ const Navbar = ({ scrollToSection }) => {
                 scrollToSection(3);
               }}
             >
-              CURRÍCULO
+              Currículo
             </NavLink>
           </li>
           <li>
@@ -109,7 +126,7 @@ const Navbar = ({ scrollToSection }) => {
                 scrollToSection(4);
               }}
             >
-              CONTATO
+              Contato
             </NavLink>
           </li>
         </ul>
