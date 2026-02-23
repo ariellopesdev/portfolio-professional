@@ -9,7 +9,6 @@ import SolarSystemBackground from "./components/SolarSystemBackground/SolarSyste
 
 // Pages
 import Home from "./pages/Home/Home";
-import ProjectsPage from "./pages/ProjectsPage/ProjectsPage";
 
 function App() {
   return (
@@ -19,11 +18,9 @@ function App() {
 
       <BrowserRouter basename="/portfolio-professional">
         <Navbar />
-
         <div className="container">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/projects" element={<ProjectsPage />} />
           </Routes>
         </div>
       </BrowserRouter>
