@@ -50,55 +50,55 @@ const Navbar = ({ activeSection, scrollToSection }) => {
           scrollToSection(0);
         }}
       />
-      <ul id="ul-header">
+      <ul id="header__ul">
         <li
-          className={activeSection === 0 ? "active-header" : ""}
+          className={activeSection === 0 ? "header__active-li" : ""}
           onClick={() => scrollToSection(0)}
         >
           Home
         </li>
         <li
-          className={activeSection === 1 ? "active-header" : ""}
+          className={activeSection === 1 ? "header__active-li" : ""}
           onClick={() => scrollToSection(1)}
         >
           Projetos
         </li>
         <li
-          className={activeSection === 2 ? "active-header" : ""}
+          className={activeSection === 2 ? "header__active-li" : ""}
           onClick={() => scrollToSection(2)}
         >
           Sobre
         </li>
         <li
-          className={activeSection === 3 ? "active-header" : ""}
+          className={activeSection === 3 ? "header__active-li" : ""}
           onClick={() => scrollToSection(3)}
         >
           Currículo
         </li>
         <li
-          className={activeSection === 4 ? "active-header" : ""}
+          className={activeSection === 4 ? "header__active-li" : ""}
           onClick={() => scrollToSection(4)}
         >
           Contato
         </li>
       </ul>
-      <div id="menu-btn">
-        <button id="menu-btn-toggle" onClick={toggleMenu}>
+      <div id="header__menu-btn">
+        <button id="menu__btn-toggle" onClick={toggleMenu}>
           {menuOpen ? (
-            <FaBars className="nav-icon" />
+            <FaBars className="header__nav-icon" />
           ) : (
-            <FaBars className="nav-icon" />
+            <FaBars className="header__nav-icon" />
           )}
         </button>
       </div>
-      <nav className={`fullscreen-menu ${menuOpen ? "active" : ""}`}>
-        <button className="close-btn" onClick={closeMenu}>
+      <nav className={`header__fs-menu ${menuOpen ? "active" : ""}`}>
+        <button className="header__close-btn" onClick={closeMenu}>
           <FaTimes />
         </button>
 
         <ul>
           <li
-            className={activeSection === 0 ? "active-header" : ""}
+            className={activeSection === 0 ? "header__active-li" : ""}
             onClick={() => {
               closeMenu();
               scrollToSection(0);
@@ -108,7 +108,7 @@ const Navbar = ({ activeSection, scrollToSection }) => {
           </li>
 
           <li
-            className={activeSection === 1 ? "active-header" : ""}
+            className={activeSection === 1 ? "header__active-li" : ""}
             onClick={() => {
               closeMenu();
               scrollToSection(1);
@@ -118,7 +118,7 @@ const Navbar = ({ activeSection, scrollToSection }) => {
           </li>
 
           <li
-            className={activeSection === 2 ? "active-header" : ""}
+            className={activeSection === 2 ? "header__active-li" : ""}
             onClick={() => {
               closeMenu();
               scrollToSection(2);
@@ -128,7 +128,7 @@ const Navbar = ({ activeSection, scrollToSection }) => {
           </li>
 
           <li
-            className={activeSection === 3 ? "active-header" : ""}
+            className={activeSection === 3 ? "header__active-li" : ""}
             onClick={() => {
               closeMenu();
               scrollToSection(3);
@@ -138,7 +138,7 @@ const Navbar = ({ activeSection, scrollToSection }) => {
           </li>
 
           <li
-            className={activeSection === 4 ? "active-header" : ""}
+            className={activeSection === 4 ? "header__active-li" : ""}
             onClick={() => {
               closeMenu();
               scrollToSection(4);

@@ -9,7 +9,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0 75px;
-  color: #fff;
+  color: var(--color-white);
   background-color: transparent;
   transition: all 0.3s ease;
   z-index: 1000;
@@ -17,7 +17,7 @@ header {
 
 header.scrolled {
   height: 60px;
-  background-color: #000;
+  background-color: var(--color-bg-dark);
   backdrop-filter: blur(8px);
 }
 
@@ -33,7 +33,7 @@ header .logo__image {
 }
 
 /************** LIST OF ICONS **************/
-#ul-header {
+#header__ul {
   list-style: none;
   display: flex;
   margin-left: auto;
@@ -42,47 +42,48 @@ header .logo__image {
   padding: 0;
 }
 
-#ul-header li {
+#header__ul li {
   position: relative;
-  font-size: clamp(0.9rem, 2vw, 1.1rem);
-  font-weight: 300;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  font-weight: var(--weight-300);
   cursor: pointer;
   color: var(--white-65);
   transition: color 0.2s ease;
+  letter-spacing: 1.5px;
 }
 
-.active-header {
+.header__active-li {
   color: var(--color-primary);
 }
 
 /************** MENU BUTTON **************/
-#menu-btn {
+#header__menu-btn {
   display: none;
 }
 
-#menu-btn-toggle {
+#menu__btn-toggle {
   background-color: transparent;
   border: none;
   outline: none;
   cursor: pointer;
   font-size: clamp(1.8rem, 2.5vw, 2rem);
-  color: #ff5f5f;
+  color: var(--color-primary);
   transition: color 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-#menu-btn-toggle .nav-icon {
+.header__nav-icon {
   color: currentColor;
   transition: color 0.2s ease;
 }
 
 /************** MENU FULLSCREEN **************/
-.fullscreen-menu {
+.header__fs-menu {
   position: fixed;
   inset: 0;
-  background: #000;
+  background: var(--color-bg-dark);
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
@@ -90,38 +91,36 @@ header .logo__image {
   padding-top: 60px;
   transform: translateY(-100%);
   opacity: 0;
-
   transition:
     transform 0.5s cubic-bezier(0.77, 0, 0.18, 1),
     opacity 0.4s ease;
-
   z-index: 2000;
 }
 
-.fullscreen-menu.active {
+.header__fs-menu.active {
   transform: translateY(0);
   opacity: 1;
   height: fit-content;
 }
 
-.fullscreen-menu ul {
+.header__fs-menu ul {
   list-style: none;
   padding: 25px 20px;
 }
 
-.fullscreen-menu ul li {
+.header__fs-menu ul li {
   position: relative;
   padding: 8px 0;
   color: var(--white-65);
   font-size: clamp(1rem, 2vw, 2rem);
-  font-weight: 600;
+  font-weight: var(--weight-600);
   cursor: pointer;
   transition: color 0.3s ease;
   text-decoration: none;
   width: fit-content;
 }
 
-.fullscreen-menu ul li::after {
+.header__fs-menu ul li::after {
   content: "";
   position: absolute;
   left: 0;
@@ -132,24 +131,24 @@ header .logo__image {
   transition: width 0.3s ease;
 }
 
-.fullscreen-menu ul li:hover {
+.header__fs-menu ul li:hover {
   color: var(--color-primary);
 }
 
-.fullscreen-menu ul li:hover::after {
+.header__fs-menu ul li:hover::after {
   width: 100%;
 }
 
-.fullscreen-menu ul li.active-header {
+.header__fs-menu ul li.header__active-li {
   color: var(--color-primary);
 }
 
-.fullscreen-menu ul li.active-header::after {
+.header__fs-menu ul li.header__active-li::after {
   width: 100%;
 }
 
 /************** CLOSE MENU BUTTON **************/
-.close-btn {
+.header__close-btn {
   position: absolute;
   top: 20px;
   right: 20px;
@@ -166,17 +165,17 @@ header .logo__image {
 /************** RESPONSIVE **************/
 
 @media (max-width: 768px) {
-  #ul-header {
+  #header__ul {
     display: none;
   }
-  #menu-btn {
+  #header__menu-btn {
     display: flex;
     align-items: center;
     justify-content: center;
   }
   header {
     height: 60px;
-    background-color: #000;
+    background-color: var(--color-bg-dark);
     transition: none;
     padding: 0 20px;
   }
@@ -185,10 +184,10 @@ header .logo__image {
 @media (min-width: 769px) {
   header.scrolled {
     height: 60px;
-    background-color: #000;
+    background-color: var(--color-bg-dark);
     backdrop-filter: blur(8px);
   }
-  #ul-header li::after {
+  #header__ul li::after {
     content: "";
     position: absolute;
     left: 0;
@@ -199,15 +198,15 @@ header .logo__image {
     transition: width 0.3s ease;
   }
 
-  #ul-header li.active-header::after {
+  #header__ul li.header__active-li::after {
     width: 100%;
   }
 
-  #ul-header li:hover {
+  #header__ul li:hover {
     color: var(--color-primary);
   }
 
-  #ul-header li:hover::after {
+  #header__ul li:hover::after {
     width: 100%;
   }
 }
