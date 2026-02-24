@@ -9,6 +9,7 @@ import SolarSystemBackground from "./components/SolarSystemBackground/SolarSyste
 
 // Pages
 import Home from "./pages/Home/Home";
+import ScrollTopButton from "./components/ScrollTopButton/ScrollTopButton";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <Route path="/" element={<Home />} />
           </Routes>
         </div>
+        <ScrollTopButton />
       </BrowserRouter>
     </div>
   );

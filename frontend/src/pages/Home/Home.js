@@ -1,6 +1,9 @@
 // CSS
 import "./Home.css";
 
+//Hooks
+import { useScrollEffect } from "../../hooks/useScrollEffect";
+
 // Components
 import Navbar from "../../components/Navbar/Navbar";
 import Main from "../../components/Main/Main";
@@ -9,17 +12,24 @@ import About from "../../components/About/About";
 import Curriculum from "../../components/Curriculum/Curriculum";
 import Contact from "../../components/Contact/Contact";
 import Footer from "../../components/Footer/Footer";
+import ScrollTopButton from "../../components/ScrollTopButton/ScrollTopButton";
 
 const Home = () => {
+  const { activeSection, scrollToSection, showScrollTop } = useScrollEffect();
   return (
     <div id="home">
-      <Navbar />
+      <Navbar activeSection={activeSection} scrollToSection={scrollToSection} />
       <Main />
       <Projects />
       <About />
       <Curriculum />
       <Contact />
       <Footer />
+
+      <ScrollTopButton
+        showScrollTop={showScrollTop}
+        scrollToSection={scrollToSection}
+      />
     </div>
   );
 };

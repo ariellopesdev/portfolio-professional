@@ -87,6 +87,7 @@ body {
   z-index: 10;
   display: flex;
   align-items: flex-end;
+  scroll-margin-top: 80px;
 }
 
 #projects,
@@ -115,6 +116,7 @@ body {
   box-sizing: border-box;
   color: #fff;
   overflow-y: auto;
+  scroll-margin-top: 80px;
 }
 
 #curriculum {

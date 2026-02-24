@@ -4,52 +4,34 @@ export const useScrollEffect = () => {
   const [activeSection, setActiveSection] = useState(0);
   const [showScrollTop, setShowScrollTop] = useState(false);
 
-  const sectionIds = [
-    "main",
-    "projects",
-    "about",
-    "curriculum",
-    "contact",
-  ];
+  const sectionIds = ["main", "projects", "about", "curriculum", "contact"];
 
-  // 🔹 Scroll suave compensando navbar
+  // 🔹 Scroll simples (SEM cálculo de header)
   const scrollToSection = useCallback((index) => {
     const element = document.getElementById(sectionIds[index]);
     if (!element) return;
 
-    const isDesktop = window.innerWidth > 768;
-    const headerHeight = isDesktop
-      ? window.scrollY > 50
-        ? 60
-        : 80
-      : 60;
-
-    const elementPosition =
-      element.getBoundingClientRect().top + window.scrollY;
-
-    window.scrollTo({
-      top: elementPosition - headerHeight,
+    element.scrollIntoView({
       behavior: "smooth",
+      block: "start",
     });
   }, []);
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + 120;
+      let currentSection = 0;
 
       sectionIds.forEach((id, index) => {
         const section = document.getElementById(id);
         if (!section) return;
 
-        if (
-          scrollPosition >= section.offsetTop &&
-          scrollPosition < section.offsetTop + section.offsetHeight
-        ) {
-          setActiveSection(index);
+        if (window.scrollY >= section.offsetTop - 80) {
+          currentSection = index;
         }
       });
 
-      // Mostrar botão ao chegar em Projects
+      setActiveSection(currentSection);
+
       const projects = document.getElementById("projects");
       if (projects) {
         setShowScrollTop(window.scrollY >= projects.offsetTop - 100);
@@ -57,6 +39,8 @@ export const useScrollEffect = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
