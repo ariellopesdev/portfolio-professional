@@ -1,6 +1,6 @@
 /************** SECTION-INFO **************/
 
-.section-info {
+.section__info {
   width: 100%;
   height: fit-content;
   background-color: transparent;
@@ -10,16 +10,6 @@
   justify-content: flex-start;
   align-items: flex-start;
   overflow: hidden;
-}
-
-/************** BASE STATE **************/
-
-.section-info h1,
-.section-info p,
-.section-info .btn-navigate {
-  transform: translateX(-400px);
-  opacity: 0;
-  will-change: transform, opacity;
 }
 
 /************** KEYFRAMES **************/
@@ -37,46 +27,24 @@
 
 /************** TITLE **************/
 
-.section-info h1 {
-  font-size: clamp(2.2rem, 5vw, 5.5rem);
-  letter-spacing: 0.1em;
-  font-weight: 600;
+.info__title {
+  transform: translateX(-400px);
+  opacity: 0;
+  will-change: transform, opacity;
+  font-family: var(--font-title);
+  font-size: var(--fs-h1);
+  letter-spacing: 2px;
+  font-weight: var(--weight-700);
+  line-height: var(--lh-tight);
   white-space: pre-line;
-}
-
-.animate-title {
   animation: slideFadeIn 0.8s ease-out forwards;
   animation-delay: 0.1s;
-}
-
-/************** TEXT **************/
-
-.section-info p {
-  font-size: clamp(0.9rem, 1.5vw, 1rem);
-  letter-spacing: 0.2em;
-  width: 300px;
-  margin-top: 1.25rem;
-  line-height: 1.6;
-}
-
-.animate-text {
-  animation: slideFadeIn 0.8s ease-out forwards;
-  animation-delay: 0.25s;
 }
 
 /************** RESPONSIVE **************/
 
 @media (max-width: 768px) {
-  .section-info {
+  .section__info {
     margin-bottom: 2em;
-  }
-
-  .section-info p {
-    width: 100%;
-  }
-
-  .section-info .btn-navigate {
-    padding: 0.9em 1em;
-    margin-top: 15px;
   }
 }
