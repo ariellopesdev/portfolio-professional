@@ -84,9 +84,9 @@
 
   --weight-300: 300;
   --weight-400: 400;
-  --weight-400: 500;
-  --weight-400: 600;
-  --weight-400: 700;
+  --weight-500: 500;
+  --weight-600: 600;
+  --weight-700: 700;
 }
 
 html {

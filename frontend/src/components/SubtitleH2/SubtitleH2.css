@@ -30,12 +30,13 @@
 }
 
 .subtitle__text {
-  font-size: clamp(1.1rem, 1.5vw, 1.3rem);
-  font-weight: 300;
-  color: #fff; 
+  font-family: var(--font-title);
+  font-size: var(--fs-h2);
+  font-weight: var(--weight-600);
+  color: var(--color-white); 
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
   margin: 0;
-  line-height: 1em;
+  line-height: var(--lh-tight);
 }
 
