@@ -46,7 +46,8 @@
 
 .projects__info--title {
   font-size: clamp(0.9rem, 1.5vw, 1rem);
-  font-weight: 600;
+  font-weight: var(--weight-600);
+  letter-spacing: .5px;
 }
 
 .projects__btn {
@@ -98,7 +99,7 @@
 
 .modal__header h3 {
   font-size: clamp(1.3rem, 2.5vw, 1.8rem);
-  line-height: 1.5;
+  line-height: var(--lh-normal);
   color: var(--modal-title);
 }
 
