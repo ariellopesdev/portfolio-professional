@@ -7,6 +7,25 @@
 }
 
 :root {
+  /* For action buttons */
+  --glass-bg: rgba(255,255,255, 0.15);
+
+  --color-primary: #ff5f5f;
+  --color-accent-blue: #5fa8ff;
+  --text-primary: #f5f7fa;
+  --text-secondary: rgba(255, 255, 255, 0.75);
+  --text-muted: rgba(255, 255, 255, 0.55);
+  --footer-bg: #0f0f0f;
+
+  --modal-bg: #ffffff;
+  --modal-surface: #f8fafc;
+  --modal-border: #e5e7eb;
+  --modal-text-primary: #0f172a;
+  --modal-text-secondary: #334155;
+  --modal-text-muted: #64748b;
+  --modal-accent: #5fa8ff;
+
+
   /* Base */
   --color-white: #ffffff;
   --color-black: #000000;
@@ -98,7 +117,6 @@ body {
   margin: 0;
   min-height: 100vh;
   overflow-x: hidden;
-  background: #000;
 }
 
 #main {
@@ -130,6 +148,12 @@ body {
   background-color: transparent;
 }
 
+#contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #projects,
 #about,
 #curriculum,
@@ -145,14 +169,8 @@ body {
   scroll-margin-top: 80px;
 }
 
-#curriculum {
-  min-height: unset !important;
-}
-
-#contact {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+#projects{
+  min-height: auto !important;
 }
 
 .sections-wrapper {
@@ -162,6 +180,8 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  border-radius: 16px;
 }
 
 .highlight {

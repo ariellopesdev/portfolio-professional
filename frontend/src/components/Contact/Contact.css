@@ -38,6 +38,7 @@
   text-decoration: none;
   letter-spacing: 0.0625rem;
   background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   transition:
@@ -79,6 +80,7 @@
   font-weight: 500;
   transition: all 0.3s ease;
   font-size: clamp(0.8rem, 2vw, 0.95rem);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
 .contact__actions--link,
