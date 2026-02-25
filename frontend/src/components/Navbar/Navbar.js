@@ -93,7 +93,7 @@ const Navbar = ({ activeSection, scrollToSection }) => {
       </div>
       <nav className={`header__fs-menu ${menuOpen ? "active" : ""}`}>
         <button className="header__close-btn" onClick={closeMenu}>
-          <FaTimes />
+          <FaTimes className="header__nav-icon"/>
         </button>
 
         <ul>
