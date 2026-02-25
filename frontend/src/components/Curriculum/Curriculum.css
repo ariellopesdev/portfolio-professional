@@ -18,7 +18,7 @@
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  font-weight: 600;
+  font-weight: var(--weight-600);
   color: var(--color-white);
   cursor: pointer;
 }
@@ -103,7 +103,7 @@
   top: 30%;
   transform: translateY(-50%);
   font-size: clamp(0.85rem, 2vw, 1rem);
-  font-weight: 600;
+  font-weight: var(--weight-600);
   color: var(--color-accent-blue);
   text-transform: uppercase;
   white-space: nowrap;
@@ -193,11 +193,12 @@
 .timeline__card--front h4 {
   font-size: clamp(0.95rem, 2vw, 1.1rem);
   margin-bottom: 0.4em;
+  font-weight: var(--weight-600);
 }
 
 .timeline__subtitle {
   font-size: clamp(0.8rem, 1.5vw, 0.95rem);
-  font-weight: 500;
+  font-weight: var(--weight-500);
   color: var(--white-85);
   margin-bottom: 0.4rem;
   opacity: 0.9;
@@ -205,7 +206,8 @@
 
 .timeline__card--front p {
   font-size: clamp(0.8rem, 1.5vw, 1rem);
-  line-height: 1.5;
+  line-height: var(--lh-normal);
+  font-weight: var(--weight-300);
 }
 
 /************** RESPONSIVE **************/
@@ -258,7 +260,7 @@
   .timeline__date--inside {
     display: block;
     font-size: clamp(0.8rem, 1vw, 0.9rem);
-    font-weight: 600;
+    font-weight: var(--weight-600);
     color: var(--color-accent-blue);
     margin-bottom: 0.6rem;
     text-transform: uppercase;
