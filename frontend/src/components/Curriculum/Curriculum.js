@@ -179,14 +179,10 @@ const Curriculum = () => {
 
                     {/* CARDS */}
                     <div className="timeline__cards">
-                      <div className="timeline__card timeline__card--back"></div>
-
-                      <div className="timeline__card timeline__card--front">
-                        {/* DATA DENTRO DO BLOCO (MOBILE) */}
+                      <div className="timeline__card">
                         <span className="timeline__date--inside">
                           {item.year}
                         </span>
-
                         <h4>{item.title}</h4>
                         {item.subtitle && (
                           <span className="timeline__subtitle">

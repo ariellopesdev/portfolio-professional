@@ -133,24 +133,11 @@
 
 .timeline__card {
   position: relative;
-  width: 100%;
-}
-
-.timeline__card--back {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: var(--timeline-card-back);
-  z-index: 0;
-}
-
-.timeline__card--front {
-  position: relative;
   background: var(--timeline-card-bg);
   color: var(--color-white);
-  padding: 1.6em;
+  padding: 1.2em;
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -158,39 +145,30 @@
   width: 100%;
 }
 
-/************** OFFSET + ARROW **************/
-.timeline__item.left .timeline__card--back {
-  transform: translateX(5px);
-}
-
-.timeline__item.left .timeline__card--back::after {
+.timeline__item.left .timeline__card::after {
   content: "";
   position: absolute;
   top: 30%;
-  right: -10px;
+  right: -11px;
   transform: translateY(-50%);
   border-width: 8px 0 8px 10px;
   border-style: solid;
-  border-color: transparent transparent transparent var(--timeline-card-back);
+  border-color: transparent transparent transparent var(--timeline-card-bg);
 }
 
-.timeline__item.right .timeline__card--back {
-  transform: translateX(-5px);
-}
-
-.timeline__item.right .timeline__card--back::after {
+.timeline__item.right .timeline__card::after {
   content: "";
   position: absolute;
   top: 30%;
-  left: -10px;
+  left: -11px;
   transform: translateY(-50%);
   border-width: 8px 10px 8px 0;
   border-style: solid;
-  border-color: transparent var(--timeline-card-back) transparent transparent;
+  border-color: transparent var(--timeline-card-bg) transparent transparent;
 }
 
 /************** TEXT **************/
-.timeline__card--front h4 {
+.timeline__card h4 {
   font-size: clamp(0.95rem, 2vw, 1.1rem);
   margin-bottom: 0.4em;
   font-weight: var(--weight-600);
@@ -204,7 +182,7 @@
   opacity: 0.9;
 }
 
-.timeline__card--front p {
+.timeline__card p {
   font-size: clamp(0.8rem, 1.5vw, 1rem);
   line-height: var(--lh-normal);
   font-weight: var(--weight-300);
@@ -233,7 +211,7 @@
   .timeline__cards {
     width: calc(100% - 60px) !important;
   }
-  .timeline__card--front {
+  .timeline__card {
     padding: 1em;
   }
   .timeline__item.left .timeline__cards {
@@ -242,17 +220,17 @@
   .timeline__item.right .timeline__cards {
     padding-left: 0 !important;
   }
-  .timeline__item.left .timeline__card--back {
+  .timeline__item.left .timeline__card {
     transform: translateX(-5px) !important;
   }
-  .timeline__item.right .timeline__card--back {
+  .timeline__item.right .timeline__card {
     transform: translateX(-5px) !important;
   }
-  .timeline__item.left .timeline__card--back::after {
+  .timeline__item.left .timeline__card::after {
     left: -10px !important;
     right: auto !important;
     border-width: 8px 10px 8px 0 !important;
-    border-color: transparent #e3a4a4 transparent transparent !important;
+    border-color: transparent var(--timeline-card-bg) transparent transparent !important;
   }
   .timeline__date {
     display: none !important;

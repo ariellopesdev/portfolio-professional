@@ -4,7 +4,6 @@
   box-sizing: border-box;
   font-family: var(--font-primary);
   font-size: var(--fs-base);
-  line-height: var(--lh-normal);
 }
 
 :root {
@@ -19,7 +18,7 @@
 
   /* Primary */
   --color-primary: #ff5f5f;
-  --color-primary-soft: #e3a4a4;
+  --color-primary-soft: #104285;
 
   /* Backgrounds */
   --color-bg-dark: #000000;
@@ -44,7 +43,7 @@
   --modal-text: #6c757d;
   --modal-bg: #f8f9fa;
 
-  /* Tech colors (mantidos como estão) */
+  /* Tech colors */
   --color-js: #f7df1e;
   --color-java: #007396;
   --color-php: #777bb4;
