@@ -37,7 +37,7 @@
 
 /************** TYPOGRAPHY **************/
 .skillscard__content--title {
-  font-weight: 600;
+  font-weight: var(--weight-600);
   font-size: clamp(1.1rem, 1.6vw, 1.3rem);
   margin-bottom: 0.7em;
   transition: color 0.3s ease;
@@ -46,15 +46,16 @@
 .about__skills--intro,
 .about__accordion--intro {
   font-size: clamp(0.9rem, 1.8vw, 1.2rem);
-  line-height: 1.6;
-  font-weight: 500;
+  line-height: var(--lh-normal);
+  font-weight: var(--weight-600);
   color: var(--white-85);
   text-align: center;
+  margin-bottom: 2rem;
 }
 
 .about__paragraph {
   font-size: clamp(1rem, 2vw, 1.2rem);
-  line-height: 1.8;
+  line-height: var(--lh-loose);
   color: var(--white-88);
   text-align: justify;
 }
@@ -65,13 +66,14 @@
   border-left: 3px solid var(--color-primary);
   font-size: clamp(0.85rem, 1.4vw, 0.95rem);
   font-style: italic;
-  line-height: 1.6;
+  line-height:var(--lh-normal);
   color: var(--white-65);
 }
 
 .skillscard__content--name,
 .skillscard__content--text {
-  font-weight: 300;
+  font-weight: var(--weight-300);
+  letter-spacing: 0.5px;
   font-size: clamp(0.8rem, 1.4vw, 0.9rem);
   opacity: 0.9;
   color: var(--color-white) !important;
