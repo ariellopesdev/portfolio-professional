@@ -4,14 +4,11 @@ import "./Contact.css";
 // Components
 import SectionContent from "../SectionContent/SectionContent";
 
-// ================================
-// CONTACT SECTION (CLEAN VERSION)
-// ================================
-const Contact = () => {
+const Contact = ({activeSection}) => {
   return (
     <section id="contact">
       <div className="sections-wrapper">
-        <SectionContent>
+        <SectionContent activeSection={activeSection} index={4}>
           <div className="contact__block--centered">
             <h1 className="contact__calltoaction">
               Entre em <span>contato</span> comigo.

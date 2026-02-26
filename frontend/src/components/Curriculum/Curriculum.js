@@ -71,7 +71,7 @@ const professionalExperiences = [
   },
 ];
 
-const Curriculum = () => {
+const Curriculum = ({ activeSection }) => {
   const [filters, setFilters] = useState({
     academic: true,
     professional: false,
@@ -122,14 +122,19 @@ const Curriculum = () => {
       <div className="sections-wrapper">
         <SectionInfo title="Currículo" />
 
-        <SectionContent>
+        <SectionContent activeSection={activeSection} index={3}>
           <div className="curriculum__empty">
             <p>
               Selecione uma ou mais categorias para visualizar minha trajetória
               acadêmica e profissional organizada cronologicamente. As
               experiências são exibidas de acordo com o ano de realização.
               Clique{" "}
-              <a href={curriculoPDF} target="_blank" rel="noopener noreferrer" className="curriculum__pdf">
+              <a
+                href={curriculoPDF}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="curriculum__pdf"
+              >
                 aqui
               </a>{" "}
               para acessar meu Currículo em PDF.

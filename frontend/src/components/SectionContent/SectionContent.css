@@ -11,6 +11,7 @@
   opacity: 1;
   display: flex;
   flex-wrap: wrap;
+  will-change: transform, opacity;
 }
 
 /************** LAYERS **************/
@@ -51,20 +52,20 @@
 /************** AUTO ANIMATIONS **************/
 
 .section-content.animate {
-  animation: growContainer 1s ease-in-out forwards;
+  animation: growContainer 0.5s ease-out forwards;
 }
 
 .section-content.animate .layer-mid {
-  animation: slideMid 0.5s ease-in-out forwards;
+  animation: slideMid 0.35s ease-out forwards;
 }
 
 .section-content.animate .layer-top {
-  animation: slideTop 0.7s ease-in-out forwards;
+  animation: slideTop 0.45s ease-out forwards;
 }
 
 .section-content.animate .section-inner {
-  animation: contentAppear 1s ease-in-out forwards;
-  animation-delay: 0.6s;
+  animation: contentAppear 0.5s ease-out forwards;
+  animation-delay: 0.25s;
 }
 
 /************** KEYFRAMES **************/

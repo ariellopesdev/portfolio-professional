@@ -15,15 +15,15 @@ import Footer from "../../components/Footer/Footer";
 import ScrollTopButton from "../../components/ScrollTopButton/ScrollTopButton";
 
 const Home = () => {
-  const { activeSection, scrollToSection, showScrollTop } = useScrollEffect();
+  const { activeSection, scrollToSection, showScrollTop} = useScrollEffect();
   return (
     <div id="home">
       <Navbar activeSection={activeSection} scrollToSection={scrollToSection} />
       <Main />
-      <Projects />
-      <About />
-      <Curriculum />
-      <Contact />
+      <Projects activeSection={activeSection}/>
+      <About activeSection={activeSection} />
+      <Curriculum activeSection={activeSection} />
+      <Contact activeSection={activeSection} />
       <Footer />
 
       <ScrollTopButton

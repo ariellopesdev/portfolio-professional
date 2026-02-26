@@ -48,7 +48,7 @@ const projectsData = [
   },
 ];
 
-const Projects = () => {
+const Projects = ({ activeSection }) => {
   const [selectedProject, setSelectedProject] = useState(null);
 
   useEffect(() => {
@@ -68,7 +68,7 @@ const Projects = () => {
       <div className="sections-wrapper">
         <SectionInfo title="Projetos" />
 
-        <SectionContent>
+        <SectionContent activeSection={activeSection} index={1}>
           <div className="projects__container">
             {projectsData.map((project) => (
               <div key={project.id} className="projects__card">
@@ -114,7 +114,7 @@ const Projects = () => {
 
                   <div className="modal__infos">
                     <div className="modal__info--item">
-                      <FaUser className="modal__info--icon"/>
+                      <FaUser className="modal__info--icon" />
                       <span>{selectedProject.demand}</span>
                     </div>
 
@@ -124,7 +124,7 @@ const Projects = () => {
                       rel="noopener noreferrer"
                       className="modal__info--item"
                     >
-                      <FaGithub className="modal__info--icon"/>
+                      <FaGithub className="modal__info--icon" />
                       <span>GitHub</span>
                     </a>
                   </div>
@@ -140,7 +140,7 @@ const Projects = () => {
                     Acesse o site: {selectedProject.name}
                   </a>
 
-                  <hr className="hrLine"/>
+                  <hr className="hrLine" />
 
                   <button
                     className="modal__back--btn"

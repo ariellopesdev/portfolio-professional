@@ -16,7 +16,7 @@ const Footer = () => {
   return (
     <div id="footer">
       <div className="sections-wrapper">
-        <SectionContent>
+        
           <div className="footer__block--centered">
             <div className="footer__info">
               <h2 className="footer__info--name">Ariel Lopes</h2>
@@ -70,7 +70,7 @@ const Footer = () => {
               </p>
             </div>
           </div>
-        </SectionContent>
+        
       </div>
     </div>
   );

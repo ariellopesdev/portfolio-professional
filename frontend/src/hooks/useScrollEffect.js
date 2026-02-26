@@ -1,12 +1,14 @@
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, useRef } from "react";
 
 export const useScrollEffect = () => {
   const [activeSection, setActiveSection] = useState(0);
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [scrollDirection, setScrollDirection] = useState("down");
 
   const sectionIds = ["main", "projects", "about", "curriculum", "contact"];
 
-  // 🔹 Scroll simples (SEM cálculo de header)
+  const lastScrollY = useRef(0);
+
   const scrollToSection = useCallback((index) => {
     const element = document.getElementById(sectionIds[index]);
     if (!element) return;
@@ -19,13 +21,21 @@ export const useScrollEffect = () => {
 
   useEffect(() => {
     const handleScroll = () => {
+      const currentY = window.scrollY;
+
+      // 🔥 Detecta direção corretamente
+      const direction = currentY > lastScrollY.current ? "down" : "up";
+      lastScrollY.current = currentY;
+      setScrollDirection(direction);
+
       let currentSection = 0;
 
       sectionIds.forEach((id, index) => {
         const section = document.getElementById(id);
         if (!section) return;
 
-        if (window.scrollY >= section.offsetTop - 80) {
+        // 🔥 agora ativa só quando realmente chega no topo
+        if (currentY >= section.offsetTop - window.innerHeight * 0.3) {
           currentSection = index;
         }
       });
@@ -34,7 +44,7 @@ export const useScrollEffect = () => {
 
       const projects = document.getElementById("projects");
       if (projects) {
-        setShowScrollTop(window.scrollY >= projects.offsetTop - 100);
+        setShowScrollTop(currentY >= projects.offsetTop);
       }
     };
 
@@ -48,5 +58,6 @@ export const useScrollEffect = () => {
     activeSection,
     scrollToSection,
     showScrollTop,
+    scrollDirection,
   };
 };

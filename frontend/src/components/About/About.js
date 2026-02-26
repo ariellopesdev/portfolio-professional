@@ -45,7 +45,7 @@ import {
 import { VscGithub } from "react-icons/vsc";
 import { IoLogoJavascript } from "react-icons/io5";
 
-const About = () => {
+const About = ({ activeSection }) => {
   const IconCarousel = ({ icons, interval = 2000 }) => {
     const [index, setIndex] = useState(0);
 
@@ -206,7 +206,8 @@ const About = () => {
                   Trabalho em Equipe
                 </h3>
                 <p className="skillscard__content--text">
-                  Atuo de forma colaborativa em projetos acadêmicos e freelas, com pair programming e revisões de código.
+                  Atuo de forma colaborativa em projetos acadêmicos e freelas,
+                  com pair programming e revisões de código.
                 </p>
               </div>
             </div>
@@ -219,7 +220,8 @@ const About = () => {
                   Resolução de Problemas
                 </h3>
                 <p className="skillscard__content--text">
-                  Entender processos e padrões de qualidade facilita a identificação e a resolução de problemas.
+                  Entender processos e padrões de qualidade facilita a
+                  identificação e a resolução de problemas.
                 </p>
               </div>
             </div>
@@ -230,7 +232,8 @@ const About = () => {
               <div className="skills__card--content">
                 <h3 className="skillscard__content--title">Proatividade</h3>
                 <p className="skillscard__content--text">
-                  Identifico pontos de melhoria, assumo novas responsabilidades e proponho ações que aprimoram os processos.
+                  Identifico pontos de melhoria, assumo novas responsabilidades
+                  e proponho ações que aprimoram os processos.
                 </p>
               </div>
             </div>
@@ -254,7 +257,8 @@ const About = () => {
               <div className="skills__card--content">
                 <h3 className="skillscard__content--title">Organização</h3>
                 <p className="skillscard__content--text">
-                  Utilizo Git com estrutura modular e commits padronizados para facilitar a manutenção do projeto.
+                  Utilizo Git com estrutura modular e commits padronizados para
+                  facilitar a manutenção do projeto.
                 </p>
               </div>
             </div>
@@ -265,7 +269,9 @@ const About = () => {
               <div className="skills__card--content">
                 <h3 className="skillscard__content--title">Resiliência</h3>
                 <p className="skillscard__content--text">
-                  Demonstro resiliência mantendo consistência nos estudos e entregas, mesmo em períodos de alta demanda e na transição de carreira.
+                  Demonstro resiliência mantendo consistência nos estudos e
+                  entregas, mesmo em períodos de alta demanda e na transição de
+                  carreira.
                 </p>
               </div>
             </div>
@@ -293,7 +299,9 @@ const About = () => {
     <section id="about">
       <div className="sections-wrapper">
         <SectionInfo title="Sobre Mim" />
-        <SectionContent>{blocks.map((block) => block.content)}</SectionContent>
+        <SectionContent activeSection={activeSection} index={2}>
+          {blocks.map((block) => block.content)}
+        </SectionContent>
       </div>
     </section>
   );
