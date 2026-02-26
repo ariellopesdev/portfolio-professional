@@ -1,8 +1,7 @@
 /************** FOOTER **************/
 
 .footer__block--centered {
-  background-color: var(--footer-bg);
-  color: var(--white-85);
+  background-color: var(--bg-dark);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,14 +21,14 @@
   margin-bottom: 1em;
   font-size: clamp(1.6rem, 2.5vw, 2rem);
   font-weight: var(--weight-700);
-  color: var(--color-white);
+  color: var(--text-primary);
 }
 
 .footer__info--city {
   margin-bottom: 1.5em;
   font-size: clamp(1.2rem, 2vw, 1.3rem);
   font-weight: var(--weight-600);
-  color: var(--color-white);
+  color: var(--text-primary);
 }
 
 .footer__info--contact {
@@ -40,7 +39,7 @@
 
 .info__contact--tel,
 .info__contact--email {
-  color: var(--color-white);
+  color: var(--text-primary);
   font-size: clamp(.8rem, 1.6vw, 1.3rem);
   font-weight: var(--weight-600);
   line-height: var(--lh-tight);
@@ -48,7 +47,7 @@
 }
 
 .info__contact--tel {
-  border-right: 1px solid var(--color-white);
+  border-right: 1px solid var(--text-primary);;
 }
 
 /************** SOCIAL **************/
@@ -64,7 +63,7 @@
 #footer__info--social li a {
   text-decoration: none;
   background-color: transparent;
-  color: var(--color-white);
+  color: var(--text-primary);
 }
 
 .footer__icon {
@@ -72,7 +71,7 @@
 }
 
 .footer__icon:hover {
-  color: var(--color-primary);
+  color: var(--details-red);
   transition: 0.3s;
 }
 
@@ -93,11 +92,11 @@
   transform: translateX(-50%);
   width: 40%;
   height: 0.0625rem;
-  background: var(--color-primary);
+  background: var(--details-red);
 }
 
 .footer__copyright--content {
-  color: var(--white-65);
+  color: var(--text-muted);
   font-weight: var(--weight-300);
   font-size: clamp(0.85rem, 1.4vw, 1rem);
   line-height: var(--lh-normal);
@@ -107,7 +106,7 @@
 .footer__copyright--content a {
   font-weight: var(--weight-600);
   text-decoration: none;
-  color: var(--color-white);
+  color: var(--text-secondary);
 }
 
 /************** RESPONSIVE **************/

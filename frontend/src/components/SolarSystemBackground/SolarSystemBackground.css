@@ -5,7 +5,7 @@
   width: 100vw;
   height: 100vh;
 
-  z-index: -5; /* fica acima das estrelas, abaixo do conteúdo */
+  z-index: -5; 
   pointer-events: none;
 
   overflow: hidden;

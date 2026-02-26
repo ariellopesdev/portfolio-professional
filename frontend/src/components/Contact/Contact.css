@@ -15,10 +15,11 @@
 .contact__calltoaction {
   font-size: clamp(2rem, 4vw, 3rem);
   letter-spacing: 1px;
+  color: var(--text-primary);
 }
 
 .contact__calltoaction span {
-  color: var(--color-primary);
+  color: var(--details-red);
   font-size: clamp(2rem, 4vw, 3rem);
   letter-spacing: 1px;
 }
@@ -27,6 +28,7 @@
   font-size: clamp(1.2rem, 2.5vw, 1.8rem);
   line-height: var(--lh-normal);
   letter-spacing: 1px;
+  color: var(--text-primary);
 }
 
 /************** BUTTON **************/
@@ -37,7 +39,7 @@
   width: fit-content;
   text-decoration: none;
   letter-spacing: 0.0625rem;
-  background: rgba(255, 255, 255, 0.15);
+  background:var(--glass-bg);
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -47,11 +49,11 @@
 }
 
 .contact__calltoaction--btn:hover {
-  background-color: var(--color-primary);
+  background-color: var(--details-red);
   cursor: pointer;
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-  color: var(--color-white);
+  color: var(--text-primary);
 }
 
 /************** ACTIONS **************/
@@ -68,13 +70,13 @@
   left: 3.75em;
   right: 3.75em;
   height: 0.0625rem;
-  background: var(--color-primary);
+  background: var(--details-red);
 }
 .contact__actions--link {
   letter-spacing: 1px;
   padding: 0.75rem 1.5rem;
   text-decoration: none;
-  background: rgba(255, 255, 255, 0.15);
+  background: var(--glass-bg);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   font-weight: 500;
@@ -92,11 +94,11 @@
 .contact__actions--link:active,
 .contact__calltoaction--btn:active,
 .contact__calltoaction--btn:focus .contact__actions--link:focus {
-  color: var(--color-white);
+  color: var(--text-primary);
 }
 
 .contact__actions--link:hover {
-  background: var(--color-primary);
+  background: var(--details-red);
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
 }

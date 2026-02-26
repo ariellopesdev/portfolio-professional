@@ -1,8 +1,12 @@
 /************** EMPTY **************/
 .curriculum__empty {
   text-align: center;
-  color: var(--color-white);
+  color: var(--text-primary);
   padding: 60px 60px 40px 60px;
+}
+
+.curriculum__empty p{
+font-size: clamp(0.9rem, 2vw, 1.2rem);
 }
 
 /************** FILTERS **************/
@@ -19,7 +23,7 @@
   align-items: center;
   gap: 0.6rem;
   font-weight: var(--weight-600);
-  color: var(--color-white);
+  color: var(--text-secondary);
   cursor: pointer;
 }
 
@@ -27,19 +31,19 @@
   appearance: none;
   width: 18px;
   height: 18px;
-  border: 2px solid var(--color-primary);
+  border: 2px solid var(--details-red);
   position: relative;
   cursor: pointer;
 }
 
 .filter__box input:checked {
-  background: var(--color-primary);
+  background: var(--details-red);
 }
 
 .filter__box input:checked::after {
   content: "";
   position: absolute;
-  background: var(--color-primary);
+  background: var(--details-red);
 }
 
 /************** TIMELINE **************/
@@ -58,7 +62,7 @@
   left: 50%;
   transform: translateX(-50%);
   width: 1px;
-  background: var(--timeline-line);
+  background: var(--details-red);
   top: 0;
   bottom: 0;
 }
@@ -91,8 +95,8 @@
 .timeline__circle {
   width: 16px;
   height: 16px;
-  border: 2px solid var(--timeline-circle-border);
-  background: var(--color-bg-circle);
+  border: 2px solid var(--details-red);
+  background: var(--bg-dark-blue);
   border-radius: 50%;
   display: block;
 }
@@ -104,7 +108,7 @@
   transform: translateY(-50%);
   font-size: clamp(0.85rem, 2vw, 1rem);
   font-weight: var(--weight-600);
-  color: var(--color-accent-blue);
+  color: var(--details-blue);
   text-transform: uppercase;
   white-space: nowrap;
   display: flex;
@@ -133,8 +137,8 @@
 
 .timeline__card {
   position: relative;
-  background: var(--timeline-card-bg);
-  color: var(--color-white);
+  background: var(--details-red);
+  color: var(--text-primary);
   padding: 1.2em;
   border: 1px solid rgba(255,255,255,0.08);
   transition: all 0.3s ease;
@@ -154,7 +158,7 @@
   transform: translateY(-50%);
   border-width: 8px 0 8px 10px;
   border-style: solid;
-  border-color: transparent transparent transparent var(--timeline-card-bg);
+  border-color: transparent transparent transparent var(--details-red);
 }
 
 .timeline__item.right .timeline__card::after {
@@ -165,7 +169,7 @@
   transform: translateY(-50%);
   border-width: 8px 10px 8px 0;
   border-style: solid;
-  border-color: transparent var(--timeline-card-bg) transparent transparent;
+  border-color: transparent var(--details-red) transparent transparent;
 }
 
 /************** TEXT **************/
@@ -173,12 +177,13 @@
   font-size: clamp(0.95rem, 2vw, 1.1rem);
   margin-bottom: 0.4em;
   font-weight: var(--weight-600);
+  color: var(--text-primary);
 }
 
 .timeline__subtitle {
   font-size: clamp(0.8rem, 1.5vw, 0.95rem);
   font-weight: var(--weight-500);
-  color: var(--white-85);
+  color: var(--text-primary);
   margin-bottom: 0.4rem;
   opacity: 0.9;
 }
@@ -187,6 +192,7 @@
   font-size: clamp(0.8rem, 1.5vw, 1rem);
   line-height: var(--lh-normal);
   font-weight: var(--weight-300);
+  color: var(--text-secondary);
 }
 
 /************** RESPONSIVE **************/
@@ -231,7 +237,7 @@
     left: -10px !important;
     right: auto !important;
     border-width: 8px 10px 8px 0 !important;
-    border-color: transparent var(--timeline-card-bg) transparent transparent !important;
+    border-color: transparent var(--details-red) transparent transparent !important;
   }
   .timeline__date {
     display: none !important;
@@ -240,7 +246,7 @@
     display: block;
     font-size: clamp(0.8rem, 1vw, 0.9rem);
     font-weight: var(--weight-600);
-    color: var(--color-accent-blue);
+    color: var(--details-blue);
     margin-bottom: 0.6rem;
     text-transform: uppercase;
   }

@@ -15,7 +15,7 @@ const ScrollTopButton = () => {
 
   return (
     <button
-      className="scroll__top--btn"
+      className="scroll__top-btn"
       onClick={() => scrollToSection(0)}
     >
       <FaChevronUp />

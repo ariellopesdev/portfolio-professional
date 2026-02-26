@@ -20,7 +20,7 @@
   content: "";
   display: block;
   height: 0.25rem;
-  background-color: var(--line-color, #ff5f5f);
+  background: var(--details-red);
   width: 5.5rem;
   margin: 1rem 0;
   border-radius: 0.25rem;

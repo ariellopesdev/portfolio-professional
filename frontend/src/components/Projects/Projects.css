@@ -36,7 +36,7 @@
   bottom: -30px;
   left: 5%;
   width: 90%;
-  background: var(--color-primary);
+  background: var(--details-red);
   padding: 10px 15px;
   display: flex;
   justify-content: space-between;
@@ -48,6 +48,7 @@
   font-size: clamp(0.9rem, 1.5vw, 1rem);
   font-weight: var(--weight-600);
   letter-spacing: .5px;
+  color: var(--text-primary);
 }
 
 .projects__btn {
@@ -66,7 +67,7 @@
 }
 
 .projects__btn--icon {
-  color: var(--color-white);
+  color: var(--text-primary);
   font-size: clamp(1rem, 1.2vw, 1.2rem);
 }
 
@@ -100,18 +101,18 @@
 .modal__header h3 {
   font-size: clamp(1.3rem, 2.5vw, 1.8rem);
   line-height: var(--lh-normal);
-  color: var(--modal-title);
+  color: var(--modal-text-primary);
 }
 
 .modal__close {
-  font-size: clamp(0.8rem, 1.2vw, 0.9rem);
+  font-size: clamp(0.8rem, 1.2vw, 1rem);
   cursor: pointer;
-  color: var(--modal-text);
+  color: var(--details-red);
 }
 
 .modal__tech{
   font-size: clamp(0.8rem, 1.2vw, 0.9rem);
-  color: var(--modal-text);
+  color: var(--modal-text-secondary);
   padding: 0 1.05rem;
 }
 
@@ -135,42 +136,43 @@
 
 .modal__info--item {
   display: flex;
+  align-items: center;
   text-decoration: none;
-  color: var(--modal-title);
+  color: var(--modal-text-primary);
   gap: 6px;
   font-size: clamp(0.9rem, 1.3vw, 1rem);
 }
 
 .modal__info--icon {
-  color: var(--modal-title);
+  color: var(--modal-text-primary);
 }
 
 .modal__desc {
   padding: 1rem;
-  color: var(--modal-text);
+  color: var(--modal-text-muted);
   font-size: clamp(0.9rem, 1.3vw, 1rem);
 }
 
 .modal__site--link {
   padding: 1rem;
-  color: var(--color-primary);
+  color: var(--details-red);
   text-decoration: none;
-  color: var(--modal-title);
+  color: var(--modal-text-primary);
 }
 
 .hrLine {
   border: none;              
   height: 1px;              
-  background-color: var(--color-accent-blue);
+  background-color: var(--details-blue);
   margin: 20px 0;
 }
 
 .modal__back--btn {
   border: none;
-  background-color: var(--color-primary);
+  background-color: var(--details-red);
   font-size: clamp(0.9rem, 1.2vw, 1rem);
   font-weight: 500;
-  color: var(--color-white);
+  color: var(--text-primary);
   padding: 15px 20px;
   float: right;
   margin-right: 1rem;

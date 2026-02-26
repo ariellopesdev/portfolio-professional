@@ -34,7 +34,7 @@
   margin: 0 0 10px 0;
   letter-spacing: 1.5px;
   font-weight: var(--weight-300);
-  color: var(--color-white);
+  color: var(--text-primary);
 }
 
 .main__text--title {
@@ -45,7 +45,7 @@
   margin: 0;
   white-space: nowrap; 
   z-index: 10;
-  color: var(--color-white);
+  color: var(--text-primary);
   animation: fadeSlideLeft 0.6s ease-out forwards;
   animation-delay: 0.1s;
 }
@@ -59,7 +59,7 @@
   white-space: pre-line;
   z-index: 10;
   font-weight:var(--weight-300);
-  color: var(--color-white);
+  color: var(--text-primary);
   animation: fadeSlideLeft 0.6s ease-out forwards;
   animation-delay: 0.5s;
 }
@@ -75,7 +75,7 @@
 .main__actions--link {
   padding: 0.75rem 1.5rem;
   text-decoration: none;
-  background: rgba(255, 255, 255, 0.15);
+  background: var(--glass-bg);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   font-weight: var(--weight-500);
@@ -89,14 +89,14 @@
 .main__actions--link:hover,
 .main__actions--link:active,
 .main__actions--link:focus {
-  color: var(--color-white);
+  color: var(--text-primary);
 }
 
 .main__actions--link:hover {
-  background: var(--color-primary);
+  background: var(--details-red);
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-  color: var(--color-white);
+  color: var(--text-primary);
 }
 
 .main__actions--link:active {

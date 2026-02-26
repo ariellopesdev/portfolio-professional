@@ -7,60 +7,20 @@
 }
 
 :root {
-  /* For action buttons */
-  --glass-bg: rgba(255,255,255, 0.15);
-
-  --color-primary: #ff5f5f;
-  --color-accent-blue: #5fa8ff;
+  --glass-bg: rgba(255, 255, 255, 0.15);
+  --details-red: #ff5f5f;
+  --details-blue: #5fa8ff;
   --text-primary: #f5f7fa;
   --text-secondary: rgba(255, 255, 255, 0.75);
   --text-muted: rgba(255, 255, 255, 0.55);
-  --footer-bg: #0f0f0f;
-
-  --modal-bg: #ffffff;
-  --modal-surface: #f8fafc;
-  --modal-border: #e5e7eb;
+  --bg-dark-blue: #072142;
+  --bg-deep-1: #01050d;
+  --bg-deep-2: #010a17;
+  --bg-dark: #000000;
+  --modal-bg: #f8fafc;
   --modal-text-primary: #0f172a;
   --modal-text-secondary: #334155;
   --modal-text-muted: #64748b;
-  --modal-accent: #5fa8ff;
-
-
-  /* Base */
-  --color-white: #ffffff;
-  --color-black: #000000;
-
-  /* Whites with opacity */
-  --white-85: #ffffffd9;
-  --white-88: #ffffffe0;
-  --white-65: #ffffffa6;
-
-  /* Primary */
-  --color-primary: #ff5f5f;
-  --color-primary-soft: #104285;
-
-  /* Backgrounds */
-  --color-bg-dark: #000000;
-  --color-bg-deep-1: #01050d;
-  --color-bg-deep-2: #010a17;
-  --color-bg-circle: #072142;
-
-  /* Accent */
-  --color-accent-blue: #5fa8ff;
-
-  /* Timeline */
-  --timeline-line: var(--color-primary);
-  --timeline-card-bg: var(--color-primary);
-  --timeline-card-back: var(--color-primary-soft);
-  --timeline-circle-border: var(--color-primary);
-
-  /* Footer */
-  --footer-bg: #0f0f0f;
-
-  /* Modal */
-  --modal-title: #343a40;
-  --modal-text: #6c757d;
-  --modal-bg: #f8f9fa;
 
   /* Tech colors */
   --color-js: #f7df1e;
@@ -126,7 +86,6 @@ body {
   padding: 100px 0 40px 75px;
   transition: all 0.8s ease;
   box-sizing: border-box;
-  color: #fff;
   background-color: transparent;
   z-index: 10;
   display: flex;
@@ -138,8 +97,8 @@ body {
 #curriculum {
   background: linear-gradient(
     180deg,
-    var(--color-bg-deep-1) 0%,
-    var(--color-bg-deep-2) 100%
+    var(--bg-deep-1) 0%,
+    var(--bg-deep-2) 100%
   );
 }
 
@@ -164,12 +123,11 @@ body {
   padding: 75px;
   transition: all 0.8s ease;
   box-sizing: border-box;
-  color: #fff;
   overflow-y: auto;
   scroll-margin-top: 80px;
 }
 
-#projects{
+#projects {
   min-height: auto !important;
 }
 
@@ -180,12 +138,14 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
   border-radius: 16px;
 }
 
 .highlight {
-  color: var(--color-kubernetes);
+  color: var(--details-blue);
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: var(--lh-loose);
 }
 
 /************** RESPONSIVE **************/

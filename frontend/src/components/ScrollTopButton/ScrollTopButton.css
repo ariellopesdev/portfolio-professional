@@ -1,4 +1,4 @@
-.scroll__top--btn {
+.scroll__top-btn {
   position: fixed;
   right: 30px;
   bottom: 30px;
@@ -6,8 +6,8 @@
   height: 45px;
   border: none;
   cursor: pointer;
-  background: var(--color-primary);
-  color: var(--color-white);
+  background: var(--details-red);
+  color: var(--text-primary);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,13 +17,6 @@
   animation: fadeInUp 0.4s forwards;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   z-index: 5000;
-}
-
-.scroll__top--btn:hover {
-  transform: translateY(0) scale(1.12);
-  box-shadow:
-    0 8px 20px rgba(0, 0, 0, 0.4),
-    0 0 12px rgba(255, 95, 95, 0.4); 
 }
 
 @keyframes fadeInUp {

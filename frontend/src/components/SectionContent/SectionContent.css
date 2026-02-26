@@ -22,17 +22,17 @@
 }
 
 .layer-deep {
-  background-color: #072142;
+  background-color: var(--bg-dark-blue);
   transform: none;
 }
 
 .layer-mid {
-  background-color: #ff5f5f;
+  background-color: var(--details-red);
   z-index: 2;
 }
 
 .layer-top {
-  background-color: #072142;
+  background-color: var(--bg-dark-blue);
   z-index: 3;
 }
 
@@ -44,7 +44,6 @@
   width: 100%;
   height: 100%;
   padding: 0;
-  color: #fff;
   opacity: 0;
   transform: translateY(20px);
 }
@@ -118,10 +117,4 @@
 
 /************** RESPONSIVE **************/
 
-@media (max-width: 768px) {
-  /* .section-content {
-    width: 100%;
-    height: 60%;
-    position: relative;
-  } */
-}
+
