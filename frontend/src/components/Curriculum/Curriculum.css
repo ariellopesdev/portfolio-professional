@@ -7,6 +7,31 @@
 
 .curriculum__empty p{
 font-size: clamp(0.9rem, 2vw, 1.2rem);
+font-weight: var(--weight-600);
+}
+
+.curriculum__pdf {
+  position: relative; 
+  text-decoration: none;
+  color: var(--details-red);
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.curriculum__pdf::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px; 
+  width: 0;
+  height: 1px;
+  background: var(--details-red);
+  transition: width 0.3s ease;
+}
+
+.curriculum__pdf:hover::after {
+  width: 100%;
 }
 
 /************** FILTERS **************/

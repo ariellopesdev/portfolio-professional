@@ -8,6 +8,9 @@ import SectionContent from "../SectionContent/SectionContent";
 //Hooks
 import { useState } from "react";
 
+//Archive
+import curriculoPDF from "../../assets/archive/curriculo_ariel_lopes.pdf";
+
 const academicExperiences = [
   {
     year: "Jun 2026",
@@ -108,7 +111,6 @@ const Curriculum = () => {
         return new Date(parseInt(year), months[month] ?? 0);
       }
 
-      // Caso venha só o ano
       return new Date(parseInt(value), 0);
     };
 
@@ -121,18 +123,19 @@ const Curriculum = () => {
         <SectionInfo title="Currículo" />
 
         <SectionContent>
-          {/* TEXTO SEM SELEÇÃO — SEMPRE NO TOPO */}
-
           <div className="curriculum__empty">
             <p>
               Selecione uma ou mais categorias para visualizar minha trajetória
               acadêmica e profissional organizada cronologicamente. As
-              experiências são exibidas de acordo com o ano de realização,
-              independentemente do tipo.
+              experiências são exibidas de acordo com o ano de realização.
+              Clique{" "}
+              <a href={curriculoPDF} target="_blank" rel="noopener noreferrer" className="curriculum__pdf">
+                aqui
+              </a>{" "}
+              para acessar meu Currículo em PDF.
             </p>
           </div>
 
-          {/* FILTROS SOBRE AS COLUNAS */}
           <div className="curriculum__filters">
             <label className="filter__box left">
               <input
@@ -163,12 +166,10 @@ const Curriculum = () => {
                     key={`${item.year}-${item.title}`}
                     className={`timeline__item ${side}`}
                   >
-                    {/* DATA FORA DO BLOCO (DESKTOP) */}
                     {side === "left" && (
                       <span className="timeline__date">{item.year}</span>
                     )}
 
-                    {/* MARKER */}
                     <div className="timeline__marker">
                       <span className="timeline__circle"></span>
                     </div>
@@ -177,7 +178,6 @@ const Curriculum = () => {
                       <span className="timeline__date">{item.year}</span>
                     )}
 
-                    {/* CARDS */}
                     <div className="timeline__cards">
                       <div className="timeline__card">
                         <span className="timeline__date--inside">
