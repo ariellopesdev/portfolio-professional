@@ -8,6 +8,7 @@ import SubtitleH2 from "../SubtitleH2/SubtitleH2";
 
 // Hooks
 import { useState, useEffect } from "react";
+import useSectionAnimation from "../../hooks/useSectionAnimation";
 
 // Images
 import portfolioImg from "../../assets/images/portfolio-image2.png";
@@ -46,6 +47,8 @@ import { VscGithub } from "react-icons/vsc";
 import { IoLogoJavascript } from "react-icons/io5";
 
 const About = ({ activeSection }) => {
+  const hasAnimated = useSectionAnimation(activeSection, 2);
+
   const IconCarousel = ({ icons, interval = 2000 }) => {
     const [index, setIndex] = useState(0);
 
@@ -298,9 +301,11 @@ const About = ({ activeSection }) => {
   return (
     <section id="about">
       <div className="sections-wrapper">
-        <SectionInfo title="Sobre Mim" />
-        <SectionContent activeSection={activeSection} index={2}>
-          {blocks.map((block) => block.content)}
+        <SectionInfo title="Sobre Mim" animate={hasAnimated} />
+        <SectionContent animate={hasAnimated}>
+          {blocks.map((block, index) => (
+            <div key={index}>{block.content}</div>
+          ))}
         </SectionContent>
       </div>
     </section>

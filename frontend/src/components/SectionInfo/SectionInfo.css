@@ -10,13 +10,22 @@
   justify-content: flex-start;
   align-items: flex-start;
   overflow: hidden;
+  position: relative;
+  transform: translateX(-100px);
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+/* ✅ animação correta */
+.section__info.animate {
+  animation: slideFadeIn 0.5s ease-out forwards;
 }
 
 /************** KEYFRAMES **************/
 
 @keyframes slideFadeIn {
   from {
-    transform: translateX(-400px);
+    transform: translateX(-100px);
     opacity: 0;
   }
   to {
@@ -28,17 +37,12 @@
 /************** TITLE **************/
 
 .info__title {
-  transform: translateX(-400px);
-  opacity: 0;
-  will-change: transform, opacity;
   font-family: var(--font-title);
   font-size: var(--fs-h1);
   letter-spacing: 2px;
   font-weight: var(--weight-700);
   line-height: var(--lh-tight);
   white-space: pre-line;
-  animation: slideFadeIn 0.8s ease-out forwards;
-  animation-delay: 0.1s;
   color: var(--text-primary);
 }
 

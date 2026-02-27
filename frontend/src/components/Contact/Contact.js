@@ -1,14 +1,18 @@
-// CSS
+//CSS
 import "./Contact.css";
 
-// Components
+//Components
 import SectionContent from "../SectionContent/SectionContent";
 
+//Hook
+import useSectionAnimation from "../../hooks/useSectionAnimation";
+
 const Contact = ({activeSection}) => {
+  const hasAnimated = useSectionAnimation(activeSection, 4);
   return (
     <section id="contact">
       <div className="sections-wrapper">
-        <SectionContent activeSection={activeSection} index={4}>
+        <SectionContent animate={hasAnimated}>
           <div className="contact__block--centered">
             <h1 className="contact__calltoaction">
               Entre em <span>contato</span> comigo.

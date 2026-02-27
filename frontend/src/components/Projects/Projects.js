@@ -8,6 +8,7 @@ import SectionContent from "../SectionContent/SectionContent";
 // Hooks
 import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
+import useSectionAnimation from "../../hooks/useSectionAnimation";
 
 // Images
 import ImgTest from "../../assets/images/image-test.jpg";
@@ -49,6 +50,8 @@ const projectsData = [
 ];
 
 const Projects = ({ activeSection }) => {
+  const hasAnimated = useSectionAnimation(activeSection, 1);
+
   const [selectedProject, setSelectedProject] = useState(null);
 
   useEffect(() => {
@@ -66,9 +69,8 @@ const Projects = ({ activeSection }) => {
   return (
     <section id="projects">
       <div className="sections-wrapper">
-        <SectionInfo title="Projetos" />
-
-        <SectionContent activeSection={activeSection} index={1}>
+        <SectionInfo title="Projetos" animate={hasAnimated} />
+        <SectionContent animate={hasAnimated}>
           <div className="projects__container">
             {projectsData.map((project) => (
               <div key={project.id} className="projects__card">

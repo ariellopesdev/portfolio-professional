@@ -7,6 +7,7 @@ import SectionContent from "../SectionContent/SectionContent";
 
 //Hooks
 import { useState } from "react";
+import useSectionAnimation from "../../hooks/useSectionAnimation";
 
 //Archive
 import curriculoPDF from "../../assets/archive/curriculo_ariel_lopes.pdf";
@@ -72,6 +73,8 @@ const professionalExperiences = [
 ];
 
 const Curriculum = ({ activeSection }) => {
+  const hasAnimated = useSectionAnimation(activeSection, 3);
+
   const [filters, setFilters] = useState({
     academic: true,
     professional: false,
@@ -120,9 +123,8 @@ const Curriculum = ({ activeSection }) => {
   return (
     <section id="curriculum">
       <div className="sections-wrapper">
-        <SectionInfo title="Currículo" />
-
-        <SectionContent activeSection={activeSection} index={3}>
+        <SectionInfo title="Currículo" animate={hasAnimated} />
+        <SectionContent animate={hasAnimated}>
           <div className="curriculum__empty">
             <p>
               Selecione uma ou mais categorias para visualizar minha trajetória
