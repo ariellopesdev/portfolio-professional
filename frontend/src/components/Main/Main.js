@@ -1,11 +1,21 @@
+//CSS
 import "./Main.css";
 
-// Components
+//Components
 import TwoLines from "../TwoLines/TwoLines";
 
+//Hooks
+import { useEffect, useState } from "react";
+
 const Main = () => {
+  const [animate, setAnimate] = useState(false);
+
+  useEffect(()=>{
+    setAnimate(true);
+  },[]);
+
   return (
-    <section id="main">
+    <section id="main" className={animate ? "animate" : ""}>
       <div id="main__container">
         <p className="main__text--intro">
           Oi, eu sou

@@ -4,17 +4,19 @@
   display: inline-block;
 }
 
-/************** BASE STATE **************/
+/************** BASE ANIMATION STATE **************/
 
-.main__text--title,
-.main__text--subtitle,
-.main__actions {
+#main .main__text--intro,
+#main .main__text--title,
+#main .main__text--subtitle,
+#main #main__actions,
+#main .two-lines {
   opacity: 0;
   transform: translateX(-50px);
   will-change: transform, opacity;
 }
 
-/************** KEYFRAMES **************/
+/************** KEYFRAME **************/
 
 @keyframes fadeSlideLeft {
   from {
@@ -27,7 +29,34 @@
   }
 }
 
-/************** TITLE **************/
+/************** ANIMATION TRIGGER **************/
+
+#main.animate .main__text--intro {
+  animation: fadeSlideLeft 0.6s ease-out forwards;
+  animation-delay: 0.1s;
+}
+
+#main.animate .main__text--title {
+  animation: fadeSlideLeft 0.6s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+#main.animate .two-lines {
+  animation: fadeSlideLeft 0.6s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+#main.animate .main__text--subtitle {
+  animation: fadeSlideLeft 0.6s ease-out forwards;
+  animation-delay: 0.7s;
+}
+
+#main.animate #main__actions {
+  animation: fadeSlideLeft 0.6s ease-out forwards;
+  animation-delay: 0.9s;
+}
+
+/************** INTRO **************/
 
 .main__text--intro {
   font-size: clamp(1.2rem, 3vw, 1.5em);
@@ -37,6 +66,7 @@
   color: var(--text-primary);
 }
 
+/************** TITLE **************/
 .main__text--title {
   font-family: var(--font-title);
   font-size: clamp(3.5rem, 6vw, 5em);
@@ -46,8 +76,6 @@
   white-space: nowrap; 
   z-index: 10;
   color: var(--text-primary);
-  animation: fadeSlideLeft 0.6s ease-out forwards;
-  animation-delay: 0.1s;
 }
 
 /************** SUBTITLE **************/
@@ -60,17 +88,13 @@
   z-index: 10;
   font-weight:var(--weight-300);
   color: var(--text-primary);
-  animation: fadeSlideLeft 0.6s ease-out forwards;
-  animation-delay: 0.5s;
 }
 
-/************** BLOCK **************/
+/************** ACTIONS **************/
 #main__actions {
   display: flex;
   gap: 0.9rem;
   margin-top: 2.5rem;
-  animation: fadeSlideLeft 0.6s ease-out forwards;
-  animation-delay: 0.9s;
 }
 .main__actions--link {
   padding: 0.75rem 1.5rem;
