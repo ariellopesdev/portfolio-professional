@@ -1,11 +1,11 @@
 import { useEffect, useState, useCallback, useRef } from "react";
 
+const sectionIds = ["main", "projects", "about", "curriculum", "contact"];
+
 export const useScrollEffect = () => {
   const [activeSection, setActiveSection] = useState(0);
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [scrollDirection, setScrollDirection] = useState("down");
-
-  const sectionIds = ["main", "projects", "about", "curriculum", "contact"];
 
   const lastScrollY = useRef(0);
 

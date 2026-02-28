@@ -1,9 +1,6 @@
 //CSS
 import "./Footer.css";
 
-//Components
-import SectionContent from "../SectionContent/SectionContent";
-
 //Icons
 import {
   FaGithub,
@@ -66,7 +63,7 @@ const Footer = () => {
           <div className="footer__block--centered">
             <div className="footer__copyright">
               <p className="footer__copyright--content">
-                &copy; <a>Link para Home Portfolio de Ariel Lopes</a>. Todos os Direitos Reservados | Developed by <a href="https://github.com/ariellopesdev">Link do GitHub - ariellopesdev</a> 
+                &copy; Todos os Direitos Reservados | Developed by <a href="https://github.com/ariellopesdev">Link do GitHub - ariellopesdev</a> 
               </p>
             </div>
           </div>

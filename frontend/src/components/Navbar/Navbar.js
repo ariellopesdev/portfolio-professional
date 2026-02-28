@@ -43,7 +43,7 @@ const Navbar = ({ activeSection, scrollToSection }) => {
     <header className={scrolled ? "header scrolled" : "header"}>
       <img
         src={logoImage}
-        alt="Logo image"
+        alt="Logo of Ariel Lopes Dev company"
         className="logo__image"
         onClick={() => {
           closeMenu();

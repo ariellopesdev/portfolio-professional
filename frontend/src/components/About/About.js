@@ -89,7 +89,7 @@ const About = ({ activeSection }) => {
             <img
               src={portfolioImg}
               className="about__image--profile"
-              alt="My photo for portfolio"
+              alt="Ariel Lopes with arms crossed and smiling"
             />
           </div>
         </div>
