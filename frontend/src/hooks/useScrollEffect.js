@@ -23,7 +23,6 @@ export const useScrollEffect = () => {
     const handleScroll = () => {
       const currentY = window.scrollY;
 
-      // 🔥 Detecta direção corretamente
       const direction = currentY > lastScrollY.current ? "down" : "up";
       lastScrollY.current = currentY;
       setScrollDirection(direction);
@@ -34,8 +33,7 @@ export const useScrollEffect = () => {
         const section = document.getElementById(id);
         if (!section) return;
 
-        // 🔥 agora ativa só quando realmente chega no topo
-        if (currentY >= section.offsetTop - window.innerHeight * 0.3) {
+        if (currentY >= section.offsetTop - window.innerHeight * 0.6) {
           currentSection = index;
         }
       });
