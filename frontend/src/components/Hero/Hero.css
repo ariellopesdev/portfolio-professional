@@ -1,16 +1,16 @@
-/************** MAIN **************/
+/************** hero **************/
 
-#main__container {
+#hero__container {
   display: inline-block;
 }
 
 /************** BASE ANIMATION STATE **************/
 
-#main .main__text--intro,
-#main .main__text--title,
-#main .main__text--subtitle,
-#main #main__actions,
-#main .two-lines {
+#hero .hero__text--intro,
+#hero .hero__text--title,
+#hero .hero__text--subtitle,
+#hero #hero__actions,
+#hero .two-lines {
   opacity: 0;
   transform: translateX(-50px);
   will-change: transform, opacity;
@@ -31,34 +31,34 @@
 
 /************** ANIMATION TRIGGER **************/
 
-#main.animate .main__text--intro {
+#hero.animate .hero__text--intro {
   animation: fadeSlideLeft 0.6s ease-out forwards;
   animation-delay: 0.1s;
 }
 
-#main.animate .main__text--title {
+#hero.animate .hero__text--title {
   animation: fadeSlideLeft 0.6s ease-out forwards;
   animation-delay: 0.3s;
 }
 
-#main.animate .two-lines {
+#hero.animate .two-lines {
   animation: fadeSlideLeft 0.6s ease-out forwards;
   animation-delay: 0.5s;
 }
 
-#main.animate .main__text--subtitle {
+#hero.animate .hero__text--subtitle {
   animation: fadeSlideLeft 0.6s ease-out forwards;
   animation-delay: 0.7s;
 }
 
-#main.animate #main__actions {
+#hero.animate #hero__actions {
   animation: fadeSlideLeft 0.6s ease-out forwards;
   animation-delay: 0.9s;
 }
 
 /************** INTRO **************/
 
-.main__text--intro {
+.hero__text--intro {
   font-size: clamp(1.2rem, 3vw, 1.5em);
   margin: 0 0 10px 0;
   letter-spacing: 1.5px;
@@ -67,7 +67,7 @@
 }
 
 /************** TITLE **************/
-.main__text--title {
+.hero__text--title {
   font-family: var(--font-title);
   font-size: clamp(3.5rem, 6vw, 5em);
   letter-spacing: 2px;
@@ -80,7 +80,7 @@
 
 /************** SUBTITLE **************/
 
-.main__text--subtitle {
+.hero__text--subtitle {
   font-size: clamp(1.2rem, 3vw, 1.5em);
   letter-spacing: 1.5px;
   line-height: 1.7;
@@ -91,12 +91,12 @@
 }
 
 /************** ACTIONS **************/
-#main__actions {
+#hero__actions {
   display: flex;
   gap: 0.9rem;
   margin-top: 2.5rem;
 }
-.main__actions--link {
+.hero__actions--link {
   padding: 0.75rem 1.5rem;
   text-decoration: none;
   background: var(--glass-bg);
@@ -108,34 +108,34 @@
   box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
-.main__actions--link,
-.main__actions--link:visited,
-.main__actions--link:hover,
-.main__actions--link:active,
-.main__actions--link:focus {
+.hero__actions--link,
+.hero__actions--link:visited,
+.hero__actions--link:hover,
+.hero__actions--link:active,
+.hero__actions--link:focus {
   color: var(--text-primary);
 }
 
-.main__actions--link:hover {
+.hero__actions--link:hover {
   background: var(--details-red);
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
   color: var(--text-primary);
 }
 
-.main__actions--link:active {
+.hero__actions--link:active {
   transform: translateY(0);
 }
 
 /************** RESPONSIVE **************/
 @media (max-width: 768px) {
-  #main__container {
+  #hero__container {
     padding: 0 5px 15px 5px;
   }
 }
 
 @media (max-width: 500px) {
-  .main__text--title {
+  .hero__text--title {
     white-space: normal;
     max-width: 7ch;
   }

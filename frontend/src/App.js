@@ -14,7 +14,6 @@ import ScrollTopButton from "./components/ScrollTopButton/ScrollTopButton";
 function App() {
   return (
     <div className="App">
-      {/* Background 3D global */}
       <SolarSystemBackground />
 
       <BrowserRouter basename="/portfolio-professional">

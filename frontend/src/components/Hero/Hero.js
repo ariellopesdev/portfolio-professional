@@ -1,5 +1,5 @@
 //CSS
-import "./Main.css";
+import "./Hero.css";
 
 //Components
 import TwoLines from "../TwoLines/TwoLines";
@@ -7,7 +7,7 @@ import TwoLines from "../TwoLines/TwoLines";
 //Hooks
 import { useEffect, useState } from "react";
 
-const Main = () => {
+const Hero = () => {
   const [animate, setAnimate] = useState(false);
 
   useEffect(()=>{
@@ -15,19 +15,19 @@ const Main = () => {
   },[]);
 
   return (
-    <section id="main" className={animate ? "animate" : ""}>
-      <div id="main__container">
-        <p className="main__text--intro">
+    <section id="hero" className={animate ? "animate" : ""}>
+      <div id="hero__container">
+        <p className="hero__text--intro">
           Oi, eu sou
         </p>
-        <h1 className="main__text--title">
+        <h1 className="hero__text--title">
           Ariel Lopes
         </h1>
-        <TwoLines color="#ff5f5f" compact={false} variant="main" />
-        <h2 className="main__text--subtitle">Full Stack Developer</h2>
-        <div id="main__actions">
+        <TwoLines color="#ff5f5f" compact={false} variant="hero" />
+        <h2 className="hero__text--subtitle">Full Stack Developer</h2>
+        <div id="hero__actions">
           <a
-            className="main__actions--link"
+            className="hero__actions--link"
             href="https://www.linkedin.com/in/ariel-lopes-71000821b/"
             target="_blank"
             rel="noopener noreferrer"
@@ -35,7 +35,7 @@ const Main = () => {
             LinkedIn
           </a>
           <a
-            className="main__actions--link"
+            className="hero__actions--link"
             href="https://github.com/ariellopesdev"
             target="_blank"
             rel="noopener noreferrer"
@@ -48,4 +48,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default Hero;

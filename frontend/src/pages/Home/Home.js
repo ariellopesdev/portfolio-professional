@@ -6,7 +6,7 @@ import { useScrollEffect } from "../../hooks/useScrollEffect";
 
 // Components
 import Navbar from "../../components/Navbar/Navbar";
-import Main from "../../components/Main/Main";
+import Hero from "../../components/Hero/Hero";
 import Projects from "../../components/Projects/Projects";
 import About from "../../components/About/About";
 import Curriculum from "../../components/Curriculum/Curriculum";
@@ -19,7 +19,7 @@ const Home = () => {
   return (
     <div id="home">
       <Navbar activeSection={activeSection} scrollToSection={scrollToSection} />
-      <Main />
+      <Hero />
       <Projects activeSection={activeSection}/>
       <About activeSection={activeSection} />
       <Curriculum activeSection={activeSection} />
