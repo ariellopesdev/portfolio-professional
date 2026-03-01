@@ -79,6 +79,10 @@ body {
   overflow-x: hidden;
 }
 
+html, body{
+  background-color: var(--bg-dark);
+}
+
 #hero {
   position: relative;
   min-height: 100dvh;
