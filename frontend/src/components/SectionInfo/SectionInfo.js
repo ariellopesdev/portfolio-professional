@@ -5,7 +5,6 @@ import "./SectionInfo.css";
 import TwoLines from "../TwoLines/TwoLines";
 
 const SectionInfo = ({ title, color = "#ff5f5f", animate }) => {
-  console.log("animate:", animate);
   return (
     <div className={`section__info ${animate ? "animate" : ""}`}>
       <h1 className="info__title">{title}</h1>

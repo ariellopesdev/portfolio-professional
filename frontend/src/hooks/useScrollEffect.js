@@ -1,6 +1,6 @@
 import { useEffect, useState, useCallback, useRef } from "react";
 
-const sectionIds = ["main", "projects", "about", "curriculum", "contact"];
+const sectionIds = ["hero", "projects", "about", "curriculum", "contact"];
 
 export const useScrollEffect = () => {
   const [activeSection, setActiveSection] = useState(0);

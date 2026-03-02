@@ -25,7 +25,6 @@ const Home = () => {
       <Curriculum activeSection={activeSection} />
       <Contact activeSection={activeSection} />
       <Footer />
-
       <ScrollTopButton
         showScrollTop={showScrollTop}
         scrollToSection={scrollToSection}

@@ -1,7 +1,11 @@
+//CSS
 import "./SolarSystemBackground.css";
+
+//Hooks
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
 
+//Textures
 import sunTex from "../../assets/textures/planets/sun.jpg";
 import mercuryTex from "../../assets/textures/planets/mercury.jpg";
 import venusTex from "../../assets/textures/planets/venus.jpg";
@@ -35,8 +39,6 @@ export default function SolarSystemBackground() {
     );
     camera.position.z = 1100;
 
-    /* ================= RENDERER ================= */
-    // Verifica se já existe um renderer (evita duplicar)
     let renderer = rendererRef.current;
     if (!renderer) {
       renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
@@ -99,8 +101,8 @@ export default function SolarSystemBackground() {
     ctxS.fillStyle = gradS;
     ctxS.fillRect(0, 0, 64, 64);
     const sunGlowTexture = new THREE.CanvasTexture(sunGlowCanvas);
-    sunGlowTexture.generateMipmaps = false; // ❌ desativa mipmaps
-    sunGlowTexture.minFilter = THREE.LinearFilter; // ❌ evita erros de textura imutável
+    sunGlowTexture.generateMipmaps = false; 
+    sunGlowTexture.minFilter = THREE.LinearFilter; 
     const sunGlow = new THREE.Sprite(
       new THREE.SpriteMaterial({
         map: sunGlowTexture,
