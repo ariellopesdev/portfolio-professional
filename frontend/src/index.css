@@ -78,10 +78,10 @@ body {
   min-height: 100dvh;
   overflow-x: hidden;
 }
-/* 
+
 html, body{
   background-color: var(--bg-dark);
-} */
+}
 
 #hero {
   position: relative;

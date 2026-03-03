@@ -1,3 +1,4 @@
+// CSS
 import "./App.css";
 
 // Router
@@ -6,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 // Components
 import Navbar from "./components/Navbar/Navbar";
 import SolarSystemBackground from "./components/SolarSystemBackground/SolarSystemBackground";
+import Preloader from "./components/PreLoader/PreLoader"; 
 
 // Pages
 import Home from "./pages/Home/Home";
@@ -14,8 +16,8 @@ import ScrollTopButton from "./components/ScrollTopButton/ScrollTopButton";
 function App() {
   return (
     <div className="App">
+      <Preloader /> 
       <SolarSystemBackground />
-
       <BrowserRouter basename="/portfolio-professional">
         <Navbar />
         <div className="container">
