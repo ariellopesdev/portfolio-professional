@@ -17,13 +17,19 @@ import uranusTex from "../../assets/textures/planets/uranus.jpg";
 import neptuneTex from "../../assets/textures/planets/neptune.jpg";
 import starsTex from "../../assets/textures/planets/stars.jpg";
 
-export default function SolarSystemBackground() {
+export default function SolarSystemBackground({onReady}) {
   const mountRef = useRef(null);
-  const rendererRef = useRef(null); // guardamos o renderer aqui
+  const rendererRef = useRef(null); 
 
   useEffect(() => {
     const mount = mountRef.current;
     if (!mount) return;
+
+    /* ================= LOADING MANAGER (ADICIONADO) ================= */
+    const loadingManager = new THREE.LoadingManager();
+    loadingManager.onLoad = () => {
+      if (onReady) onReady();
+    };
 
     /* ================= SCENE ================= */
     const scene = new THREE.Scene();
@@ -57,7 +63,7 @@ export default function SolarSystemBackground() {
     scene.add(sunLight);
 
     /* ================= TEXTURE LOADER ================= */
-    const loader = new THREE.TextureLoader();
+    const loader = new THREE.TextureLoader(loadingManager); 
     const loadTexture = (src) => {
       const tex = loader.load(src);
       tex.colorSpace = THREE.SRGBColorSpace;

@@ -88,8 +88,8 @@
 
 .preloader__loading--text {
   margin-top: 40px;
-  font-family: "Inter", sans-serif;
-  font-size: 0.85rem;
+  font-family: var(--font-title);
+  font-size: 1.7rem; 
   letter-spacing: 4px;
   color: rgba(255,255,255,0.6);
   animation: pulse 2s ease-in-out infinite;

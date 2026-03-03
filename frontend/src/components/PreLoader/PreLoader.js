@@ -4,24 +4,20 @@ import "./PreLoader.css";
 //Hooks
 import { useEffect, useState } from "react";
 
-const Preloader = () => {
+const Preloader = ({ready}) => {
   const [loading, setLoading] = useState(true);
   const [fade, setFade] = useState(false);
 
   useEffect(() => {
-    const handleLoad = () => {
-      setFade(true);
-      setTimeout(() => setLoading(false), 600);
-    };
+    if (!ready) return; 
 
-    if (document.readyState === "complete") {
-      handleLoad();
-    } else {
-      window.addEventListener("load", handleLoad);
-    }
+    setFade(true);
+    const timeout = setTimeout(() => {
+      setLoading(false);
+    }, 600);
 
-    return () => window.removeEventListener("load", handleLoad);
-  }, []);
+    return () => clearTimeout(timeout);
+  }, [ready]);
 
   if (!loading) return null;
 
