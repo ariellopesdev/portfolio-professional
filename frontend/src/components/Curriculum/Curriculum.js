@@ -77,7 +77,7 @@ const Curriculum = ({ activeSection }) => {
 
   const [filters, setFilters] = useState({
     academic: true,
-    professional: false,
+    professional: true,
   });
 
   const toggleFilter = (key) => {
