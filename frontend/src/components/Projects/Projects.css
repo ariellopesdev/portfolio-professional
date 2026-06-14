@@ -24,7 +24,8 @@
   transition: transform 0.4s ease;
 }
 
-.projects__image--container img {
+.projects__image--container img,
+.projects__image--container video {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -47,7 +48,7 @@
 .projects__info--title {
   font-size: clamp(0.9rem, 1.5vw, 1rem);
   font-weight: var(--weight-600);
-  letter-spacing: .5px;
+  letter-spacing: 0.5px;
   color: var(--text-primary);
 }
 
@@ -87,7 +88,7 @@
 
 .project__modal {
   width: 90%;
-  max-width: 500px;
+  max-width: 700px;
   background-color: var(--modal-bg);
 }
 
@@ -110,21 +111,25 @@
   color: var(--details-red);
 }
 
-.modal__tech{
+.modal__tech {
   font-size: clamp(0.8rem, 1.2vw, 0.9rem);
   color: var(--modal-text-secondary);
   padding: 0 1.05rem;
 }
 
 .modal__image {
-  padding-top: .5rem;
+  padding-top: 0.5rem;
   padding-bottom: 1rem;
 }
 
-.modal__image img {
+.modal__image img,
+.modal__image video {
   width: 100%;
-  height: 400px;
-  object-fit: cover;
+  max-height: 70vh;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  background-color: #000;
+  display: block;
 }
 
 .modal__infos {
@@ -161,8 +166,8 @@
 }
 
 .hrLine {
-  border: none;              
-  height: 1px;              
+  border: none;
+  height: 1px;
   background-color: var(--details-blue);
   margin: 20px 0;
 }
@@ -183,7 +188,7 @@
   transition: all 0.3s ease;
 }
 
-.modal__back--btn:hover{
+.modal__back--btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
@@ -212,6 +217,19 @@
 
 @media (max-width: 768px) {
   .projects__container {
-  padding: 40px 20px 60px 20px;
+    padding: 40px 20px 60px 20px;
+  }
+
+  .modal__image img,
+  .modal__image video {
+    max-height: 45vh;
+    aspect-ratio: 16 / 9;
+  }
 }
+
+@media (max-width: 480px) {
+  .modal__image img,
+  .modal__image video {
+    max-height: 35vh;
+  }
 }

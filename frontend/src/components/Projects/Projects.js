@@ -12,6 +12,11 @@ import useSectionAnimation from "../../hooks/useSectionAnimation";
 
 // Images
 import FluxoSimplesImg from "../../assets/images/fluxosimplessystem.png";
+import RandPlayImg from "../../assets/images/randplay.png";
+import ImgTest from "../../assets/images/image-test.jpg";
+
+// Video
+import FluxoSimplesVideo from "../../assets/video/presentation-fluxo-simples.mp4";
 
 // Icons
 import { FaGithub, FaUser, FaTimes, FaExternalLinkAlt } from "react-icons/fa";
@@ -21,10 +26,11 @@ const projectsData = [
     id: 1,
     name: "Fluxo Simples System",
     image: FluxoSimplesImg,
+    video: FluxoSimplesVideo,
     demand: "Projeto acadêmico / Sistema de gestão",
     github: "https://github.com/ariellopesdev/fluxosimplessystem",
     site: "https://fluxosimplessystem.vercel.app",
-    desc: "Fluxo Simples System é um sistema web de gestão empresarial desenvolvido para centralizar processos como clientes, produtos, vendas, serviços, financeiro, relatórios e chamados de suporte. O projeto conta com controle de acesso por níveis de usuário, interface administrativa, modais reutilizáveis, dashboards e fluxo de atendimento entre usuários, administradores e super administradores.",
+    desc: "Fluxo Simples System é um sistema web de gestão empresarial desenvolvido para centralizar processos como clientes, produtos, vendas, serviços, financeiro, relatórios e chamados de suporte. O projeto conta com controle de acesso por níveis de usuário, interface administrativa, modais reutilizáveis, dashboards e fluxo de atendimento entre usuários, administradores e super administradores. Dados para teste no site. Login: teste@teste.com Senha: Teste123!",
     tech: "React.js · Node.js · Express · MongoDB · Redux · JWT · API ",
     features: [
       "Controle de acesso por usuário, admin e super admin",
@@ -33,6 +39,7 @@ const projectsData = [
       "Sistema de chamados com histórico e atendimento",
       "Interface responsiva com modais reutilizáveis",
       "Autenticação com JWT e rotas protegidas",
+      "Geração de relatórios e dashboard",
     ],
   },
   {
@@ -42,17 +49,17 @@ const projectsData = [
     demand: "Ramon Efísio Arquitetura",
     github: "#",
     site: "#",
-    desc: "Ramon Efísio Arquitetura é um estúdio especializado em projetos arquitetônicos contemporâneos, unindo estética, funcionalidade e eficiência espacial em soluções sob medida.",
+    desc: "Projeto em implementação.",
     tech: "React.js · PHP · Firebase · APIs",
   },
   {
     id: 3,
-    name: "TechTravel",
-    image: ImgTest,
+    name: "RandPlay",
+    image: RandPlayImg,
     demand: "Projeto Pessoal",
     github: "#",
     site: "#",
-    desc: "TechTravel é uma plataforma moderna para planejamento e gerenciamento de viagens, permitindo criar roteiros personalizados, acompanhar despesas e receber sugestões inteligentes.",
+    desc: "Projeto em implementação.",
     tech: "React.js · Java · MySQL · APIs",
   },
 ];
@@ -116,10 +123,14 @@ const Projects = ({ activeSection }) => {
                   </div>
                   <span className="modal__tech">{selectedProject.tech}</span>
                   <div className="modal__image">
-                    <img
-                      src={selectedProject.image}
-                      alt={selectedProject.name}
-                    />
+                    {selectedProject.video ? (
+                      <video src={selectedProject.video} controls playsInline />
+                    ) : (
+                      <img
+                        src={selectedProject.image}
+                        alt={selectedProject.name}
+                      />
+                    )}
                   </div>
 
                   <div className="modal__infos">

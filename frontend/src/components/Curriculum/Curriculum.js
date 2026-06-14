@@ -14,7 +14,7 @@ import curriculoPDF from "../../assets/archive/curriculo_ariel_lopes.pdf";
 
 const academicExperiences = [
   {
-    year: "Jun 2026",
+    year: "Ago 2026",
     title: "Tecnólogo em Análise e Desenvolvimento de Sistemas",
     subtitle: "Pontifícia Universidade Católica do Paraná",
     desc: "Desenvolvimento de software, bancos de dados, APIs, arquitetura e metodologias ágeis.",
@@ -58,6 +58,12 @@ const academicExperiences = [
 ];
 
 const professionalExperiences = [
+  {
+    year: "Jun 2026",
+    title: "Fluxo Simples System",
+    subtitle: "Projeto (Acadêmico/Profissional) / Sistema de Gestão",
+    desc: "React.js, Node.js, Express, MongoDB, Redux, JWT, API",
+  },
   {
     year: "Out 2025",
     title: "RandPlay",

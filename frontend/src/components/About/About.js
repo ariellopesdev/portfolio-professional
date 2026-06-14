@@ -71,7 +71,7 @@ const About = ({ activeSection }) => {
             <p className="about__paragraph">
               Sou <span className="highlight">Desenvolvedor Fullstack</span> e
               estou no último período de Análise e Desenvolvimento de Sistemas
-              na <strong>PUCPR</strong> (conclusão em Jun/2026). Meu foco é
+              na <strong>PUCPR</strong> (formatura em Ago/2026). Meu foco é
               criar aplicações que unem clareza, performance e experiências
               centradas no usuário.
             </p>
@@ -115,7 +115,7 @@ const About = ({ activeSection }) => {
               <div className="skills__card--content">
                 <h3 className="skillscard__content--title">Front-End</h3>
                 <div className="skillscard__content--name">
-                  Javascript, HTML5, CSS3, SASS, React JS
+                  Javascript, HTML5, CSS3, SASS, React JS, Redux
                 </div>
               </div>
             </div>
