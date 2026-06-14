@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/portfolio-professional/static/css/main.972acc32.css",
-    "main.js": "/portfolio-professional/static/js/main.c5464ed2.js",
-    "static/js/453.8ab44547.chunk.js": "/portfolio-professional/static/js/453.8ab44547.chunk.js",
+    "main.css": "/portfolio-professional/static/css/main.3a8313c2.css",
+    "main.js": "/portfolio-professional/static/js/main.ec41b810.js",
+    "static/js/453.80304955.chunk.js": "/portfolio-professional/static/js/453.80304955.chunk.js",
     "static/media/mercury.jpg": "/portfolio-professional/static/media/mercury.b3bc4c353800a4a2a211.jpg",
     "static/media/mars.jpg": "/portfolio-professional/static/media/mars.a48029948504cbb4d125.jpg",
     "static/media/earth.jpg": "/portfolio-professional/static/media/earth.54672c1f3ba121d80470.jpg",
@@ -17,13 +17,14 @@
     "static/media/neptune.jpg": "/portfolio-professional/static/media/neptune.6dd112666aad0cd68958.jpg",
     "static/media/logo-2.png": "/portfolio-professional/static/media/logo-2.776c3818c4904e01c746.png",
     "static/media/uranus.jpg": "/portfolio-professional/static/media/uranus.428ad3f979bd783a27d1.jpg",
+    "static/media/fluxosimplessystem.png": "/portfolio-professional/static/media/fluxosimplessystem.f6a75bd9fd07e466c309.png",
     "index.html": "/portfolio-professional/index.html",
-    "main.972acc32.css.map": "/portfolio-professional/static/css/main.972acc32.css.map",
-    "main.c5464ed2.js.map": "/portfolio-professional/static/js/main.c5464ed2.js.map",
-    "453.8ab44547.chunk.js.map": "/portfolio-professional/static/js/453.8ab44547.chunk.js.map"
+    "main.3a8313c2.css.map": "/portfolio-professional/static/css/main.3a8313c2.css.map",
+    "main.ec41b810.js.map": "/portfolio-professional/static/js/main.ec41b810.js.map",
+    "453.80304955.chunk.js.map": "/portfolio-professional/static/js/453.80304955.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.972acc32.css",
-    "static/js/main.c5464ed2.js"
+    "static/css/main.3a8313c2.css",
+    "static/js/main.ec41b810.js"
   ]
 }
