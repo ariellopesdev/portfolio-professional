@@ -11,7 +11,7 @@ import { createPortal } from "react-dom";
 import useSectionAnimation from "../../hooks/useSectionAnimation";
 
 // Images
-import ImgTest from "../../assets/images/image-test.jpg";
+import FluxoSimplesImg from "../../assets/images/fluxosimplessystem.png";
 
 // Icons
 import { FaGithub, FaUser, FaTimes, FaExternalLinkAlt } from "react-icons/fa";
@@ -19,13 +19,21 @@ import { FaGithub, FaUser, FaTimes, FaExternalLinkAlt } from "react-icons/fa";
 const projectsData = [
   {
     id: 1,
-    name: "RandPlay",
-    image: ImgTest,
-    demand: "Projeto Pessoal",
-    github: "https://github.com/ariellopesdev/RandPlay-official",
-    site: "#",
-    desc: "RandPlay é uma plataforma completa para criação e gerenciamento de campeonatos de futebol. Com ela, qualquer pessoa pode montar torneios personalizados, editar regras, registrar resultados, controlar placares e organizar times ou seleções com total liberdade.",
-    tech: "React.js · Java · MongoDB · APIs",
+    name: "Fluxo Simples System",
+    image: FluxoSimplesImg,
+    demand: "Projeto acadêmico / Sistema de gestão",
+    github: "https://github.com/ariellopesdev/fluxosimplessystem",
+    site: "https://fluxosimplessystem.vercel.app",
+    desc: "Fluxo Simples System é um sistema web de gestão empresarial desenvolvido para centralizar processos como clientes, produtos, vendas, serviços, financeiro, relatórios e chamados de suporte. O projeto conta com controle de acesso por níveis de usuário, interface administrativa, modais reutilizáveis, dashboards e fluxo de atendimento entre usuários, administradores e super administradores.",
+    tech: "React.js · Node.js · Express · MongoDB · Redux · JWT · API ",
+    features: [
+      "Controle de acesso por usuário, admin e super admin",
+      "Gestão de clientes, produtos, vendas e serviços",
+      "Módulo financeiro e relatórios",
+      "Sistema de chamados com histórico e atendimento",
+      "Interface responsiva com modais reutilizáveis",
+      "Autenticação com JWT e rotas protegidas",
+    ],
   },
   {
     id: 2,
@@ -132,6 +140,14 @@ const Projects = ({ activeSection }) => {
                   </div>
 
                   <p className="modal__desc">{selectedProject.desc}</p>
+
+                  {selectedProject.features && (
+                    <ul className="modal__features">
+                      {selectedProject.features.map((feature, index) => (
+                        <li key={index}>{feature}</li>
+                      ))}
+                    </ul>
+                  )}
 
                   <a
                     href={selectedProject.site}
