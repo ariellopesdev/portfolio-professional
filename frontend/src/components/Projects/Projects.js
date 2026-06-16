@@ -14,6 +14,7 @@ import useSectionAnimation from "../../hooks/useSectionAnimation";
 import FluxoSimplesImg from "../../assets/images/fluxosimplessystem.png";
 import RandPlayImg from "../../assets/images/randplay.png";
 import ImgTest from "../../assets/images/image-test.jpg";
+import Kara_Arquitetura from "../../assets/images/hero_kara_arquitetura.png";
 
 // Video
 import FluxoSimplesVideo from "../../assets/video/presentation-fluxo-simples.mp4";
@@ -44,9 +45,9 @@ const projectsData = [
   },
   {
     id: 2,
-    name: "Ramon Efísio Arquitetura",
-    image: ImgTest,
-    demand: "Ramon Efísio Arquitetura",
+    name: "Kara Arquitetura",
+    image: Kara_Arquitetura,
+    demand: "Kara Arquitetura",
     github: "#",
     site: "#",
     desc: "Projeto em implementação.",
