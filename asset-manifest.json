@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/portfolio-professional/static/css/main.7bf4cda5.css",
-    "main.js": "/portfolio-professional/static/js/main.25381381.js",
+    "main.js": "/portfolio-professional/static/js/main.1dbecf2a.js",
     "static/js/453.80304955.chunk.js": "/portfolio-professional/static/js/453.80304955.chunk.js",
     "static/media/presentation-fluxo-simples.mp4": "/portfolio-professional/static/media/presentation-fluxo-simples.f337db51ddc1942de8f7.mp4",
     "static/media/mercury.jpg": "/portfolio-professional/static/media/mercury.b3bc4c353800a4a2a211.jpg",
@@ -16,17 +16,18 @@
     "static/media/image-test.jpg": "/portfolio-professional/static/media/image-test.c98984426d6787cbd4c8.jpg",
     "static/media/randplay.png": "/portfolio-professional/static/media/randplay.8ece0f28cd17ff790798.png",
     "static/media/saturn.jpg": "/portfolio-professional/static/media/saturn.afe61e83ea388f0d901a.jpg",
+    "static/media/hero_kara_arquitetura.png": "/portfolio-professional/static/media/hero_kara_arquitetura.ea4e9db6fcb7401ec8db.png",
     "static/media/neptune.jpg": "/portfolio-professional/static/media/neptune.6dd112666aad0cd68958.jpg",
     "static/media/logo-2.png": "/portfolio-professional/static/media/logo-2.776c3818c4904e01c746.png",
     "static/media/uranus.jpg": "/portfolio-professional/static/media/uranus.428ad3f979bd783a27d1.jpg",
     "static/media/fluxosimplessystem.png": "/portfolio-professional/static/media/fluxosimplessystem.f6a75bd9fd07e466c309.png",
     "index.html": "/portfolio-professional/index.html",
     "main.7bf4cda5.css.map": "/portfolio-professional/static/css/main.7bf4cda5.css.map",
-    "main.25381381.js.map": "/portfolio-professional/static/js/main.25381381.js.map",
+    "main.1dbecf2a.js.map": "/portfolio-professional/static/js/main.1dbecf2a.js.map",
     "453.80304955.chunk.js.map": "/portfolio-professional/static/js/453.80304955.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7bf4cda5.css",
-    "static/js/main.25381381.js"
+    "static/js/main.1dbecf2a.js"
   ]
 }
