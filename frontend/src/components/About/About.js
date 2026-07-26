@@ -115,7 +115,7 @@ const About = ({ activeSection }) => {
               <div className="skills__card--content">
                 <h3 className="skillscard__content--title">Front-End</h3>
                 <div className="skillscard__content--name">
-                  Javascript, HTML5, CSS3, SASS, React JS, Redux
+                  Javascript, TypeScript, React JS, HTML5, CSS3, SASS/SCSS, Redux
                 </div>
               </div>
             </div>
@@ -174,7 +174,7 @@ const About = ({ activeSection }) => {
                   DevOps & Ferramentas
                 </h3>
                 <div className="skillscard__content--name">
-                  Docker, Kubernetes, CI/CD, Git, GitHub, Postman
+                  Docker, Kubernetes, CI/CD, Git, GitHub, Postman, ChatGPT, Claude Code
                 </div>
               </div>
             </div>
